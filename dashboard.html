@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css?v=20261002-highlights" />
+    <link rel="stylesheet" href="assets/styles.css?v=20261002-visual-pass" />
   </head>
   <body class="dashboard-page">
     <nav class="site-nav">
@@ -33,7 +33,9 @@
           <label for="positionFilter">Position<select id="positionFilter"><option value="all">All positions</option></select></label>
           <label for="playerFilter">Player<select id="playerFilter"><option value="all">All players</option></select></label>
         </div>
-        <div class="switch-row"><span class="filter-help">Select a team, opponent, and position for a true matchup view. Charts answer different football questions: game script, role matchup, home/away splits, and player usage.</span><span class="filter-status" id="filterStatus" aria-live="polite">Loading data…</span></div><div class="active-filters" id="activeFilters" aria-live="polite"></div>
+        <div class="switch-row"><span class="filter-help">Select a team, opponent, and position for a true matchup view. Charts answer different football questions: game script, role matchup, home/away splits, and player usage.</span><span class="filter-status" id="filterStatus" aria-live="polite">Loading data…</span></div>
+        <div class="selection-rail" aria-live="polite"><div><span>SELECTED VIEW</span><strong id="selectionTitle">All NFL teams</strong></div><p id="selectionMeta">Choose a team to apply its colors and narrow the available opponents.</p></div>
+        <div class="active-filters" id="activeFilters" aria-live="polite"></div>
       </section>
 
       <section class="summary-grid" aria-label="Filtered summary numbers">
@@ -75,8 +77,8 @@
       <section class="dashboard-chart-grid">
         <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">GAME SCRIPT BY SEASON</span><h2 id="trendTitle">Points scored vs allowed</h2></div><span class="chart-note" id="trendNote">Select a team and opponent</span></div><p class="chart-explainer">Solid lines are points scored; dashed lines are points allowed. Matched teams use the same games.</p><canvas id="trendChart" role="img" aria-label="Line chart comparing points scored and allowed by season"></canvas></div>
         <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">ROLE MATCHUP LENS</span><h2 id="breakdownTitle">Selected role vs opposing unit</h2></div><span class="chart-note" id="breakdownNote">Choose a position for a coverage view</span></div><p class="chart-explainer">Measures change with the selected role: quarterbacks show passing, backs show rushing, receivers show receiving, and defenders show pressure.</p><canvas id="breakdownChart" role="img" aria-label="Bar chart showing role-specific production and opposing impact"></canvas></div>
-        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">HOME / AWAY SPLIT</span><h2 id="outcomeTitle">Home vs away performance</h2></div></div><p class="chart-explainer">Compare points scored, points allowed, and point differential per game.</p><canvas id="outcomeChart" role="img" aria-label="Bar chart comparing home and away performance"></canvas></div>
-        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">USAGE &amp; EFFICIENCY</span><h2 id="leaderboardTitle">Player role metrics</h2></div><span class="chart-note" id="leaderboardNote">Role-specific measures</span></div><p class="chart-explainer">The measures are role-specific rates, so a receiver is not ranked by a quarterback’s stat.</p><canvas id="leaderboardChart" role="img" aria-label="Bar chart showing role-specific player usage and efficiency"></canvas></div>
+        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">HOME / AWAY SPLIT</span><h2 id="outcomeTitle">Home vs away performance</h2></div><span class="chart-note" id="outcomeNote">Two-location comparison</span></div><p class="chart-explainer">The line compares scoring, opponent scoring, and point differential across the two locations.</p><canvas id="outcomeChart" role="img" aria-label="Line chart comparing home and away performance"></canvas></div>
+        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">USAGE &amp; EFFICIENCY</span><h2 id="leaderboardTitle">Player role metrics</h2></div><span class="chart-note" id="leaderboardNote">Role-specific measures</span></div><p class="chart-explainer">Each bubble is a player: games are usage, vertical position is per-game production, and size is total production.</p><canvas id="leaderboardChart" role="img" aria-label="Bubble chart showing role-specific player usage and efficiency"></canvas></div>
       </section>
 
       <section class="table-card"><div class="table-heading"><div><span class="section-kicker">THE NUMBERS BEHIND THE VIEW</span><h2>Player-game detail</h2></div><span id="tableCount">Showing 0 rows</span></div><div class="table-scroll"><table><caption class="sr-only">Filtered NFL player-game statistics</caption><thead><tr><th>Player</th><th>Team</th><th>Opp.</th><th>Pos.</th><th>Season</th><th>Week</th><th>H/A</th><th>Result</th><th>Pass yds</th><th>Rush yds</th><th>Rec yds</th><th>Tackles</th><th>Sacks</th></tr></thead><tbody id="dataTableBody"></tbody></table></div></section>
@@ -86,6 +88,6 @@
     <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/app.js?v=20261002-highlights"></script>
+    <script src="assets/app.js?v=20261002-visual-pass"></script>
   </body>
 </html>

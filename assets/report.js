@@ -36,6 +36,16 @@
     charts[id] = new Chart(document.getElementById(id), config);
     return charts[id];
   };
+  function setupStoryMap() {
+    const links = [...document.querySelectorAll(".story-map a")];
+    const sections = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+    if (!links.length || !sections.length) return;
+    const activate = (id) => links.forEach((link) => link.classList.toggle("is-reading", link.getAttribute("href") === `#${id}`));
+    activate(sections[0].id);
+    if (!window.IntersectionObserver) return;
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) activate(entry.target.id); }), { rootMargin: "-18% 0px -68% 0px", threshold: 0 });
+    sections.forEach((section) => observer.observe(section));
+  }
   const pointColor = (rate) => {
     const value = Number(rate || 0);
     if (value >= .65) return colors.red;
@@ -86,6 +96,8 @@
     },
   };
   const qbState = { play: "mesh", target: "slot", running: false };
+
+  setupStoryMap();
 
   function drawQbField() {
     const yardLines = document.querySelector(".qb-yard-lines");
@@ -163,6 +175,15 @@
     const home = stats.home_away.find((row) => row.home_away === "Home");
     const away = stats.home_away.find((row) => row.home_away === "Away");
     set("home-win-rate", pct(home.win_rate)); set("home-edge", decimal((home.win_rate - away.win_rate) * 100));
+    set("hero-top-team", topTeam.team); set("hero-top-team-rate", `${pct(topTeam.win_rate)} win rate · ${number(topTeam.wins)} wins`); set("hero-top-qb", `${topQb.player_display_name} · ${Number(topQb.epa_per_attempt).toFixed(3)} EPA/att`);
+    set("trend-takeaway", `${peak.season} was the scoring peak at ${decimal(peak.points_per_team_game)} points per team-game.`);
+    set("win-takeaway", `${topTeam.team} led the five-season window with ${number(topTeam.wins)} wins.`);
+    set("offense-takeaway", `${topOffense.team} in ${topOffense.season} produced ${number(topOffense.offensive_yards)} offensive yards.`);
+    set("defense-takeaway", `${topDefense.team} in ${topDefense.season} paired ${number(topDefense.def_sacks)} sacks with ${number(topDefense.def_interceptions)} interceptions.`);
+    set("position-takeaway", `${topPosition.position_group} accounted for ${number(topPosition.production_yards)} recorded yards in the panel.`);
+    set("qb-takeaway", `${topQb.player_display_name} led qualified QBs at ${Number(topQb.epa_per_attempt).toFixed(3)} EPA per attempt.`);
+    set("style-takeaway", `${topStyle.team} had the highest passing share at ${decimal(Number(topStyle.passing_share) * 100)}%.`);
+    set("home-takeaway", `Home teams won ${pct(home.win_rate)} of team-games, ${decimal((home.win_rate - away.win_rate) * 100)} points above away teams.`);
 
     const qbSelect = document.getElementById("qbPlayerSelect");
     if (qbSelect) {
