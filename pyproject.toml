@@ -1,0 +1,13 @@
+[project]
+name = "nfl-football-project"
+version = "0.1.0"
+description = "NFL player-game panel and interactive Financial Data Analytics website"
+requires-python = ">=3.14"
+dependencies = [
+    "nflreadpy>=0.1.4",
+    "pandas>=3.0.0",
+    "pyarrow>=25.0.0",
+]
+
+[tool.uv]
+package = false

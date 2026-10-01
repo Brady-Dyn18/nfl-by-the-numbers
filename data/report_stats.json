@@ -1,0 +1,644 @@
+{
+  "overview": {
+    "rows": 90495,
+    "games": 1359,
+    "teams": 32,
+    "players": 3691,
+    "seasons": 5,
+    "positions": 9,
+    "total_points": 61187,
+    "win_rows": 1355
+  },
+  "team_win_rate": [
+    {
+      "team": "BUF",
+      "games": 84,
+      "wins": 60,
+      "losses": 24,
+      "win_rate": 0.7142857143
+    },
+    {
+      "team": "PHI",
+      "games": 85,
+      "wins": 59,
+      "losses": 26,
+      "win_rate": 0.6941176471
+    },
+    {
+      "team": "KC",
+      "games": 85,
+      "wins": 58,
+      "losses": 27,
+      "win_rate": 0.6823529412
+    },
+    {
+      "team": "SF",
+      "games": 85,
+      "wins": 53,
+      "losses": 32,
+      "win_rate": 0.6235294118
+    },
+    {
+      "team": "BAL",
+      "games": 85,
+      "wins": 51,
+      "losses": 34,
+      "win_rate": 0.6
+    },
+    {
+      "team": "MIN",
+      "games": 85,
+      "wins": 51,
+      "losses": 34,
+      "win_rate": 0.6
+    },
+    {
+      "team": "DAL",
+      "games": 85,
+      "wins": 50,
+      "losses": 34,
+      "win_rate": 0.5882352941
+    },
+    {
+      "team": "GB",
+      "games": 85,
+      "wins": 50,
+      "losses": 34,
+      "win_rate": 0.5882352941
+    },
+    {
+      "team": "LA",
+      "games": 85,
+      "wins": 49,
+      "losses": 36,
+      "win_rate": 0.5764705882
+    },
+    {
+      "team": "SEA",
+      "games": 85,
+      "wins": 49,
+      "losses": 36,
+      "win_rate": 0.5764705882
+    }
+  ],
+  "team_offense": [
+    {
+      "season": 2025,
+      "team": "DEN",
+      "wins": 491,
+      "win_rate": 28.8823529412,
+      "passing_yards": 3931,
+      "rushing_yards": 2018,
+      "offensive_yards": 5949
+    },
+    {
+      "season": 2022,
+      "team": "KC",
+      "wins": 490,
+      "win_rate": 28.8235294118,
+      "passing_yards": 5250,
+      "rushing_yards": 1970,
+      "offensive_yards": 7220
+    },
+    {
+      "season": 2025,
+      "team": "NE",
+      "wins": 490,
+      "win_rate": 28.8235294118,
+      "passing_yards": 4459,
+      "rushing_yards": 2191,
+      "offensive_yards": 6650
+    },
+    {
+      "season": 2024,
+      "team": "KC",
+      "wins": 490,
+      "win_rate": 28.8235294118,
+      "passing_yards": 4046,
+      "rushing_yards": 1790,
+      "offensive_yards": 5836
+    },
+    {
+      "season": 2024,
+      "team": "DET",
+      "wins": 475,
+      "win_rate": 27.9411764706,
+      "passing_yards": 4718,
+      "rushing_yards": 2488,
+      "offensive_yards": 7206
+    },
+    {
+      "season": 2024,
+      "team": "MIN",
+      "wins": 466,
+      "win_rate": 27.4117647059,
+      "passing_yards": 4379,
+      "rushing_yards": 1855,
+      "offensive_yards": 6234
+    },
+    {
+      "season": 2025,
+      "team": "SEA",
+      "wins": 465,
+      "win_rate": 27.3529411765,
+      "passing_yards": 4063,
+      "rushing_yards": 2096,
+      "offensive_yards": 6159
+    },
+    {
+      "season": 2022,
+      "team": "PHI",
+      "wins": 460,
+      "win_rate": 27.0588235294,
+      "passing_yards": 4364,
+      "rushing_yards": 2509,
+      "offensive_yards": 6873
+    },
+    {
+      "season": 2022,
+      "team": "BUF",
+      "wins": 432,
+      "win_rate": 27.0,
+      "passing_yards": 4291,
+      "rushing_yards": 2232,
+      "offensive_yards": 6523
+    },
+    {
+      "season": 2024,
+      "team": "BUF",
+      "wins": 457,
+      "win_rate": 26.8823529412,
+      "passing_yards": 3938,
+      "rushing_yards": 2230,
+      "offensive_yards": 6168
+    }
+  ],
+  "team_defense": [
+    {
+      "season": 2025,
+      "team": "DEN",
+      "wins": 491,
+      "win_rate": 28.8823529412,
+      "def_sacks": 68.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 78.0
+    },
+    {
+      "season": 2022,
+      "team": "KC",
+      "wins": 490,
+      "win_rate": 28.8235294118,
+      "def_sacks": 55.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 66.0
+    },
+    {
+      "season": 2024,
+      "team": "KC",
+      "wins": 490,
+      "win_rate": 28.8235294118,
+      "def_sacks": 39.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2025,
+      "team": "NE",
+      "wins": 490,
+      "win_rate": 28.8235294118,
+      "def_sacks": 34.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 44.0
+    },
+    {
+      "season": 2024,
+      "team": "DET",
+      "wins": 475,
+      "win_rate": 27.9411764706,
+      "def_sacks": 37.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2024,
+      "team": "MIN",
+      "wins": 466,
+      "win_rate": 27.4117647059,
+      "def_sacks": 48.0,
+      "def_interceptions": 24,
+      "defensive_takeaways_pressure": 72.0
+    },
+    {
+      "season": 2025,
+      "team": "SEA",
+      "wins": 465,
+      "win_rate": 27.3529411765,
+      "def_sacks": 47.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 65.0
+    },
+    {
+      "season": 2022,
+      "team": "PHI",
+      "wins": 460,
+      "win_rate": 27.0588235294,
+      "def_sacks": 69.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 86.0
+    },
+    {
+      "season": 2022,
+      "team": "BUF",
+      "wins": 432,
+      "win_rate": 27.0,
+      "def_sacks": 40.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2025,
+      "team": "JAX",
+      "wins": 457,
+      "win_rate": 26.8823529412,
+      "def_sacks": 32.0,
+      "def_interceptions": 22,
+      "defensive_takeaways_pressure": 54.0
+    }
+  ],
+  "position_production": [
+    {
+      "position_group": "QB",
+      "players": 138,
+      "player_games": 3279,
+      "production_yards": 684684,
+      "def_tackles": 107,
+      "def_sacks": 0.0
+    },
+    {
+      "position_group": "WR",
+      "players": 458,
+      "player_games": 12298,
+      "production_yards": 419535,
+      "def_tackles": 1295,
+      "def_sacks": 1.0
+    },
+    {
+      "position_group": "RB",
+      "players": 316,
+      "player_games": 8156,
+      "production_yards": 347248,
+      "def_tackles": 903,
+      "def_sacks": 0.0
+    },
+    {
+      "position_group": "TE",
+      "players": 234,
+      "player_games": 6112,
+      "production_yards": 141726,
+      "def_tackles": 701,
+      "def_sacks": 0.0
+    },
+    {
+      "position_group": "DB",
+      "players": 760,
+      "player_games": 19812,
+      "production_yards": 681,
+      "def_tackles": 47037,
+      "def_sacks": 509.5
+    },
+    {
+      "position_group": "SPEC",
+      "players": 183,
+      "player_games": 5750,
+      "production_yards": 218,
+      "def_tackles": 322,
+      "def_sacks": 0.0
+    },
+    {
+      "position_group": "LB",
+      "players": 543,
+      "player_games": 15065,
+      "production_yards": 104,
+      "def_tackles": 31062,
+      "def_sacks": 2552.0
+    },
+    {
+      "position_group": "OL",
+      "players": 506,
+      "player_games": 4494,
+      "production_yards": 104,
+      "def_tackles": 375,
+      "def_sacks": 0.0
+    },
+    {
+      "position_group": "DL",
+      "players": 553,
+      "player_games": 15529,
+      "production_yards": 46,
+      "def_tackles": 16508,
+      "def_sacks": 3441.5
+    }
+  ],
+  "quarterbacks": [
+    {
+      "player_display_name": "Brock Purdy",
+      "games": 49,
+      "attempts": 1353,
+      "passing_yards": 11685,
+      "passing_tds": 84,
+      "epa_per_attempt": 0.2374126263,
+      "win_rate": 0.6734693878
+    },
+    {
+      "player_display_name": "Josh Johnson",
+      "games": 12,
+      "attempts": 144,
+      "passing_yards": 1037,
+      "passing_tds": 6,
+      "epa_per_attempt": 0.1983395986,
+      "win_rate": 0.6666666667
+    },
+    {
+      "player_display_name": "Patrick Mahomes",
+      "games": 80,
+      "attempts": 2986,
+      "passing_yards": 21787,
+      "passing_tds": 153,
+      "epa_per_attempt": 0.1749030374,
+      "win_rate": 0.7125
+    },
+    {
+      "player_display_name": "Josh Allen",
+      "games": 82,
+      "attempts": 2735,
+      "passing_yards": 20395,
+      "passing_tds": 153,
+      "epa_per_attempt": 0.1736169986,
+      "win_rate": 0.7195121951
+    },
+    {
+      "player_display_name": "Jordan Love",
+      "games": 57,
+      "attempts": 1526,
+      "passing_yards": 11535,
+      "passing_tds": 83,
+      "epa_per_attempt": 0.1685677143,
+      "win_rate": 0.5263157895
+    },
+    {
+      "player_display_name": "Drake Maye",
+      "games": 30,
+      "attempts": 830,
+      "passing_yards": 6670,
+      "passing_tds": 46,
+      "epa_per_attempt": 0.1683870273,
+      "win_rate": 0.5666666667
+    },
+    {
+      "player_display_name": "Nick Mullens",
+      "games": 18,
+      "attempts": 208,
+      "passing_yards": 1734,
+      "passing_tds": 9,
+      "epa_per_attempt": 0.1666707586,
+      "win_rate": 0.6111111111
+    },
+    {
+      "player_display_name": "Tua Tagovailoa",
+      "games": 68,
+      "attempts": 2131,
+      "passing_yards": 16352,
+      "passing_tds": 109,
+      "epa_per_attempt": 0.1592143436,
+      "win_rate": 0.5735294118
+    },
+    {
+      "player_display_name": "Jimmy Garoppolo",
+      "games": 37,
+      "attempts": 959,
+      "passing_yards": 7786,
+      "passing_tds": 45,
+      "epa_per_attempt": 0.1591827715,
+      "win_rate": 0.6486486486
+    },
+    {
+      "player_display_name": "Jared Goff",
+      "games": 82,
+      "attempts": 2803,
+      "passing_yards": 21451,
+      "passing_tds": 149,
+      "epa_per_attempt": 0.1542788741,
+      "win_rate": 0.5853658537
+    }
+  ],
+  "passing_share": [
+    {
+      "team": "CIN",
+      "passing_share": 0.7404395431
+    },
+    {
+      "team": "LV",
+      "passing_share": 0.7180206473
+    },
+    {
+      "team": "TB",
+      "passing_share": 0.7147138419
+    },
+    {
+      "team": "LAC",
+      "passing_share": 0.7092562639
+    },
+    {
+      "team": "KC",
+      "passing_share": 0.7065696099
+    },
+    {
+      "team": "MIN",
+      "passing_share": 0.7061152472
+    },
+    {
+      "team": "HOU",
+      "passing_share": 0.7041944479
+    },
+    {
+      "team": "LA",
+      "passing_share": 0.6970827356
+    },
+    {
+      "team": "SEA",
+      "passing_share": 0.6877568519
+    },
+    {
+      "team": "MIA",
+      "passing_share": 0.687115046
+    }
+  ],
+  "home_away": [
+    {
+      "home_away": "Away",
+      "games": 1359,
+      "wins": 622,
+      "win_rate": 0.4576894776
+    },
+    {
+      "home_away": "Home",
+      "games": 1359,
+      "wins": 733,
+      "win_rate": 0.5393671818
+    }
+  ],
+  "season_trend": [
+    {
+      "season": 2021,
+      "games": 272,
+      "team_games": 544,
+      "points_for": 12502,
+      "points_against": 12502,
+      "points_per_team_game": 22.9816176471
+    },
+    {
+      "season": 2022,
+      "games": 271,
+      "team_games": 542,
+      "points_for": 11860,
+      "points_against": 11860,
+      "points_per_team_game": 21.8819188192
+    },
+    {
+      "season": 2023,
+      "games": 272,
+      "team_games": 544,
+      "points_for": 11842,
+      "points_against": 11842,
+      "points_per_team_game": 21.7683823529
+    },
+    {
+      "season": 2024,
+      "games": 272,
+      "team_games": 544,
+      "points_for": 12464,
+      "points_against": 12464,
+      "points_per_team_game": 22.9117647059
+    },
+    {
+      "season": 2025,
+      "games": 272,
+      "team_games": 544,
+      "points_for": 12519,
+      "points_against": 12519,
+      "points_per_team_game": 23.0128676471
+    }
+  ],
+  "leaderboard": [
+    {
+      "player_display_name": "Patrick Mahomes",
+      "position_group": "QB",
+      "player_games": 80,
+      "passing_yards": 21787,
+      "rushing_yards": 1857,
+      "receiving_yards": -2,
+      "def_tackles": 4,
+      "def_sacks": 0.0,
+      "all_around_yards": 23642
+    },
+    {
+      "player_display_name": "Josh Allen",
+      "position_group": "QB",
+      "player_games": 82,
+      "passing_yards": 20395,
+      "rushing_yards": 3159,
+      "receiving_yards": 7,
+      "def_tackles": 5,
+      "def_sacks": 0.0,
+      "all_around_yards": 23561
+    },
+    {
+      "player_display_name": "Justin Herbert",
+      "position_group": "QB",
+      "player_games": 80,
+      "passing_yards": 20484,
+      "rushing_yards": 1481,
+      "receiving_yards": 0,
+      "def_tackles": 4,
+      "def_sacks": 0.0,
+      "all_around_yards": 21965
+    },
+    {
+      "player_display_name": "Jared Goff",
+      "position_group": "QB",
+      "player_games": 82,
+      "passing_yards": 21451,
+      "rushing_yards": 282,
+      "receiving_yards": 12,
+      "def_tackles": 4,
+      "def_sacks": 0.0,
+      "all_around_yards": 21745
+    },
+    {
+      "player_display_name": "Jalen Hurts",
+      "position_group": "QB",
+      "player_games": 78,
+      "passing_yards": 16830,
+      "rushing_yards": 3200,
+      "receiving_yards": 0,
+      "def_tackles": 4,
+      "def_sacks": 0.0,
+      "all_around_yards": 20030
+    },
+    {
+      "player_display_name": "Matthew Stafford",
+      "position_group": "QB",
+      "player_games": 74,
+      "passing_yards": 19407,
+      "rushing_yards": 159,
+      "receiving_yards": 0,
+      "def_tackles": 2,
+      "def_sacks": 0.0,
+      "all_around_yards": 19566
+    },
+    {
+      "player_display_name": "Trevor Lawrence",
+      "position_group": "QB",
+      "player_games": 77,
+      "passing_yards": 17822,
+      "rushing_yards": 1442,
+      "receiving_yards": -5,
+      "def_tackles": 6,
+      "def_sacks": 0.0,
+      "all_around_yards": 19259
+    },
+    {
+      "player_display_name": "Dak Prescott",
+      "position_group": "QB",
+      "player_games": 70,
+      "passing_yards": 18355,
+      "rushing_yards": 801,
+      "receiving_yards": 0,
+      "def_tackles": 4,
+      "def_sacks": 0.0,
+      "all_around_yards": 19156
+    },
+    {
+      "player_display_name": "Lamar Jackson",
+      "position_group": "QB",
+      "player_games": 70,
+      "passing_yards": 15523,
+      "rushing_yards": 3616,
+      "receiving_yards": 0,
+      "def_tackles": 6,
+      "def_sacks": 0.0,
+      "all_around_yards": 19139
+    },
+    {
+      "player_display_name": "Joe Burrow",
+      "position_group": "QB",
+      "player_games": 67,
+      "passing_yards": 18122,
+      "rushing_yards": 705,
+      "receiving_yards": 0,
+      "def_tackles": 3,
+      "def_sacks": 0.0,
+      "all_around_yards": 18827
+    }
+  ]
+}
