@@ -270,6 +270,9 @@
       "position_group": "QB",
       "players": 138,
       "player_games": 3279,
+      "passing_yards": 635172,
+      "rushing_yards": 49435,
+      "receiving_yards": 77,
       "production_yards": 684684,
       "def_tackles": 107,
       "def_sacks": 0.0
@@ -278,6 +281,9 @@
       "position_group": "WR",
       "players": 458,
       "player_games": 12298,
+      "passing_yards": 796,
+      "rushing_yards": 12653,
+      "receiving_yards": 406086,
       "production_yards": 419535,
       "def_tackles": 1295,
       "def_sacks": 1.0
@@ -286,6 +292,9 @@
       "position_group": "RB",
       "players": 316,
       "player_games": 8156,
+      "passing_yards": 134,
+      "rushing_yards": 254284,
+      "receiving_yards": 92830,
       "production_yards": 347248,
       "def_tackles": 903,
       "def_sacks": 0.0
@@ -294,6 +303,9 @@
       "position_group": "TE",
       "players": 234,
       "player_games": 6112,
+      "passing_yards": 1379,
+      "rushing_yards": 2184,
+      "receiving_yards": 138163,
       "production_yards": 141726,
       "def_tackles": 701,
       "def_sacks": 0.0
@@ -302,6 +314,9 @@
       "position_group": "DB",
       "players": 760,
       "player_games": 19812,
+      "passing_yards": 29,
+      "rushing_yards": 179,
+      "receiving_yards": 473,
       "production_yards": 681,
       "def_tackles": 47037,
       "def_sacks": 509.5
@@ -310,6 +325,9 @@
       "position_group": "SPEC",
       "players": 183,
       "player_games": 5750,
+      "passing_yards": 299,
+      "rushing_yards": -81,
+      "receiving_yards": 0,
       "production_yards": 218,
       "def_tackles": 322,
       "def_sacks": 0.0
@@ -318,6 +336,9 @@
       "position_group": "LB",
       "players": 543,
       "player_games": 15065,
+      "passing_yards": 31,
+      "rushing_yards": 13,
+      "receiving_yards": 60,
       "production_yards": 104,
       "def_tackles": 31062,
       "def_sacks": 2552.0
@@ -326,6 +347,9 @@
       "position_group": "OL",
       "players": 506,
       "player_games": 4494,
+      "passing_yards": 0,
+      "rushing_yards": 0,
+      "receiving_yards": 104,
       "production_yards": 104,
       "def_tackles": 375,
       "def_sacks": 0.0
@@ -334,6 +358,9 @@
       "position_group": "DL",
       "players": 553,
       "player_games": 15529,
+      "passing_yards": 0,
+      "rushing_yards": 0,
+      "receiving_yards": 46,
       "production_yards": 46,
       "def_tackles": 16508,
       "def_sacks": 3441.5

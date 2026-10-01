@@ -215,7 +215,7 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
         "team_win_rate": records(team_by_wins, ["team", "games", "wins", "losses", "win_rate"]),
         "team_offense": records(offense_by_wins, ["season", "team", "wins", "win_rate", "passing_yards", "rushing_yards", "offensive_yards"]),
         "team_defense": records(defense_by_wins, ["season", "team", "wins", "win_rate", "def_sacks", "def_interceptions", "defensive_takeaways_pressure"]),
-        "position_production": records(position_by_production, ["position_group", "players", "player_games", "production_yards", "def_tackles", "def_sacks"]),
+        "position_production": records(position_by_production, ["position_group", "players", "player_games", "passing_yards", "rushing_yards", "receiving_yards", "production_yards", "def_tackles", "def_sacks"]),
         "quarterbacks": records(qb_by_epa, ["player_display_name", "games", "attempts", "passing_yards", "passing_tds", "epa_per_attempt", "win_rate"]),
         "passing_share": records(pass_share, ["team", "passing_share"]),
         "home_away": json.loads(home_away.to_json(orient="records")),

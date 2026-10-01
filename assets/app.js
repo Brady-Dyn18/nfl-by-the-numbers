@@ -15,7 +15,7 @@
   const playerById = () => Object.fromEntries(state.players.map((player) => [player.player_id, player]));
 
   function unique(values) { return [...new Set(values.filter((v) => v !== "" && v != null))].sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true })); }
-  function fillSelect(id, values, labeler = (v) => v) { const select = get(id); const current = select.value; select.innerHTML = `<option value="all">All ${id.replace("Filter", "").replace(/([A-Z])/g, " $1").toLowerCase()}</option>` + values.map((v) => `<option value="${String(v).replaceAll('"', '&quot;')}">${labeler(v)}</option>`).join(""); if (values.includes(current)) select.value = current; }
+  function fillSelect(id, values, labeler = (v) => v) { const select = get(id); const current = select.value; const optionValues = values.map((v) => String(v)); select.innerHTML = `<option value="all">All ${id.replace("Filter", "").replace(/([A-Z])/g, " $1").toLowerCase()}</option>` + values.map((v) => `<option value="${String(v).replaceAll('"', '&quot;')}">${labeler(v)}</option>`).join(""); select.value = optionValues.includes(current) ? current : "all"; }
   function setTheme(teamAbbr) {
     const team = teamByAbbr()[teamAbbr];
     const root = document.documentElement;
@@ -26,7 +26,22 @@
     const teamRows = state.rows.filter((row) => row.team === teamAbbr); const games = [...new Set(teamRows.map((row) => row.game_id))]; const wins = [...new Set(teamRows.filter((row) => row.win_loss === "W").map((row) => row.game_id))].length; get("teamRecord").textContent = `${wins}-${games.length - wins} in the selected seasons`;
   }
   function val(id) { return get(id).value; }
+  function syncDependentFilters() {
+    const season = val("seasonFilter");
+    const team = val("teamFilter");
+    const seasonRows = state.rows.filter((row) => season === "all" || String(row.season) === season);
+    const opponentRows = seasonRows.filter((row) => team === "all" || row.team === team);
+    fillSelect("opponentFilter", unique(opponentRows.map((row) => row.opponent_team)));
+
+    const playerRows = seasonRows.filter((row) => team === "all" || row.team === team);
+    const playerIds = unique(playerRows.map((row) => row.player_id));
+    fillSelect("playerFilter", playerIds, (id) => {
+      const player = playerById()[id];
+      return player ? `${player.player_display_name} · ${player.position || ""}` : id;
+    });
+  }
   function applyFilters() {
+    syncDependentFilters();
     const season = val("seasonFilter"), team = val("teamFilter"), opponent = val("opponentFilter"), group = val("positionGroupFilter"), position = val("positionFilter"), player = val("playerFilter");
     state.filtered = state.rows.filter((row) => (season === "all" || String(row.season) === season) && (team === "all" || row.team === team) && (opponent === "all" || row.opponent_team === opponent) && (group === "all" || row.position_group === group) && (position === "all" || row.position === position) && (player === "all" || row.player_id === player));
     setTheme(team === "all" ? "" : team); updateView();
@@ -73,6 +88,6 @@
     state.rows = parsed; state.teams = teams; state.players = players;
     fillSelect("seasonFilter", unique(state.rows.map((r) => r.season)), (v) => v); fillSelect("teamFilter", unique(state.rows.map((r) => r.team))); fillSelect("opponentFilter", unique(state.rows.map((r) => r.opponent_team))); fillSelect("positionGroupFilter", unique(state.rows.map((r) => r.position_group))); fillSelect("positionFilter", unique(state.rows.map((r) => r.position))); fillSelect("playerFilter", state.players.map((p) => p.player_id), (v) => { const p = playerById()[v]; return p ? `${p.player_display_name} · ${p.position || ""}` : v; });
     ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "positionFilter", "playerFilter", "measureSelect", "breakdownSelect"].forEach((id) => get(id).addEventListener("change", applyFilters)); get("resetFilters").addEventListener("click", reset);
-    state.filtered = state.rows; setTheme(""); updateView();
+    applyFilters();
   } catch (error) { get("filterStatus").textContent = "Could not load data"; console.error(error); }
 })();
