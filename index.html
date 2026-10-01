@@ -20,8 +20,8 @@
       <section class="hero report-hero">
         <div class="hero-copy">
           <p class="eyebrow">FINANCIAL DATA ANALYTICS · REGULAR SEASONS 2021–2025</p>
-          <h1>What makes an NFL team win?</h1>
-          <p class="hero-lede">A player-level look at offensive production, defensive disruption, position groups, and matchup outcomes across the five most recent completed NFL seasons.</p>
+          <h1>Find the story inside the score.</h1>
+          <p class="hero-lede">A player-level look at the five most recent completed NFL seasons—built to show how scoring, style, pressure, position roles, and home field fit together.</p>
           <p class="byline">Prepared by <strong>Brady Dyn</strong> · <span id="report-generated">Loading verified data…</span></p>
           <a class="primary-button" href="dashboard.html">Explore the interactive dashboard <span>→</span></a>
         </div>
@@ -29,6 +29,28 @@
           <div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div>
           <div class="football"><span></span><i></i><i></i><i></i></div>
           <div class="hero-stat"><strong>5</strong><span>SEASONS</span></div>
+        </div>
+      </section>
+
+      <section class="pulse-lab content-width" aria-labelledby="pulse-title">
+        <div class="pulse-intro">
+          <p class="section-kicker">OPENING DRIVE · INTERACTIVE</p>
+          <h2 id="pulse-title">Press play on the league’s scoring pulse.</h2>
+          <p>Choose a season and watch the scoring environment move from kickoff to final whistle. The pulse uses points per team-game, so seasons with different numbers of games stay comparable.</p>
+          <div class="pulse-controls">
+            <label for="pulseSeason">VIEW</label>
+            <select id="pulseSeason"><option value="all">All five seasons</option></select>
+            <button class="pulse-button" id="pulsePlay" type="button"><span aria-hidden="true">▶</span> Play pulse</button>
+          </div>
+        </div>
+        <div class="pulse-stage" id="pulseStage">
+          <div class="pulse-scoreline"><span class="pulse-live"><i></i> LIVE DATA</span><strong id="pulseReadout">League scoring pulse</strong><span id="pulseMeta">2021–2025 regular seasons</span></div>
+          <svg id="seasonPulseChart" viewBox="0 0 780 250" role="img" aria-labelledby="pulse-title pulseDesc" preserveAspectRatio="none">
+            <desc id="pulseDesc">Interactive line showing average points per team-game by NFL season.</desc>
+            <defs><linearGradient id="pulseFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d50a0a" stop-opacity=".42"/><stop offset="1" stop-color="#d50a0a" stop-opacity="0"/></linearGradient></defs>
+            <g class="pulse-grid-lines"></g><path class="pulse-area"></path><path class="pulse-line"></path><g class="pulse-points"></g>
+          </svg>
+          <div class="pulse-footer"><span id="pulseFootnote">Select a season to spotlight it.</span><span class="pulse-yardline" aria-hidden="true">01 · 10 · 20 · 30 · 40 · 50</span></div>
         </div>
       </section>
 
@@ -46,42 +68,42 @@
       </section>
 
       <section class="report-section content-width" id="finding-1">
-        <div class="finding-number">01</div><div class="finding-copy"><p class="section-kicker">LEAGUE LANDSCAPE</p><h2>The scoring environment stayed remarkably consistent from season to season.</h2><p>Across the five-season window, the league averaged <strong id="trend-average">—</strong> points per team-game in <strong id="trend-peak-season">—</strong>, the highest season in the data. The line chart gives the report a common baseline before comparing teams and players.</p></div>
+        <div class="finding-number">01</div><div class="finding-copy"><p class="section-kicker">LEAGUE RHYTHM</p><h2>The scoring pulse rose and fell without losing its NFL shape.</h2><p>Across the five-season window, the league averaged <strong id="trend-average">—</strong> points per team-game. <strong id="trend-peak-season">—</strong> was the highest-scoring season, giving us the baseline for every comparison that follows.</p></div>
         <div class="chart-card"><canvas id="seasonTrendChart"></canvas></div>
       </section>
 
       <section class="report-section content-width" id="finding-2">
-        <div class="finding-number">02</div><div class="finding-copy"><p class="section-kicker">WINNING TEAMS</p><h2><span id="top-team-name">—</span> had the strongest five-season regular-season record.</h2><p>It won <strong id="top-team-wins">—</strong> of <strong id="top-team-games">—</strong> team-games, a <strong id="top-team-rate">—</strong> winning rate. The ranking uses the final score attached to each player-game record, then removes duplicates so a game is counted once per team.</p></div>
+        <div class="finding-number">02</div><div class="finding-copy"><p class="section-kicker">WINNING MARGIN</p><h2><span id="top-team-name">—</span> set the five-season pace for winning.</h2><p>It won <strong id="top-team-wins">—</strong> of <strong id="top-team-games">—</strong> team-games, a <strong id="top-team-rate">—</strong> winning rate. The ring chart shows how that record compares with the rest of the league without making a game count twice.</p></div>
         <div class="chart-card"><canvas id="teamWinChart"></canvas></div>
       </section>
 
       <section class="report-section content-width" id="finding-3">
-        <div class="finding-number">03</div><div class="finding-copy"><p class="section-kicker">OFFENSE</p><h2><span id="offense-team-season">—</span> produced the most combined passing and rushing yardage in a team-season.</h2><p>The chart compares team-season offensive yardage with wins. Passing and rushing totals are sums of the player-level statistics, so the result can be filtered later by team, position, opponent, or season in the dashboard.</p></div>
+        <div class="finding-number">03</div><div class="finding-copy"><p class="section-kicker">OFFENSIVE IDENTITY</p><h2><span id="offense-team-season">—</span> shows how different team styles can travel to the same scoreboard.</h2><p>Each dot is a team-season: farther right means more passing yards, higher means more rushing yards, and dot size reflects wins. Hover over a team to see its offensive fingerprint.</p></div>
         <div class="chart-card"><canvas id="offenseChart"></canvas></div>
       </section>
 
       <section class="report-section content-width" id="finding-4">
-        <div class="finding-number">04</div><div class="finding-copy"><p class="section-kicker">DEFENSE</p><h2><span id="defense-team-season">—</span> led the team-seasons in sacks plus interceptions.</h2><p>This simple disruption measure combines two player-level defensive events that can change possession or end a drive. It is descriptive, not causal: a high total is associated with the team’s season, not proof that it alone created every win.</p></div>
+        <div class="finding-number">04</div><div class="finding-copy"><p class="section-kicker">DEFENSIVE PRESSURE</p><h2><span id="defense-team-season">—</span> led the team-seasons in disruption.</h2><p>The radar separates sacks from interceptions so “pressure” is not a one-number mystery. A bigger shape means more disruption, but the two axes tell you whether a defense got home with the rush or took the ball away.</p></div>
         <div class="chart-card"><canvas id="defenseChart"></canvas></div>
       </section>
 
       <section class="report-section content-width" id="finding-5">
-        <div class="finding-number">05</div><div class="finding-copy"><p class="section-kicker">POSITION GROUPS</p><h2><span id="top-position">—</span> generated the most yardage in the player-game panel.</h2><p>Position groups make the dashboard useful to readers who do not want to analyze every individual player. The chart shows the total passing, rushing, and receiving yardage associated with each group, alongside defensive tackle volume.</p></div>
+        <div class="finding-number">05</div><div class="finding-copy"><p class="section-kicker">POSITION ROLES</p><h2><span id="top-position">—</span> carried the largest share of recorded yardage.</h2><p>The polar chart makes the roles visible at a glance: quarterbacks move the passing needle, running backs own the ground game, and receivers stretch the field. This is workload, not a ranking of player value.</p></div>
         <div class="chart-card"><canvas id="positionChart"></canvas></div>
       </section>
 
       <section class="report-section content-width" id="finding-6">
-        <div class="finding-number">06</div><div class="finding-copy"><p class="section-kicker">QUARTERBACKS</p><h2><span id="top-quarterback">—</span> topped the qualified quarterback group in EPA per attempt.</h2><p>Only quarterbacks with at least 100 attempts are ranked, which removes tiny-sample outliers. EPA per attempt is total passing EPA divided by pass attempts and is displayed with the player’s attempts for context.</p></div>
+        <div class="finding-number">06</div><div class="finding-copy"><p class="section-kicker">QUARTERBACK EFFICIENCY</p><h2><span id="top-quarterback">—</span> topped the qualified quarterback group in EPA per attempt.</h2><p>Only quarterbacks with at least 100 attempts are included. Each bubble balances efficiency on the vertical axis with pass volume on the horizontal axis, so a small sample cannot hide behind a shiny rate.</p></div>
         <div class="chart-card"><canvas id="qbChart"></canvas></div>
       </section>
 
       <section class="report-section content-width" id="finding-7">
-        <div class="finding-number">07</div><div class="finding-copy"><p class="section-kicker">PLAY STYLE</p><h2><span id="pass-heavy-team">—</span> was the most pass-heavy team over the five-season window.</h2><p>Pass share is calculated as passing yards divided by the sum of passing and rushing yards, averaged across team-seasons. This describes offensive identity without pretending that one play style is automatically better.</p></div>
+        <div class="finding-number">07</div><div class="finding-copy"><p class="section-kicker">PLAY STYLE</p><h2><span id="pass-heavy-team">—</span> was the most pass-heavy team across the window.</h2><p>Pass share is passing yards divided by passing plus rushing yards. The slope chart follows that identity by season, making it easier to see whether teams changed their balance as personnel and situations changed.</p></div>
         <div class="chart-card"><canvas id="styleChart"></canvas></div>
       </section>
 
       <section class="report-section content-width" id="finding-8">
-        <div class="finding-number">08</div><div class="finding-copy"><p class="section-kicker">HOME FIELD</p><h2>Home teams won&nbsp;<span id="home-win-rate">—</span> of their team-games in this sample.</h2><p>Home and away are taken from the schedule’s designated home and away teams. Neutral-site games retain the schedule’s home designation but can be investigated further through the dashboard’s opponent and game filters.</p></div>
+        <div class="finding-number">08</div><div class="finding-copy"><p class="section-kicker">HOME FIELD</p><h2>Home teams won&nbsp;<span id="home-win-rate">—</span> of their team-games.</h2><p>The home edge was <strong id="home-edge">—</strong> percentage points in win rate. The companion radar compares wins, points scored, and point differential per game—what the home crowd can influence is a question for deeper game-level research.</p></div>
         <div class="chart-card"><canvas id="homeAwayChart"></canvas></div>
       </section>
 

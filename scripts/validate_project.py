@@ -44,7 +44,7 @@ def main() -> None:
     require(report_html.count("class=\"report-section") >= 8, "Report needs at least eight finding sections")
     require(report_html.count("<canvas") >= 8, "Report needs a chart for each finding")
     require(dashboard_html.count("<canvas") >= 4, "Dashboard needs at least four charts")
-    for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "resetFilters", "summaryRows", "dataTableBody"]:
+    for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "playerFilter", "resetFilters", "summaryValue1", "summaryValue4", "dataTableBody"]:
         require(required_id in dashboard_html, f"Dashboard missing {required_id}")
 
     print("Project validation passed.")

@@ -83,186 +83,3206 @@
   ],
   "team_offense": [
     {
+      "season": 2024,
+      "team": "BAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4189,
+      "rushing_yards": 3189,
+      "offensive_yards": 7378
+    },
+    {
+      "season": 2022,
+      "team": "KC",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "passing_yards": 5250,
+      "rushing_yards": 1970,
+      "offensive_yards": 7220
+    },
+    {
+      "season": 2024,
+      "team": "DET",
+      "games": 17,
+      "wins": 15,
+      "win_rate": 0.8823529412,
+      "passing_yards": 4718,
+      "rushing_yards": 2488,
+      "offensive_yards": 7206
+    },
+    {
+      "season": 2021,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4963,
+      "rushing_yards": 2119,
+      "offensive_yards": 7082
+    },
+    {
+      "season": 2021,
+      "team": "TB",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "passing_yards": 5383,
+      "rushing_yards": 1672,
+      "offensive_yards": 7055
+    },
+    {
+      "season": 2024,
+      "team": "TB",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4505,
+      "rushing_yards": 2536,
+      "offensive_yards": 7041
+    },
+    {
+      "season": 2023,
+      "team": "MIA",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 4698,
+      "rushing_yards": 2308,
+      "offensive_yards": 7006
+    },
+    {
+      "season": 2023,
+      "team": "SF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4577,
+      "rushing_yards": 2389,
+      "offensive_yards": 6966
+    },
+    {
+      "season": 2023,
+      "team": "DET",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4606,
+      "rushing_yards": 2311,
+      "offensive_yards": 6917
+    },
+    {
+      "season": 2021,
+      "team": "KC",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4937,
+      "rushing_yards": 1955,
+      "offensive_yards": 6892
+    },
+    {
+      "season": 2022,
+      "team": "PHI",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "passing_yards": 4364,
+      "rushing_yards": 2509,
+      "offensive_yards": 6873
+    },
+    {
+      "season": 2025,
+      "team": "DAL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 4735,
+      "rushing_yards": 2136,
+      "offensive_yards": 6871
+    },
+    {
+      "season": 2025,
+      "team": "LA",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4707,
+      "rushing_yards": 2152,
+      "offensive_yards": 6859
+    },
+    {
+      "season": 2021,
+      "team": "LAC",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 5014,
+      "rushing_yards": 1834,
+      "offensive_yards": 6848
+    },
+    {
+      "season": 2021,
+      "team": "BAL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 4267,
+      "rushing_yards": 2479,
+      "offensive_yards": 6746
+    },
+    {
+      "season": 2021,
+      "team": "ARI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 4619,
+      "rushing_yards": 2076,
+      "offensive_yards": 6695
+    },
+    {
+      "season": 2025,
+      "team": "BUF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 3981,
+      "rushing_yards": 2714,
+      "offensive_yards": 6695
+    },
+    {
+      "season": 2021,
+      "team": "BUF",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 4450,
+      "rushing_yards": 2209,
+      "offensive_yards": 6659
+    },
+    {
+      "season": 2025,
+      "team": "NE",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "passing_yards": 4459,
+      "rushing_yards": 2191,
+      "offensive_yards": 6650
+    },
+    {
+      "season": 2022,
+      "team": "DET",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4444,
+      "rushing_yards": 2179,
+      "offensive_yards": 6623
+    },
+    {
+      "season": 2025,
+      "team": "DET",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4567,
+      "rushing_yards": 2041,
+      "offensive_yards": 6608
+    },
+    {
+      "season": 2021,
+      "team": "SF",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4437,
+      "rushing_yards": 2166,
+      "offensive_yards": 6603
+    },
+    {
+      "season": 2024,
+      "team": "SF",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 4424,
+      "rushing_yards": 2163,
+      "offensive_yards": 6587
+    },
+    {
+      "season": 2023,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4660,
+      "rushing_yards": 1920,
+      "offensive_yards": 6580
+    },
+    {
+      "season": 2021,
+      "team": "LA",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4893,
+      "rushing_yards": 1683,
+      "offensive_yards": 6576
+    },
+    {
+      "season": 2024,
+      "team": "PHI",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "passing_yards": 3517,
+      "rushing_yards": 3048,
+      "offensive_yards": 6565
+    },
+    {
+      "season": 2024,
+      "team": "WAS",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 3932,
+      "rushing_yards": 2619,
+      "offensive_yards": 6551
+    },
+    {
+      "season": 2021,
+      "team": "CIN",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4806,
+      "rushing_yards": 1742,
+      "offensive_yards": 6548
+    },
+    {
+      "season": 2023,
+      "team": "BAL",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "passing_yards": 3881,
+      "rushing_yards": 2661,
+      "offensive_yards": 6542
+    },
+    {
+      "season": 2022,
+      "team": "BUF",
+      "games": 16,
+      "wins": 13,
+      "win_rate": 0.8125,
+      "passing_yards": 4291,
+      "rushing_yards": 2232,
+      "offensive_yards": 6523
+    },
+    {
+      "season": 2023,
+      "team": "BUF",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 4306,
+      "rushing_yards": 2212,
+      "offensive_yards": 6518
+    },
+    {
+      "season": 2024,
+      "team": "ATL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 4283,
+      "rushing_yards": 2219,
+      "offensive_yards": 6502
+    },
+    {
+      "season": 2024,
+      "team": "CIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4918,
+      "rushing_yards": 1574,
+      "offensive_yards": 6492
+    },
+    {
+      "season": 2022,
+      "team": "MIN",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "passing_yards": 4818,
+      "rushing_yards": 1661,
+      "offensive_yards": 6479
+    },
+    {
+      "season": 2022,
+      "team": "MIA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4765,
+      "rushing_yards": 1686,
+      "offensive_yards": 6451
+    },
+    {
+      "season": 2025,
+      "team": "CHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 3991,
+      "rushing_yards": 2456,
+      "offensive_yards": 6447
+    },
+    {
+      "season": 2024,
+      "team": "GB",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 3939,
+      "rushing_yards": 2496,
+      "offensive_yards": 6435
+    },
+    {
+      "season": 2021,
+      "team": "GB",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "passing_yards": 4526,
+      "rushing_yards": 1900,
+      "offensive_yards": 6426
+    },
+    {
+      "season": 2021,
+      "team": "LV",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4808,
+      "rushing_yards": 1617,
+      "offensive_yards": 6425
+    },
+    {
+      "season": 2022,
+      "team": "SF",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "passing_yards": 4049,
+      "rushing_yards": 2360,
+      "offensive_yards": 6409
+    },
+    {
+      "season": 2021,
+      "team": "MIN",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 4450,
+      "rushing_yards": 1930,
+      "offensive_yards": 6380
+    },
+    {
+      "season": 2023,
+      "team": "LA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4300,
+      "rushing_yards": 2045,
+      "offensive_yards": 6345
+    },
+    {
+      "season": 2022,
+      "team": "SEA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4282,
+      "rushing_yards": 2042,
+      "offensive_yards": 6324
+    },
+    {
+      "season": 2022,
+      "team": "LAC",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4791,
+      "rushing_yards": 1524,
+      "offensive_yards": 6315
+    },
+    {
+      "season": 2024,
+      "team": "ARI",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3859,
+      "rushing_yards": 2451,
+      "offensive_yards": 6310
+    },
+    {
+      "season": 2021,
+      "team": "PHI",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3585,
+      "rushing_yards": 2715,
+      "offensive_yards": 6300
+    },
+    {
+      "season": 2022,
+      "team": "JAX",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4148,
+      "rushing_yards": 2116,
+      "offensive_yards": 6264
+    },
+    {
+      "season": 2023,
+      "team": "PHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 4067,
+      "rushing_yards": 2190,
+      "offensive_yards": 6257
+    },
+    {
+      "season": 2023,
+      "team": "MIN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 4700,
+      "rushing_yards": 1553,
+      "offensive_yards": 6253
+    },
+    {
+      "season": 2021,
+      "team": "NE",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4098,
+      "rushing_yards": 2151,
+      "offensive_yards": 6249
+    },
+    {
+      "season": 2022,
+      "team": "LV",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 4182,
+      "rushing_yards": 2059,
+      "offensive_yards": 6241
+    },
+    {
+      "season": 2024,
+      "team": "MIN",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "passing_yards": 4379,
+      "rushing_yards": 1855,
+      "offensive_yards": 6234
+    },
+    {
+      "season": 2023,
+      "team": "HOU",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4578,
+      "rushing_yards": 1647,
+      "offensive_yards": 6225
+    },
+    {
+      "season": 2022,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 3911,
+      "rushing_yards": 2298,
+      "offensive_yards": 6209
+    },
+    {
+      "season": 2022,
+      "team": "CLE",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3710,
+      "rushing_yards": 2490,
+      "offensive_yards": 6200
+    },
+    {
+      "season": 2024,
+      "team": "BUF",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "passing_yards": 3938,
+      "rushing_yards": 2230,
+      "offensive_yards": 6168
+    },
+    {
+      "season": 2023,
+      "team": "KC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 4383,
+      "rushing_yards": 1784,
+      "offensive_yards": 6167
+    },
+    {
+      "season": 2025,
+      "team": "SEA",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "passing_yards": 4063,
+      "rushing_yards": 2096,
+      "offensive_yards": 6159
+    },
+    {
+      "season": 2021,
+      "team": "TEN",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 3745,
+      "rushing_yards": 2404,
+      "offensive_yards": 6149
+    },
+    {
+      "season": 2025,
+      "team": "SF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 4318,
+      "rushing_yards": 1817,
+      "offensive_yards": 6135
+    },
+    {
+      "season": 2021,
+      "team": "IND",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3588,
+      "rushing_yards": 2540,
+      "offensive_yards": 6128
+    },
+    {
+      "season": 2023,
+      "team": "GB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4210,
+      "rushing_yards": 1905,
+      "offensive_yards": 6115
+    },
+    {
+      "season": 2025,
+      "team": "IND",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 4085,
+      "rushing_yards": 2007,
+      "offensive_yards": 6092
+    },
+    {
+      "season": 2021,
+      "team": "CLE",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3619,
+      "rushing_yards": 2471,
+      "offensive_yards": 6090
+    },
+    {
+      "season": 2022,
+      "team": "TB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 4746,
+      "rushing_yards": 1308,
+      "offensive_yards": 6054
+    },
+    {
+      "season": 2022,
+      "team": "CIN",
+      "games": 16,
+      "wins": 12,
+      "win_rate": 0.75,
+      "passing_yards": 4520,
+      "rushing_yards": 1528,
+      "offensive_yards": 6048
+    },
+    {
+      "season": 2023,
+      "team": "CLE",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 4011,
+      "rushing_yards": 2017,
+      "offensive_yards": 6028
+    },
+    {
+      "season": 2023,
+      "team": "JAX",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4377,
+      "rushing_yards": 1646,
+      "offensive_yards": 6023
+    },
+    {
+      "season": 2025,
+      "team": "LAC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 3953,
+      "rushing_yards": 2067,
+      "offensive_yards": 6020
+    },
+    {
+      "season": 2024,
+      "team": "SEA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4379,
+      "rushing_yards": 1627,
+      "offensive_yards": 6006
+    },
+    {
+      "season": 2022,
+      "team": "GB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3890,
+      "rushing_yards": 2113,
+      "offensive_yards": 6003
+    },
+    {
+      "season": 2025,
+      "team": "JAX",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "passing_yards": 4026,
+      "rushing_yards": 1956,
+      "offensive_yards": 5982
+    },
+    {
+      "season": 2023,
+      "team": "NO",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4225,
+      "rushing_yards": 1742,
+      "offensive_yards": 5967
+    },
+    {
+      "season": 2023,
+      "team": "LAC",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 4312,
+      "rushing_yards": 1642,
+      "offensive_yards": 5954
+    },
+    {
+      "season": 2022,
+      "team": "NO",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3969,
+      "rushing_yards": 1982,
+      "offensive_yards": 5951
+    },
+    {
+      "season": 2022,
+      "team": "NYG",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3431,
+      "rushing_yards": 2519,
+      "offensive_yards": 5950
+    },
+    {
       "season": 2025,
       "team": "DEN",
-      "wins": 491,
-      "win_rate": 28.8823529412,
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
       "passing_yards": 3931,
       "rushing_yards": 2018,
       "offensive_yards": 5949
     },
     {
       "season": 2022,
-      "team": "KC",
-      "wins": 490,
-      "win_rate": 28.8235294118,
-      "passing_yards": 5250,
-      "rushing_yards": 1970,
-      "offensive_yards": 7220
+      "team": "DEN",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 4007,
+      "rushing_yards": 1935,
+      "offensive_yards": 5942
+    },
+    {
+      "season": 2023,
+      "team": "IND",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3882,
+      "rushing_yards": 2059,
+      "offensive_yards": 5941
     },
     {
       "season": 2025,
-      "team": "NE",
-      "wins": 490,
-      "win_rate": 28.8235294118,
-      "passing_yards": 4459,
-      "rushing_yards": 2191,
-      "offensive_yards": 6650
+      "team": "BAL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3278,
+      "rushing_yards": 2662,
+      "offensive_yards": 5940
+    },
+    {
+      "season": 2025,
+      "team": "ARI",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 4354,
+      "rushing_yards": 1583,
+      "offensive_yards": 5937
+    },
+    {
+      "season": 2023,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3775,
+      "rushing_yards": 2159,
+      "offensive_yards": 5934
+    },
+    {
+      "season": 2024,
+      "team": "IND",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3599,
+      "rushing_yards": 2331,
+      "offensive_yards": 5930
+    },
+    {
+      "season": 2022,
+      "team": "WAS",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3783,
+      "rushing_yards": 2143,
+      "offensive_yards": 5926
+    },
+    {
+      "season": 2022,
+      "team": "BAL",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 3202,
+      "rushing_yards": 2720,
+      "offensive_yards": 5922
+    },
+    {
+      "season": 2025,
+      "team": "NYG",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3703,
+      "rushing_yards": 2195,
+      "offensive_yards": 5898
+    },
+    {
+      "season": 2021,
+      "team": "SEA",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3815,
+      "rushing_yards": 2074,
+      "offensive_yards": 5889
+    },
+    {
+      "season": 2025,
+      "team": "GB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3845,
+      "rushing_yards": 2037,
+      "offensive_yards": 5882
+    },
+    {
+      "season": 2021,
+      "team": "DEN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3856,
+      "rushing_yards": 2025,
+      "offensive_yards": 5881
+    },
+    {
+      "season": 2024,
+      "team": "HOU",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 3952,
+      "rushing_yards": 1909,
+      "offensive_yards": 5861
+    },
+    {
+      "season": 2024,
+      "team": "LA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 4096,
+      "rushing_yards": 1765,
+      "offensive_yards": 5861
+    },
+    {
+      "season": 2025,
+      "team": "ATL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3703,
+      "rushing_yards": 2138,
+      "offensive_yards": 5841
+    },
+    {
+      "season": 2022,
+      "team": "ARI",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3966,
+      "rushing_yards": 1873,
+      "offensive_yards": 5839
     },
     {
       "season": 2024,
       "team": "KC",
-      "wins": 490,
-      "win_rate": 28.8235294118,
+      "games": 17,
+      "wins": 15,
+      "win_rate": 0.8823529412,
       "passing_yards": 4046,
       "rushing_yards": 1790,
       "offensive_yards": 5836
     },
     {
-      "season": 2024,
-      "team": "DET",
-      "wins": 475,
-      "win_rate": 27.9411764706,
-      "passing_yards": 4718,
-      "rushing_yards": 2488,
-      "offensive_yards": 7206
+      "season": 2025,
+      "team": "CIN",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 4244,
+      "rushing_yards": 1591,
+      "offensive_yards": 5835
     },
     {
       "season": 2024,
-      "team": "MIN",
-      "wins": 466,
-      "win_rate": 27.4117647059,
-      "passing_yards": 4379,
-      "rushing_yards": 1855,
-      "offensive_yards": 6234
+      "team": "MIA",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 4036,
+      "rushing_yards": 1795,
+      "offensive_yards": 5831
+    },
+    {
+      "season": 2023,
+      "team": "CHI",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3421,
+      "rushing_yards": 2399,
+      "offensive_yards": 5820
     },
     {
       "season": 2025,
-      "team": "SEA",
-      "wins": 465,
-      "win_rate": 27.3529411765,
-      "passing_yards": 4063,
-      "rushing_yards": 2096,
-      "offensive_yards": 6159
+      "team": "HOU",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "passing_yards": 3956,
+      "rushing_yards": 1852,
+      "offensive_yards": 5808
     },
     {
-      "season": 2022,
-      "team": "PHI",
-      "wins": 460,
-      "win_rate": 27.0588235294,
-      "passing_yards": 4364,
-      "rushing_yards": 2509,
-      "offensive_yards": 6873
-    },
-    {
-      "season": 2022,
-      "team": "BUF",
-      "wins": 432,
-      "win_rate": 27.0,
-      "passing_yards": 4291,
-      "rushing_yards": 2232,
-      "offensive_yards": 6523
+      "season": 2021,
+      "team": "WAS",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3746,
+      "rushing_yards": 2061,
+      "offensive_yards": 5807
     },
     {
       "season": 2024,
-      "team": "BUF",
-      "wins": 457,
-      "win_rate": 26.8823529412,
-      "passing_yards": 3938,
-      "rushing_yards": 2230,
-      "offensive_yards": 6168
+      "team": "DAL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 4092,
+      "rushing_yards": 1705,
+      "offensive_yards": 5797
+    },
+    {
+      "season": 2023,
+      "team": "ARI",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3430,
+      "rushing_yards": 2365,
+      "offensive_yards": 5795
+    },
+    {
+      "season": 2023,
+      "team": "CIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4257,
+      "rushing_yards": 1527,
+      "offensive_yards": 5784
+    },
+    {
+      "season": 2024,
+      "team": "LAC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 3901,
+      "rushing_yards": 1882,
+      "offensive_yards": 5783
+    },
+    {
+      "season": 2024,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 3607,
+      "rushing_yards": 2166,
+      "offensive_yards": 5773
+    },
+    {
+      "season": 2021,
+      "team": "DET",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3884,
+      "rushing_yards": 1886,
+      "offensive_yards": 5770
+    },
+    {
+      "season": 2023,
+      "team": "WAS",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 4174,
+      "rushing_yards": 1592,
+      "offensive_yards": 5766
+    },
+    {
+      "season": 2025,
+      "team": "KC",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 3947,
+      "rushing_yards": 1812,
+      "offensive_yards": 5759
+    },
+    {
+      "season": 2023,
+      "team": "SEA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4167,
+      "rushing_yards": 1580,
+      "offensive_yards": 5747
+    },
+    {
+      "season": 2022,
+      "team": "PIT",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3661,
+      "rushing_yards": 2073,
+      "offensive_yards": 5734
+    },
+    {
+      "season": 2022,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 4040,
+      "rushing_yards": 1686,
+      "offensive_yards": 5726
+    },
+    {
+      "season": 2022,
+      "team": "IND",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3855,
+      "rushing_yards": 1866,
+      "offensive_yards": 5721
+    },
+    {
+      "season": 2024,
+      "team": "DEN",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 3808,
+      "rushing_yards": 1908,
+      "offensive_yards": 5716
+    },
+    {
+      "season": 2025,
+      "team": "TB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3755,
+      "rushing_yards": 1947,
+      "offensive_yards": 5702
+    },
+    {
+      "season": 2024,
+      "team": "NO",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 3730,
+      "rushing_yards": 1954,
+      "offensive_yards": 5684
+    },
+    {
+      "season": 2021,
+      "team": "CHI",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 3635,
+      "rushing_yards": 2018,
+      "offensive_yards": 5653
+    },
+    {
+      "season": 2022,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 2927,
+      "rushing_yards": 2718,
+      "offensive_yards": 5645
+    },
+    {
+      "season": 2025,
+      "team": "NO",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 4027,
+      "rushing_yards": 1603,
+      "offensive_yards": 5630
+    },
+    {
+      "season": 2022,
+      "team": "NE",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3815,
+      "rushing_yards": 1812,
+      "offensive_yards": 5627
+    },
+    {
+      "season": 2021,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3959,
+      "rushing_yards": 1667,
+      "offensive_yards": 5626
+    },
+    {
+      "season": 2025,
+      "team": "WAS",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 3329,
+      "rushing_yards": 2290,
+      "offensive_yards": 5619
+    },
+    {
+      "season": 2022,
+      "team": "CHI",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 2598,
+      "rushing_yards": 3014,
+      "offensive_yards": 5612
+    },
+    {
+      "season": 2021,
+      "team": "PIT",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4017,
+      "rushing_yards": 1583,
+      "offensive_yards": 5600
+    },
+    {
+      "season": 2024,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 4016,
+      "rushing_yards": 1561,
+      "offensive_yards": 5577
+    },
+    {
+      "season": 2023,
+      "team": "TB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 4044,
+      "rushing_yards": 1509,
+      "offensive_yards": 5553
+    },
+    {
+      "season": 2021,
+      "team": "MIA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3936,
+      "rushing_yards": 1568,
+      "offensive_yards": 5504
+    },
+    {
+      "season": 2024,
+      "team": "CLE",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3879,
+      "rushing_yards": 1608,
+      "offensive_yards": 5487
+    },
+    {
+      "season": 2025,
+      "team": "PHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "passing_yards": 3498,
+      "rushing_yards": 1988,
+      "offensive_yards": 5486
+    },
+    {
+      "season": 2024,
+      "team": "TEN",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3621,
+      "rushing_yards": 1855,
+      "offensive_yards": 5476
+    },
+    {
+      "season": 2024,
+      "team": "LV",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 4117,
+      "rushing_yards": 1357,
+      "offensive_yards": 5474
+    },
+    {
+      "season": 2022,
+      "team": "CAR",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3246,
+      "rushing_yards": 2210,
+      "offensive_yards": 5456
+    },
+    {
+      "season": 2024,
+      "team": "JAX",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3717,
+      "rushing_yards": 1729,
+      "offensive_yards": 5446
+    },
+    {
+      "season": 2021,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3987,
+      "rushing_yards": 1451,
+      "offensive_yards": 5438
+    },
+    {
+      "season": 2023,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 3421,
+      "rushing_yards": 2010,
+      "offensive_yards": 5431
+    },
+    {
+      "season": 2021,
+      "team": "JAX",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3674,
+      "rushing_yards": 1755,
+      "offensive_yards": 5429
+    },
+    {
+      "season": 2021,
+      "team": "NO",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3437,
+      "rushing_yards": 1991,
+      "offensive_yards": 5428
+    },
+    {
+      "season": 2021,
+      "team": "CAR",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 3573,
+      "rushing_yards": 1842,
+      "offensive_yards": 5415
+    },
+    {
+      "season": 2025,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "passing_yards": 3632,
+      "rushing_yards": 1756,
+      "offensive_yards": 5388
+    },
+    {
+      "season": 2023,
+      "team": "DEN",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3566,
+      "rushing_yards": 1810,
+      "offensive_yards": 5376
+    },
+    {
+      "season": 2025,
+      "team": "MIA",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3322,
+      "rushing_yards": 2044,
+      "offensive_yards": 5366
+    },
+    {
+      "season": 2023,
+      "team": "TEN",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 3512,
+      "rushing_yards": 1846,
+      "offensive_yards": 5358
+    },
+    {
+      "season": 2022,
+      "team": "TEN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3227,
+      "rushing_yards": 2131,
+      "offensive_yards": 5358
+    },
+    {
+      "season": 2024,
+      "team": "NE",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3343,
+      "rushing_yards": 1969,
+      "offensive_yards": 5312
+    },
+    {
+      "season": 2024,
+      "team": "NYG",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3521,
+      "rushing_yards": 1783,
+      "offensive_yards": 5304
+    },
+    {
+      "season": 2024,
+      "team": "CAR",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 3411,
+      "rushing_yards": 1878,
+      "offensive_yards": 5289
+    },
+    {
+      "season": 2024,
+      "team": "CHI",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 3552,
+      "rushing_yards": 1734,
+      "offensive_yards": 5286
+    },
+    {
+      "season": 2025,
+      "team": "CAR",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3304,
+      "rushing_yards": 1977,
+      "offensive_yards": 5281
+    },
+    {
+      "season": 2023,
+      "team": "NYG",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "passing_yards": 3351,
+      "rushing_yards": 1874,
+      "offensive_yards": 5225
+    },
+    {
+      "season": 2023,
+      "team": "LV",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "passing_yards": 3666,
+      "rushing_yards": 1542,
+      "offensive_yards": 5208
+    },
+    {
+      "season": 2022,
+      "team": "LA",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 3506,
+      "rushing_yards": 1661,
+      "offensive_yards": 5167
+    },
+    {
+      "season": 2021,
+      "team": "NYG",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3463,
+      "rushing_yards": 1688,
+      "offensive_yards": 5151
+    },
+    {
+      "season": 2022,
+      "team": "HOU",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3642,
+      "rushing_yards": 1476,
+      "offensive_yards": 5118
+    },
+    {
+      "season": 2021,
+      "team": "HOU",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3630,
+      "rushing_yards": 1422,
+      "offensive_yards": 5052
+    },
+    {
+      "season": 2025,
+      "team": "MIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "passing_yards": 3208,
+      "rushing_yards": 1841,
+      "offensive_yards": 5049
+    },
+    {
+      "season": 2023,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "passing_yards": 3373,
+      "rushing_yards": 1647,
+      "offensive_yards": 5020
+    },
+    {
+      "season": 2023,
+      "team": "NE",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "passing_yards": 3392,
+      "rushing_yards": 1627,
+      "offensive_yards": 5019
+    },
+    {
+      "season": 2023,
+      "team": "CAR",
+      "games": 17,
+      "wins": 2,
+      "win_rate": 0.1176470588,
+      "passing_yards": 3245,
+      "rushing_yards": 1769,
+      "offensive_yards": 5014
+    },
+    {
+      "season": 2025,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 2784,
+      "rushing_yards": 2096,
+      "offensive_yards": 4880
+    },
+    {
+      "season": 2025,
+      "team": "TEN",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3241,
+      "rushing_yards": 1589,
+      "offensive_yards": 4830
+    },
+    {
+      "season": 2025,
+      "team": "CLE",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "passing_yards": 3152,
+      "rushing_yards": 1649,
+      "offensive_yards": 4801
+    },
+    {
+      "season": 2025,
+      "team": "LV",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "passing_yards": 3315,
+      "rushing_yards": 1317,
+      "offensive_yards": 4632
     }
   ],
   "team_defense": [
     {
+      "season": 2022,
+      "team": "PHI",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "def_sacks": 69.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 86.0
+    },
+    {
       "season": 2025,
       "team": "DEN",
-      "wins": 491,
-      "win_rate": 28.8823529412,
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
       "def_sacks": 68.0,
       "def_interceptions": 10,
       "defensive_takeaways_pressure": 78.0
     },
     {
+      "season": 2024,
+      "team": "DEN",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 63.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 78.0
+    },
+    {
+      "season": 2023,
+      "team": "BAL",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "def_sacks": 58.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 76.0
+    },
+    {
+      "season": 2025,
+      "team": "ATL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 57.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 73.0
+    },
+    {
+      "season": 2024,
+      "team": "MIN",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "def_sacks": 48.0,
+      "def_interceptions": 24,
+      "defensive_takeaways_pressure": 72.0
+    },
+    {
+      "season": 2022,
+      "team": "NE",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 53.0,
+      "def_interceptions": 19,
+      "defensive_takeaways_pressure": 72.0
+    },
+    {
+      "season": 2023,
+      "team": "MIA",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 56.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 71.0
+    },
+    {
+      "season": 2023,
+      "team": "BUF",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 53.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 71.0
+    },
+    {
+      "season": 2022,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 54.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 70.0
+    },
+    {
+      "season": 2023,
+      "team": "SF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 48.0,
+      "def_interceptions": 22,
+      "defensive_takeaways_pressure": 70.0
+    },
+    {
+      "season": 2021,
+      "team": "LA",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 50.0,
+      "def_interceptions": 19,
+      "defensive_takeaways_pressure": 69.0
+    },
+    {
+      "season": 2024,
+      "team": "HOU",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 49.0,
+      "def_interceptions": 19,
+      "defensive_takeaways_pressure": 68.0
+    },
+    {
+      "season": 2021,
+      "team": "PIT",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 55.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 68.0
+    },
+    {
+      "season": 2021,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 41.0,
+      "def_interceptions": 26,
+      "defensive_takeaways_pressure": 67.0
+    },
+    {
+      "season": 2021,
+      "team": "MIN",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 51.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 67.0
+    },
+    {
       "season": 2022,
       "team": "KC",
-      "wins": 490,
-      "win_rate": 28.8235294118,
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
       "def_sacks": 55.0,
       "def_interceptions": 11,
       "defensive_takeaways_pressure": 66.0
     },
     {
-      "season": 2024,
-      "team": "KC",
-      "wins": 490,
-      "win_rate": 28.8235294118,
-      "def_sacks": 39.0,
-      "def_interceptions": 13,
-      "defensive_takeaways_pressure": 52.0
+      "season": 2025,
+      "team": "HOU",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 47.0,
+      "def_interceptions": 19,
+      "defensive_takeaways_pressure": 66.0
+    },
+    {
+      "season": 2023,
+      "team": "CLE",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 48.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 66.0
+    },
+    {
+      "season": 2023,
+      "team": "IND",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 51.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 66.0
     },
     {
       "season": 2025,
-      "team": "NE",
-      "wins": 490,
-      "win_rate": 28.8235294118,
-      "def_sacks": 34.0,
-      "def_interceptions": 10,
-      "defensive_takeaways_pressure": 44.0
+      "team": "SEA",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "def_sacks": 47.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 65.0
     },
     {
       "season": 2024,
+      "team": "BAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 53.0,
+      "def_interceptions": 12,
+      "defensive_takeaways_pressure": 65.0
+    },
+    {
+      "season": 2023,
+      "team": "KC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 57.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 65.0
+    },
+    {
+      "season": 2021,
+      "team": "NO",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 46.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 64.0
+    },
+    {
+      "season": 2024,
+      "team": "DAL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 51.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 64.0
+    },
+    {
+      "season": 2025,
+      "team": "CLE",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 53.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 64.0
+    },
+    {
+      "season": 2021,
+      "team": "TB",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "def_sacks": 47.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 64.0
+    },
+    {
+      "season": 2022,
+      "team": "SF",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "def_sacks": 44.0,
+      "def_interceptions": 20,
+      "defensive_takeaways_pressure": 64.0
+    },
+    {
+      "season": 2025,
+      "team": "LAC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 45.0,
+      "def_interceptions": 19,
+      "defensive_takeaways_pressure": 64.0
+    },
+    {
+      "season": 2023,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 46.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 63.0
+    },
+    {
+      "season": 2025,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 48.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 63.0
+    },
+    {
+      "season": 2023,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 47.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 63.0
+    },
+    {
+      "season": 2025,
+      "team": "LA",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 47.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 63.0
+    },
+    {
+      "season": 2022,
+      "team": "BAL",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 48.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 62.0
+    },
+    {
+      "season": 2024,
+      "team": "GB",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 45.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 62.0
+    },
+    {
+      "season": 2023,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 45.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 62.0
+    },
+    {
+      "season": 2023,
+      "team": "CIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 44.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 61.0
+    },
+    {
+      "season": 2025,
       "team": "DET",
-      "wins": 475,
-      "win_rate": 27.9411764706,
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 48.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 61.0
+    },
+    {
+      "season": 2021,
+      "team": "MIA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 47.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 61.0
+    },
+    {
+      "season": 2022,
+      "team": "PIT",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 40.0,
+      "def_interceptions": 20,
+      "defensive_takeaways_pressure": 60.0
+    },
+    {
+      "season": 2021,
+      "team": "BUF",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 41.0,
+      "def_interceptions": 19,
+      "defensive_takeaways_pressure": 60.0
+    },
+    {
+      "season": 2024,
+      "team": "LAC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 45.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 60.0
+    },
+    {
+      "season": 2023,
+      "team": "TB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 47.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 60.0
+    },
+    {
+      "season": 2023,
+      "team": "LV",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 46.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 59.0
+    },
+    {
+      "season": 2021,
+      "team": "NE",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 36.0,
+      "def_interceptions": 23,
+      "defensive_takeaways_pressure": 59.0
+    },
+    {
+      "season": 2022,
+      "team": "SEA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 44.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 58.0
+    },
+    {
+      "season": 2023,
+      "team": "HOU",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 44.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 58.0
+    },
+    {
+      "season": 2021,
+      "team": "TEN",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 42.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 58.0
+    },
+    {
+      "season": 2025,
+      "team": "CHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 35.0,
+      "def_interceptions": 23,
+      "defensive_takeaways_pressure": 58.0
+    },
+    {
+      "season": 2023,
+      "team": "SEA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 47.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 58.0
+    },
+    {
+      "season": 2022,
+      "team": "BUF",
+      "games": 16,
+      "wins": 13,
+      "win_rate": 0.8125,
+      "def_sacks": 40.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2021,
+      "team": "CHI",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 49.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2025,
+      "team": "MIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 49.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2021,
+      "team": "SF",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 48.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2023,
+      "team": "LAC",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 48.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2024,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 40.0,
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2023,
+      "team": "DET",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 41.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2024,
+      "team": "SEA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 44.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 57.0
+    },
+    {
+      "season": 2022,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 44.0,
+      "def_interceptions": 12,
+      "defensive_takeaways_pressure": 56.0
+    },
+    {
+      "season": 2021,
+      "team": "CLE",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 43.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 56.0
+    },
+    {
+      "season": 2023,
+      "team": "JAX",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 40.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 56.0
+    },
+    {
+      "season": 2021,
+      "team": "GB",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "def_sacks": 38.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 56.0
+    },
+    {
+      "season": 2022,
+      "team": "NO",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 48.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 55.0
+    },
+    {
+      "season": 2022,
+      "team": "HOU",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 39.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 55.0
+    },
+    {
+      "season": 2025,
+      "team": "NO",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 44.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2022,
+      "team": "LAC",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 40.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2021,
+      "team": "CIN",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 41.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2025,
+      "team": "PHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 42.0,
+      "def_interceptions": 12,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2025,
+      "team": "JAX",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "def_sacks": 32.0,
+      "def_interceptions": 22,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2022,
+      "team": "IND",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 44.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2024,
+      "team": "PHI",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "def_sacks": 41.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2022,
+      "team": "TB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 44.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2022,
+      "team": "LA",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 38.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2023,
+      "team": "MIN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 43.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 54.0
+    },
+    {
+      "season": 2021,
+      "team": "ARI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 40.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2024,
+      "team": "BUF",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
       "def_sacks": 37.0,
       "def_interceptions": 16,
       "defensive_takeaways_pressure": 53.0
     },
     {
       "season": 2024,
+      "team": "DET",
+      "games": 17,
+      "wins": 15,
+      "win_rate": 0.8823529412,
+      "def_sacks": 37.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2025,
+      "team": "IND",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 39.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2024,
+      "team": "TB",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 46.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2022,
+      "team": "TEN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 39.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2022,
       "team": "MIN",
-      "wins": 466,
-      "win_rate": 27.4117647059,
-      "def_sacks": 48.0,
-      "def_interceptions": 24,
-      "defensive_takeaways_pressure": 72.0
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "def_sacks": 38.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 53.0
     },
     {
-      "season": 2025,
-      "team": "SEA",
-      "wins": 465,
-      "win_rate": 27.3529411765,
-      "def_sacks": 47.0,
+      "season": 2024,
+      "team": "NO",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 39.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2023,
+      "team": "DEN",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 42.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 53.0
+    },
+    {
+      "season": 2023,
+      "team": "NYG",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 34.0,
       "def_interceptions": 18,
-      "defensive_takeaways_pressure": 65.0
+      "defensive_takeaways_pressure": 52.0
     },
     {
-      "season": 2022,
+      "season": 2021,
+      "team": "IND",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 33.0,
+      "def_interceptions": 19,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2023,
       "team": "PHI",
-      "wins": 460,
-      "win_rate": 27.0588235294,
-      "def_sacks": 69.0,
-      "def_interceptions": 17,
-      "defensive_takeaways_pressure": 86.0
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "def_sacks": 43.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2023,
+      "team": "GB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 45.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2023,
+      "team": "NO",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 34.0,
+      "def_interceptions": 18,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2024,
+      "team": "KC",
+      "games": 17,
+      "wins": 15,
+      "win_rate": 0.8823529412,
+      "def_sacks": 39.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2024,
+      "team": "IND",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 36.0,
+      "def_interceptions": 16,
+      "defensive_takeaways_pressure": 52.0
     },
     {
       "season": 2022,
-      "team": "BUF",
-      "wins": 432,
-      "win_rate": 27.0,
+      "team": "WAS",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 43.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2023,
+      "team": "CHI",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 30.0,
+      "def_interceptions": 22,
+      "defensive_takeaways_pressure": 52.0
+    },
+    {
+      "season": 2024,
+      "team": "LA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 38.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2024,
+      "team": "CIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 36.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2024,
+      "team": "CHI",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
       "def_sacks": 40.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2023,
+      "team": "LA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 41.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2023,
+      "team": "TEN",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 45.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2022,
+      "team": "DEN",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 36.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2022,
+      "team": "DET",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 39.0,
+      "def_interceptions": 12,
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2022,
+      "team": "GB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 34.0,
       "def_interceptions": 17,
-      "defensive_takeaways_pressure": 57.0
+      "defensive_takeaways_pressure": 51.0
+    },
+    {
+      "season": 2024,
+      "team": "ARI",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 41.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 50.0
+    },
+    {
+      "season": 2023,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 42.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 50.0
     },
     {
       "season": 2025,
+      "team": "TB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 37.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 50.0
+    },
+    {
+      "season": 2024,
+      "team": "WAS",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 43.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 50.0
+    },
+    {
+      "season": 2024,
+      "team": "NYG",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 45.0,
+      "def_interceptions": 5,
+      "defensive_takeaways_pressure": 50.0
+    },
+    {
+      "season": 2025,
+      "team": "WAS",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 42.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 50.0
+    },
+    {
+      "season": 2024,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 42.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 49.0
+    },
+    {
+      "season": 2021,
+      "team": "DEN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 36.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 49.0
+    },
+    {
+      "season": 2025,
+      "team": "BUF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 36.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 49.0
+    },
+    {
+      "season": 2021,
+      "team": "NYG",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 34.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 49.0
+    },
+    {
+      "season": 2022,
       "team": "JAX",
-      "wins": 457,
-      "win_rate": 26.8823529412,
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 35.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 49.0
+    },
+    {
+      "season": 2021,
+      "team": "HOU",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
       "def_sacks": 32.0,
-      "def_interceptions": 22,
-      "defensive_takeaways_pressure": 54.0
+      "def_interceptions": 17,
+      "defensive_takeaways_pressure": 49.0
+    },
+    {
+      "season": 2025,
+      "team": "MIA",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 39.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 48.0
+    },
+    {
+      "season": 2021,
+      "team": "WAS",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 37.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 48.0
+    },
+    {
+      "season": 2021,
+      "team": "CAR",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 39.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 48.0
+    },
+    {
+      "season": 2022,
+      "team": "MIA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 40.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 48.0
+    },
+    {
+      "season": 2025,
+      "team": "TEN",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 42.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 48.0
+    },
+    {
+      "season": 2024,
+      "team": "LV",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 37.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 47.0
+    },
+    {
+      "season": 2022,
+      "team": "ARI",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 36.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 47.0
+    },
+    {
+      "season": 2024,
+      "team": "SF",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 36.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 47.0
+    },
+    {
+      "season": 2025,
+      "team": "NYG",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 38.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 47.0
+    },
+    {
+      "season": 2025,
+      "team": "CIN",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 34.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 47.0
+    },
+    {
+      "season": 2023,
+      "team": "NE",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 36.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 46.0
+    },
+    {
+      "season": 2023,
+      "team": "WAS",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 38.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 46.0
+    },
+    {
+      "season": 2021,
+      "team": "KC",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 31.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 46.0
+    },
+    {
+      "season": 2021,
+      "team": "LAC",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 35.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 46.0
+    },
+    {
+      "season": 2022,
+      "team": "NYG",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 40.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 46.0
+    },
+    {
+      "season": 2022,
+      "team": "CAR",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 35.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 45.0
+    },
+    {
+      "season": 2024,
+      "team": "MIA",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 35.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 45.0
+    },
+    {
+      "season": 2022,
+      "team": "CLE",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 34.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 45.0
+    },
+    {
+      "season": 2024,
+      "team": "CLE",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 41.0,
+      "def_interceptions": 4,
+      "defensive_takeaways_pressure": 45.0
+    },
+    {
+      "season": 2025,
+      "team": "CAR",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 30.0,
+      "def_interceptions": 15,
+      "defensive_takeaways_pressure": 45.0
+    },
+    {
+      "season": 2021,
+      "team": "SEA",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 33.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 44.0
+    },
+    {
+      "season": 2025,
+      "team": "NE",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "def_sacks": 34.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 44.0
+    },
+    {
+      "season": 2025,
+      "team": "LV",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 36.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 44.0
+    },
+    {
+      "season": 2023,
+      "team": "ARI",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 33.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 44.0
+    },
+    {
+      "season": 2022,
+      "team": "CIN",
+      "games": 16,
+      "wins": 12,
+      "win_rate": 0.75,
+      "def_sacks": 30.0,
+      "def_interceptions": 13,
+      "defensive_takeaways_pressure": 43.0
+    },
+    {
+      "season": 2025,
+      "team": "GB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 36.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 43.0
+    },
+    {
+      "season": 2024,
+      "team": "ATL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 31.0,
+      "def_interceptions": 12,
+      "defensive_takeaways_pressure": 43.0
+    },
+    {
+      "season": 2025,
+      "team": "KC",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 33.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 43.0
+    },
+    {
+      "season": 2024,
+      "team": "TEN",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 32.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 43.0
+    },
+    {
+      "season": 2021,
+      "team": "BAL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 33.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 42.0
+    },
+    {
+      "season": 2025,
+      "team": "BAL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "def_sacks": 30.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 41.0
+    },
+    {
+      "season": 2021,
+      "team": "LV",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "def_sacks": 35.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 41.0
+    },
+    {
+      "season": 2024,
+      "team": "CAR",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "def_sacks": 32.0,
+      "def_interceptions": 9,
+      "defensive_takeaways_pressure": 41.0
+    },
+    {
+      "season": 2021,
+      "team": "DET",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 30.0,
+      "def_interceptions": 11,
+      "defensive_takeaways_pressure": 41.0
+    },
+    {
+      "season": 2021,
+      "team": "PHI",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "def_sacks": 29.0,
+      "def_interceptions": 12,
+      "defensive_takeaways_pressure": 41.0
+    },
+    {
+      "season": 2025,
+      "team": "DAL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 34.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 40.0
+    },
+    {
+      "season": 2024,
+      "team": "JAX",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 34.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 40.0
+    },
+    {
+      "season": 2025,
+      "team": "ARI",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 30.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 40.0
+    },
+    {
+      "season": 2021,
+      "team": "JAX",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 32.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 39.0
+    },
+    {
+      "season": 2021,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 31.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 38.0
+    },
+    {
+      "season": 2024,
+      "team": "NE",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "def_sacks": 28.0,
+      "def_interceptions": 7,
+      "defensive_takeaways_pressure": 35.0
+    },
+    {
+      "season": 2023,
+      "team": "CAR",
+      "games": 17,
+      "wins": 2,
+      "win_rate": 0.1176470588,
+      "def_sacks": 27.0,
+      "def_interceptions": 8,
+      "defensive_takeaways_pressure": 35.0
+    },
+    {
+      "season": 2022,
+      "team": "CHI",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 20.0,
+      "def_interceptions": 14,
+      "defensive_takeaways_pressure": 34.0
+    },
+    {
+      "season": 2022,
+      "team": "LV",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "def_sacks": 27.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 33.0
+    },
+    {
+      "season": 2022,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 21.0,
+      "def_interceptions": 10,
+      "defensive_takeaways_pressure": 31.0
+    },
+    {
+      "season": 2021,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "def_sacks": 17.0,
+      "def_interceptions": 12,
+      "defensive_takeaways_pressure": 29.0
+    },
+    {
+      "season": 2025,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "def_sacks": 26.0,
+      "def_interceptions": 0,
+      "defensive_takeaways_pressure": 26.0
+    },
+    {
+      "season": 2025,
+      "team": "SF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "def_sacks": 20.0,
+      "def_interceptions": 6,
+      "defensive_takeaways_pressure": 26.0
     }
   ],
   "position_production": [
@@ -498,6 +3518,1216 @@
     {
       "team": "MIA",
       "passing_share": 0.687115046
+    },
+    {
+      "team": "DAL",
+      "passing_share": 0.6867800178
+    },
+    {
+      "team": "JAX",
+      "passing_share": 0.6842370652
+    },
+    {
+      "team": "NO",
+      "passing_share": 0.6759418569
+    },
+    {
+      "team": "NYJ",
+      "passing_share": 0.6743510604
+    },
+    {
+      "team": "DET",
+      "passing_share": 0.6711783362
+    },
+    {
+      "team": "SF",
+      "passing_share": 0.6672480092
+    },
+    {
+      "team": "DEN",
+      "passing_share": 0.6640649583
+    },
+    {
+      "team": "NE",
+      "passing_share": 0.6618908124
+    },
+    {
+      "team": "GB",
+      "passing_share": 0.661323382
+    },
+    {
+      "team": "ARI",
+      "passing_share": 0.6611938525
+    },
+    {
+      "team": "PIT",
+      "passing_share": 0.6569183621
+    },
+    {
+      "team": "CLE",
+      "passing_share": 0.6443016738
+    },
+    {
+      "team": "BUF",
+      "passing_share": 0.6439612322
+    },
+    {
+      "team": "WAS",
+      "passing_share": 0.6400046776
+    },
+    {
+      "team": "TEN",
+      "passing_share": 0.6398102255
+    },
+    {
+      "team": "IND",
+      "passing_share": 0.6380466546
+    },
+    {
+      "team": "NYG",
+      "passing_share": 0.6363907136
+    },
+    {
+      "team": "ATL",
+      "passing_share": 0.6361075149
+    },
+    {
+      "team": "CAR",
+      "passing_share": 0.6345051055
+    },
+    {
+      "team": "PHI",
+      "passing_share": 0.6054661486
+    },
+    {
+      "team": "CHI",
+      "passing_share": 0.5969539906
+    },
+    {
+      "team": "BAL",
+      "passing_share": 0.5772166478
+    }
+  ],
+  "team_style": [
+    {
+      "season": 2021,
+      "team": "ARI",
+      "passing_share": 0.6899178491,
+      "passing_yards": 4619,
+      "rushing_yards": 2076
+    },
+    {
+      "season": 2022,
+      "team": "ARI",
+      "passing_share": 0.6792258948,
+      "passing_yards": 3966,
+      "rushing_yards": 1873
+    },
+    {
+      "season": 2023,
+      "team": "ARI",
+      "passing_share": 0.59188956,
+      "passing_yards": 3430,
+      "rushing_yards": 2365
+    },
+    {
+      "season": 2024,
+      "team": "ARI",
+      "passing_share": 0.6115689382,
+      "passing_yards": 3859,
+      "rushing_yards": 2451
+    },
+    {
+      "season": 2025,
+      "team": "ARI",
+      "passing_share": 0.7333670204,
+      "passing_yards": 4354,
+      "rushing_yards": 1583
+    },
+    {
+      "season": 2021,
+      "team": "ATL",
+      "passing_share": 0.733173961,
+      "passing_yards": 3987,
+      "rushing_yards": 1451
+    },
+    {
+      "season": 2022,
+      "team": "ATL",
+      "passing_share": 0.5185119575,
+      "passing_yards": 2927,
+      "rushing_yards": 2718
+    },
+    {
+      "season": 2023,
+      "team": "ATL",
+      "passing_share": 0.6361644759,
+      "passing_yards": 3775,
+      "rushing_yards": 2159
+    },
+    {
+      "season": 2024,
+      "team": "ATL",
+      "passing_share": 0.6587203937,
+      "passing_yards": 4283,
+      "rushing_yards": 2219
+    },
+    {
+      "season": 2025,
+      "team": "ATL",
+      "passing_share": 0.6339667865,
+      "passing_yards": 3703,
+      "rushing_yards": 2138
+    },
+    {
+      "season": 2021,
+      "team": "BAL",
+      "passing_share": 0.6325229766,
+      "passing_yards": 4267,
+      "rushing_yards": 2479
+    },
+    {
+      "season": 2022,
+      "team": "BAL",
+      "passing_share": 0.5406957109,
+      "passing_yards": 3202,
+      "rushing_yards": 2720
+    },
+    {
+      "season": 2023,
+      "team": "BAL",
+      "passing_share": 0.5932436564,
+      "passing_yards": 3881,
+      "rushing_yards": 2661
+    },
+    {
+      "season": 2024,
+      "team": "BAL",
+      "passing_share": 0.5677690431,
+      "passing_yards": 4189,
+      "rushing_yards": 3189
+    },
+    {
+      "season": 2025,
+      "team": "BAL",
+      "passing_share": 0.5518518519,
+      "passing_yards": 3278,
+      "rushing_yards": 2662
+    },
+    {
+      "season": 2021,
+      "team": "BUF",
+      "passing_share": 0.6682685088,
+      "passing_yards": 4450,
+      "rushing_yards": 2209
+    },
+    {
+      "season": 2022,
+      "team": "BUF",
+      "passing_share": 0.6578261536,
+      "passing_yards": 4291,
+      "rushing_yards": 2232
+    },
+    {
+      "season": 2023,
+      "team": "BUF",
+      "passing_share": 0.6606320957,
+      "passing_yards": 4306,
+      "rushing_yards": 2212
+    },
+    {
+      "season": 2024,
+      "team": "BUF",
+      "passing_share": 0.6384565499,
+      "passing_yards": 3938,
+      "rushing_yards": 2230
+    },
+    {
+      "season": 2025,
+      "team": "BUF",
+      "passing_share": 0.5946228529,
+      "passing_yards": 3981,
+      "rushing_yards": 2714
+    },
+    {
+      "season": 2021,
+      "team": "CAR",
+      "passing_share": 0.659833795,
+      "passing_yards": 3573,
+      "rushing_yards": 1842
+    },
+    {
+      "season": 2022,
+      "team": "CAR",
+      "passing_share": 0.594941349,
+      "passing_yards": 3246,
+      "rushing_yards": 2210
+    },
+    {
+      "season": 2023,
+      "team": "CAR",
+      "passing_share": 0.647187874,
+      "passing_yards": 3245,
+      "rushing_yards": 1769
+    },
+    {
+      "season": 2024,
+      "team": "CAR",
+      "passing_share": 0.644923426,
+      "passing_yards": 3411,
+      "rushing_yards": 1878
+    },
+    {
+      "season": 2025,
+      "team": "CAR",
+      "passing_share": 0.6256390835,
+      "passing_yards": 3304,
+      "rushing_yards": 1977
+    },
+    {
+      "season": 2021,
+      "team": "CHI",
+      "passing_share": 0.6430214046,
+      "passing_yards": 3635,
+      "rushing_yards": 2018
+    },
+    {
+      "season": 2022,
+      "team": "CHI",
+      "passing_share": 0.4629365645,
+      "passing_yards": 2598,
+      "rushing_yards": 3014
+    },
+    {
+      "season": 2023,
+      "team": "CHI",
+      "passing_share": 0.5878006873,
+      "passing_yards": 3421,
+      "rushing_yards": 2399
+    },
+    {
+      "season": 2024,
+      "team": "CHI",
+      "passing_share": 0.6719636776,
+      "passing_yards": 3552,
+      "rushing_yards": 1734
+    },
+    {
+      "season": 2025,
+      "team": "CHI",
+      "passing_share": 0.619047619,
+      "passing_yards": 3991,
+      "rushing_yards": 2456
+    },
+    {
+      "season": 2021,
+      "team": "CIN",
+      "passing_share": 0.7339645693,
+      "passing_yards": 4806,
+      "rushing_yards": 1742
+    },
+    {
+      "season": 2022,
+      "team": "CIN",
+      "passing_share": 0.7473544974,
+      "passing_yards": 4520,
+      "rushing_yards": 1528
+    },
+    {
+      "season": 2023,
+      "team": "CIN",
+      "passing_share": 0.7359958506,
+      "passing_yards": 4257,
+      "rushing_yards": 1527
+    },
+    {
+      "season": 2024,
+      "team": "CIN",
+      "passing_share": 0.7575477511,
+      "passing_yards": 4918,
+      "rushing_yards": 1574
+    },
+    {
+      "season": 2025,
+      "team": "CIN",
+      "passing_share": 0.7273350471,
+      "passing_yards": 4244,
+      "rushing_yards": 1591
+    },
+    {
+      "season": 2021,
+      "team": "CLE",
+      "passing_share": 0.5942528736,
+      "passing_yards": 3619,
+      "rushing_yards": 2471
+    },
+    {
+      "season": 2022,
+      "team": "CLE",
+      "passing_share": 0.5983870968,
+      "passing_yards": 3710,
+      "rushing_yards": 2490
+    },
+    {
+      "season": 2023,
+      "team": "CLE",
+      "passing_share": 0.6653948242,
+      "passing_yards": 4011,
+      "rushing_yards": 2017
+    },
+    {
+      "season": 2024,
+      "team": "CLE",
+      "passing_share": 0.7069436851,
+      "passing_yards": 3879,
+      "rushing_yards": 1608
+    },
+    {
+      "season": 2025,
+      "team": "CLE",
+      "passing_share": 0.6565298896,
+      "passing_yards": 3152,
+      "rushing_yards": 1649
+    },
+    {
+      "season": 2021,
+      "team": "DAL",
+      "passing_share": 0.7007907371,
+      "passing_yards": 4963,
+      "rushing_yards": 2119
+    },
+    {
+      "season": 2022,
+      "team": "DAL",
+      "passing_share": 0.6298920921,
+      "passing_yards": 3911,
+      "rushing_yards": 2298
+    },
+    {
+      "season": 2023,
+      "team": "DAL",
+      "passing_share": 0.7082066869,
+      "passing_yards": 4660,
+      "rushing_yards": 1920
+    },
+    {
+      "season": 2024,
+      "team": "DAL",
+      "passing_share": 0.7058823529,
+      "passing_yards": 4092,
+      "rushing_yards": 1705
+    },
+    {
+      "season": 2025,
+      "team": "DAL",
+      "passing_share": 0.6891282201,
+      "passing_yards": 4735,
+      "rushing_yards": 2136
+    },
+    {
+      "season": 2021,
+      "team": "DEN",
+      "passing_share": 0.6556708043,
+      "passing_yards": 3856,
+      "rushing_yards": 2025
+    },
+    {
+      "season": 2022,
+      "team": "DEN",
+      "passing_share": 0.67435207,
+      "passing_yards": 4007,
+      "rushing_yards": 1935
+    },
+    {
+      "season": 2023,
+      "team": "DEN",
+      "passing_share": 0.6633184524,
+      "passing_yards": 3566,
+      "rushing_yards": 1810
+    },
+    {
+      "season": 2024,
+      "team": "DEN",
+      "passing_share": 0.66620014,
+      "passing_yards": 3808,
+      "rushing_yards": 1908
+    },
+    {
+      "season": 2025,
+      "team": "DEN",
+      "passing_share": 0.6607833249,
+      "passing_yards": 3931,
+      "rushing_yards": 2018
+    },
+    {
+      "season": 2021,
+      "team": "DET",
+      "passing_share": 0.6731369151,
+      "passing_yards": 3884,
+      "rushing_yards": 1886
+    },
+    {
+      "season": 2022,
+      "team": "DET",
+      "passing_share": 0.6709950174,
+      "passing_yards": 4444,
+      "rushing_yards": 2179
+    },
+    {
+      "season": 2023,
+      "team": "DET",
+      "passing_share": 0.6658956195,
+      "passing_yards": 4606,
+      "rushing_yards": 2311
+    },
+    {
+      "season": 2024,
+      "team": "DET",
+      "passing_share": 0.6547321676,
+      "passing_yards": 4718,
+      "rushing_yards": 2488
+    },
+    {
+      "season": 2025,
+      "team": "DET",
+      "passing_share": 0.6911319613,
+      "passing_yards": 4567,
+      "rushing_yards": 2041
+    },
+    {
+      "season": 2021,
+      "team": "GB",
+      "passing_share": 0.7043261749,
+      "passing_yards": 4526,
+      "rushing_yards": 1900
+    },
+    {
+      "season": 2022,
+      "team": "GB",
+      "passing_share": 0.6480093287,
+      "passing_yards": 3890,
+      "rushing_yards": 2113
+    },
+    {
+      "season": 2023,
+      "team": "GB",
+      "passing_share": 0.688470973,
+      "passing_yards": 4210,
+      "rushing_yards": 1905
+    },
+    {
+      "season": 2024,
+      "team": "GB",
+      "passing_share": 0.6121212121,
+      "passing_yards": 3939,
+      "rushing_yards": 2496
+    },
+    {
+      "season": 2025,
+      "team": "GB",
+      "passing_share": 0.6536892214,
+      "passing_yards": 3845,
+      "rushing_yards": 2037
+    },
+    {
+      "season": 2021,
+      "team": "HOU",
+      "passing_share": 0.7185273159,
+      "passing_yards": 3630,
+      "rushing_yards": 1422
+    },
+    {
+      "season": 2022,
+      "team": "HOU",
+      "passing_share": 0.7116060961,
+      "passing_yards": 3642,
+      "rushing_yards": 1476
+    },
+    {
+      "season": 2023,
+      "team": "HOU",
+      "passing_share": 0.7354216867,
+      "passing_yards": 4578,
+      "rushing_yards": 1647
+    },
+    {
+      "season": 2024,
+      "team": "HOU",
+      "passing_share": 0.6742876642,
+      "passing_yards": 3952,
+      "rushing_yards": 1909
+    },
+    {
+      "season": 2025,
+      "team": "HOU",
+      "passing_share": 0.6811294766,
+      "passing_yards": 3956,
+      "rushing_yards": 1852
+    },
+    {
+      "season": 2021,
+      "team": "IND",
+      "passing_share": 0.5855091384,
+      "passing_yards": 3588,
+      "rushing_yards": 2540
+    },
+    {
+      "season": 2022,
+      "team": "IND",
+      "passing_share": 0.6738332459,
+      "passing_yards": 3855,
+      "rushing_yards": 1866
+    },
+    {
+      "season": 2023,
+      "team": "IND",
+      "passing_share": 0.6534253493,
+      "passing_yards": 3882,
+      "rushing_yards": 2059
+    },
+    {
+      "season": 2024,
+      "team": "IND",
+      "passing_share": 0.6069139966,
+      "passing_yards": 3599,
+      "rushing_yards": 2331
+    },
+    {
+      "season": 2025,
+      "team": "IND",
+      "passing_share": 0.670551543,
+      "passing_yards": 4085,
+      "rushing_yards": 2007
+    },
+    {
+      "season": 2021,
+      "team": "JAX",
+      "passing_share": 0.6767360472,
+      "passing_yards": 3674,
+      "rushing_yards": 1755
+    },
+    {
+      "season": 2022,
+      "team": "JAX",
+      "passing_share": 0.6621966794,
+      "passing_yards": 4148,
+      "rushing_yards": 2116
+    },
+    {
+      "season": 2023,
+      "team": "JAX",
+      "passing_share": 0.726714262,
+      "passing_yards": 4377,
+      "rushing_yards": 1646
+    },
+    {
+      "season": 2024,
+      "team": "JAX",
+      "passing_share": 0.6825192802,
+      "passing_yards": 3717,
+      "rushing_yards": 1729
+    },
+    {
+      "season": 2025,
+      "team": "JAX",
+      "passing_share": 0.6730190572,
+      "passing_yards": 4026,
+      "rushing_yards": 1956
+    },
+    {
+      "season": 2021,
+      "team": "KC",
+      "passing_share": 0.7163377829,
+      "passing_yards": 4937,
+      "rushing_yards": 1955
+    },
+    {
+      "season": 2022,
+      "team": "KC",
+      "passing_share": 0.7271468144,
+      "passing_yards": 5250,
+      "rushing_yards": 1970
+    },
+    {
+      "season": 2023,
+      "team": "KC",
+      "passing_share": 0.7107183395,
+      "passing_yards": 4383,
+      "rushing_yards": 1784
+    },
+    {
+      "season": 2024,
+      "team": "KC",
+      "passing_share": 0.6932830706,
+      "passing_yards": 4046,
+      "rushing_yards": 1790
+    },
+    {
+      "season": 2025,
+      "team": "KC",
+      "passing_share": 0.685362042,
+      "passing_yards": 3947,
+      "rushing_yards": 1812
+    },
+    {
+      "season": 2021,
+      "team": "LA",
+      "passing_share": 0.7440693431,
+      "passing_yards": 4893,
+      "rushing_yards": 1683
+    },
+    {
+      "season": 2022,
+      "team": "LA",
+      "passing_share": 0.6785368686,
+      "passing_yards": 3506,
+      "rushing_yards": 1661
+    },
+    {
+      "season": 2023,
+      "team": "LA",
+      "passing_share": 0.6776989756,
+      "passing_yards": 4300,
+      "rushing_yards": 2045
+    },
+    {
+      "season": 2024,
+      "team": "LA",
+      "passing_share": 0.6988568504,
+      "passing_yards": 4096,
+      "rushing_yards": 1765
+    },
+    {
+      "season": 2025,
+      "team": "LA",
+      "passing_share": 0.6862516402,
+      "passing_yards": 4707,
+      "rushing_yards": 2152
+    },
+    {
+      "season": 2021,
+      "team": "LAC",
+      "passing_share": 0.7321845794,
+      "passing_yards": 5014,
+      "rushing_yards": 1834
+    },
+    {
+      "season": 2022,
+      "team": "LAC",
+      "passing_share": 0.7586698337,
+      "passing_yards": 4791,
+      "rushing_yards": 1524
+    },
+    {
+      "season": 2023,
+      "team": "LAC",
+      "passing_share": 0.7242190124,
+      "passing_yards": 4312,
+      "rushing_yards": 1642
+    },
+    {
+      "season": 2024,
+      "team": "LAC",
+      "passing_share": 0.6745633754,
+      "passing_yards": 3901,
+      "rushing_yards": 1882
+    },
+    {
+      "season": 2025,
+      "team": "LAC",
+      "passing_share": 0.6566445183,
+      "passing_yards": 3953,
+      "rushing_yards": 2067
+    },
+    {
+      "season": 2021,
+      "team": "LV",
+      "passing_share": 0.7483268482,
+      "passing_yards": 4808,
+      "rushing_yards": 1617
+    },
+    {
+      "season": 2022,
+      "team": "LV",
+      "passing_share": 0.6700849223,
+      "passing_yards": 4182,
+      "rushing_yards": 2059
+    },
+    {
+      "season": 2023,
+      "team": "LV",
+      "passing_share": 0.7039170507,
+      "passing_yards": 3666,
+      "rushing_yards": 1542
+    },
+    {
+      "season": 2024,
+      "team": "LV",
+      "passing_share": 0.7521008403,
+      "passing_yards": 4117,
+      "rushing_yards": 1357
+    },
+    {
+      "season": 2025,
+      "team": "LV",
+      "passing_share": 0.7156735751,
+      "passing_yards": 3315,
+      "rushing_yards": 1317
+    },
+    {
+      "season": 2021,
+      "team": "MIA",
+      "passing_share": 0.7151162791,
+      "passing_yards": 3936,
+      "rushing_yards": 1568
+    },
+    {
+      "season": 2022,
+      "team": "MIA",
+      "passing_share": 0.7386451713,
+      "passing_yards": 4765,
+      "rushing_yards": 1686
+    },
+    {
+      "season": 2023,
+      "team": "MIA",
+      "passing_share": 0.6705680845,
+      "passing_yards": 4698,
+      "rushing_yards": 2308
+    },
+    {
+      "season": 2024,
+      "team": "MIA",
+      "passing_share": 0.6921625793,
+      "passing_yards": 4036,
+      "rushing_yards": 1795
+    },
+    {
+      "season": 2025,
+      "team": "MIA",
+      "passing_share": 0.6190831159,
+      "passing_yards": 3322,
+      "rushing_yards": 2044
+    },
+    {
+      "season": 2021,
+      "team": "MIN",
+      "passing_share": 0.697492163,
+      "passing_yards": 4450,
+      "rushing_yards": 1930
+    },
+    {
+      "season": 2022,
+      "team": "MIN",
+      "passing_share": 0.7436332767,
+      "passing_yards": 4818,
+      "rushing_yards": 1661
+    },
+    {
+      "season": 2023,
+      "team": "MIN",
+      "passing_share": 0.7516392132,
+      "passing_yards": 4700,
+      "rushing_yards": 1553
+    },
+    {
+      "season": 2024,
+      "team": "MIN",
+      "passing_share": 0.7024382419,
+      "passing_yards": 4379,
+      "rushing_yards": 1855
+    },
+    {
+      "season": 2025,
+      "team": "MIN",
+      "passing_share": 0.6353733413,
+      "passing_yards": 3208,
+      "rushing_yards": 1841
+    },
+    {
+      "season": 2021,
+      "team": "NE",
+      "passing_share": 0.6557849256,
+      "passing_yards": 4098,
+      "rushing_yards": 2151
+    },
+    {
+      "season": 2022,
+      "team": "NE",
+      "passing_share": 0.6779811623,
+      "passing_yards": 3815,
+      "rushing_yards": 1812
+    },
+    {
+      "season": 2023,
+      "team": "NE",
+      "passing_share": 0.675831839,
+      "passing_yards": 3392,
+      "rushing_yards": 1627
+    },
+    {
+      "season": 2024,
+      "team": "NE",
+      "passing_share": 0.6293298193,
+      "passing_yards": 3343,
+      "rushing_yards": 1969
+    },
+    {
+      "season": 2025,
+      "team": "NE",
+      "passing_share": 0.6705263158,
+      "passing_yards": 4459,
+      "rushing_yards": 2191
+    },
+    {
+      "season": 2021,
+      "team": "NO",
+      "passing_share": 0.6331982314,
+      "passing_yards": 3437,
+      "rushing_yards": 1991
+    },
+    {
+      "season": 2022,
+      "team": "NO",
+      "passing_share": 0.6669467316,
+      "passing_yards": 3969,
+      "rushing_yards": 1982
+    },
+    {
+      "season": 2023,
+      "team": "NO",
+      "passing_share": 0.7080610022,
+      "passing_yards": 4225,
+      "rushing_yards": 1742
+    },
+    {
+      "season": 2024,
+      "team": "NO",
+      "passing_share": 0.6562280084,
+      "passing_yards": 3730,
+      "rushing_yards": 1954
+    },
+    {
+      "season": 2025,
+      "team": "NO",
+      "passing_share": 0.7152753108,
+      "passing_yards": 4027,
+      "rushing_yards": 1603
+    },
+    {
+      "season": 2021,
+      "team": "NYG",
+      "passing_share": 0.6722966414,
+      "passing_yards": 3463,
+      "rushing_yards": 1688
+    },
+    {
+      "season": 2022,
+      "team": "NYG",
+      "passing_share": 0.5766386555,
+      "passing_yards": 3431,
+      "rushing_yards": 2519
+    },
+    {
+      "season": 2023,
+      "team": "NYG",
+      "passing_share": 0.6413397129,
+      "passing_yards": 3351,
+      "rushing_yards": 1874
+    },
+    {
+      "season": 2024,
+      "team": "NYG",
+      "passing_share": 0.6638386124,
+      "passing_yards": 3521,
+      "rushing_yards": 1783
+    },
+    {
+      "season": 2025,
+      "team": "NYG",
+      "passing_share": 0.6278399457,
+      "passing_yards": 3703,
+      "rushing_yards": 2195
+    },
+    {
+      "season": 2021,
+      "team": "NYJ",
+      "passing_share": 0.7036971205,
+      "passing_yards": 3959,
+      "rushing_yards": 1667
+    },
+    {
+      "season": 2022,
+      "team": "NYJ",
+      "passing_share": 0.7055536151,
+      "passing_yards": 4040,
+      "rushing_yards": 1686
+    },
+    {
+      "season": 2023,
+      "team": "NYJ",
+      "passing_share": 0.6719123506,
+      "passing_yards": 3373,
+      "rushing_yards": 1647
+    },
+    {
+      "season": 2024,
+      "team": "NYJ",
+      "passing_share": 0.7201004124,
+      "passing_yards": 4016,
+      "rushing_yards": 1561
+    },
+    {
+      "season": 2025,
+      "team": "NYJ",
+      "passing_share": 0.5704918033,
+      "passing_yards": 2784,
+      "rushing_yards": 2096
+    },
+    {
+      "season": 2021,
+      "team": "PHI",
+      "passing_share": 0.569047619,
+      "passing_yards": 3585,
+      "rushing_yards": 2715
+    },
+    {
+      "season": 2022,
+      "team": "PHI",
+      "passing_share": 0.6349483486,
+      "passing_yards": 4364,
+      "rushing_yards": 2509
+    },
+    {
+      "season": 2023,
+      "team": "PHI",
+      "passing_share": 0.6499920089,
+      "passing_yards": 4067,
+      "rushing_yards": 2190
+    },
+    {
+      "season": 2024,
+      "team": "PHI",
+      "passing_share": 0.5357197258,
+      "passing_yards": 3517,
+      "rushing_yards": 3048
+    },
+    {
+      "season": 2025,
+      "team": "PHI",
+      "passing_share": 0.6376230405,
+      "passing_yards": 3498,
+      "rushing_yards": 1988
+    },
+    {
+      "season": 2021,
+      "team": "PIT",
+      "passing_share": 0.7173214286,
+      "passing_yards": 4017,
+      "rushing_yards": 1583
+    },
+    {
+      "season": 2022,
+      "team": "PIT",
+      "passing_share": 0.6384722707,
+      "passing_yards": 3661,
+      "rushing_yards": 2073
+    },
+    {
+      "season": 2023,
+      "team": "PIT",
+      "passing_share": 0.6299024121,
+      "passing_yards": 3421,
+      "rushing_yards": 2010
+    },
+    {
+      "season": 2024,
+      "team": "PIT",
+      "passing_share": 0.6248051273,
+      "passing_yards": 3607,
+      "rushing_yards": 2166
+    },
+    {
+      "season": 2025,
+      "team": "PIT",
+      "passing_share": 0.6740905716,
+      "passing_yards": 3632,
+      "rushing_yards": 1756
+    },
+    {
+      "season": 2021,
+      "team": "SEA",
+      "passing_share": 0.6478179657,
+      "passing_yards": 3815,
+      "rushing_yards": 2074
+    },
+    {
+      "season": 2022,
+      "team": "SEA",
+      "passing_share": 0.6771030993,
+      "passing_yards": 4282,
+      "rushing_yards": 2042
+    },
+    {
+      "season": 2023,
+      "team": "SEA",
+      "passing_share": 0.7250739516,
+      "passing_yards": 4167,
+      "rushing_yards": 1580
+    },
+    {
+      "season": 2024,
+      "team": "SEA",
+      "passing_share": 0.7291042291,
+      "passing_yards": 4379,
+      "rushing_yards": 1627
+    },
+    {
+      "season": 2025,
+      "team": "SEA",
+      "passing_share": 0.6596850138,
+      "passing_yards": 4063,
+      "rushing_yards": 2096
+    },
+    {
+      "season": 2021,
+      "team": "SF",
+      "passing_share": 0.6719672876,
+      "passing_yards": 4437,
+      "rushing_yards": 2166
+    },
+    {
+      "season": 2022,
+      "team": "SF",
+      "passing_share": 0.6317678265,
+      "passing_yards": 4049,
+      "rushing_yards": 2360
+    },
+    {
+      "season": 2023,
+      "team": "SF",
+      "passing_share": 0.6570485214,
+      "passing_yards": 4577,
+      "rushing_yards": 2389
+    },
+    {
+      "season": 2024,
+      "team": "SF",
+      "passing_share": 0.6716259299,
+      "passing_yards": 4424,
+      "rushing_yards": 2163
+    },
+    {
+      "season": 2025,
+      "team": "SF",
+      "passing_share": 0.7038304808,
+      "passing_yards": 4318,
+      "rushing_yards": 1817
+    },
+    {
+      "season": 2021,
+      "team": "TB",
+      "passing_share": 0.763004961,
+      "passing_yards": 5383,
+      "rushing_yards": 1672
+    },
+    {
+      "season": 2022,
+      "team": "TB",
+      "passing_share": 0.7839444995,
+      "passing_yards": 4746,
+      "rushing_yards": 1308
+    },
+    {
+      "season": 2023,
+      "team": "TB",
+      "passing_share": 0.7282549973,
+      "passing_yards": 4044,
+      "rushing_yards": 1509
+    },
+    {
+      "season": 2024,
+      "team": "TB",
+      "passing_share": 0.6398238887,
+      "passing_yards": 4505,
+      "rushing_yards": 2536
+    },
+    {
+      "season": 2025,
+      "team": "TB",
+      "passing_share": 0.6585408629,
+      "passing_yards": 3755,
+      "rushing_yards": 1947
+    },
+    {
+      "season": 2021,
+      "team": "TEN",
+      "passing_share": 0.6090421207,
+      "passing_yards": 3745,
+      "rushing_yards": 2404
+    },
+    {
+      "season": 2022,
+      "team": "TEN",
+      "passing_share": 0.602276969,
+      "passing_yards": 3227,
+      "rushing_yards": 2131
+    },
+    {
+      "season": 2023,
+      "team": "TEN",
+      "passing_share": 0.6554684584,
+      "passing_yards": 3512,
+      "rushing_yards": 1846
+    },
+    {
+      "season": 2024,
+      "team": "TEN",
+      "passing_share": 0.6612490869,
+      "passing_yards": 3621,
+      "rushing_yards": 1855
+    },
+    {
+      "season": 2025,
+      "team": "TEN",
+      "passing_share": 0.6710144928,
+      "passing_yards": 3241,
+      "rushing_yards": 1589
+    },
+    {
+      "season": 2021,
+      "team": "WAS",
+      "passing_share": 0.6450835199,
+      "passing_yards": 3746,
+      "rushing_yards": 2061
+    },
+    {
+      "season": 2022,
+      "team": "WAS",
+      "passing_share": 0.6383732703,
+      "passing_yards": 3783,
+      "rushing_yards": 2143
+    },
+    {
+      "season": 2023,
+      "team": "WAS",
+      "passing_share": 0.7238987166,
+      "passing_yards": 4174,
+      "rushing_yards": 1592
+    },
+    {
+      "season": 2024,
+      "team": "WAS",
+      "passing_share": 0.6002137078,
+      "passing_yards": 3932,
+      "rushing_yards": 2619
+    },
+    {
+      "season": 2025,
+      "team": "WAS",
+      "passing_share": 0.5924541733,
+      "passing_yards": 3329,
+      "rushing_yards": 2290
     }
   ],
   "home_away": [
@@ -505,13 +4735,23 @@
       "home_away": "Away",
       "games": 1359,
       "wins": 622,
-      "win_rate": 0.4576894776
+      "points_for": 29192,
+      "points_against": 31995,
+      "win_rate": 0.4576894776,
+      "points_for_per_game": 21.4805003679,
+      "points_against_per_game": 23.5430463576,
+      "point_differential_per_game": -2.0625459897
     },
     {
       "home_away": "Home",
       "games": 1359,
       "wins": 733,
-      "win_rate": 0.5393671818
+      "points_for": 31995,
+      "points_against": 29192,
+      "win_rate": 0.5393671818,
+      "points_for_per_game": 23.5430463576,
+      "points_against_per_game": 21.4805003679,
+      "point_differential_per_game": 2.0625459897
     }
   ],
   "season_trend": [

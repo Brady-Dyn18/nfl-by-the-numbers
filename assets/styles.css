@@ -1,15 +1,16 @@
 :root {
-  --ink: #0b132b;
+  --ink: #071d34;
   --ink-soft: #526074;
-  --paper: #f6f8fb;
+  --paper: #f2f6fa;
   --card: #ffffff;
   --line: #dfe5ee;
-  --nfl-blue: #003b7a;
-  --nfl-red: #d71920;
+  --nfl-blue: #013369;
+  --nfl-navy: #013369;
+  --nfl-red: #d50a0a;
   --nfl-orange: #f28c28;
-  --team-primary: #003b7a;
-  --team-secondary: #d71920;
-  --team-soft: #eaf1fb;
+  --team-primary: #013369;
+  --team-secondary: #d50a0a;
+  --team-soft: #e7eff7;
   --shadow: 0 18px 50px rgba(11, 19, 43, 0.08);
   font-family: "DM Sans", system-ui, sans-serif;
   color: var(--ink);
@@ -19,12 +20,12 @@
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); color: var(--ink); }
 a { color: inherit; }
-.site-nav { height: 74px; padding: 0 clamp(20px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); }
+.site-nav { height: 74px; padding: 0 clamp(20px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; background: rgba(1,51,105,.96); color: #fff; border-bottom: 3px solid var(--nfl-red); position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-family: "Barlow Condensed", sans-serif; font-weight: 800; letter-spacing: .11em; font-size: 17px; }
-.brand-mark { display: grid; place-items: center; width: 40px; height: 30px; color: #fff; background: linear-gradient(135deg, var(--nfl-blue), var(--nfl-red)); clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); font-size: 14px; letter-spacing: .04em; }
-.nav-links { display: flex; gap: 28px; font-size: 14px; font-weight: 700; color: var(--ink-soft); }
+.brand-mark { display: grid; place-items: center; width: 40px; height: 30px; color: var(--nfl-blue); background: #fff; clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); font-size: 14px; letter-spacing: .04em; }
+.nav-links { display: flex; gap: 28px; font-size: 14px; font-weight: 700; color: rgba(255,255,255,.72); }
 .nav-links a { text-decoration: none; padding: 27px 0 23px; border-bottom: 3px solid transparent; }
-.nav-links a:hover, .nav-links a.active { color: var(--team-primary); border-bottom-color: var(--team-secondary); }
+.nav-links a:hover, .nav-links a.active { color: #fff; border-bottom-color: var(--nfl-red); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3, .eyebrow, .section-kicker, .metric-label, .summary-card span, .filter-panel label, .table-heading, .chart-note { font-family: "Barlow Condensed", sans-serif; }
 h1 { font-size: clamp(52px, 7vw, 96px); line-height: .89; letter-spacing: -.035em; margin-bottom: 28px; max-width: 760px; }
@@ -58,3 +59,16 @@ p { line-height: 1.7; color: var(--ink-soft); }
 @media (max-width: 600px) { .site-nav { height: 64px; }.nav-links { gap: 14px; }.nav-links a { padding: 22px 0 19px; }.brand > span:last-child { display: none; }.hero { min-height: auto; padding-block: 80px; }.headline-grid, .summary-grid, .method-grid { grid-template-columns: 1fr; }.report-section { display: block; padding: 56px 0; }.finding-number { margin-bottom: 12px; }.report-section .chart-card { margin-top: 24px; }.filter-panel { padding: 20px; }.filter-grid { grid-template-columns: 1fr 1fr; }.switch-row { display: grid; grid-template-columns: 1fr 1fr; }.switch-row label { width: auto; }.filter-status { grid-column: 1 / -1; margin-left: 0; }.profile-content { align-items: flex-start; }.profile-content img { width: 68px; height: 68px; }.profile-stats { display: none; }.site-footer { flex-direction: column; gap: 10px; } }
 .profile-content.is-matchup { align-items: stretch; gap: 16px; }.profile-person { display: flex; align-items: center; gap: 12px; min-width: 210px; }.profile-person img { width: 84px; height: 84px; object-fit: contain; align-self: center; }.profile-person h3 { margin: 2px 0; font: 700 24px/1.05 "Barlow Condensed", sans-serif; }.profile-person p { margin: 0; color: var(--ink-soft); font-size: 12px; }.profile-person-kicker { color: var(--team-secondary) !important; font-size: 10px !important; font-weight: 800; letter-spacing: .1em; }.profile-vs { display: grid; place-items: center; font: 800 18px "Barlow Condensed", sans-serif; color: var(--team-secondary); }.profile-content.is-matchup .profile-stats { margin-left: auto; }.profile-content.is-matchup .profile-stat strong { font-size: 25px; }
 @media (max-width: 600px) { .profile-content.is-matchup { display: grid; grid-template-columns: 1fr auto 1fr; align-items: start; }.profile-content.is-matchup .profile-stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, 1fr); margin-left: 0; gap: 12px; }.profile-person { flex-direction: column; text-align: center; min-width: 0; }.profile-person img { width: 64px; height: 64px; }.profile-person h3 { font-size: 19px; } }
+
+/* Report art direction: an NFL navy foundation with red game-day signals. */
+.report-hero { background: radial-gradient(circle at 80% 20%, rgba(116,185,232,.24), transparent 28%), linear-gradient(130deg, #071d34 0%, #013369 64%, #082546 100%); color: #fff; }
+.report-hero .eyebrow { color: #a7d8f3; }.report-hero .hero-lede, .report-hero .byline { color: rgba(255,255,255,.76); }.report-hero .byline strong { color: #fff; }.report-hero .hero-stat { color: #fff; }.report-hero .hero-ring { border-color: rgba(255,255,255,.17); }.report-hero .ring-two { border-color: rgba(213,10,10,.55); }.report-hero .primary-button { background: var(--nfl-red); }.report-hero .primary-button:hover { background: #fff; color: var(--nfl-blue); }.report-hero .football { box-shadow: inset -18px -14px 0 rgba(69,29,13,.18), 20px 24px 0 rgba(0,0,0,.25); }
+.pulse-lab { display: grid; grid-template-columns: minmax(250px,.72fr) minmax(520px,1.28fr); gap: 24px; align-items: stretch; margin-top: 50px; padding: 34px; color: #fff; background: linear-gradient(135deg, #071d34, #013369); box-shadow: 0 22px 60px rgba(1,51,105,.22); position: relative; overflow: hidden; }
+.pulse-lab::after { content: ""; width: 300px; height: 300px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; position: absolute; right: -90px; top: -120px; box-shadow: 0 0 0 30px rgba(255,255,255,.025), 0 0 0 60px rgba(255,255,255,.02); pointer-events: none; }
+.pulse-intro { position: relative; z-index: 1; }.pulse-intro .section-kicker { color: #a7d8f3; }.pulse-intro h2 { max-width: 410px; margin-bottom: 14px; }.pulse-intro p:not(.section-kicker) { color: rgba(255,255,255,.72); max-width: 410px; }
+.pulse-controls { display: flex; align-items: end; gap: 10px; flex-wrap: wrap; margin-top: 26px; }.pulse-controls label { width: 100%; color: #a7d8f3; font: 800 11px "Barlow Condensed"; letter-spacing: .16em; }.pulse-controls select { min-height: 42px; padding: 0 12px; border: 1px solid rgba(255,255,255,.25); border-radius: 3px; color: #fff; background: rgba(255,255,255,.1); font: 600 13px "DM Sans"; }.pulse-controls option { color: var(--ink); }.pulse-button { min-height: 42px; padding: 0 15px; border: 0; border-radius: 3px; background: var(--nfl-red); color: #fff; font-weight: 800; cursor: pointer; }.pulse-button:hover { background: #fff; color: var(--nfl-blue); }.pulse-button span { margin-right: 5px; }
+.pulse-stage { min-height: 300px; padding: 20px 20px 14px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.13); position: relative; z-index: 1; }.pulse-scoreline { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; font-family: "Barlow Condensed"; }.pulse-scoreline strong { font-size: 21px; letter-spacing: -.01em; }.pulse-scoreline > span:last-child { margin-left: auto; color: rgba(255,255,255,.6); font-size: 12px; }.pulse-live { color: #ffb3b3; font-size: 10px; font-weight: 800; letter-spacing: .16em; }.pulse-live i { display: inline-block; width: 7px; height: 7px; margin-right: 5px; border-radius: 50%; background: var(--nfl-red); box-shadow: 0 0 0 4px rgba(213,10,10,.2); animation: pulse-dot 1.4s ease-in-out infinite; }.pulse-stage svg { display: block; width: 100%; height: 225px; overflow: visible; }.pulse-grid-lines line { stroke: rgba(255,255,255,.13); stroke-dasharray: 3 7; }.pulse-grid-lines text { fill: rgba(255,255,255,.56); font: 10px "DM Sans"; }.pulse-area { fill: url(#pulseFill); }.pulse-line { fill: none; stroke: #ff5252; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 4px 8px rgba(213,10,10,.3)); transition: stroke-dashoffset .45s ease; }.pulse-point circle { fill: #fff; stroke: var(--nfl-red); stroke-width: 4; }.pulse-point text { fill: rgba(255,255,255,.72); font: 11px "Barlow Condensed"; font-weight: 700; }.pulse-footer { display: flex; justify-content: space-between; gap: 16px; color: rgba(255,255,255,.62); font: 11px "DM Sans"; }.pulse-yardline { color: rgba(255,255,255,.34); letter-spacing: .08em; }.pulse-stage.is-playing .pulse-line { animation: draw-pulse 1.5s ease-out forwards; }.pulse-stage.is-playing .pulse-point { animation: pop-pulse .6s ease-out both; }.pulse-stage.is-playing .pulse-point:nth-child(2) { animation-delay: .23s; }.pulse-stage.is-playing .pulse-point:nth-child(3) { animation-delay: .46s; }.pulse-stage.is-playing .pulse-point:nth-child(4) { animation-delay: .69s; }.pulse-stage.is-playing .pulse-point:nth-child(5) { animation-delay: .92s; }
+.chart-card { min-height: 360px; padding: 22px; border-radius: 2px; box-shadow: 0 16px 42px rgba(1,51,105,.08); }.chart-card canvas { height: 310px !important; max-height: none; }.finding-copy strong { color: var(--nfl-blue); }.report-section:nth-of-type(even) .chart-card { border-top: 4px solid var(--nfl-red); }.report-section:nth-of-type(odd) .chart-card { border-top: 4px solid var(--nfl-blue); }
+@keyframes draw-pulse { from { stroke-dashoffset: 1200; } to { stroke-dashoffset: 0; } }.pulse-stage.is-playing .pulse-area { animation: pulse-fade 1.5s ease-out both; } @keyframes pulse-fade { from { opacity: 0; } to { opacity: 1; } } @keyframes pop-pulse { from { opacity: 0; transform: scale(.5); transform-origin: center; } to { opacity: 1; transform: scale(1); transform-origin: center; } } @keyframes pulse-dot { 50% { opacity: .42; transform: scale(.75); } }
+@media (max-width: 950px) { .pulse-lab { grid-template-columns: 1fr; }.pulse-intro h2 { max-width: 650px; }.pulse-intro p:not(.section-kicker) { max-width: 650px; } }
+@media (max-width: 600px) { .pulse-lab { margin-top: 28px; padding: 22px 16px; }.pulse-scoreline > span:last-child { margin-left: 0; width: 100%; }.pulse-stage { padding-inline: 10px; }.pulse-stage svg { height: 185px; }.pulse-footer { display: block; }.pulse-yardline { display: none; }.chart-card canvas { height: 280px !important; } }
