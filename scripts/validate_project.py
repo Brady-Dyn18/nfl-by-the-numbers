@@ -39,8 +39,13 @@ def main() -> None:
     require((data_dir / "panel.csv.gz").exists(), "Missing compressed dashboard panel")
     with gzip.open(data_dir / "panel.csv.gz", "rt", encoding="utf-8") as compressed_panel:
         require(compressed_panel.readline().startswith("season,week,game_date"), "Compressed panel header is invalid")
+    require((data_dir / "highlights.json.gz").exists(), "Missing compressed play-by-play highlights")
+    with gzip.open(data_dir / "highlights.json.gz", "rt", encoding="utf-8") as compressed_highlights:
+        highlights = json.load(compressed_highlights)
+    require(len(highlights) >= 10_000, "Highlight index needs game-specific play-by-play events")
+    require({"game_id", "player_id", "event", "description", "yards_gained"}.issubset(highlights[0]), "Highlight records are missing play fields")
 
-    for filename in ["index.html", "dashboard.html", "assets/styles.css", "assets/app.js", "assets/report.js", "README.md", "docs/rubric-checklist.md", "docs/data-dictionary.md"]:
+    for filename in ["index.html", "dashboard.html", "assets/styles.css", "assets/app.js", "assets/report.js", "README.md", "docs/rubric-checklist.md", "docs/data-dictionary.md", "scripts/build_highlights.py"]:
         require((ROOT / filename).exists(), f"Missing required file: {filename}")
 
     report_html = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -51,6 +56,8 @@ def main() -> None:
     for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "positionFilter", "playerFilter", "filterSearch", "activeFilters", "resetFilters", "summaryValue1", "summaryValue4", "matchupSummary", "highlightField", "dataTableBody"]:
         require(required_id in dashboard_html, f"Dashboard missing {required_id}")
     require("panel.csv.gz" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must prefer the compressed panel")
+    require("highlights.json.gz" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must load the compressed highlight index")
+    require("highlightEvent" in dashboard_html and "highlightSituation" in dashboard_html, "Dashboard highlight needs actual play context")
 
     print("Project validation passed.")
     print(json.dumps({"rows": len(panel), "columns": panel.shape[1], "seasons": sorted(panel["season"].unique().tolist()), "teams": panel["team"].nunique(), "players": panel["player_id"].nunique()}, indent=2))

@@ -385,6 +385,7 @@ def main() -> None:
         "players": int(panel["player_id"].nunique()),
         "data_source": "nflverse via nflreadpy",
         "dashboard_panel": "panel.csv.gz",
+        "highlights": "highlights.json.gz",
     }
     (DATA_DIR / "metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     print(json.dumps(metadata, indent=2))

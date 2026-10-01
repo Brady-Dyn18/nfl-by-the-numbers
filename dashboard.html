@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css?v=20261002-final" />
+    <link rel="stylesheet" href="assets/styles.css?v=20261002-highlights" />
   </head>
   <body class="dashboard-page">
     <nav class="site-nav">
@@ -52,7 +52,7 @@
       </section>
 
       <section class="highlight-reel" id="highlightReel" aria-labelledby="highlightTitle">
-        <div class="highlight-heading"><div><span class="section-kicker">ANIMATED HIGHLIGHT REEL</span><h2 id="highlightTitle">Replay the selected player’s best statistical moment.</h2></div><span class="chart-note" id="highlightNote">Choose filters or a player to build the replay</span></div>
+        <div class="highlight-heading"><div><span class="section-kicker">ACTUAL PLAY REPLAY · NFLVERSE PLAY-BY-PLAY</span><h2 id="highlightTitle">Replay the real play behind the stat.</h2></div><span class="chart-note" id="highlightNote">Select a team + opponent to load matchup highlights</span></div>
         <div class="highlight-controls">
           <label for="highlightPlayer">PLAYER<select id="highlightPlayer"><option value="all">Select a player</option></select></label>
           <label for="highlightGame">GAME<select id="highlightGame"><option value="all">Select a game</option></select></label>
@@ -62,13 +62,13 @@
         <div class="highlight-layout">
           <div class="highlight-field-shell">
             <svg id="highlightField" class="highlight-field" viewBox="0 0 900 330" role="img" aria-labelledby="highlightTitle highlightDescription">
-              <desc id="highlightDescription">Animated schematic football play with moving player dots and ball.</desc>
+              <desc id="highlightDescription">Animated schematic trace of the selected nflverse play-by-play event.</desc>
               <defs><linearGradient id="highlightGrass" x1="0" x2="1"><stop offset="0" stop-color="#0b5d4b"/><stop offset="1" stop-color="#13745b"/></linearGradient></defs>
               <rect x="14" y="16" width="872" height="298" rx="10" class="highlight-grass"></rect><g class="highlight-yard-lines"></g><g id="highlightPlayLayer"></g>
             </svg>
             <div class="highlight-legend"><span><i class="legend-offense"></i> Offense</span><span><i class="legend-defense"></i> Defense</span><span><i class="legend-ball"></i> Ball</span><span>Motion is schematic</span></div>
           </div>
-          <aside class="highlight-scoreboard" aria-live="polite"><div class="highlight-status" id="highlightStatus">PRE-SNAP</div><img id="highlightHeadshot" alt="Selected player headshot" /><strong id="highlightScore">—</strong><p id="highlightContext">Select a player and game to load the replay.</p><p id="highlightResult">The motion is schematic; the stat is from the selected player-game row.</p><div class="highlight-stat-grid"><span><b id="highlightStatOne">—</b><small id="highlightStatLabelOne">Impact stat</small></span><span><b id="highlightStatTwo">—</b><small id="highlightStatLabelTwo">Team score</small></span><span><b id="highlightStatThree">—</b><small id="highlightStatLabelThree">Opponent score</small></span></div></aside>
+          <aside class="highlight-scoreboard" aria-live="polite"><div class="highlight-status" id="highlightStatus">PLAY READY</div><img id="highlightHeadshot" alt="Selected player headshot" /><strong id="highlightScore">—</strong><p class="highlight-context" id="highlightContext">Select a player and game to load the replay.</p><div class="highlight-situation"><span id="highlightSituation">Actual down, distance, and clock will appear here.</span><span id="highlightFieldPosition">Field position —</span></div><p class="highlight-event" id="highlightEvent">The actual play description will appear here.</p><p id="highlightResult">Play-by-play context is paired with the selected player-game statistic.</p><div class="highlight-stat-grid"><span><b id="highlightStatOne">—</b><small id="highlightStatLabelOne">Play yards</small></span><span><b id="highlightStatTwo">—</b><small id="highlightStatLabelTwo">Score after</small></span><span><b id="highlightStatThree">—</b><small id="highlightStatLabelThree">Opponent after</small></span></div></aside>
         </div>
       </section>
 
@@ -86,6 +86,6 @@
     <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/app.js?v=20261002-final"></script>
+    <script src="assets/app.js?v=20261002-highlights"></script>
   </body>
 </html>

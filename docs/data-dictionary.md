@@ -69,4 +69,19 @@ The downloadable panel is `data/panel.csv`. Each row represents one player in on
 - The report’s EPA rate is passing EPA divided by pass attempts for qualified quarterbacks.
 - The website’s animated plays are schematic illustrations. The panel contains player-game aggregates, not play-level tracking coordinates or video.
 
+## Actual play replay index
+
+The dashboard also loads `data/highlights.json.gz`. This separate index contains one highest-priority nflverse play-by-play event for each player-game represented in the panel. It is used to keep the replay tied to a real game event instead of a repeated generic animation.
+
+| Field | Meaning |
+| --- | --- |
+| `event` | Role-specific label such as PASSING TD, RECEPTION, RUSH, SACK, INTERCEPTION, or SOLO TACKLE. |
+| `description` | nflverse’s original play description. |
+| `down`, `ydstogo`, `clock`, `quarter` | Situation at the start of the play when available. |
+| `yardline_100` | Approximate yards to the opponent’s goal line at the start of the play. |
+| `yards_gained` | Yards recorded on the play. |
+| `team_score_before`, `opponent_score_before`, `team_score_after`, `opponent_score_after` | Score state around the selected play from the possession and defensive-team perspective. |
+
+The replay uses those fields for the text and motion length. Its player dots are intentionally schematic because nflverse play-by-play does not provide broadcast video or tracking coordinates.
+
 Source: [nflverse](https://github.com/nflverse/nflverse-data) through [nflreadpy](https://nflreadpy.nflverse.com/). Team marks and player images remain the property of their respective rights holders and are used for this educational project.
