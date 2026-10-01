@@ -29,13 +29,14 @@
   function syncDependentFilters() {
     const season = val("seasonFilter");
     const team = val("teamFilter");
+    const opponent = val("opponentFilter");
     const group = val("positionGroupFilter");
     const position = val("positionFilter");
     const seasonRows = state.rows.filter((row) => season === "all" || String(row.season) === season);
     const opponentRows = seasonRows.filter((row) => team === "all" || row.team === team);
     fillSelect("opponentFilter", unique(opponentRows.map((row) => row.opponent_team)));
 
-    const playerRows = seasonRows.filter((row) => (team === "all" || row.team === team) && (group === "all" || row.position_group === group) && (position === "all" || row.position === position));
+    const playerRows = seasonRows.filter((row) => (team === "all" || row.team === team) && (opponent === "all" || row.opponent_team === opponent) && (group === "all" || row.position_group === group) && (position === "all" || row.position === position));
     const playerIds = unique(playerRows.map((row) => row.player_id));
     fillSelect("playerFilter", playerIds, (id) => {
       const player = playerById()[id];
