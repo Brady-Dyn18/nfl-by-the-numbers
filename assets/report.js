@@ -4,6 +4,7 @@
   const pct = (value) => `${(Number(value || 0) * 100).toFixed(1)}%`;
   const number = (value) => nf.format(Math.round(Number(value || 0)));
   const decimal = (value) => oneDecimal.format(Number(value || 0));
+  const formatUpdatedAt = (value) => { const date = new Date(value); return Number.isNaN(date.getTime()) ? "—" : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date); };
   const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
   const colors = {
     navy: "#013369",
@@ -145,6 +146,7 @@
     document.querySelectorAll('[data-report="teams"]').forEach((el) => el.textContent = number(overview.teams));
     document.querySelectorAll('[data-report="players"]').forEach((el) => el.textContent = number(overview.players));
     set("report-generated", `${metadata.seasons.join(" · ")} · ${number(overview.rows)} verified rows`);
+    set("report-updated", formatUpdatedAt(metadata.generated_at_utc));
 
     const trend = stats.season_trend;
     const peak = trend.reduce((a, b) => Number(a.points_per_team_game) > Number(b.points_per_team_game) ? a : b);

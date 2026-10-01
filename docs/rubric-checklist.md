@@ -22,6 +22,8 @@
 - [x] Filters for season, team, opponent, position group, and position.
 - [x] Four dynamic summary numbers.
 - [x] Four dynamic charts.
+- [x] Team/opponent matchup snapshot with logos, colors, and role-specific comparison.
+- [x] Cascading filters, quick-find search, active filter chips, and accessible table rows.
 - [x] Measure switch and chart breakdown switch.
 - [x] Current-view data table.
 - [x] Reset filters button.
@@ -33,3 +35,4 @@
 - [x] Player headshot updates when a player is selected.
 - [x] README describes every file and data source.
 - [x] Reproducible build and validation scripts.
+- [x] Compressed dashboard panel, data dictionary, refresh date, and downloadable CSV.

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import gzip
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -338,6 +339,8 @@ def main() -> None:
     ]
     panel = panel[output_columns].sort_values(["season", "week", "team", "player_display_name"])
     panel.to_csv(DATA_DIR / "panel.csv", index=False)
+    with gzip.open(DATA_DIR / "panel.csv.gz", "wt", encoding="utf-8", newline="") as compressed_panel:
+        panel.to_csv(compressed_panel, index=False)
 
     team_columns = [
         "team_abbr",
@@ -381,6 +384,7 @@ def main() -> None:
         "teams": int(panel["team"].nunique()),
         "players": int(panel["player_id"].nunique()),
         "data_source": "nflverse via nflreadpy",
+        "dashboard_panel": "panel.csv.gz",
     }
     (DATA_DIR / "metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     print(json.dumps(metadata, indent=2))

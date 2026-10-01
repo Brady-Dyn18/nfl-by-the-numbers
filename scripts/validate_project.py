@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import gzip
 from pathlib import Path
 
 import pandas as pd
@@ -35,8 +36,11 @@ def main() -> None:
     require(panel[["season", "week", "team", "player_id"]].notna().all().all(), "Missing panel keys")
     require(metadata["rows"] == len(panel), "Metadata row count does not match panel")
     require(report_stats["overview"]["rows"] == len(panel), "Report row count does not match panel")
+    require((data_dir / "panel.csv.gz").exists(), "Missing compressed dashboard panel")
+    with gzip.open(data_dir / "panel.csv.gz", "rt", encoding="utf-8") as compressed_panel:
+        require(compressed_panel.readline().startswith("season,week,game_date"), "Compressed panel header is invalid")
 
-    for filename in ["index.html", "dashboard.html", "assets/styles.css", "assets/app.js", "assets/report.js", "README.md", "docs/rubric-checklist.md"]:
+    for filename in ["index.html", "dashboard.html", "assets/styles.css", "assets/app.js", "assets/report.js", "README.md", "docs/rubric-checklist.md", "docs/data-dictionary.md"]:
         require((ROOT / filename).exists(), f"Missing required file: {filename}")
 
     report_html = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -44,8 +48,9 @@ def main() -> None:
     require(report_html.count("class=\"report-section") >= 8, "Report needs at least eight finding sections")
     require(report_html.count("<canvas") >= 8, "Report needs a chart for each finding")
     require(dashboard_html.count("<canvas") >= 4, "Dashboard needs at least four charts")
-    for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "playerFilter", "resetFilters", "summaryValue1", "summaryValue4", "dataTableBody"]:
+    for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "positionFilter", "playerFilter", "filterSearch", "activeFilters", "resetFilters", "summaryValue1", "summaryValue4", "matchupSummary", "highlightField", "dataTableBody"]:
         require(required_id in dashboard_html, f"Dashboard missing {required_id}")
+    require("panel.csv.gz" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must prefer the compressed panel")
 
     print("Project validation passed.")
     print(json.dumps({"rows": len(panel), "columns": panel.shape[1], "seasons": sorted(panel["season"].unique().tolist()), "teams": panel["team"].nunique(), "players": panel["player_id"].nunique()}, indent=2))

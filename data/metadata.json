@@ -55,5 +55,6 @@
   "games": 1359,
   "teams": 32,
   "players": 3691,
-  "data_source": "nflverse via nflreadpy"
+  "data_source": "nflverse via nflreadpy",
+  "dashboard_panel": "panel.csv.gz"
 }
