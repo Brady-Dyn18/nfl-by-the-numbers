@@ -33,7 +33,7 @@
           <label>Position<select id="positionFilter"><option value="all">All positions</option></select></label>
           <label>Player<select id="playerFilter"><option value="all">All players</option></select></label>
         </div>
-        <div class="switch-row"><span class="filter-help">Select both Team and Opponent for a true head-to-head view. Position-aware charts compare the selected side with the opposing player group.</span><span class="filter-status" id="filterStatus">Loading data…</span></div>
+        <div class="switch-row"><span class="filter-help">Select a team, opponent, and position for a true matchup view. Charts answer different football questions: game script, role matchup, home/away splits, and player usage.</span><span class="filter-status" id="filterStatus">Loading data…</span></div>
       </section>
 
       <section class="summary-grid" aria-label="Filtered summary numbers">
@@ -46,10 +46,10 @@
       <section class="player-profile" id="playerProfile"><div class="profile-placeholder"><span class="profile-icon">+</span><div><strong>Select a player from the filter or table</strong><p>The player’s headshot, team colors, position, and selected statistics will appear here.</p></div></div></section>
 
       <section class="dashboard-chart-grid">
-        <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">HEAD-TO-HEAD TREND</span><h2 id="trendTitle">Passing vs rushing over time</h2></div><span class="chart-note" id="trendNote">Select a team and opponent</span></div><canvas id="trendChart"></canvas></div>
-        <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">POSITION MATCHUP</span><h2 id="breakdownTitle">Production per game by player</h2></div><span class="chart-note" id="breakdownNote">Same position on both teams</span></div><canvas id="breakdownChart"></canvas></div>
-        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">SCORING &amp; EFFICIENCY</span><h2 id="outcomeTitle">Scoring &amp; efficiency in view</h2></div></div><canvas id="outcomeChart"></canvas></div>
-        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">MATCHUP LEADERBOARD</span><h2 id="leaderboardTitle">Top players by offensive yards</h2></div><span class="chart-note" id="leaderboardNote">Total production in current view</span></div><canvas id="leaderboardChart"></canvas></div>
+        <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">GAME SCRIPT BY SEASON</span><h2 id="trendTitle">Points scored vs allowed</h2></div><span class="chart-note" id="trendNote">Select a team and opponent</span></div><canvas id="trendChart"></canvas></div>
+        <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">ROLE MATCHUP LENS</span><h2 id="breakdownTitle">Selected role vs opposing unit</h2></div><span class="chart-note" id="breakdownNote">Choose a position for a coverage view</span></div><canvas id="breakdownChart"></canvas></div>
+        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">HOME / AWAY SPLIT</span><h2 id="outcomeTitle">Home vs away performance</h2></div></div><canvas id="outcomeChart"></canvas></div>
+        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">USAGE &amp; EFFICIENCY</span><h2 id="leaderboardTitle">Player role metrics</h2></div><span class="chart-note" id="leaderboardNote">Role-specific measures</span></div><canvas id="leaderboardChart"></canvas></div>
       </section>
 
       <section class="table-card"><div class="table-heading"><div><span class="section-kicker">THE NUMBERS BEHIND THE VIEW</span><h2>Player-game detail</h2></div><span id="tableCount">Showing 0 rows</span></div><div class="table-scroll"><table><thead><tr><th>Player</th><th>Team</th><th>Opp.</th><th>Pos.</th><th>Season</th><th>Week</th><th>H/A</th><th>Result</th><th>Pass yds</th><th>Rush yds</th><th>Rec yds</th><th>Tackles</th><th>Sacks</th></tr></thead><tbody id="dataTableBody"></tbody></table></div></section>
@@ -58,6 +58,6 @@
     <footer class="site-footer"><span>NFL BY THE NUMBERS · FILTERS CALCULATED IN YOUR BROWSER</span><span><a href="index.html">← Back to report</a></span></footer>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/app.js?v=20261001-head-to-head"></script>
+    <script src="assets/app.js?v=20261001-role-matchups"></script>
   </body>
 </html>
