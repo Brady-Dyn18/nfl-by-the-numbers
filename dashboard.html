@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NFL Dashboard | NFL by the Numbers</title>
+    <meta name="description" content="Filter and explore player-game NFL performance from 2021 through 2025." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="dashboard-page">
+    <nav class="site-nav">
+      <a class="brand" href="index.html"><span class="brand-mark">NFL</span><span>BY THE NUMBERS</span></a>
+      <div class="nav-links"><a href="index.html">Report</a><a class="active" href="dashboard.html">Dashboard <span aria-hidden="true">↗</span></a></div>
+    </nav>
+
+    <main class="dashboard-shell">
+      <section class="dashboard-hero">
+        <div><p class="eyebrow">INTERACTIVE EXPLORER · 90,000+ PLAYER-GAME ROWS</p><h1>Find the matchup behind the number.</h1><p>Filter the five-season panel, switch the measure, and click any player in the table to bring up their profile.</p></div>
+        <div class="team-identity" id="teamIdentity"><img id="teamLogo" alt="Selected team logo" /><div><span id="teamConference">NFL LEAGUE VIEW</span><strong id="teamName">All teams</strong><small id="teamRecord">Select a team to apply its colors</small></div></div>
+      </section>
+
+      <section class="filter-panel" aria-label="Dashboard filters">
+        <div class="filter-heading"><div><span class="section-kicker">CONTROL ROOM</span><h2>Filter the panel</h2></div><button class="ghost-button" id="resetFilters">Reset all filters</button></div>
+        <div class="filter-grid">
+          <label>Season<select id="seasonFilter"><option value="all">All seasons</option></select></label>
+          <label>Team<select id="teamFilter"><option value="all">All teams</option></select></label>
+          <label>Opponent<select id="opponentFilter"><option value="all">All opponents</option></select></label>
+          <label>Position group<select id="positionGroupFilter"><option value="all">All position groups</option></select></label>
+          <label>Position<select id="positionFilter"><option value="all">All positions</option></select></label>
+          <label>Player<select id="playerFilter"><option value="all">All players</option></select></label>
+        </div>
+        <div class="switch-row"><label>Measure<select id="measureSelect"><option value="rows">Player-game count</option><option value="passing_yards">Passing yards</option><option value="rushing_yards">Rushing yards</option><option value="receiving_yards">Receiving yards</option><option value="def_tackles_solo">Solo tackles</option><option value="def_sacks">Sacks</option><option value="fantasy_points">Fantasy points</option><option value="point_differential">Point differential</option></select></label><label>Break charts down by<select id="breakdownSelect"><option value="season">Season</option><option value="team">Team</option><option value="opponent_team">Opponent</option><option value="position_group">Position group</option><option value="position">Position</option><option value="win_loss">Result</option></select></label><span class="filter-status" id="filterStatus">Loading data…</span></div>
+      </section>
+
+      <section class="summary-grid" aria-label="Filtered summary numbers">
+        <div class="summary-card"><span>ROWS IN VIEW</span><strong id="summaryRows">—</strong><small>player-game observations</small></div>
+        <div class="summary-card"><span>WIN RATE</span><strong id="summaryWinRate">—</strong><small>unique team-games</small></div>
+        <div class="summary-card"><span>AVG POINTS</span><strong id="summaryPoints">—</strong><small>per team-game</small></div>
+        <div class="summary-card"><span>MEASURE TOTAL</span><strong id="summaryMeasure">—</strong><small id="summaryMeasureLabel">selected measure</small></div>
+      </section>
+
+      <section class="player-profile" id="playerProfile"><div class="profile-placeholder"><span class="profile-icon">+</span><div><strong>Select a player from the filter or table</strong><p>The player’s headshot, team colors, position, and selected statistics will appear here.</p></div></div></section>
+
+      <section class="dashboard-chart-grid">
+        <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">TREND</span><h2>How the selected measure changes over time</h2></div><span class="chart-note">Dynamic with filters</span></div><canvas id="trendChart"></canvas></div>
+        <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">BREAKDOWN</span><h2>Where the number comes from</h2></div><span class="chart-note">Switch the breakdown above</span></div><canvas id="breakdownChart"></canvas></div>
+        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">OUTCOMES</span><h2>Results in view</h2></div></div><canvas id="outcomeChart"></canvas></div>
+        <div class="chart-card"><div class="chart-heading"><div><span class="section-kicker">LEADERBOARD</span><h2>Top rows by measure</h2></div></div><canvas id="leaderboardChart"></canvas></div>
+      </section>
+
+      <section class="table-card"><div class="table-heading"><div><span class="section-kicker">THE NUMBERS BEHIND THE VIEW</span><h2>Player-game detail</h2></div><span id="tableCount">Showing 0 rows</span></div><div class="table-scroll"><table><thead><tr><th>Player</th><th>Team</th><th>Opp.</th><th>Pos.</th><th>Season</th><th>Week</th><th>Result</th><th>Selected measure</th></tr></thead><tbody id="dataTableBody"></tbody></table></div></section>
+    </main>
+
+    <footer class="site-footer"><span>NFL BY THE NUMBERS · FILTERS CALCULATED IN YOUR BROWSER</span><span><a href="index.html">← Back to report</a></span></footer>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
