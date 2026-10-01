@@ -90,7 +90,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4189,
       "rushing_yards": 3189,
-      "offensive_yards": 7378
+      "offensive_yards": 7378,
+      "offensive_tds": 62,
+      "points_per_game": 30.4705882353,
+      "offensive_yards_per_game": 434.0,
+      "offensive_interceptions_per_game": 0.2352941176
     },
     {
       "season": 2022,
@@ -100,7 +104,11 @@
       "win_rate": 0.8235294118,
       "passing_yards": 5250,
       "rushing_yards": 1970,
-      "offensive_yards": 7220
+      "offensive_yards": 7220,
+      "offensive_tds": 59,
+      "points_per_game": 29.1764705882,
+      "offensive_yards_per_game": 424.7058823529,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2024,
@@ -110,7 +118,11 @@
       "win_rate": 0.8823529412,
       "passing_yards": 4718,
       "rushing_yards": 2488,
-      "offensive_yards": 7206
+      "offensive_yards": 7206,
+      "offensive_tds": 68,
+      "points_per_game": 33.1764705882,
+      "offensive_yards_per_game": 423.8823529412,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2021,
@@ -120,7 +132,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4963,
       "rushing_yards": 2119,
-      "offensive_yards": 7082
+      "offensive_yards": 7082,
+      "offensive_tds": 55,
+      "points_per_game": 31.1764705882,
+      "offensive_yards_per_game": 416.5882352941,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2021,
@@ -130,7 +146,11 @@
       "win_rate": 0.7647058824,
       "passing_yards": 5383,
       "rushing_yards": 1672,
-      "offensive_yards": 7055
+      "offensive_yards": 7055,
+      "offensive_tds": 61,
+      "points_per_game": 30.0588235294,
+      "offensive_yards_per_game": 415.0,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2024,
@@ -140,7 +160,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4505,
       "rushing_yards": 2536,
-      "offensive_yards": 7041
+      "offensive_yards": 7041,
+      "offensive_tds": 57,
+      "points_per_game": 29.5294117647,
+      "offensive_yards_per_game": 414.1764705882,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2023,
@@ -150,7 +174,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 4698,
       "rushing_yards": 2308,
-      "offensive_yards": 7006
+      "offensive_yards": 7006,
+      "offensive_tds": 57,
+      "points_per_game": 29.1764705882,
+      "offensive_yards_per_game": 412.1176470588,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2023,
@@ -160,7 +188,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4577,
       "rushing_yards": 2389,
-      "offensive_yards": 6966
+      "offensive_yards": 6966,
+      "offensive_tds": 60,
+      "points_per_game": 28.8823529412,
+      "offensive_yards_per_game": 409.7647058824,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2023,
@@ -170,7 +202,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4606,
       "rushing_yards": 2311,
-      "offensive_yards": 6917
+      "offensive_yards": 6917,
+      "offensive_tds": 57,
+      "points_per_game": 27.1176470588,
+      "offensive_yards_per_game": 406.8823529412,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2021,
@@ -180,7 +216,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4937,
       "rushing_yards": 1955,
-      "offensive_yards": 6892
+      "offensive_yards": 6892,
+      "offensive_tds": 53,
+      "points_per_game": 28.2352941176,
+      "offensive_yards_per_game": 405.4117647059,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2022,
@@ -190,7 +230,11 @@
       "win_rate": 0.8235294118,
       "passing_yards": 4364,
       "rushing_yards": 2509,
-      "offensive_yards": 6873
+      "offensive_yards": 6873,
+      "offensive_tds": 57,
+      "points_per_game": 28.0588235294,
+      "offensive_yards_per_game": 404.2941176471,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2025,
@@ -200,7 +244,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 4735,
       "rushing_yards": 2136,
-      "offensive_yards": 6871
+      "offensive_yards": 6871,
+      "offensive_tds": 49,
+      "points_per_game": 27.7058823529,
+      "offensive_yards_per_game": 404.1764705882,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2025,
@@ -210,7 +258,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4707,
       "rushing_yards": 2152,
-      "offensive_yards": 6859
+      "offensive_yards": 6859,
+      "offensive_tds": 63,
+      "points_per_game": 30.4705882353,
+      "offensive_yards_per_game": 403.4705882353,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2021,
@@ -220,7 +272,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 5014,
       "rushing_yards": 1834,
-      "offensive_yards": 6848
+      "offensive_yards": 6848,
+      "offensive_tds": 56,
+      "points_per_game": 27.8823529412,
+      "offensive_yards_per_game": 402.8235294118,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2021,
@@ -230,7 +286,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 4267,
       "rushing_yards": 2479,
-      "offensive_yards": 6746
+      "offensive_yards": 6746,
+      "offensive_tds": 39,
+      "points_per_game": 22.7647058824,
+      "offensive_yards_per_game": 396.8235294118,
+      "offensive_interceptions_per_game": 1.0588235294
     },
     {
       "season": 2021,
@@ -240,7 +300,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 4619,
       "rushing_yards": 2076,
-      "offensive_yards": 6695
+      "offensive_yards": 6695,
+      "offensive_tds": 50,
+      "points_per_game": 26.4117647059,
+      "offensive_yards_per_game": 393.8235294118,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2025,
@@ -250,7 +314,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 3981,
       "rushing_yards": 2714,
-      "offensive_yards": 6695
+      "offensive_yards": 6695,
+      "offensive_tds": 59,
+      "points_per_game": 28.2941176471,
+      "offensive_yards_per_game": 393.8235294118,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2021,
@@ -260,7 +328,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 4450,
       "rushing_yards": 2209,
-      "offensive_yards": 6659
+      "offensive_yards": 6659,
+      "offensive_tds": 56,
+      "points_per_game": 28.4117647059,
+      "offensive_yards_per_game": 391.7058823529,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2025,
@@ -270,7 +342,11 @@
       "win_rate": 0.8235294118,
       "passing_yards": 4459,
       "rushing_yards": 2191,
-      "offensive_yards": 6650
+      "offensive_yards": 6650,
+      "offensive_tds": 53,
+      "points_per_game": 28.8235294118,
+      "offensive_yards_per_game": 391.1764705882,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2022,
@@ -280,7 +356,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4444,
       "rushing_yards": 2179,
-      "offensive_yards": 6623
+      "offensive_yards": 6623,
+      "offensive_tds": 52,
+      "points_per_game": 26.6470588235,
+      "offensive_yards_per_game": 389.5882352941,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2025,
@@ -290,7 +370,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4567,
       "rushing_yards": 2041,
-      "offensive_yards": 6608
+      "offensive_yards": 6608,
+      "offensive_tds": 56,
+      "points_per_game": 28.2941176471,
+      "offensive_yards_per_game": 388.7058823529,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2021,
@@ -300,7 +384,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4437,
       "rushing_yards": 2166,
-      "offensive_yards": 6603
+      "offensive_yards": 6603,
+      "offensive_tds": 48,
+      "points_per_game": 25.1176470588,
+      "offensive_yards_per_game": 388.4117647059,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2024,
@@ -310,7 +398,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 4424,
       "rushing_yards": 2163,
-      "offensive_yards": 6587
+      "offensive_yards": 6587,
+      "offensive_tds": 40,
+      "points_per_game": 22.8823529412,
+      "offensive_yards_per_game": 387.4705882353,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2023,
@@ -320,7 +412,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4660,
       "rushing_yards": 1920,
-      "offensive_yards": 6580
+      "offensive_yards": 6580,
+      "offensive_tds": 50,
+      "points_per_game": 29.9411764706,
+      "offensive_yards_per_game": 387.0588235294,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2021,
@@ -330,7 +426,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4893,
       "rushing_yards": 1683,
-      "offensive_yards": 6576
+      "offensive_yards": 6576,
+      "offensive_tds": 51,
+      "points_per_game": 27.0588235294,
+      "offensive_yards_per_game": 386.8235294118,
+      "offensive_interceptions_per_game": 1.0588235294
     },
     {
       "season": 2024,
@@ -340,7 +440,11 @@
       "win_rate": 0.8235294118,
       "passing_yards": 3517,
       "rushing_yards": 3048,
-      "offensive_yards": 6565
+      "offensive_yards": 6565,
+      "offensive_tds": 53,
+      "points_per_game": 27.2352941176,
+      "offensive_yards_per_game": 386.1764705882,
+      "offensive_interceptions_per_game": 0.3529411765
     },
     {
       "season": 2024,
@@ -350,7 +454,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 3932,
       "rushing_yards": 2619,
-      "offensive_yards": 6551
+      "offensive_yards": 6551,
+      "offensive_tds": 54,
+      "points_per_game": 28.5294117647,
+      "offensive_yards_per_game": 385.3529411765,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2021,
@@ -360,7 +468,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4806,
       "rushing_yards": 1742,
-      "offensive_yards": 6548
+      "offensive_yards": 6548,
+      "offensive_tds": 52,
+      "points_per_game": 27.0588235294,
+      "offensive_yards_per_game": 385.1764705882,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2023,
@@ -370,7 +482,11 @@
       "win_rate": 0.7647058824,
       "passing_yards": 3881,
       "rushing_yards": 2661,
-      "offensive_yards": 6542
+      "offensive_yards": 6542,
+      "offensive_tds": 53,
+      "points_per_game": 28.4117647059,
+      "offensive_yards_per_game": 384.8235294118,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2022,
@@ -380,7 +496,11 @@
       "win_rate": 0.8125,
       "passing_yards": 4291,
       "rushing_yards": 2232,
-      "offensive_yards": 6523
+      "offensive_yards": 6523,
+      "offensive_tds": 50,
+      "points_per_game": 28.4375,
+      "offensive_yards_per_game": 407.6875,
+      "offensive_interceptions_per_game": 0.875
     },
     {
       "season": 2023,
@@ -390,7 +510,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 4306,
       "rushing_yards": 2212,
-      "offensive_yards": 6518
+      "offensive_yards": 6518,
+      "offensive_tds": 51,
+      "points_per_game": 26.5294117647,
+      "offensive_yards_per_game": 383.4117647059,
+      "offensive_interceptions_per_game": 1.0588235294
     },
     {
       "season": 2024,
@@ -400,7 +524,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 4283,
       "rushing_yards": 2219,
-      "offensive_yards": 6502
+      "offensive_yards": 6502,
+      "offensive_tds": 39,
+      "points_per_game": 22.8823529412,
+      "offensive_yards_per_game": 382.4705882353,
+      "offensive_interceptions_per_game": 1.1176470588
     },
     {
       "season": 2024,
@@ -410,7 +538,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4918,
       "rushing_yards": 1574,
-      "offensive_yards": 6492
+      "offensive_yards": 6492,
+      "offensive_tds": 54,
+      "points_per_game": 27.7647058824,
+      "offensive_yards_per_game": 381.8823529412,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2022,
@@ -420,7 +552,11 @@
       "win_rate": 0.7647058824,
       "passing_yards": 4818,
       "rushing_yards": 1661,
-      "offensive_yards": 6479
+      "offensive_yards": 6479,
+      "offensive_tds": 48,
+      "points_per_game": 24.9411764706,
+      "offensive_yards_per_game": 381.1176470588,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2022,
@@ -430,7 +566,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4765,
       "rushing_yards": 1686,
-      "offensive_yards": 6451
+      "offensive_yards": 6451,
+      "offensive_tds": 42,
+      "points_per_game": 23.3529411765,
+      "offensive_yards_per_game": 379.4705882353,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2025,
@@ -440,7 +580,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 3991,
       "rushing_yards": 2456,
-      "offensive_yards": 6447
+      "offensive_yards": 6447,
+      "offensive_tds": 47,
+      "points_per_game": 25.9411764706,
+      "offensive_yards_per_game": 379.2352941176,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2024,
@@ -450,7 +594,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 3939,
       "rushing_yards": 2496,
-      "offensive_yards": 6435
+      "offensive_yards": 6435,
+      "offensive_tds": 51,
+      "points_per_game": 27.0588235294,
+      "offensive_yards_per_game": 378.5294117647,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2021,
@@ -460,7 +608,11 @@
       "win_rate": 0.7647058824,
       "passing_yards": 4526,
       "rushing_yards": 1900,
-      "offensive_yards": 6426
+      "offensive_yards": 6426,
+      "offensive_tds": 52,
+      "points_per_game": 26.4705882353,
+      "offensive_yards_per_game": 378.0,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2021,
@@ -470,7 +622,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4808,
       "rushing_yards": 1617,
-      "offensive_yards": 6425
+      "offensive_yards": 6425,
+      "offensive_tds": 37,
+      "points_per_game": 22.0,
+      "offensive_yards_per_game": 377.9411764706,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2022,
@@ -480,7 +636,11 @@
       "win_rate": 0.7647058824,
       "passing_yards": 4049,
       "rushing_yards": 2360,
-      "offensive_yards": 6409
+      "offensive_yards": 6409,
+      "offensive_tds": 50,
+      "points_per_game": 26.4705882353,
+      "offensive_yards_per_game": 377.0,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2021,
@@ -490,7 +650,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 4450,
       "rushing_yards": 1930,
-      "offensive_yards": 6380
+      "offensive_yards": 6380,
+      "offensive_tds": 44,
+      "points_per_game": 25.0,
+      "offensive_yards_per_game": 375.2941176471,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2023,
@@ -500,7 +664,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4300,
       "rushing_yards": 2045,
-      "offensive_yards": 6345
+      "offensive_yards": 6345,
+      "offensive_tds": 44,
+      "points_per_game": 23.7647058824,
+      "offensive_yards_per_game": 373.2352941176,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2022,
@@ -510,7 +678,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4282,
       "rushing_yards": 2042,
-      "offensive_yards": 6324
+      "offensive_yards": 6324,
+      "offensive_tds": 42,
+      "points_per_game": 23.9411764706,
+      "offensive_yards_per_game": 372.0,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2022,
@@ -520,7 +692,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4791,
       "rushing_yards": 1524,
-      "offensive_yards": 6315
+      "offensive_yards": 6315,
+      "offensive_tds": 41,
+      "points_per_game": 23.0,
+      "offensive_yards_per_game": 371.4705882353,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2024,
@@ -530,7 +706,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3859,
       "rushing_yards": 2451,
-      "offensive_yards": 6310
+      "offensive_yards": 6310,
+      "offensive_tds": 39,
+      "points_per_game": 23.5294117647,
+      "offensive_yards_per_game": 371.1764705882,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2021,
@@ -540,7 +720,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3585,
       "rushing_yards": 2715,
-      "offensive_yards": 6300
+      "offensive_yards": 6300,
+      "offensive_tds": 45,
+      "points_per_game": 26.1176470588,
+      "offensive_yards_per_game": 370.5882352941,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2022,
@@ -550,7 +734,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4148,
       "rushing_yards": 2116,
-      "offensive_yards": 6264
+      "offensive_yards": 6264,
+      "offensive_tds": 41,
+      "points_per_game": 23.7647058824,
+      "offensive_yards_per_game": 368.4705882353,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2023,
@@ -560,7 +748,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 4067,
       "rushing_yards": 2190,
-      "offensive_yards": 6257
+      "offensive_yards": 6257,
+      "offensive_tds": 46,
+      "points_per_game": 25.4705882353,
+      "offensive_yards_per_game": 368.0588235294,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2023,
@@ -570,7 +762,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 4700,
       "rushing_yards": 1553,
-      "offensive_yards": 6253
+      "offensive_yards": 6253,
+      "offensive_tds": 37,
+      "points_per_game": 20.2352941176,
+      "offensive_yards_per_game": 367.8235294118,
+      "offensive_interceptions_per_game": 1.1176470588
     },
     {
       "season": 2021,
@@ -580,7 +776,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4098,
       "rushing_yards": 2151,
-      "offensive_yards": 6249
+      "offensive_yards": 6249,
+      "offensive_tds": 48,
+      "points_per_game": 27.1764705882,
+      "offensive_yards_per_game": 367.5882352941,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2022,
@@ -590,7 +790,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 4182,
       "rushing_yards": 2059,
-      "offensive_yards": 6241
+      "offensive_yards": 6241,
+      "offensive_tds": 40,
+      "points_per_game": 23.2352941176,
+      "offensive_yards_per_game": 367.1176470588,
+      "offensive_interceptions_per_game": 1.0
     },
     {
       "season": 2024,
@@ -600,7 +804,11 @@
       "win_rate": 0.8235294118,
       "passing_yards": 4379,
       "rushing_yards": 1855,
-      "offensive_yards": 6234
+      "offensive_yards": 6234,
+      "offensive_tds": 44,
+      "points_per_game": 25.4117647059,
+      "offensive_yards_per_game": 366.7058823529,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2023,
@@ -610,7 +818,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4578,
       "rushing_yards": 1647,
-      "offensive_yards": 6225
+      "offensive_yards": 6225,
+      "offensive_tds": 37,
+      "points_per_game": 22.1764705882,
+      "offensive_yards_per_game": 366.1764705882,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2022,
@@ -620,7 +832,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 3911,
       "rushing_yards": 2298,
-      "offensive_yards": 6209
+      "offensive_yards": 6209,
+      "offensive_tds": 52,
+      "points_per_game": 27.4705882353,
+      "offensive_yards_per_game": 365.2352941176,
+      "offensive_interceptions_per_game": 1.0588235294
     },
     {
       "season": 2022,
@@ -630,7 +846,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3710,
       "rushing_yards": 2490,
-      "offensive_yards": 6200
+      "offensive_yards": 6200,
+      "offensive_tds": 38,
+      "points_per_game": 21.2352941176,
+      "offensive_yards_per_game": 364.7058823529,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2024,
@@ -640,7 +860,11 @@
       "win_rate": 0.7647058824,
       "passing_yards": 3938,
       "rushing_yards": 2230,
-      "offensive_yards": 6168
+      "offensive_yards": 6168,
+      "offensive_tds": 62,
+      "points_per_game": 30.8823529412,
+      "offensive_yards_per_game": 362.8235294118,
+      "offensive_interceptions_per_game": 0.3529411765
     },
     {
       "season": 2023,
@@ -650,7 +874,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 4383,
       "rushing_yards": 1784,
-      "offensive_yards": 6167
+      "offensive_yards": 6167,
+      "offensive_tds": 37,
+      "points_per_game": 21.8235294118,
+      "offensive_yards_per_game": 362.7647058824,
+      "offensive_interceptions_per_game": 1.0
     },
     {
       "season": 2025,
@@ -660,7 +888,11 @@
       "win_rate": 0.8235294118,
       "passing_yards": 4063,
       "rushing_yards": 2096,
-      "offensive_yards": 6159
+      "offensive_yards": 6159,
+      "offensive_tds": 44,
+      "points_per_game": 28.4117647059,
+      "offensive_yards_per_game": 362.2941176471,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2021,
@@ -670,7 +902,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 3745,
       "rushing_yards": 2404,
-      "offensive_yards": 6149
+      "offensive_yards": 6149,
+      "offensive_tds": 45,
+      "points_per_game": 24.6470588235,
+      "offensive_yards_per_game": 361.7058823529,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2025,
@@ -680,7 +916,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 4318,
       "rushing_yards": 1817,
-      "offensive_yards": 6135
+      "offensive_yards": 6135,
+      "offensive_tds": 48,
+      "points_per_game": 25.7058823529,
+      "offensive_yards_per_game": 360.8823529412,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2021,
@@ -690,7 +930,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3588,
       "rushing_yards": 2540,
-      "offensive_yards": 6128
+      "offensive_yards": 6128,
+      "offensive_tds": 49,
+      "points_per_game": 26.5294117647,
+      "offensive_yards_per_game": 360.4705882353,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2023,
@@ -700,7 +944,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4210,
       "rushing_yards": 1905,
-      "offensive_yards": 6115
+      "offensive_yards": 6115,
+      "offensive_tds": 42,
+      "points_per_game": 22.5294117647,
+      "offensive_yards_per_game": 359.7058823529,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2025,
@@ -710,7 +958,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 4085,
       "rushing_yards": 2007,
-      "offensive_yards": 6092
+      "offensive_yards": 6092,
+      "offensive_tds": 52,
+      "points_per_game": 27.4117647059,
+      "offensive_yards_per_game": 358.3529411765,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2021,
@@ -720,7 +972,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3619,
       "rushing_yards": 2471,
-      "offensive_yards": 6090
+      "offensive_yards": 6090,
+      "offensive_tds": 41,
+      "points_per_game": 20.5294117647,
+      "offensive_yards_per_game": 358.2352941176,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2022,
@@ -730,7 +986,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 4746,
       "rushing_yards": 1308,
-      "offensive_yards": 6054
+      "offensive_yards": 6054,
+      "offensive_tds": 31,
+      "points_per_game": 18.4117647059,
+      "offensive_yards_per_game": 356.1176470588,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2022,
@@ -740,7 +1000,11 @@
       "win_rate": 0.75,
       "passing_yards": 4520,
       "rushing_yards": 1528,
-      "offensive_yards": 6048
+      "offensive_yards": 6048,
+      "offensive_tds": 49,
+      "points_per_game": 26.125,
+      "offensive_yards_per_game": 378.0,
+      "offensive_interceptions_per_game": 0.75
     },
     {
       "season": 2023,
@@ -750,7 +1014,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 4011,
       "rushing_yards": 2017,
-      "offensive_yards": 6028
+      "offensive_yards": 6028,
+      "offensive_tds": 39,
+      "points_per_game": 23.2941176471,
+      "offensive_yards_per_game": 354.5882352941,
+      "offensive_interceptions_per_game": 1.3529411765
     },
     {
       "season": 2023,
@@ -760,7 +1028,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4377,
       "rushing_yards": 1646,
-      "offensive_yards": 6023
+      "offensive_yards": 6023,
+      "offensive_tds": 39,
+      "points_per_game": 22.1764705882,
+      "offensive_yards_per_game": 354.2941176471,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2025,
@@ -770,7 +1042,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 3953,
       "rushing_yards": 2067,
-      "offensive_yards": 6020
+      "offensive_yards": 6020,
+      "offensive_tds": 36,
+      "points_per_game": 21.6470588235,
+      "offensive_yards_per_game": 354.1176470588,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2024,
@@ -780,7 +1056,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4379,
       "rushing_yards": 1627,
-      "offensive_yards": 6006
+      "offensive_yards": 6006,
+      "offensive_tds": 38,
+      "points_per_game": 22.0588235294,
+      "offensive_yards_per_game": 353.2941176471,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2022,
@@ -790,7 +1070,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3890,
       "rushing_yards": 2113,
-      "offensive_yards": 6003
+      "offensive_yards": 6003,
+      "offensive_tds": 39,
+      "points_per_game": 21.7647058824,
+      "offensive_yards_per_game": 353.1176470588,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2025,
@@ -800,7 +1084,11 @@
       "win_rate": 0.7647058824,
       "passing_yards": 4026,
       "rushing_yards": 1956,
-      "offensive_yards": 5982
+      "offensive_yards": 5982,
+      "offensive_tds": 51,
+      "points_per_game": 27.8823529412,
+      "offensive_yards_per_game": 351.8823529412,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2023,
@@ -810,7 +1098,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4225,
       "rushing_yards": 1742,
-      "offensive_yards": 5967
+      "offensive_yards": 5967,
+      "offensive_tds": 41,
+      "points_per_game": 23.6470588235,
+      "offensive_yards_per_game": 351.0,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2023,
@@ -820,7 +1112,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 4312,
       "rushing_yards": 1642,
-      "offensive_yards": 5954
+      "offensive_yards": 5954,
+      "offensive_tds": 35,
+      "points_per_game": 20.3529411765,
+      "offensive_yards_per_game": 350.2352941176,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2022,
@@ -830,7 +1126,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3969,
       "rushing_yards": 1982,
-      "offensive_yards": 5951
+      "offensive_yards": 5951,
+      "offensive_tds": 36,
+      "points_per_game": 19.4117647059,
+      "offensive_yards_per_game": 350.0588235294,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2022,
@@ -840,7 +1140,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3431,
       "rushing_yards": 2519,
-      "offensive_yards": 5950
+      "offensive_yards": 5950,
+      "offensive_tds": 38,
+      "points_per_game": 21.4705882353,
+      "offensive_yards_per_game": 350.0,
+      "offensive_interceptions_per_game": 0.3529411765
     },
     {
       "season": 2025,
@@ -850,7 +1154,11 @@
       "win_rate": 0.8235294118,
       "passing_yards": 3931,
       "rushing_yards": 2018,
-      "offensive_yards": 5949
+      "offensive_yards": 5949,
+      "offensive_tds": 43,
+      "points_per_game": 23.5882352941,
+      "offensive_yards_per_game": 349.9411764706,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2022,
@@ -860,7 +1168,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 4007,
       "rushing_yards": 1935,
-      "offensive_yards": 5942
+      "offensive_yards": 5942,
+      "offensive_tds": 29,
+      "points_per_game": 16.8823529412,
+      "offensive_yards_per_game": 349.5294117647,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2023,
@@ -870,7 +1182,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3882,
       "rushing_yards": 2059,
-      "offensive_yards": 5941
+      "offensive_yards": 5941,
+      "offensive_tds": 37,
+      "points_per_game": 23.2941176471,
+      "offensive_yards_per_game": 349.4705882353,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2025,
@@ -880,7 +1196,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3278,
       "rushing_yards": 2662,
-      "offensive_yards": 5940
+      "offensive_yards": 5940,
+      "offensive_tds": 46,
+      "points_per_game": 24.9411764706,
+      "offensive_yards_per_game": 349.4117647059,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2025,
@@ -890,7 +1210,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 4354,
       "rushing_yards": 1583,
-      "offensive_yards": 5937
+      "offensive_yards": 5937,
+      "offensive_tds": 38,
+      "points_per_game": 20.8823529412,
+      "offensive_yards_per_game": 349.2352941176,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2023,
@@ -900,7 +1224,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3775,
       "rushing_yards": 2159,
-      "offensive_yards": 5934
+      "offensive_yards": 5934,
+      "offensive_tds": 31,
+      "points_per_game": 18.8823529412,
+      "offensive_yards_per_game": 349.0588235294,
+      "offensive_interceptions_per_game": 1.0
     },
     {
       "season": 2024,
@@ -910,7 +1238,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3599,
       "rushing_yards": 2331,
-      "offensive_yards": 5930
+      "offensive_yards": 5930,
+      "offensive_tds": 40,
+      "points_per_game": 22.1764705882,
+      "offensive_yards_per_game": 348.8235294118,
+      "offensive_interceptions_per_game": 1.1176470588
     },
     {
       "season": 2022,
@@ -920,7 +1252,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3783,
       "rushing_yards": 2143,
-      "offensive_yards": 5926
+      "offensive_yards": 5926,
+      "offensive_tds": 33,
+      "points_per_game": 18.8823529412,
+      "offensive_yards_per_game": 348.5882352941,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2022,
@@ -930,7 +1266,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 3202,
       "rushing_yards": 2720,
-      "offensive_yards": 5922
+      "offensive_yards": 5922,
+      "offensive_tds": 33,
+      "points_per_game": 20.5882352941,
+      "offensive_yards_per_game": 348.3529411765,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2025,
@@ -940,7 +1280,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3703,
       "rushing_yards": 2195,
-      "offensive_yards": 5898
+      "offensive_yards": 5898,
+      "offensive_tds": 43,
+      "points_per_game": 22.4117647059,
+      "offensive_yards_per_game": 346.9411764706,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2021,
@@ -950,7 +1294,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3815,
       "rushing_yards": 2074,
-      "offensive_yards": 5889
+      "offensive_yards": 5889,
+      "offensive_tds": 48,
+      "points_per_game": 23.2352941176,
+      "offensive_yards_per_game": 346.4117647059,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2025,
@@ -960,7 +1308,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3845,
       "rushing_yards": 2037,
-      "offensive_yards": 5882
+      "offensive_yards": 5882,
+      "offensive_tds": 44,
+      "points_per_game": 23.0,
+      "offensive_yards_per_game": 346.0,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2021,
@@ -970,7 +1322,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3856,
       "rushing_yards": 2025,
-      "offensive_yards": 5881
+      "offensive_yards": 5881,
+      "offensive_tds": 36,
+      "points_per_game": 19.7058823529,
+      "offensive_yards_per_game": 345.9411764706,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2024,
@@ -980,7 +1336,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 3952,
       "rushing_yards": 1909,
-      "offensive_yards": 5861
+      "offensive_yards": 5861,
+      "offensive_tds": 35,
+      "points_per_game": 21.8823529412,
+      "offensive_yards_per_game": 344.7647058824,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2024,
@@ -990,7 +1350,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 4096,
       "rushing_yards": 1765,
-      "offensive_yards": 5861
+      "offensive_yards": 5861,
+      "offensive_tds": 37,
+      "points_per_game": 21.5882352941,
+      "offensive_yards_per_game": 344.7647058824,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2025,
@@ -1000,7 +1364,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3703,
       "rushing_yards": 2138,
-      "offensive_yards": 5841
+      "offensive_yards": 5841,
+      "offensive_tds": 36,
+      "points_per_game": 20.7647058824,
+      "offensive_yards_per_game": 343.5882352941,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2022,
@@ -1010,7 +1378,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3966,
       "rushing_yards": 1873,
-      "offensive_yards": 5839
+      "offensive_yards": 5839,
+      "offensive_tds": 32,
+      "points_per_game": 20.0,
+      "offensive_yards_per_game": 343.4705882353,
+      "offensive_interceptions_per_game": 1.0
     },
     {
       "season": 2024,
@@ -1020,7 +1392,11 @@
       "win_rate": 0.8823529412,
       "passing_yards": 4046,
       "rushing_yards": 1790,
-      "offensive_yards": 5836
+      "offensive_yards": 5836,
+      "offensive_tds": 41,
+      "points_per_game": 22.6470588235,
+      "offensive_yards_per_game": 343.2941176471,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2025,
@@ -1030,7 +1406,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 4244,
       "rushing_yards": 1591,
-      "offensive_yards": 5835
+      "offensive_yards": 5835,
+      "offensive_tds": 47,
+      "points_per_game": 24.3529411765,
+      "offensive_yards_per_game": 343.2352941176,
+      "offensive_interceptions_per_game": 1.0
     },
     {
       "season": 2024,
@@ -1040,7 +1420,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 4036,
       "rushing_yards": 1795,
-      "offensive_yards": 5831
+      "offensive_yards": 5831,
+      "offensive_tds": 34,
+      "points_per_game": 20.2941176471,
+      "offensive_yards_per_game": 343.0,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2023,
@@ -1050,7 +1434,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3421,
       "rushing_yards": 2399,
-      "offensive_yards": 5820
+      "offensive_yards": 5820,
+      "offensive_tds": 35,
+      "points_per_game": 21.1764705882,
+      "offensive_yards_per_game": 342.3529411765,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2025,
@@ -1060,7 +1448,11 @@
       "win_rate": 0.7058823529,
       "passing_yards": 3956,
       "rushing_yards": 1852,
-      "offensive_yards": 5808
+      "offensive_yards": 5808,
+      "offensive_tds": 33,
+      "points_per_game": 23.7647058824,
+      "offensive_yards_per_game": 341.6470588235,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2021,
@@ -1070,7 +1462,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3746,
       "rushing_yards": 2061,
-      "offensive_yards": 5807
+      "offensive_yards": 5807,
+      "offensive_tds": 34,
+      "points_per_game": 19.7058823529,
+      "offensive_yards_per_game": 341.5882352941,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2024,
@@ -1080,7 +1476,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 4092,
       "rushing_yards": 1705,
-      "offensive_yards": 5797
+      "offensive_yards": 5797,
+      "offensive_tds": 29,
+      "points_per_game": 20.5882352941,
+      "offensive_yards_per_game": 341.0,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2023,
@@ -1090,7 +1490,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3430,
       "rushing_yards": 2365,
-      "offensive_yards": 5795
+      "offensive_yards": 5795,
+      "offensive_tds": 35,
+      "points_per_game": 19.4117647059,
+      "offensive_yards_per_game": 340.8823529412,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2023,
@@ -1100,7 +1504,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4257,
       "rushing_yards": 1527,
-      "offensive_yards": 5784
+      "offensive_yards": 5784,
+      "offensive_tds": 39,
+      "points_per_game": 21.5294117647,
+      "offensive_yards_per_game": 340.2352941176,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2024,
@@ -1110,7 +1518,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 3901,
       "rushing_yards": 1882,
-      "offensive_yards": 5783
+      "offensive_yards": 5783,
+      "offensive_tds": 40,
+      "points_per_game": 23.6470588235,
+      "offensive_yards_per_game": 340.1764705882,
+      "offensive_interceptions_per_game": 0.1764705882
     },
     {
       "season": 2024,
@@ -1120,7 +1532,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 3607,
       "rushing_yards": 2166,
-      "offensive_yards": 5773
+      "offensive_yards": 5773,
+      "offensive_tds": 35,
+      "points_per_game": 22.3529411765,
+      "offensive_yards_per_game": 339.5882352941,
+      "offensive_interceptions_per_game": 0.3529411765
     },
     {
       "season": 2021,
@@ -1130,7 +1546,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3884,
       "rushing_yards": 1886,
-      "offensive_yards": 5770
+      "offensive_yards": 5770,
+      "offensive_tds": 35,
+      "points_per_game": 19.1176470588,
+      "offensive_yards_per_game": 339.4117647059,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2023,
@@ -1140,7 +1560,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 4174,
       "rushing_yards": 1592,
-      "offensive_yards": 5766
+      "offensive_yards": 5766,
+      "offensive_tds": 38,
+      "points_per_game": 19.3529411765,
+      "offensive_yards_per_game": 339.1764705882,
+      "offensive_interceptions_per_game": 1.2352941176
     },
     {
       "season": 2025,
@@ -1150,7 +1574,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 3947,
       "rushing_yards": 1812,
-      "offensive_yards": 5759
+      "offensive_yards": 5759,
+      "offensive_tds": 38,
+      "points_per_game": 21.2941176471,
+      "offensive_yards_per_game": 338.7647058824,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2023,
@@ -1160,7 +1588,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4167,
       "rushing_yards": 1580,
-      "offensive_yards": 5747
+      "offensive_yards": 5747,
+      "offensive_tds": 34,
+      "points_per_game": 21.4117647059,
+      "offensive_yards_per_game": 338.0588235294,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2022,
@@ -1170,7 +1602,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3661,
       "rushing_yards": 2073,
-      "offensive_yards": 5734
+      "offensive_yards": 5734,
+      "offensive_tds": 28,
+      "points_per_game": 18.1176470588,
+      "offensive_yards_per_game": 337.2941176471,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2022,
@@ -1180,7 +1616,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 4040,
       "rushing_yards": 1686,
-      "offensive_yards": 5726
+      "offensive_yards": 5726,
+      "offensive_tds": 28,
+      "points_per_game": 17.4117647059,
+      "offensive_yards_per_game": 336.8235294118,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2022,
@@ -1190,7 +1630,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3855,
       "rushing_yards": 1866,
-      "offensive_yards": 5721
+      "offensive_yards": 5721,
+      "offensive_tds": 25,
+      "points_per_game": 17.0,
+      "offensive_yards_per_game": 336.5294117647,
+      "offensive_interceptions_per_game": 1.1764705882
     },
     {
       "season": 2024,
@@ -1200,7 +1644,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 3808,
       "rushing_yards": 1908,
-      "offensive_yards": 5716
+      "offensive_yards": 5716,
+      "offensive_tds": 42,
+      "points_per_game": 25.0,
+      "offensive_yards_per_game": 336.2352941176,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2025,
@@ -1210,7 +1658,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3755,
       "rushing_yards": 1947,
-      "offensive_yards": 5702
+      "offensive_yards": 5702,
+      "offensive_tds": 39,
+      "points_per_game": 22.3529411765,
+      "offensive_yards_per_game": 335.4117647059,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2024,
@@ -1220,7 +1672,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 3730,
       "rushing_yards": 1954,
-      "offensive_yards": 5684
+      "offensive_yards": 5684,
+      "offensive_tds": 36,
+      "points_per_game": 19.8823529412,
+      "offensive_yards_per_game": 334.3529411765,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2021,
@@ -1230,7 +1686,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 3635,
       "rushing_yards": 2018,
-      "offensive_yards": 5653
+      "offensive_yards": 5653,
+      "offensive_tds": 30,
+      "points_per_game": 18.2941176471,
+      "offensive_yards_per_game": 332.5294117647,
+      "offensive_interceptions_per_game": 1.1764705882
     },
     {
       "season": 2022,
@@ -1240,7 +1700,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 2927,
       "rushing_yards": 2718,
-      "offensive_yards": 5645
+      "offensive_yards": 5645,
+      "offensive_tds": 34,
+      "points_per_game": 21.4705882353,
+      "offensive_yards_per_game": 332.0588235294,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2025,
@@ -1250,7 +1714,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 4027,
       "rushing_yards": 1603,
-      "offensive_yards": 5630
+      "offensive_yards": 5630,
+      "offensive_tds": 28,
+      "points_per_game": 18.0,
+      "offensive_yards_per_game": 331.1764705882,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2022,
@@ -1260,7 +1728,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3815,
       "rushing_yards": 1812,
-      "offensive_yards": 5627
+      "offensive_yards": 5627,
+      "offensive_tds": 31,
+      "points_per_game": 21.4117647059,
+      "offensive_yards_per_game": 331.0,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2021,
@@ -1270,7 +1742,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3959,
       "rushing_yards": 1667,
-      "offensive_yards": 5626
+      "offensive_yards": 5626,
+      "offensive_tds": 34,
+      "points_per_game": 18.2352941176,
+      "offensive_yards_per_game": 330.9411764706,
+      "offensive_interceptions_per_game": 1.1764705882
     },
     {
       "season": 2025,
@@ -1280,7 +1756,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 3329,
       "rushing_yards": 2290,
-      "offensive_yards": 5619
+      "offensive_yards": 5619,
+      "offensive_tds": 39,
+      "points_per_game": 20.9411764706,
+      "offensive_yards_per_game": 330.5294117647,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2022,
@@ -1290,7 +1770,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 2598,
       "rushing_yards": 3014,
-      "offensive_yards": 5612
+      "offensive_yards": 5612,
+      "offensive_tds": 37,
+      "points_per_game": 19.1764705882,
+      "offensive_yards_per_game": 330.1176470588,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2021,
@@ -1300,7 +1784,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4017,
       "rushing_yards": 1583,
-      "offensive_yards": 5600
+      "offensive_yards": 5600,
+      "offensive_tds": 33,
+      "points_per_game": 20.1764705882,
+      "offensive_yards_per_game": 329.4117647059,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2024,
@@ -1310,7 +1798,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 4016,
       "rushing_yards": 1561,
-      "offensive_yards": 5577
+      "offensive_yards": 5577,
+      "offensive_tds": 39,
+      "points_per_game": 19.8823529412,
+      "offensive_yards_per_game": 328.0588235294,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2023,
@@ -1320,7 +1812,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 4044,
       "rushing_yards": 1509,
-      "offensive_yards": 5553
+      "offensive_yards": 5553,
+      "offensive_tds": 36,
+      "points_per_game": 20.4705882353,
+      "offensive_yards_per_game": 326.6470588235,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2021,
@@ -1330,7 +1826,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3936,
       "rushing_yards": 1568,
-      "offensive_yards": 5504
+      "offensive_yards": 5504,
+      "offensive_tds": 33,
+      "points_per_game": 20.0588235294,
+      "offensive_yards_per_game": 323.7647058824,
+      "offensive_interceptions_per_game": 0.8235294118
     },
     {
       "season": 2024,
@@ -1340,7 +1840,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3879,
       "rushing_yards": 1608,
-      "offensive_yards": 5487
+      "offensive_yards": 5487,
+      "offensive_tds": 27,
+      "points_per_game": 15.1764705882,
+      "offensive_yards_per_game": 322.7647058824,
+      "offensive_interceptions_per_game": 1.3529411765
     },
     {
       "season": 2025,
@@ -1350,7 +1854,11 @@
       "win_rate": 0.6470588235,
       "passing_yards": 3498,
       "rushing_yards": 1988,
-      "offensive_yards": 5486
+      "offensive_yards": 5486,
+      "offensive_tds": 43,
+      "points_per_game": 22.2941176471,
+      "offensive_yards_per_game": 322.7058823529,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2024,
@@ -1360,7 +1868,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3621,
       "rushing_yards": 1855,
-      "offensive_yards": 5476
+      "offensive_yards": 5476,
+      "offensive_tds": 33,
+      "points_per_game": 18.2941176471,
+      "offensive_yards_per_game": 322.1176470588,
+      "offensive_interceptions_per_game": 1.2352941176
     },
     {
       "season": 2024,
@@ -1370,7 +1882,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 4117,
       "rushing_yards": 1357,
-      "offensive_yards": 5474
+      "offensive_yards": 5474,
+      "offensive_tds": 29,
+      "points_per_game": 18.1764705882,
+      "offensive_yards_per_game": 322.0,
+      "offensive_interceptions_per_game": 0.9411764706
     },
     {
       "season": 2022,
@@ -1380,7 +1896,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3246,
       "rushing_yards": 2210,
-      "offensive_yards": 5456
+      "offensive_yards": 5456,
+      "offensive_tds": 32,
+      "points_per_game": 20.4117647059,
+      "offensive_yards_per_game": 320.9411764706,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2024,
@@ -1390,7 +1910,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3717,
       "rushing_yards": 1729,
-      "offensive_yards": 5446
+      "offensive_yards": 5446,
+      "offensive_tds": 32,
+      "points_per_game": 18.8235294118,
+      "offensive_yards_per_game": 320.3529411765,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2021,
@@ -1400,7 +1924,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3987,
       "rushing_yards": 1451,
-      "offensive_yards": 5438
+      "offensive_yards": 5438,
+      "offensive_tds": 31,
+      "points_per_game": 18.4117647059,
+      "offensive_yards_per_game": 319.8823529412,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2023,
@@ -1410,7 +1938,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 3421,
       "rushing_yards": 2010,
-      "offensive_yards": 5431
+      "offensive_yards": 5431,
+      "offensive_tds": 29,
+      "points_per_game": 17.8823529412,
+      "offensive_yards_per_game": 319.4705882353,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2021,
@@ -1420,7 +1952,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3674,
       "rushing_yards": 1755,
-      "offensive_yards": 5429
+      "offensive_yards": 5429,
+      "offensive_tds": 25,
+      "points_per_game": 14.8823529412,
+      "offensive_yards_per_game": 319.3529411765,
+      "offensive_interceptions_per_game": 1.0
     },
     {
       "season": 2021,
@@ -1430,7 +1966,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3437,
       "rushing_yards": 1991,
-      "offensive_yards": 5428
+      "offensive_yards": 5428,
+      "offensive_tds": 41,
+      "points_per_game": 21.4117647059,
+      "offensive_yards_per_game": 319.2941176471,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2021,
@@ -1440,7 +1980,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 3573,
       "rushing_yards": 1842,
-      "offensive_yards": 5415
+      "offensive_yards": 5415,
+      "offensive_tds": 31,
+      "points_per_game": 17.8823529412,
+      "offensive_yards_per_game": 318.5294117647,
+      "offensive_interceptions_per_game": 1.2352941176
     },
     {
       "season": 2025,
@@ -1450,7 +1994,11 @@
       "win_rate": 0.5882352941,
       "passing_yards": 3632,
       "rushing_yards": 1756,
-      "offensive_yards": 5388
+      "offensive_yards": 5388,
+      "offensive_tds": 42,
+      "points_per_game": 23.3529411765,
+      "offensive_yards_per_game": 316.9411764706,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2023,
@@ -1460,7 +2008,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3566,
       "rushing_yards": 1810,
-      "offensive_yards": 5376
+      "offensive_yards": 5376,
+      "offensive_tds": 36,
+      "points_per_game": 21.0,
+      "offensive_yards_per_game": 316.2352941176,
+      "offensive_interceptions_per_game": 0.5294117647
     },
     {
       "season": 2025,
@@ -1470,7 +2022,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3322,
       "rushing_yards": 2044,
-      "offensive_yards": 5366
+      "offensive_yards": 5366,
+      "offensive_tds": 37,
+      "points_per_game": 20.4117647059,
+      "offensive_yards_per_game": 315.6470588235,
+      "offensive_interceptions_per_game": 1.0588235294
     },
     {
       "season": 2023,
@@ -1480,7 +2036,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 3512,
       "rushing_yards": 1846,
-      "offensive_yards": 5358
+      "offensive_yards": 5358,
+      "offensive_tds": 30,
+      "points_per_game": 17.9411764706,
+      "offensive_yards_per_game": 315.1764705882,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2022,
@@ -1490,7 +2050,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3227,
       "rushing_yards": 2131,
-      "offensive_yards": 5358
+      "offensive_yards": 5358,
+      "offensive_tds": 32,
+      "points_per_game": 17.5294117647,
+      "offensive_yards_per_game": 315.1764705882,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2024,
@@ -1500,7 +2064,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3343,
       "rushing_yards": 1969,
-      "offensive_yards": 5312
+      "offensive_yards": 5312,
+      "offensive_tds": 29,
+      "points_per_game": 17.0,
+      "offensive_yards_per_game": 312.4705882353,
+      "offensive_interceptions_per_game": 0.6470588235
     },
     {
       "season": 2024,
@@ -1510,7 +2078,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3521,
       "rushing_yards": 1783,
-      "offensive_yards": 5304
+      "offensive_yards": 5304,
+      "offensive_tds": 28,
+      "points_per_game": 16.0588235294,
+      "offensive_yards_per_game": 312.0,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2024,
@@ -1520,7 +2092,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 3411,
       "rushing_yards": 1878,
-      "offensive_yards": 5289
+      "offensive_yards": 5289,
+      "offensive_tds": 40,
+      "points_per_game": 20.0588235294,
+      "offensive_yards_per_game": 311.1176470588,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2024,
@@ -1530,7 +2106,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 3552,
       "rushing_yards": 1734,
-      "offensive_yards": 5286
+      "offensive_yards": 5286,
+      "offensive_tds": 33,
+      "points_per_game": 18.2352941176,
+      "offensive_yards_per_game": 310.9411764706,
+      "offensive_interceptions_per_game": 0.4117647059
     },
     {
       "season": 2025,
@@ -1540,7 +2120,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3304,
       "rushing_yards": 1977,
-      "offensive_yards": 5281
+      "offensive_yards": 5281,
+      "offensive_tds": 33,
+      "points_per_game": 18.2941176471,
+      "offensive_yards_per_game": 310.6470588235,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2023,
@@ -1550,7 +2134,11 @@
       "win_rate": 0.3529411765,
       "passing_yards": 3351,
       "rushing_yards": 1874,
-      "offensive_yards": 5225
+      "offensive_yards": 5225,
+      "offensive_tds": 25,
+      "points_per_game": 15.6470588235,
+      "offensive_yards_per_game": 307.3529411765,
+      "offensive_interceptions_per_game": 0.7058823529
     },
     {
       "season": 2023,
@@ -1560,7 +2148,11 @@
       "win_rate": 0.4705882353,
       "passing_yards": 3666,
       "rushing_yards": 1542,
-      "offensive_yards": 5208
+      "offensive_yards": 5208,
+      "offensive_tds": 31,
+      "points_per_game": 19.5294117647,
+      "offensive_yards_per_game": 306.3529411765,
+      "offensive_interceptions_per_game": 1.0588235294
     },
     {
       "season": 2022,
@@ -1570,7 +2162,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 3506,
       "rushing_yards": 1661,
-      "offensive_yards": 5167
+      "offensive_yards": 5167,
+      "offensive_tds": 31,
+      "points_per_game": 18.0588235294,
+      "offensive_yards_per_game": 303.9411764706,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2021,
@@ -1580,7 +2176,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3463,
       "rushing_yards": 1688,
-      "offensive_yards": 5151
+      "offensive_yards": 5151,
+      "offensive_tds": 23,
+      "points_per_game": 15.1764705882,
+      "offensive_yards_per_game": 303.0,
+      "offensive_interceptions_per_game": 1.1764705882
     },
     {
       "season": 2022,
@@ -1590,7 +2190,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3642,
       "rushing_yards": 1476,
-      "offensive_yards": 5118
+      "offensive_yards": 5118,
+      "offensive_tds": 27,
+      "points_per_game": 17.0,
+      "offensive_yards_per_game": 301.0588235294,
+      "offensive_interceptions_per_game": 1.1176470588
     },
     {
       "season": 2021,
@@ -1600,7 +2204,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3630,
       "rushing_yards": 1422,
-      "offensive_yards": 5052
+      "offensive_yards": 5052,
+      "offensive_tds": 29,
+      "points_per_game": 16.4705882353,
+      "offensive_yards_per_game": 297.1764705882,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2025,
@@ -1610,7 +2218,11 @@
       "win_rate": 0.5294117647,
       "passing_yards": 3208,
       "rushing_yards": 1841,
-      "offensive_yards": 5049
+      "offensive_yards": 5049,
+      "offensive_tds": 33,
+      "points_per_game": 20.2352941176,
+      "offensive_yards_per_game": 297.0,
+      "offensive_interceptions_per_game": 1.2352941176
     },
     {
       "season": 2023,
@@ -1620,7 +2232,11 @@
       "win_rate": 0.4117647059,
       "passing_yards": 3373,
       "rushing_yards": 1647,
-      "offensive_yards": 5020
+      "offensive_yards": 5020,
+      "offensive_tds": 18,
+      "points_per_game": 15.7647058824,
+      "offensive_yards_per_game": 295.2941176471,
+      "offensive_interceptions_per_game": 0.8823529412
     },
     {
       "season": 2023,
@@ -1630,7 +2246,11 @@
       "win_rate": 0.2352941176,
       "passing_yards": 3392,
       "rushing_yards": 1627,
-      "offensive_yards": 5019
+      "offensive_yards": 5019,
+      "offensive_tds": 25,
+      "points_per_game": 13.8823529412,
+      "offensive_yards_per_game": 295.2352941176,
+      "offensive_interceptions_per_game": 1.2352941176
     },
     {
       "season": 2023,
@@ -1640,7 +2260,11 @@
       "win_rate": 0.1176470588,
       "passing_yards": 3245,
       "rushing_yards": 1769,
-      "offensive_yards": 5014
+      "offensive_yards": 5014,
+      "offensive_tds": 20,
+      "points_per_game": 13.8823529412,
+      "offensive_yards_per_game": 294.9411764706,
+      "offensive_interceptions_per_game": 0.5882352941
     },
     {
       "season": 2025,
@@ -1650,7 +2274,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 2784,
       "rushing_yards": 2096,
-      "offensive_yards": 4880
+      "offensive_yards": 4880,
+      "offensive_tds": 26,
+      "points_per_game": 17.6470588235,
+      "offensive_yards_per_game": 287.0588235294,
+      "offensive_interceptions_per_game": 0.7647058824
     },
     {
       "season": 2025,
@@ -1660,7 +2288,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3241,
       "rushing_yards": 1589,
-      "offensive_yards": 4830
+      "offensive_yards": 4830,
+      "offensive_tds": 24,
+      "points_per_game": 16.7058823529,
+      "offensive_yards_per_game": 284.1176470588,
+      "offensive_interceptions_per_game": 0.4705882353
     },
     {
       "season": 2025,
@@ -1670,7 +2302,11 @@
       "win_rate": 0.2941176471,
       "passing_yards": 3152,
       "rushing_yards": 1649,
-      "offensive_yards": 4801
+      "offensive_yards": 4801,
+      "offensive_tds": 26,
+      "points_per_game": 16.4117647059,
+      "offensive_yards_per_game": 282.4117647059,
+      "offensive_interceptions_per_game": 1.0588235294
     },
     {
       "season": 2025,
@@ -1680,7 +2316,11 @@
       "win_rate": 0.1764705882,
       "passing_yards": 3315,
       "rushing_yards": 1317,
-      "offensive_yards": 4632
+      "offensive_yards": 4632,
+      "offensive_tds": 25,
+      "points_per_game": 14.1764705882,
+      "offensive_yards_per_game": 272.4705882353,
+      "offensive_interceptions_per_game": 1.1176470588
     }
   ],
   "team_defense": [
@@ -4794,6 +5434,2465 @@
       "points_for": 12519,
       "points_against": 12519,
       "points_per_team_game": 23.0128676471
+    }
+  ],
+  "season_balance": [
+    {
+      "season": 2021,
+      "team_games": 544,
+      "passing_yards": 132800,
+      "rushing_yards": 62694,
+      "offensive_yards": 195494,
+      "passing_yards_per_team_game": 244.1176470588,
+      "rushing_yards_per_team_game": 115.2463235294,
+      "offensive_yards_per_team_game": 359.3639705882,
+      "passing_share": 0.6793047357
+    },
+    {
+      "season": 2022,
+      "team_games": 542,
+      "passing_yards": 127036,
+      "rushing_yards": 65894,
+      "offensive_yards": 192930,
+      "passing_yards_per_team_game": 234.3837638376,
+      "rushing_yards_per_team_game": 121.5756457565,
+      "offensive_yards_per_team_game": 355.9594095941,
+      "passing_share": 0.658456435
+    },
+    {
+      "season": 2023,
+      "team_games": 544,
+      "passing_yards": 128567,
+      "rushing_yards": 61287,
+      "offensive_yards": 189854,
+      "passing_yards_per_team_game": 236.3363970588,
+      "rushing_yards_per_team_game": 112.6599264706,
+      "offensive_yards_per_team_game": 348.9963235294,
+      "passing_share": 0.6771887872
+    },
+    {
+      "season": 2024,
+      "team_games": 544,
+      "passing_yards": 127024,
+      "rushing_yards": 65174,
+      "offensive_yards": 192198,
+      "passing_yards_per_team_game": 233.5,
+      "rushing_yards_per_team_game": 119.8051470588,
+      "offensive_yards_per_team_game": 353.3051470588,
+      "passing_share": 0.6609017784
+    },
+    {
+      "season": 2025,
+      "team_games": 544,
+      "passing_yards": 122413,
+      "rushing_yards": 63618,
+      "offensive_yards": 186031,
+      "passing_yards_per_team_game": 225.0238970588,
+      "rushing_yards_per_team_game": 116.9448529412,
+      "offensive_yards_per_team_game": 341.96875,
+      "passing_share": 0.6580247378
+    }
+  ],
+  "turnover_success": [
+    {
+      "season": 2024,
+      "team": "DET",
+      "games": 17,
+      "wins": 15,
+      "win_rate": 0.8823529412,
+      "points_per_game": 33.1764705882,
+      "offensive_yards_per_game": 423.8823529412,
+      "offensive_tds_per_game": 4.0,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 4
+    },
+    {
+      "season": 2024,
+      "team": "KC",
+      "games": 17,
+      "wins": 15,
+      "win_rate": 0.8823529412,
+      "points_per_game": 22.6470588235,
+      "offensive_yards_per_game": 343.2941176471,
+      "offensive_tds_per_game": 2.4117647059,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2022,
+      "team": "KC",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "points_per_game": 29.1764705882,
+      "offensive_yards_per_game": 424.7058823529,
+      "offensive_tds_per_game": 3.4705882353,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2025,
+      "team": "NE",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "points_per_game": 28.8235294118,
+      "offensive_yards_per_game": 391.1764705882,
+      "offensive_tds_per_game": 3.1176470588,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2025,
+      "team": "SEA",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "points_per_game": 28.4117647059,
+      "offensive_yards_per_game": 362.2941176471,
+      "offensive_tds_per_game": 2.5882352941,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2022,
+      "team": "PHI",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "points_per_game": 28.0588235294,
+      "offensive_yards_per_game": 404.2941176471,
+      "offensive_tds_per_game": 3.3529411765,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 8
+    },
+    {
+      "season": 2024,
+      "team": "PHI",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "points_per_game": 27.2352941176,
+      "offensive_yards_per_game": 386.1764705882,
+      "offensive_tds_per_game": 3.1176470588,
+      "passing_interceptions": 6,
+      "offensive_interceptions_per_game": 0.3529411765,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 7
+    },
+    {
+      "season": 2024,
+      "team": "MIN",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "points_per_game": 25.4117647059,
+      "offensive_yards_per_game": 366.7058823529,
+      "offensive_tds_per_game": 2.5882352941,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 24,
+      "takeaways_per_game": 1.4117647059,
+      "takeaway_margin": 12
+    },
+    {
+      "season": 2025,
+      "team": "DEN",
+      "games": 17,
+      "wins": 14,
+      "win_rate": 0.8235294118,
+      "points_per_game": 23.5882352941,
+      "offensive_yards_per_game": 349.9411764706,
+      "offensive_tds_per_game": 2.5294117647,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2022,
+      "team": "BUF",
+      "games": 16,
+      "wins": 13,
+      "win_rate": 0.8125,
+      "points_per_game": 28.4375,
+      "offensive_yards_per_game": 407.6875,
+      "offensive_tds_per_game": 3.125,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.875,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0625,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2024,
+      "team": "BUF",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "points_per_game": 30.8823529412,
+      "offensive_yards_per_game": 362.8235294118,
+      "offensive_tds_per_game": 3.6470588235,
+      "passing_interceptions": 6,
+      "offensive_interceptions_per_game": 0.3529411765,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 10
+    },
+    {
+      "season": 2021,
+      "team": "TB",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "points_per_game": 30.0588235294,
+      "offensive_yards_per_game": 415.0,
+      "offensive_tds_per_game": 3.5882352941,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2023,
+      "team": "BAL",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "points_per_game": 28.4117647059,
+      "offensive_yards_per_game": 384.8235294118,
+      "offensive_tds_per_game": 3.1176470588,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": 11
+    },
+    {
+      "season": 2025,
+      "team": "JAX",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "points_per_game": 27.8823529412,
+      "offensive_yards_per_game": 351.8823529412,
+      "offensive_tds_per_game": 3.0,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 22,
+      "takeaways_per_game": 1.2941176471,
+      "takeaway_margin": 10
+    },
+    {
+      "season": 2021,
+      "team": "GB",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "points_per_game": 26.4705882353,
+      "offensive_yards_per_game": 378.0,
+      "offensive_tds_per_game": 3.0588235294,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": 11
+    },
+    {
+      "season": 2022,
+      "team": "SF",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "points_per_game": 26.4705882353,
+      "offensive_yards_per_game": 377.0,
+      "offensive_tds_per_game": 2.9411764706,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 20,
+      "takeaways_per_game": 1.1764705882,
+      "takeaway_margin": 11
+    },
+    {
+      "season": 2022,
+      "team": "MIN",
+      "games": 17,
+      "wins": 13,
+      "win_rate": 0.7647058824,
+      "points_per_game": 24.9411764706,
+      "offensive_yards_per_game": 381.1176470588,
+      "offensive_tds_per_game": 2.8235294118,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2022,
+      "team": "CIN",
+      "games": 16,
+      "wins": 12,
+      "win_rate": 0.75,
+      "points_per_game": 26.125,
+      "offensive_yards_per_game": 378.0,
+      "offensive_tds_per_game": 3.0625,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.75,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.8125,
+      "takeaway_margin": 1
+    },
+    {
+      "season": 2021,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 31.1764705882,
+      "offensive_yards_per_game": 416.5882352941,
+      "offensive_tds_per_game": 3.2352941176,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 26,
+      "takeaways_per_game": 1.5294117647,
+      "takeaway_margin": 15
+    },
+    {
+      "season": 2024,
+      "team": "BAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 30.4705882353,
+      "offensive_yards_per_game": 434.0,
+      "offensive_tds_per_game": 3.6470588235,
+      "passing_interceptions": 4,
+      "offensive_interceptions_per_game": 0.2352941176,
+      "def_interceptions": 12,
+      "takeaways_per_game": 0.7058823529,
+      "takeaway_margin": 8
+    },
+    {
+      "season": 2025,
+      "team": "LA",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 30.4705882353,
+      "offensive_yards_per_game": 403.4705882353,
+      "offensive_tds_per_game": 3.7058823529,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 8
+    },
+    {
+      "season": 2023,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 29.9411764706,
+      "offensive_yards_per_game": 387.0588235294,
+      "offensive_tds_per_game": 2.9411764706,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 7
+    },
+    {
+      "season": 2023,
+      "team": "SF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 28.8823529412,
+      "offensive_yards_per_game": 409.7647058824,
+      "offensive_tds_per_game": 3.5294117647,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 22,
+      "takeaways_per_game": 1.2941176471,
+      "takeaway_margin": 10
+    },
+    {
+      "season": 2024,
+      "team": "WAS",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 28.5294117647,
+      "offensive_yards_per_game": 385.3529411765,
+      "offensive_tds_per_game": 3.1764705882,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -2
+    },
+    {
+      "season": 2025,
+      "team": "BUF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 28.2941176471,
+      "offensive_yards_per_game": 393.8235294118,
+      "offensive_tds_per_game": 3.4705882353,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2021,
+      "team": "KC",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 28.2352941176,
+      "offensive_yards_per_game": 405.4117647059,
+      "offensive_tds_per_game": 3.1176470588,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2022,
+      "team": "DAL",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 27.4705882353,
+      "offensive_yards_per_game": 365.2352941176,
+      "offensive_tds_per_game": 3.0588235294,
+      "passing_interceptions": 18,
+      "offensive_interceptions_per_game": 1.0588235294,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": -2
+    },
+    {
+      "season": 2023,
+      "team": "DET",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 27.1176470588,
+      "offensive_yards_per_game": 406.8823529412,
+      "offensive_tds_per_game": 3.3529411765,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 4
+    },
+    {
+      "season": 2021,
+      "team": "LA",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 27.0588235294,
+      "offensive_yards_per_game": 386.8235294118,
+      "offensive_tds_per_game": 3.0,
+      "passing_interceptions": 18,
+      "offensive_interceptions_per_game": 1.0588235294,
+      "def_interceptions": 19,
+      "takeaways_per_game": 1.1176470588,
+      "takeaway_margin": 1
+    },
+    {
+      "season": 2025,
+      "team": "SF",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 25.7058823529,
+      "offensive_yards_per_game": 360.8823529412,
+      "offensive_tds_per_game": 2.8235294118,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": -10
+    },
+    {
+      "season": 2021,
+      "team": "TEN",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 24.6470588235,
+      "offensive_yards_per_game": 361.7058823529,
+      "offensive_tds_per_game": 2.6470588235,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2025,
+      "team": "HOU",
+      "games": 17,
+      "wins": 12,
+      "win_rate": 0.7058823529,
+      "points_per_game": 23.7647058824,
+      "offensive_yards_per_game": 341.6470588235,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 19,
+      "takeaways_per_game": 1.1176470588,
+      "takeaway_margin": 10
+    },
+    {
+      "season": 2023,
+      "team": "MIA",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 29.1764705882,
+      "offensive_yards_per_game": 412.1176470588,
+      "offensive_tds_per_game": 3.3529411765,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2021,
+      "team": "BUF",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 28.4117647059,
+      "offensive_yards_per_game": 391.7058823529,
+      "offensive_tds_per_game": 3.2941176471,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 19,
+      "takeaways_per_game": 1.1176470588,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2024,
+      "team": "GB",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 27.0588235294,
+      "offensive_yards_per_game": 378.5294117647,
+      "offensive_tds_per_game": 3.0,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 6
+    },
+    {
+      "season": 2023,
+      "team": "BUF",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 26.5294117647,
+      "offensive_yards_per_game": 383.4117647059,
+      "offensive_tds_per_game": 3.0,
+      "passing_interceptions": 18,
+      "offensive_interceptions_per_game": 1.0588235294,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2021,
+      "team": "ARI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 26.4117647059,
+      "offensive_yards_per_game": 393.8235294118,
+      "offensive_tds_per_game": 2.9411764706,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2025,
+      "team": "CHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 25.9411764706,
+      "offensive_yards_per_game": 379.2352941176,
+      "offensive_tds_per_game": 2.7647058824,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 23,
+      "takeaways_per_game": 1.3529411765,
+      "takeaway_margin": 16
+    },
+    {
+      "season": 2023,
+      "team": "PHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 25.4705882353,
+      "offensive_yards_per_game": 368.0588235294,
+      "offensive_tds_per_game": 2.7058823529,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -7
+    },
+    {
+      "season": 2024,
+      "team": "LAC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 23.6470588235,
+      "offensive_yards_per_game": 340.1764705882,
+      "offensive_tds_per_game": 2.3529411765,
+      "passing_interceptions": 3,
+      "offensive_interceptions_per_game": 0.1764705882,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 12
+    },
+    {
+      "season": 2023,
+      "team": "CLE",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 23.2941176471,
+      "offensive_yards_per_game": 354.5882352941,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 23,
+      "offensive_interceptions_per_game": 1.3529411765,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": -5
+    },
+    {
+      "season": 2025,
+      "team": "PHI",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 22.2941176471,
+      "offensive_yards_per_game": 322.7058823529,
+      "offensive_tds_per_game": 2.5294117647,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 12,
+      "takeaways_per_game": 0.7058823529,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2023,
+      "team": "KC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 21.8235294118,
+      "offensive_yards_per_game": 362.7647058824,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 17,
+      "offensive_interceptions_per_game": 1.0,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -9
+    },
+    {
+      "season": 2025,
+      "team": "LAC",
+      "games": 17,
+      "wins": 11,
+      "win_rate": 0.6470588235,
+      "points_per_game": 21.6470588235,
+      "offensive_yards_per_game": 354.1176470588,
+      "offensive_tds_per_game": 2.1176470588,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 19,
+      "takeaways_per_game": 1.1176470588,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2024,
+      "team": "TB",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 29.5294117647,
+      "offensive_yards_per_game": 414.1764705882,
+      "offensive_tds_per_game": 3.3529411765,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -9
+    },
+    {
+      "season": 2021,
+      "team": "NE",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 27.1764705882,
+      "offensive_yards_per_game": 367.5882352941,
+      "offensive_tds_per_game": 2.8235294118,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 23,
+      "takeaways_per_game": 1.3529411765,
+      "takeaway_margin": 10
+    },
+    {
+      "season": 2021,
+      "team": "CIN",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 27.0588235294,
+      "offensive_yards_per_game": 385.1764705882,
+      "offensive_tds_per_game": 3.0588235294,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2021,
+      "team": "SF",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 25.1176470588,
+      "offensive_yards_per_game": 388.4117647059,
+      "offensive_tds_per_game": 2.8235294118,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -5
+    },
+    {
+      "season": 2024,
+      "team": "DEN",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 25.0,
+      "offensive_yards_per_game": 336.2352941176,
+      "offensive_tds_per_game": 2.4705882353,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2023,
+      "team": "LA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 23.7647058824,
+      "offensive_yards_per_game": 373.2352941176,
+      "offensive_tds_per_game": 2.5882352941,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -3
+    },
+    {
+      "season": 2025,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 23.3529411765,
+      "offensive_yards_per_game": 316.9411764706,
+      "offensive_tds_per_game": 2.4705882353,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 6
+    },
+    {
+      "season": 2022,
+      "team": "LAC",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 23.0,
+      "offensive_yards_per_game": 371.4705882353,
+      "offensive_tds_per_game": 2.4117647059,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 4
+    },
+    {
+      "season": 2024,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 22.3529411765,
+      "offensive_yards_per_game": 339.5882352941,
+      "offensive_tds_per_game": 2.0588235294,
+      "passing_interceptions": 6,
+      "offensive_interceptions_per_game": 0.3529411765,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 11
+    },
+    {
+      "season": 2023,
+      "team": "HOU",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 22.1764705882,
+      "offensive_yards_per_game": 366.1764705882,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 6
+    },
+    {
+      "season": 2024,
+      "team": "SEA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 22.0588235294,
+      "offensive_yards_per_game": 353.2941176471,
+      "offensive_tds_per_game": 2.2352941176,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": -3
+    },
+    {
+      "season": 2021,
+      "team": "LV",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 22.0,
+      "offensive_yards_per_game": 377.9411764706,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": -8
+    },
+    {
+      "season": 2024,
+      "team": "HOU",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 21.8823529412,
+      "offensive_yards_per_game": 344.7647058824,
+      "offensive_tds_per_game": 2.0588235294,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 19,
+      "takeaways_per_game": 1.1176470588,
+      "takeaway_margin": 7
+    },
+    {
+      "season": 2024,
+      "team": "LA",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 21.5882352941,
+      "offensive_yards_per_game": 344.7647058824,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 4
+    },
+    {
+      "season": 2022,
+      "team": "BAL",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 20.5882352941,
+      "offensive_yards_per_game": 348.3529411765,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 1
+    },
+    {
+      "season": 2023,
+      "team": "PIT",
+      "games": 17,
+      "wins": 10,
+      "win_rate": 0.5882352941,
+      "points_per_game": 17.8823529412,
+      "offensive_yards_per_game": 319.4705882353,
+      "offensive_tds_per_game": 1.7058823529,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 7
+    },
+    {
+      "season": 2025,
+      "team": "DET",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 28.2941176471,
+      "offensive_yards_per_game": 388.7058823529,
+      "offensive_tds_per_game": 3.2941176471,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2021,
+      "team": "LAC",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 27.8823529412,
+      "offensive_yards_per_game": 402.8235294118,
+      "offensive_tds_per_game": 3.2941176471,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -4
+    },
+    {
+      "season": 2024,
+      "team": "CIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 27.7647058824,
+      "offensive_yards_per_game": 381.8823529412,
+      "offensive_tds_per_game": 3.1764705882,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 6
+    },
+    {
+      "season": 2022,
+      "team": "DET",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 26.6470588235,
+      "offensive_yards_per_game": 389.5882352941,
+      "offensive_tds_per_game": 3.0588235294,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 12,
+      "takeaways_per_game": 0.7058823529,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2021,
+      "team": "IND",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 26.5294117647,
+      "offensive_yards_per_game": 360.4705882353,
+      "offensive_tds_per_game": 2.8823529412,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 19,
+      "takeaways_per_game": 1.1176470588,
+      "takeaway_margin": 11
+    },
+    {
+      "season": 2021,
+      "team": "PHI",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 26.1176470588,
+      "offensive_yards_per_game": 370.5882352941,
+      "offensive_tds_per_game": 2.6470588235,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 12,
+      "takeaways_per_game": 0.7058823529,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2022,
+      "team": "SEA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 23.9411764706,
+      "offensive_yards_per_game": 372.0,
+      "offensive_tds_per_game": 2.4705882353,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2022,
+      "team": "JAX",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 23.7647058824,
+      "offensive_yards_per_game": 368.4705882353,
+      "offensive_tds_per_game": 2.4117647059,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2023,
+      "team": "NO",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 23.6470588235,
+      "offensive_yards_per_game": 351.0,
+      "offensive_tds_per_game": 2.4117647059,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": 7
+    },
+    {
+      "season": 2022,
+      "team": "MIA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 23.3529411765,
+      "offensive_yards_per_game": 379.4705882353,
+      "offensive_tds_per_game": 2.4705882353,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -7
+    },
+    {
+      "season": 2023,
+      "team": "IND",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 23.2941176471,
+      "offensive_yards_per_game": 349.4705882353,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2025,
+      "team": "GB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 23.0,
+      "offensive_yards_per_game": 346.0,
+      "offensive_tds_per_game": 2.5882352941,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2023,
+      "team": "GB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 22.5294117647,
+      "offensive_yards_per_game": 359.7058823529,
+      "offensive_tds_per_game": 2.4705882353,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -4
+    },
+    {
+      "season": 2023,
+      "team": "JAX",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 22.1764705882,
+      "offensive_yards_per_game": 354.2941176471,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2023,
+      "team": "CIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 21.5294117647,
+      "offensive_yards_per_game": 340.2352941176,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2022,
+      "team": "NYG",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 21.4705882353,
+      "offensive_yards_per_game": 350.0,
+      "offensive_tds_per_game": 2.2352941176,
+      "passing_interceptions": 6,
+      "offensive_interceptions_per_game": 0.3529411765,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2021,
+      "team": "NO",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 21.4117647059,
+      "offensive_yards_per_game": 319.2941176471,
+      "offensive_tds_per_game": 2.4117647059,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2023,
+      "team": "SEA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 21.4117647059,
+      "offensive_yards_per_game": 338.0588235294,
+      "offensive_tds_per_game": 2.0,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2023,
+      "team": "TB",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 20.4705882353,
+      "offensive_yards_per_game": 326.6470588235,
+      "offensive_tds_per_game": 2.1176470588,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2025,
+      "team": "MIN",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 20.2352941176,
+      "offensive_yards_per_game": 297.0,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 21,
+      "offensive_interceptions_per_game": 1.2352941176,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -13
+    },
+    {
+      "season": 2021,
+      "team": "PIT",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 20.1764705882,
+      "offensive_yards_per_game": 329.4117647059,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2021,
+      "team": "MIA",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 20.0588235294,
+      "offensive_yards_per_game": 323.7647058824,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2022,
+      "team": "PIT",
+      "games": 17,
+      "wins": 9,
+      "win_rate": 0.5294117647,
+      "points_per_game": 18.1176470588,
+      "offensive_yards_per_game": 337.2941176471,
+      "offensive_tds_per_game": 1.6470588235,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 20,
+      "takeaways_per_game": 1.1764705882,
+      "takeaway_margin": 6
+    },
+    {
+      "season": 2025,
+      "team": "IND",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 27.4117647059,
+      "offensive_yards_per_game": 358.3529411765,
+      "offensive_tds_per_game": 3.0588235294,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2021,
+      "team": "MIN",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 25.0,
+      "offensive_yards_per_game": 375.2941176471,
+      "offensive_tds_per_game": 2.5882352941,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 9
+    },
+    {
+      "season": 2025,
+      "team": "BAL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 24.9411764706,
+      "offensive_yards_per_game": 349.4117647059,
+      "offensive_tds_per_game": 2.7058823529,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2024,
+      "team": "ARI",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 23.5294117647,
+      "offensive_yards_per_game": 371.1764705882,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -2
+    },
+    {
+      "season": 2024,
+      "team": "ATL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 22.8823529412,
+      "offensive_yards_per_game": 382.4705882353,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 19,
+      "offensive_interceptions_per_game": 1.1176470588,
+      "def_interceptions": 12,
+      "takeaways_per_game": 0.7058823529,
+      "takeaway_margin": -7
+    },
+    {
+      "season": 2021,
+      "team": "BAL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 22.7647058824,
+      "offensive_yards_per_game": 396.8235294118,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 18,
+      "offensive_interceptions_per_game": 1.0588235294,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -9
+    },
+    {
+      "season": 2025,
+      "team": "TB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 22.3529411765,
+      "offensive_yards_per_game": 335.4117647059,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2024,
+      "team": "IND",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 22.1764705882,
+      "offensive_yards_per_game": 348.8235294118,
+      "offensive_tds_per_game": 2.3529411765,
+      "passing_interceptions": 19,
+      "offensive_interceptions_per_game": 1.1176470588,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": -3
+    },
+    {
+      "season": 2022,
+      "team": "GB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 21.7647058824,
+      "offensive_yards_per_game": 353.1176470588,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2022,
+      "team": "NE",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 21.4117647059,
+      "offensive_yards_per_game": 331.0,
+      "offensive_tds_per_game": 1.8235294118,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 19,
+      "takeaways_per_game": 1.1176470588,
+      "takeaway_margin": 5
+    },
+    {
+      "season": 2023,
+      "team": "DEN",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 21.0,
+      "offensive_yards_per_game": 316.2352941176,
+      "offensive_tds_per_game": 2.1176470588,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2025,
+      "team": "ATL",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 20.7647058824,
+      "offensive_yards_per_game": 343.5882352941,
+      "offensive_tds_per_game": 2.1176470588,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 8
+    },
+    {
+      "season": 2021,
+      "team": "CLE",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 20.5294117647,
+      "offensive_yards_per_game": 358.2352941176,
+      "offensive_tds_per_game": 2.4117647059,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2024,
+      "team": "MIA",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 20.2941176471,
+      "offensive_yards_per_game": 343.0,
+      "offensive_tds_per_game": 2.0,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2023,
+      "team": "LV",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 19.5294117647,
+      "offensive_yards_per_game": 306.3529411765,
+      "offensive_tds_per_game": 1.8235294118,
+      "passing_interceptions": 18,
+      "offensive_interceptions_per_game": 1.0588235294,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": -5
+    },
+    {
+      "season": 2022,
+      "team": "WAS",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 18.8823529412,
+      "offensive_yards_per_game": 348.5882352941,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -7
+    },
+    {
+      "season": 2022,
+      "team": "TB",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 18.4117647059,
+      "offensive_yards_per_game": 356.1176470588,
+      "offensive_tds_per_game": 1.8235294118,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2025,
+      "team": "CAR",
+      "games": 17,
+      "wins": 8,
+      "win_rate": 0.4705882353,
+      "points_per_game": 18.2941176471,
+      "offensive_yards_per_game": 310.6470588235,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2025,
+      "team": "DAL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 27.7058823529,
+      "offensive_yards_per_game": 404.1764705882,
+      "offensive_tds_per_game": 2.8823529412,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": -6
+    },
+    {
+      "season": 2021,
+      "team": "SEA",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 23.2352941176,
+      "offensive_yards_per_game": 346.4117647059,
+      "offensive_tds_per_game": 2.8235294118,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": 4
+    },
+    {
+      "season": 2022,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 21.4705882353,
+      "offensive_yards_per_game": 332.0588235294,
+      "offensive_tds_per_game": 2.0,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": 1
+    },
+    {
+      "season": 2022,
+      "team": "CLE",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 21.2352941176,
+      "offensive_yards_per_game": 364.7058823529,
+      "offensive_tds_per_game": 2.2352941176,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2023,
+      "team": "CHI",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 21.1764705882,
+      "offensive_yards_per_game": 342.3529411765,
+      "offensive_tds_per_game": 2.0588235294,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 22,
+      "takeaways_per_game": 1.2941176471,
+      "takeaway_margin": 7
+    },
+    {
+      "season": 2024,
+      "team": "DAL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 20.5882352941,
+      "offensive_yards_per_game": 341.0,
+      "offensive_tds_per_game": 1.7058823529,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2022,
+      "team": "CAR",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 20.4117647059,
+      "offensive_yards_per_game": 320.9411764706,
+      "offensive_tds_per_game": 1.8823529412,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -3
+    },
+    {
+      "season": 2025,
+      "team": "MIA",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 20.4117647059,
+      "offensive_yards_per_game": 315.6470588235,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 18,
+      "offensive_interceptions_per_game": 1.0588235294,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -9
+    },
+    {
+      "season": 2023,
+      "team": "MIN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 20.2352941176,
+      "offensive_yards_per_game": 367.8235294118,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 19,
+      "offensive_interceptions_per_game": 1.1176470588,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -8
+    },
+    {
+      "season": 2021,
+      "team": "DEN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 19.7058823529,
+      "offensive_yards_per_game": 345.9411764706,
+      "offensive_tds_per_game": 2.1176470588,
+      "passing_interceptions": 9,
+      "offensive_interceptions_per_game": 0.5294117647,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": 4
+    },
+    {
+      "season": 2021,
+      "team": "WAS",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 19.7058823529,
+      "offensive_yards_per_game": 341.5882352941,
+      "offensive_tds_per_game": 2.0,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -4
+    },
+    {
+      "season": 2022,
+      "team": "NO",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 19.4117647059,
+      "offensive_yards_per_game": 350.0588235294,
+      "offensive_tds_per_game": 2.1176470588,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -7
+    },
+    {
+      "season": 2023,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 18.8823529412,
+      "offensive_yards_per_game": 349.0588235294,
+      "offensive_tds_per_game": 1.8235294118,
+      "passing_interceptions": 17,
+      "offensive_interceptions_per_game": 1.0,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -9
+    },
+    {
+      "season": 2021,
+      "team": "ATL",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 18.4117647059,
+      "offensive_yards_per_game": 319.8823529412,
+      "offensive_tds_per_game": 1.8235294118,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 12,
+      "takeaways_per_game": 0.7058823529,
+      "takeaway_margin": -3
+    },
+    {
+      "season": 2022,
+      "team": "TEN",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 17.5294117647,
+      "offensive_yards_per_game": 315.1764705882,
+      "offensive_tds_per_game": 1.8823529412,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 3
+    },
+    {
+      "season": 2022,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 17.4117647059,
+      "offensive_yards_per_game": 336.8235294118,
+      "offensive_tds_per_game": 1.6470588235,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 12,
+      "takeaways_per_game": 0.7058823529,
+      "takeaway_margin": -2
+    },
+    {
+      "season": 2023,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 7,
+      "win_rate": 0.4117647059,
+      "points_per_game": 15.7647058824,
+      "offensive_yards_per_game": 295.2941176471,
+      "offensive_tds_per_game": 1.0588235294,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2025,
+      "team": "CIN",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 24.3529411765,
+      "offensive_yards_per_game": 343.2352941176,
+      "offensive_tds_per_game": 2.7647058824,
+      "passing_interceptions": 17,
+      "offensive_interceptions_per_game": 1.0,
+      "def_interceptions": 13,
+      "takeaways_per_game": 0.7647058824,
+      "takeaway_margin": -4
+    },
+    {
+      "season": 2022,
+      "team": "LV",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 23.2352941176,
+      "offensive_yards_per_game": 367.1176470588,
+      "offensive_tds_per_game": 2.3529411765,
+      "passing_interceptions": 17,
+      "offensive_interceptions_per_game": 1.0,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": -11
+    },
+    {
+      "season": 2024,
+      "team": "SF",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 22.8823529412,
+      "offensive_yards_per_game": 387.4705882353,
+      "offensive_tds_per_game": 2.3529411765,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -5
+    },
+    {
+      "season": 2025,
+      "team": "KC",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 21.2941176471,
+      "offensive_yards_per_game": 338.7647058824,
+      "offensive_tds_per_game": 2.2352941176,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -2
+    },
+    {
+      "season": 2021,
+      "team": "CHI",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 18.2941176471,
+      "offensive_yards_per_game": 332.5294117647,
+      "offensive_tds_per_game": 1.7647058824,
+      "passing_interceptions": 20,
+      "offensive_interceptions_per_game": 1.1764705882,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -12
+    },
+    {
+      "season": 2025,
+      "team": "NO",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 18.0,
+      "offensive_yards_per_game": 331.1764705882,
+      "offensive_tds_per_game": 1.6470588235,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -2
+    },
+    {
+      "season": 2023,
+      "team": "TEN",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 17.9411764706,
+      "offensive_yards_per_game": 315.1764705882,
+      "offensive_tds_per_game": 1.7647058824,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": -5
+    },
+    {
+      "season": 2023,
+      "team": "NYG",
+      "games": 17,
+      "wins": 6,
+      "win_rate": 0.3529411765,
+      "points_per_game": 15.6470588235,
+      "offensive_yards_per_game": 307.3529411765,
+      "offensive_tds_per_game": 1.4705882353,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 18,
+      "takeaways_per_game": 1.0588235294,
+      "takeaway_margin": 6
+    },
+    {
+      "season": 2025,
+      "team": "WAS",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 20.9411764706,
+      "offensive_yards_per_game": 330.5294117647,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -4
+    },
+    {
+      "season": 2023,
+      "team": "LAC",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 20.3529411765,
+      "offensive_yards_per_game": 350.2352941176,
+      "offensive_tds_per_game": 2.0588235294,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": 1
+    },
+    {
+      "season": 2024,
+      "team": "CAR",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 20.0588235294,
+      "offensive_yards_per_game": 311.1176470588,
+      "offensive_tds_per_game": 2.3529411765,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -6
+    },
+    {
+      "season": 2024,
+      "team": "NO",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 19.8823529412,
+      "offensive_yards_per_game": 334.3529411765,
+      "offensive_tds_per_game": 2.1176470588,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2024,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 19.8823529412,
+      "offensive_yards_per_game": 328.0588235294,
+      "offensive_tds_per_game": 2.2941176471,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -4
+    },
+    {
+      "season": 2024,
+      "team": "CHI",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 18.2352941176,
+      "offensive_yards_per_game": 310.9411764706,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 7,
+      "offensive_interceptions_per_game": 0.4117647059,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": 4
+    },
+    {
+      "season": 2022,
+      "team": "LA",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 18.0588235294,
+      "offensive_yards_per_game": 303.9411764706,
+      "offensive_tds_per_game": 1.8235294118,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": 1
+    },
+    {
+      "season": 2021,
+      "team": "CAR",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 17.8823529412,
+      "offensive_yards_per_game": 318.5294117647,
+      "offensive_tds_per_game": 1.8235294118,
+      "passing_interceptions": 21,
+      "offensive_interceptions_per_game": 1.2352941176,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -12
+    },
+    {
+      "season": 2022,
+      "team": "DEN",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 16.8823529412,
+      "offensive_yards_per_game": 349.5294117647,
+      "offensive_tds_per_game": 1.7058823529,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": 0
+    },
+    {
+      "season": 2025,
+      "team": "CLE",
+      "games": 17,
+      "wins": 5,
+      "win_rate": 0.2941176471,
+      "points_per_game": 16.4117647059,
+      "offensive_yards_per_game": 282.4117647059,
+      "offensive_tds_per_game": 1.5294117647,
+      "passing_interceptions": 18,
+      "offensive_interceptions_per_game": 1.0588235294,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -7
+    },
+    {
+      "season": 2025,
+      "team": "NYG",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 22.4117647059,
+      "offensive_yards_per_game": 346.9411764706,
+      "offensive_tds_per_game": 2.5294117647,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 9,
+      "takeaways_per_game": 0.5294117647,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2022,
+      "team": "ARI",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 20.0,
+      "offensive_yards_per_game": 343.4705882353,
+      "offensive_tds_per_game": 1.8823529412,
+      "passing_interceptions": 17,
+      "offensive_interceptions_per_game": 1.0,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -6
+    },
+    {
+      "season": 2023,
+      "team": "ARI",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 19.4117647059,
+      "offensive_yards_per_game": 340.8823529412,
+      "offensive_tds_per_game": 2.0588235294,
+      "passing_interceptions": 12,
+      "offensive_interceptions_per_game": 0.7058823529,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2023,
+      "team": "WAS",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 19.3529411765,
+      "offensive_yards_per_game": 339.1764705882,
+      "offensive_tds_per_game": 2.2352941176,
+      "passing_interceptions": 21,
+      "offensive_interceptions_per_game": 1.2352941176,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -13
+    },
+    {
+      "season": 2024,
+      "team": "JAX",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 18.8235294118,
+      "offensive_yards_per_game": 320.3529411765,
+      "offensive_tds_per_game": 1.8823529412,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": -9
+    },
+    {
+      "season": 2021,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 18.2352941176,
+      "offensive_yards_per_game": 330.9411764706,
+      "offensive_tds_per_game": 2.0,
+      "passing_interceptions": 20,
+      "offensive_interceptions_per_game": 1.1764705882,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -13
+    },
+    {
+      "season": 2024,
+      "team": "LV",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 18.1764705882,
+      "offensive_yards_per_game": 322.0,
+      "offensive_tds_per_game": 1.7058823529,
+      "passing_interceptions": 16,
+      "offensive_interceptions_per_game": 0.9411764706,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -6
+    },
+    {
+      "season": 2022,
+      "team": "IND",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 17.0,
+      "offensive_yards_per_game": 336.5294117647,
+      "offensive_tds_per_game": 1.4705882353,
+      "passing_interceptions": 20,
+      "offensive_interceptions_per_game": 1.1764705882,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -10
+    },
+    {
+      "season": 2024,
+      "team": "NE",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 17.0,
+      "offensive_yards_per_game": 312.4705882353,
+      "offensive_tds_per_game": 1.7058823529,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -4
+    },
+    {
+      "season": 2021,
+      "team": "HOU",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 16.4705882353,
+      "offensive_yards_per_game": 297.1764705882,
+      "offensive_tds_per_game": 1.7058823529,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 17,
+      "takeaways_per_game": 1.0,
+      "takeaway_margin": 2
+    },
+    {
+      "season": 2021,
+      "team": "NYG",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 15.1764705882,
+      "offensive_yards_per_game": 303.0,
+      "offensive_tds_per_game": 1.3529411765,
+      "passing_interceptions": 20,
+      "offensive_interceptions_per_game": 1.1764705882,
+      "def_interceptions": 15,
+      "takeaways_per_game": 0.8823529412,
+      "takeaway_margin": -5
+    },
+    {
+      "season": 2023,
+      "team": "NE",
+      "games": 17,
+      "wins": 4,
+      "win_rate": 0.2352941176,
+      "points_per_game": 13.8823529412,
+      "offensive_yards_per_game": 295.2352941176,
+      "offensive_tds_per_game": 1.4705882353,
+      "passing_interceptions": 21,
+      "offensive_interceptions_per_game": 1.2352941176,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -11
+    },
+    {
+      "season": 2025,
+      "team": "ARI",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 20.8823529412,
+      "offensive_yards_per_game": 349.2352941176,
+      "offensive_tds_per_game": 2.2352941176,
+      "passing_interceptions": 11,
+      "offensive_interceptions_per_game": 0.6470588235,
+      "def_interceptions": 10,
+      "takeaways_per_game": 0.5882352941,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2022,
+      "team": "CHI",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 19.1764705882,
+      "offensive_yards_per_game": 330.1176470588,
+      "offensive_tds_per_game": 2.1764705882,
+      "passing_interceptions": 15,
+      "offensive_interceptions_per_game": 0.8823529412,
+      "def_interceptions": 14,
+      "takeaways_per_game": 0.8235294118,
+      "takeaway_margin": -1
+    },
+    {
+      "season": 2021,
+      "team": "DET",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 19.1176470588,
+      "offensive_yards_per_game": 339.4117647059,
+      "offensive_tds_per_game": 2.0588235294,
+      "passing_interceptions": 14,
+      "offensive_interceptions_per_game": 0.8235294118,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -3
+    },
+    {
+      "season": 2024,
+      "team": "TEN",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 18.2941176471,
+      "offensive_yards_per_game": 322.1176470588,
+      "offensive_tds_per_game": 1.9411764706,
+      "passing_interceptions": 21,
+      "offensive_interceptions_per_game": 1.2352941176,
+      "def_interceptions": 11,
+      "takeaways_per_game": 0.6470588235,
+      "takeaway_margin": -10
+    },
+    {
+      "season": 2025,
+      "team": "NYJ",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 17.6470588235,
+      "offensive_yards_per_game": 287.0588235294,
+      "offensive_tds_per_game": 1.5294117647,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 0,
+      "takeaways_per_game": 0.0,
+      "takeaway_margin": -13
+    },
+    {
+      "season": 2022,
+      "team": "HOU",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 17.0,
+      "offensive_yards_per_game": 301.0588235294,
+      "offensive_tds_per_game": 1.5882352941,
+      "passing_interceptions": 19,
+      "offensive_interceptions_per_game": 1.1176470588,
+      "def_interceptions": 16,
+      "takeaways_per_game": 0.9411764706,
+      "takeaway_margin": -3
+    },
+    {
+      "season": 2025,
+      "team": "TEN",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 16.7058823529,
+      "offensive_yards_per_game": 284.1176470588,
+      "offensive_tds_per_game": 1.4117647059,
+      "passing_interceptions": 8,
+      "offensive_interceptions_per_game": 0.4705882353,
+      "def_interceptions": 6,
+      "takeaways_per_game": 0.3529411765,
+      "takeaway_margin": -2
+    },
+    {
+      "season": 2024,
+      "team": "NYG",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 16.0588235294,
+      "offensive_yards_per_game": 312.0,
+      "offensive_tds_per_game": 1.6470588235,
+      "passing_interceptions": 13,
+      "offensive_interceptions_per_game": 0.7647058824,
+      "def_interceptions": 5,
+      "takeaways_per_game": 0.2941176471,
+      "takeaway_margin": -8
+    },
+    {
+      "season": 2024,
+      "team": "CLE",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 15.1764705882,
+      "offensive_yards_per_game": 322.7647058824,
+      "offensive_tds_per_game": 1.5882352941,
+      "passing_interceptions": 23,
+      "offensive_interceptions_per_game": 1.3529411765,
+      "def_interceptions": 4,
+      "takeaways_per_game": 0.2352941176,
+      "takeaway_margin": -19
+    },
+    {
+      "season": 2021,
+      "team": "JAX",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 14.8823529412,
+      "offensive_yards_per_game": 319.3529411765,
+      "offensive_tds_per_game": 1.4705882353,
+      "passing_interceptions": 17,
+      "offensive_interceptions_per_game": 1.0,
+      "def_interceptions": 7,
+      "takeaways_per_game": 0.4117647059,
+      "takeaway_margin": -10
+    },
+    {
+      "season": 2025,
+      "team": "LV",
+      "games": 17,
+      "wins": 3,
+      "win_rate": 0.1764705882,
+      "points_per_game": 14.1764705882,
+      "offensive_yards_per_game": 272.4705882353,
+      "offensive_tds_per_game": 1.4705882353,
+      "passing_interceptions": 19,
+      "offensive_interceptions_per_game": 1.1176470588,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -11
+    },
+    {
+      "season": 2023,
+      "team": "CAR",
+      "games": 17,
+      "wins": 2,
+      "win_rate": 0.1176470588,
+      "points_per_game": 13.8823529412,
+      "offensive_yards_per_game": 294.9411764706,
+      "offensive_tds_per_game": 1.1764705882,
+      "passing_interceptions": 10,
+      "offensive_interceptions_per_game": 0.5882352941,
+      "def_interceptions": 8,
+      "takeaways_per_game": 0.4705882353,
+      "takeaway_margin": -2
     }
   ],
   "leaderboard": [

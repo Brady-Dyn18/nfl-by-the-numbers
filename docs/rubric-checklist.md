@@ -14,14 +14,14 @@
 
 - [x] Title, author, summary paragraph, and source note.
 - [x] Four headline numbers.
-- [x] Eight finding sections, each with explanatory text and a chart.
+- [x] Ten finding sections, each with explanatory text and a chart.
 - [x] Closing methodology section explains source, row definition, exclusions, and calculations.
 
 ## Dashboard page
 
 - [x] Filters for season, team, opponent, position group, and position.
 - [x] Four dynamic summary numbers.
-- [x] Four dynamic charts.
+- [x] Five dynamic charts, including role-specific production, home/away outcomes, usage efficiency, and turnover success.
 - [x] Team/opponent matchup snapshot with logos, colors, and role-specific comparison.
 - [x] Cascading filters, quick-find search, active filter chips, and accessible table rows.
 - [x] Measure switch and chart breakdown switch.

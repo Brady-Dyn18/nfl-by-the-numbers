@@ -127,6 +127,9 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
         .agg(
             passing_yards=("passing_yards", "sum"),
             rushing_yards=("rushing_yards", "sum"),
+            passing_tds=("passing_tds", "sum"),
+            rushing_tds=("rushing_tds", "sum"),
+            passing_interceptions=("passing_interceptions", "sum"),
             def_sacks=("def_sacks", "sum"),
             def_interceptions=("def_interceptions", "sum"),
         )
@@ -143,7 +146,14 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
     team_season = team_season_results.merge(team_season, on=["season", "team"], how="left")
     team_season["win_rate"] = team_season["wins"] / team_season["games"]
     team_season["offensive_yards"] = team_season["passing_yards"] + team_season["rushing_yards"]
+    team_season["offensive_tds"] = team_season["passing_tds"] + team_season["rushing_tds"]
+    team_season["points_per_game"] = team_season["points_for"] / team_season["games"]
+    team_season["offensive_yards_per_game"] = team_season["offensive_yards"] / team_season["games"]
+    team_season["passing_yards_per_game"] = team_season["passing_yards"] / team_season["games"]
+    team_season["rushing_yards_per_game"] = team_season["rushing_yards"] / team_season["games"]
+    team_season["offensive_interceptions_per_game"] = team_season["passing_interceptions"] / team_season["games"]
     team_season["defensive_takeaways_pressure"] = team_season["def_sacks"] + team_season["def_interceptions"]
+    team_season["takeaway_margin"] = team_season["def_interceptions"] - team_season["passing_interceptions"]
 
     position = (
         panel.groupby("position_group", as_index=False)
@@ -209,6 +219,25 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
     )
     seasons["points_per_team_game"] = seasons["points_for"] / seasons["team_games"]
 
+    season_balance = (
+        team_season.groupby("season", as_index=False)
+        .agg(
+            team_games=("games", "sum"),
+            passing_yards=("passing_yards", "sum"),
+            rushing_yards=("rushing_yards", "sum"),
+            offensive_yards=("offensive_yards", "sum"),
+        )
+    )
+    season_balance["passing_yards_per_team_game"] = season_balance["passing_yards"] / season_balance["team_games"]
+    season_balance["rushing_yards_per_team_game"] = season_balance["rushing_yards"] / season_balance["team_games"]
+    season_balance["offensive_yards_per_team_game"] = season_balance["offensive_yards"] / season_balance["team_games"]
+    season_balance["passing_share"] = season_balance["passing_yards"] / season_balance["offensive_yards"].replace(0, pd.NA)
+
+    turnover_success = team_season.copy()
+    turnover_success["offensive_interceptions_per_game"] = turnover_success["passing_interceptions"] / turnover_success["games"]
+    turnover_success["takeaways_per_game"] = turnover_success["def_interceptions"] / turnover_success["games"]
+    turnover_success["offensive_tds_per_game"] = turnover_success["offensive_tds"] / turnover_success["games"]
+
     def records(frame: pd.DataFrame, columns: list[str], n: int = 10) -> list[dict]:
         return json.loads(frame[columns].head(n).to_json(orient="records"))
 
@@ -232,7 +261,7 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
             "win_rows": int((team_games["win_loss"] == "W").sum()),
         },
         "team_win_rate": records(team_by_wins, ["team", "games", "wins", "losses", "win_rate"]),
-        "team_offense": records(offense_by_yards, ["season", "team", "games", "wins", "win_rate", "passing_yards", "rushing_yards", "offensive_yards"], 160),
+        "team_offense": records(offense_by_yards, ["season", "team", "games", "wins", "win_rate", "passing_yards", "rushing_yards", "offensive_yards", "offensive_tds", "points_per_game", "offensive_yards_per_game", "offensive_interceptions_per_game"], 160),
         "team_defense": records(defense_by_pressure, ["season", "team", "games", "wins", "win_rate", "def_sacks", "def_interceptions", "defensive_takeaways_pressure"], 160),
         "position_production": records(position_by_production, ["position_group", "players", "player_games", "passing_yards", "rushing_yards", "receiving_yards", "production_yards", "def_tackles", "def_sacks"]),
         "quarterbacks": records(qb_by_epa, ["player_display_name", "games", "attempts", "passing_yards", "passing_tds", "epa_per_attempt", "win_rate"]),
@@ -240,6 +269,12 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
         "team_style": records(rushing_passing.sort_values(["team", "season"]), ["season", "team", "passing_share", "passing_yards", "rushing_yards"], 160),
         "home_away": json.loads(home_away.to_json(orient="records")),
         "season_trend": json.loads(seasons.to_json(orient="records")),
+        "season_balance": json.loads(season_balance.to_json(orient="records")),
+        "turnover_success": records(
+            turnover_success.sort_values(["win_rate", "points_per_game"], ascending=False),
+            ["season", "team", "games", "wins", "win_rate", "points_per_game", "offensive_yards_per_game", "offensive_tds_per_game", "passing_interceptions", "offensive_interceptions_per_game", "def_interceptions", "takeaways_per_game", "takeaway_margin"],
+            160,
+        ),
         "leaderboard": records(
             panel.groupby(["player_id", "player_display_name", "position_group"], as_index=False)
             .agg(

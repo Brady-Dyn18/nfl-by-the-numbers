@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css?v=20261002-visual-pass" />
+    <link rel="stylesheet" href="assets/styles.css?v=20261002-chart-lab" />
   </head>
   <body class="report-page">
     <nav class="site-nav">
@@ -42,7 +42,7 @@
 
       <nav class="story-map content-width" aria-label="Report sections">
         <span class="story-map-label">EXPLORE THE STORY</span>
-        <a href="#finding-1">01 Scoring</a><a href="#finding-2">02 Winning</a><a href="#finding-3">03 Offense</a><a href="#finding-4">04 Defense</a><a href="#finding-5">05 Roles</a><a href="#finding-6">06 QB</a><a href="#finding-7">07 Style</a><a href="#finding-8">08 Home field</a><a href="#methodology">Methods</a>
+        <a href="#finding-1">01 Scoring</a><a href="#finding-2">02 Winning</a><a href="#finding-3">03 Offense</a><a href="#finding-4">04 Defense</a><a href="#finding-5">05 Roles</a><a href="#finding-6">06 QB</a><a href="#finding-7">07 Style</a><a href="#finding-8">08 Home field</a><a href="#finding-9">09 Balance</a><a href="#finding-10">10 Turnovers</a><a href="#methodology">Methods</a>
       </nav>
 
       <section class="qb-lab content-width" id="qb-lab" aria-labelledby="qb-title">
@@ -123,14 +123,24 @@
         <div class="chart-card"><p class="chart-explainer">Home and away teams are compared on win rate, scoring, and point differential per game.</p><canvas id="homeAwayChart" role="img" aria-label="Radar chart comparing NFL home and away performance"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="home-takeaway">—</strong></p></div>
       </section>
 
+      <section class="report-section content-width" id="finding-9">
+        <div class="finding-number">09</div><div class="finding-copy"><p class="section-kicker">OFFENSIVE BALANCE</p><h2><span id="balance-season">—</span> shows how the league split the workload between air and ground.</h2><p>The total column height is offensive yards per team-game. The stack makes the passing-versus-rushing tradeoff visible while keeping the seasons comparable.</p></div>
+        <div class="chart-card"><p class="chart-explainer">Each season is split into passing yards and rushing yards per team-game; the line tracks passing share.</p><canvas id="balanceChart" role="img" aria-label="Stacked bar chart comparing passing and rushing yards per team-game by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="balance-takeaway">—</strong></p></div>
+      </section>
+
+      <section class="report-section content-width" id="finding-10">
+        <div class="finding-number">10</div><div class="finding-copy"><p class="section-kicker">TURNOVERS &amp; SUCCESS</p><h2><span id="turnover-season">—</span> shows the cost of giving away possessions.</h2><p>Each bubble is a team-season: left is better on interceptions thrown, higher is better on points per game, and larger bubbles represent more offensive touchdowns. This uses recorded interceptions as the turnover measure in the player panel.</p></div>
+        <div class="chart-card"><p class="chart-explainer">Lower-left teams protected the ball and scored more efficiently. Color tracks win rate.</p><canvas id="turnoverChart" role="img" aria-label="Bubble chart comparing offensive interceptions, points per game, and touchdowns by team-season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="turnover-takeaway">—</strong></p></div>
+      </section>
+
       <section class="methodology content-width" id="methodology">
-        <div class="method-grid"><div><h3>Source</h3><p>Data comes from the free <a href="https://github.com/nflverse/nflverse-data" target="_blank" rel="noreferrer">nflverse</a> releases through <a href="https://nflreadpy.nflverse.com/" target="_blank" rel="noreferrer">nflreadpy</a>. Player statistics provide offense, defense, position, team, opponent, and headshot URLs. Schedules provide game dates and final scores. Team metadata supplies colors and logo URLs.</p></div><div><h3>One row</h3><p>One row is one player in one regular-season NFL game from 2021, 2022, 2023, 2024, or 2025. The five seasons are deliberately limited to completed regular seasons, so the comparisons use the same game type throughout.</p></div><div><h3>Calculations</h3><p>Win/loss is computed from team score minus opponent score. Win rate is wins divided by team-games. Team offensive yards means passing plus rushing yards; recorded player production also includes receiving yards and is labeled separately. EPA per attempt is passing EPA divided by pass attempts. Pass share is passing yards divided by passing plus rushing yards.</p></div><div><h3>Limitations</h3><p>Players without an official statistic in a game are not represented in the player-statistics release. Player totals are not a measure of value by themselves, and these charts show association rather than causation. The animation is schematic because this panel does not contain play-level tracking coordinates or video. Images and team marks belong to their respective rights holders and are used for this educational project.</p></div></div>
+        <div class="method-grid"><div><h3>Source</h3><p>Data comes from the free <a href="https://github.com/nflverse/nflverse-data" target="_blank" rel="noreferrer">nflverse</a> releases through <a href="https://nflreadpy.nflverse.com/" target="_blank" rel="noreferrer">nflreadpy</a>. Player statistics provide offense, defense, position, team, opponent, and headshot URLs. Schedules provide game dates and final scores. Team metadata supplies colors and logo URLs.</p></div><div><h3>One row</h3><p>One row is one player in one regular-season NFL game from 2021, 2022, 2023, 2024, or 2025. The five seasons are deliberately limited to completed regular seasons, so the comparisons use the same game type throughout.</p></div><div><h3>Calculations</h3><p>Win/loss is computed from team score minus opponent score. Win rate is wins divided by team-games. Team offensive yards means passing plus rushing yards; recorded player production also includes receiving yards and is labeled separately. EPA per attempt is passing EPA divided by pass attempts. Pass share is passing yards divided by passing plus rushing yards. Turnover charts use interceptions thrown and defensive interceptions because fumbles are not included in this player panel.</p></div><div><h3>Limitations</h3><p>Players without an official statistic in a game are not represented in the player-statistics release. Player totals are not a measure of value by themselves, and these charts show association rather than causation. The animation is schematic because this panel does not contain play-level tracking coordinates or video. Images and team marks belong to their respective rights holders and are used for this educational project.</p></div></div>
         <div class="method-links"><strong>PROJECT FILES</strong><a href="data/panel.csv" download>Download the player-game panel (CSV)</a><a href="docs/data-dictionary.md">Read the data dictionary</a><span>Data refreshed <time id="report-updated">—</time></span></div>
       </section>
     </main>
 
     <footer class="site-footer"><span>NFL BY THE NUMBERS · 2021–2025</span><span><a href="dashboard.html">Open dashboard →</a> · <a href="docs/data-dictionary.md">Data dictionary</a></span></footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/report.js?v=20261002-visual-pass"></script>
+    <script src="assets/report.js?v=20261002-chart-lab"></script>
   </body>
 </html>

@@ -175,6 +175,14 @@
     const home = stats.home_away.find((row) => row.home_away === "Home");
     const away = stats.home_away.find((row) => row.home_away === "Away");
     set("home-win-rate", pct(home.win_rate)); set("home-edge", decimal((home.win_rate - away.win_rate) * 100));
+    const balance = stats.season_balance || [];
+    const balancePeak = balance.length ? balance.reduce((best, row) => Number(row.offensive_yards_per_team_game) > Number(best.offensive_yards_per_team_game) ? row : best, balance[0]) : null;
+    const turnoverRows = stats.turnover_success || [];
+    const turnoverLeader = turnoverRows.length ? turnoverRows.reduce((best, row) => Number(row.win_rate) > Number(best.win_rate) ? row : best, turnoverRows[0]) : null;
+    set("balance-season", balancePeak?.season || "The five-season window");
+    set("balance-takeaway", balancePeak ? `${balancePeak.season} reached ${decimal(balancePeak.offensive_yards_per_team_game)} offensive yards per team-game, with ${decimal(Number(balancePeak.passing_share) * 100)}% coming through passing.` : "—");
+    set("turnover-season", turnoverLeader ? `${turnoverLeader.team} (${turnoverLeader.season})` : "The best team-seasons");
+    set("turnover-takeaway", turnoverLeader ? `${turnoverLeader.team} in ${turnoverLeader.season} won ${pct(turnoverLeader.win_rate)} of its games while throwing ${decimal(turnoverLeader.offensive_interceptions_per_game)} interceptions per game.` : "—");
     set("hero-top-team", topTeam.team); set("hero-top-team-rate", `${pct(topTeam.win_rate)} win rate · ${number(topTeam.wins)} wins`); set("hero-top-qb", `${topQb.player_display_name} · ${Number(topQb.epa_per_attempt).toFixed(3)} EPA/att`);
     set("trend-takeaway", `${peak.season} was the scoring peak at ${decimal(peak.points_per_team_game)} points per team-game.`);
     set("win-takeaway", `${topTeam.team} led the five-season window with ${number(topTeam.wins)} wins.`);
@@ -212,8 +220,8 @@
 
     makeChart("offenseChart", {
       type: "scatter",
-      data: { datasets: [{ label: "Team-seasons", data: stats.team_offense.map((row) => ({ x: Number(row.passing_yards), y: Number(row.rushing_yards), team: row.team, season: row.season, wins: row.wins, rate: row.win_rate })), backgroundColor: stats.team_offense.map((row) => pointColor(row.win_rate)), borderColor: "#fff", borderWidth: 1, pointRadius: stats.team_offense.map((row) => 4 + Math.min(6, Number(row.wins || 0) / 3)), pointHoverRadius: 10 }] },
-      options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: (ctx) => { const raw = ctx.raw; return `${raw.team} ${raw.season}: ${number(raw.x)} pass yds · ${number(raw.y)} rush yds · ${raw.wins} wins`; } } } }, scales: { x: { ...chartDefaults.scales.x, title: { display: true, text: "Passing yards", color: colors.navyDark }, ticks: { callback: (value) => `${Math.round(value / 1000)}k` } }, y: { ...chartDefaults.scales.y, title: { display: true, text: "Rushing yards", color: colors.navyDark }, ticks: { callback: (value) => `${Math.round(value / 1000)}k` } } } },
+      data: { datasets: [{ label: "Team-seasons", data: stats.team_offense.map((row) => ({ x: Number(row.passing_yards), y: Number(row.rushing_yards), team: row.team, season: row.season, wins: row.wins, rate: row.win_rate, offensiveYards: row.offensive_yards, offensiveTds: row.offensive_tds, pointsPerGame: row.points_per_game, yardsPerGame: row.offensive_yards_per_game })), backgroundColor: stats.team_offense.map((row) => pointColor(row.win_rate)), borderColor: "#fff", borderWidth: 1, pointRadius: stats.team_offense.map((row) => 4 + Math.min(6, Number(row.wins || 0) / 3)), pointHoverRadius: 10 }] },
+      options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: (ctx) => { const raw = ctx.raw; return `${raw.team} ${raw.season}: ${number(raw.x)} pass yds · ${number(raw.y)} rush yds · ${number(raw.offensiveYards)} total yds · ${number(raw.offensiveTds)} offensive TDs · ${decimal(raw.yardsPerGame)} yds/game · ${decimal(raw.pointsPerGame)} pts/game`; } } } }, scales: { x: { ...chartDefaults.scales.x, title: { display: true, text: "Passing yards", color: colors.navyDark }, ticks: { callback: (value) => `${Math.round(value / 1000)}k` } }, y: { ...chartDefaults.scales.y, title: { display: true, text: "Rushing yards", color: colors.navyDark }, ticks: { callback: (value) => `${Math.round(value / 1000)}k` } } } },
     });
 
     const defensiveLeaders = stats.team_defense.slice(0, 5);
@@ -249,6 +257,18 @@
       type: "radar",
       data: { labels: ["Win rate × 100", "Points for / game", "Point diff / game"], datasets: [{ label: "Home", data: [home.win_rate * 100, home.points_for_per_game, home.point_differential_per_game], borderColor: colors.navy, backgroundColor: "rgba(1,51,105,.18)", pointBackgroundColor: colors.navy, borderWidth: 3 }, { label: "Away", data: [away.win_rate * 100, away.points_for_per_game, away.point_differential_per_game], borderColor: colors.red, backgroundColor: "rgba(213,10,10,.12)", pointBackgroundColor: colors.red, borderWidth: 3 }] },
       options: { ...chartDefaults, scales: { r: { beginAtZero: true, angleLines: { color: colors.grid }, grid: { color: colors.grid }, pointLabels: { color: colors.navyDark, font: { family: "Barlow Condensed", size: 12, weight: "700" } }, ticks: { display: false } } }, plugins: { ...chartDefaults.plugins, legend: { display: true, position: "bottom", labels: chartDefaults.plugins.legend.labels }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${decimal(ctx.raw)}${ctx.dataIndex === 0 ? "%" : ""}` } } } },
+    });
+
+    makeChart("balanceChart", {
+      type: "bar",
+      data: { labels: balance.map((row) => row.season), datasets: [{ label: "Passing yards / team-game", data: balance.map((row) => row.passing_yards_per_team_game), backgroundColor: colors.navy, stack: "yards" }, { label: "Rushing yards / team-game", data: balance.map((row) => row.rushing_yards_per_team_game), backgroundColor: colors.sky, stack: "yards" }, { type: "line", label: "Passing share", data: balance.map((row) => Number(row.passing_share) * 100), borderColor: colors.red, backgroundColor: colors.red, pointBackgroundColor: colors.red, borderWidth: 3, pointRadius: 5, tension: .25, yAxisID: "share" }] },
+      options: { ...chartDefaults, scales: { x: { ...chartDefaults.scales.x, stacked: true }, y: { ...chartDefaults.scales.y, stacked: true, beginAtZero: true, title: { display: true, text: "Yards per team-game", color: colors.navyDark } }, share: { position: "right", min: 0, max: 100, grid: { drawOnChartArea: false }, ticks: { color: colors.red, callback: (value) => `${value}%` }, title: { display: true, text: "Passing share", color: colors.red } } }, plugins: { ...chartDefaults.plugins, legend: { display: true, position: "bottom", labels: chartDefaults.plugins.legend.labels }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.dataset.yAxisID === "share" ? decimal(ctx.raw) + "%" : decimal(ctx.raw) + " yards"}` } } } },
+    });
+
+    makeChart("turnoverChart", {
+      type: "bubble",
+      data: { datasets: [{ label: "Team-seasons", data: turnoverRows.map((row) => ({ x: Number(row.offensive_interceptions_per_game), y: Number(row.points_per_game), r: Math.max(5, Math.min(15, Number(row.offensive_tds_per_game) * 2.6)), team: row.team, season: row.season, winRate: row.win_rate, takeaways: row.takeaway_margin, tds: row.offensive_tds_per_game })), backgroundColor: turnoverRows.map((row) => `${pointColor(row.win_rate)}cc`), borderColor: turnoverRows.map((row) => pointColor(row.win_rate)), borderWidth: 2, pointHoverRadius: 11 }] },
+      options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: (ctx) => { const raw = ctx.raw; return `${raw.team} ${raw.season}: ${decimal(raw.x)} INTs thrown/game · ${decimal(raw.y)} pts/game · ${decimal(raw.tds)} offensive TDs/game · ${pct(raw.winRate)} wins · ${raw.takeaways >= 0 ? "+" : ""}${decimal(raw.takeaways)} INT margin`; } } } }, scales: { x: { ...chartDefaults.scales.x, beginAtZero: true, title: { display: true, text: "Offensive interceptions thrown / game", color: colors.navyDark } }, y: { ...chartDefaults.scales.y, beginAtZero: true, title: { display: true, text: "Points scored / game", color: colors.navyDark } } } },
     });
   } catch (error) {
     document.body.insertAdjacentHTML("beforeend", `<div class="load-error">Report data could not be loaded. Run the build script and serve the project over HTTP.</div>`);

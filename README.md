@@ -24,7 +24,7 @@ The browser dashboard needs an HTTP server because browsers block local CSV requ
 
 ## Website files
 
-- `index.html` - narrative report with headline metrics and eight findings.
+- `index.html` - narrative report with headline metrics and ten findings, including scoring, offense balance, turnovers, and home/away context.
 - `dashboard.html` - interactive dashboard with filters, switches, charts, table, and reset control.
 - `assets/styles.css` - shared NFL-inspired design system and responsive layout.
 - `assets/app.js` - dashboard data loading, filtering, calculations, charts, theming, and player cards.
@@ -34,6 +34,7 @@ The browser dashboard needs an HTTP server because browsers block local CSV requ
 - `data/highlights.json` - readable copy of the play-by-play index for inspection and fallback loading.
 - `data/teams.json` - team names, colors, and logo URLs.
 - `data/players.json` - player names, positions, and headshot URLs.
+- `data/report_stats.json` - derived season, team, position, quarterback, balance, turnover, and home/away aggregates used by the report charts.
 - `scripts/build_data.py` - reproducible data acquisition and panel construction.
 - `scripts/build_highlights.py` - reproducible nflverse play-by-play indexing for one actual event per player-game.
 - `scripts/validate_project.py` - automated rubric and data-integrity checks.

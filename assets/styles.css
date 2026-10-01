@@ -209,6 +209,7 @@ body { background: radial-gradient(circle at 8% 12%, rgba(116,185,232,.08), tran
 .dashboard-chart-grid .chart-card:nth-child(2) { border-top-color: var(--team-secondary); }
 .dashboard-chart-grid .chart-card:nth-child(3) { border-top-color: var(--nfl-orange); }
 .dashboard-chart-grid .chart-card:nth-child(4) { border-top-color: #1f8a70; }
+.dashboard-chart-grid .chart-card:nth-child(5) { border-top-color: var(--nfl-red); }
 .table-card { overflow: hidden; }
 .table-scroll thead th { position: sticky; top: 0; z-index: 2; }
 .table-scroll tbody tr { transition: background .18s ease, transform .18s ease; }
