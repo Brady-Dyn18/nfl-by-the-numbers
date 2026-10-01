@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css?v=20261001-animated-replays" />
   </head>
   <body class="dashboard-page">
     <nav class="site-nav">
@@ -45,6 +45,27 @@
 
       <section class="player-profile" id="playerProfile"><div class="profile-placeholder"><span class="profile-icon">+</span><div><strong>Select a player from the filter or table</strong><p>The player’s headshot, team colors, position, and selected statistics will appear here.</p></div></div></section>
 
+      <section class="highlight-reel" id="highlightReel" aria-labelledby="highlightTitle">
+        <div class="highlight-heading"><div><span class="section-kicker">ANIMATED HIGHLIGHT REEL</span><h2 id="highlightTitle">Replay the selected player’s best statistical moment.</h2></div><span class="chart-note" id="highlightNote">Choose filters or a player to build the replay</span></div>
+        <div class="highlight-controls">
+          <label for="highlightPlayer">PLAYER<select id="highlightPlayer"><option value="all">Select a player</option></select></label>
+          <label for="highlightGame">GAME<select id="highlightGame"><option value="all">Select a game</option></select></label>
+          <button class="highlight-button" id="highlightPlay" type="button"><span aria-hidden="true">▶</span> Run highlight</button>
+          <button class="ghost-button" id="highlightReset" type="button">Reset frame</button>
+        </div>
+        <div class="highlight-layout">
+          <div class="highlight-field-shell">
+            <svg id="highlightField" class="highlight-field" viewBox="0 0 900 330" role="img" aria-labelledby="highlightTitle highlightDescription">
+              <desc id="highlightDescription">Animated schematic football play with moving player dots and ball.</desc>
+              <defs><linearGradient id="highlightGrass" x1="0" x2="1"><stop offset="0" stop-color="#0b5d4b"/><stop offset="1" stop-color="#13745b"/></linearGradient></defs>
+              <rect x="14" y="16" width="872" height="298" rx="10" class="highlight-grass"></rect><g class="highlight-yard-lines"></g><g id="highlightPlayLayer"></g>
+            </svg>
+            <div class="highlight-legend"><span><i class="legend-offense"></i> Offense</span><span><i class="legend-defense"></i> Defense</span><span><i class="legend-ball"></i> Ball</span><span>Motion is schematic</span></div>
+          </div>
+          <aside class="highlight-scoreboard" aria-live="polite"><div class="highlight-status" id="highlightStatus">PRE-SNAP</div><img id="highlightHeadshot" alt="Selected player headshot" /><strong id="highlightScore">—</strong><p id="highlightResult">Select a player and game to load the replay.</p><div class="highlight-stat-grid"><span><b id="highlightStatOne">—</b><small id="highlightStatLabelOne">Impact stat</small></span><span><b id="highlightStatTwo">—</b><small id="highlightStatLabelTwo">Team score</small></span><span><b id="highlightStatThree">—</b><small id="highlightStatLabelThree">Opponent score</small></span></div></aside>
+        </div>
+      </section>
+
       <section class="dashboard-chart-grid">
         <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">GAME SCRIPT BY SEASON</span><h2 id="trendTitle">Points scored vs allowed</h2></div><span class="chart-note" id="trendNote">Select a team and opponent</span></div><canvas id="trendChart"></canvas></div>
         <div class="chart-card large"><div class="chart-heading"><div><span class="section-kicker">ROLE MATCHUP LENS</span><h2 id="breakdownTitle">Selected role vs opposing unit</h2></div><span class="chart-note" id="breakdownNote">Choose a position for a coverage view</span></div><canvas id="breakdownChart"></canvas></div>
@@ -58,6 +79,6 @@
     <footer class="site-footer"><span>NFL BY THE NUMBERS · FILTERS CALCULATED IN YOUR BROWSER</span><span><a href="index.html">← Back to report</a></span></footer>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/app.js?v=20261001-role-matchups"></script>
+    <script src="assets/app.js?v=20261001-animated-replays"></script>
   </body>
 </html>

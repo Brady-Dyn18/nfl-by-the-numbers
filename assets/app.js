@@ -6,7 +6,7 @@
   const decimal = (value) => oneDecimal.format(Number(value || 0));
   const safe = (value) => value == null || value === "" ? "—" : value;
   const get = (id) => document.getElementById(id);
-  const state = { rows: [], teams: [], players: [], filtered: [], charts: {} };
+  const state = { rows: [], teams: [], players: [], filtered: [], charts: {}, highlight: { row: null, timer: null } };
   const defaults = { primary: "#003b7a", secondary: "#d71920", soft: "#eaf1fb" };
 
   const csvNumberFields = ["season", "week", "team_score", "opponent_score", "point_differential", "completions", "attempts", "passing_yards", "passing_tds", "passing_interceptions", "passing_epa", "carries", "rushing_yards", "rushing_tds", "rushing_epa", "receptions", "targets", "receiving_yards", "receiving_tds", "receiving_epa", "def_tackles_solo", "def_sacks", "def_interceptions", "def_pass_defended", "def_tds", "penalties", "penalty_yards", "fantasy_points"];
@@ -222,7 +222,57 @@
     const context = matchupRows(state.filtered); const rows = context.primary.filter((row) => row.player_id === playerId); const games = gameCount(rows); const totals = statTotals(rows); const metric = activeMetric(rows); const focusValue = metricValue(totals, metric); const opponentPlayer = playerProduction(context.opponent).filter((item) => item.games).map((item) => ({ ...item, total: metricValue(item, metric), perGame: perGame(metricValue(item, metric), item.games) })).sort((a, b) => b.perGame - a.perGame)[0]; const opponentMeta = opponentPlayer ? playerById()[opponentPlayer.id] : null; const image = player.headshot_url || ""; const unit = rows.length ? unitForRow(rows[0]) : "—"; const edge = context.matched && opponentPlayer ? perGame(focusValue, games) - opponentPlayer.perGame : 0; const edgeText = context.matched && opponentPlayer ? `${edge >= 0 ? "+" : ""}${decimal(edge)}` : "—"; const primaryTeam = unique(rows.map((row) => row.team)).join(", ") || context.team; const opponentMarkup = context.matched && opponentPlayer ? `<div class="profile-vs">VS</div><div class="profile-person opponent"><img src="${opponentMeta?.headshot_url || ""}" alt="Headshot of ${opponentPlayer.label}" onerror="this.style.visibility='hidden'" /><div><p class="profile-person-kicker">OPPOSING PLAYER</p><h3>${opponentPlayer.label}</h3><p>${opponentPlayer.position || "Unknown position"} · ${context.opponentTeam}</p></div></div>` : "";
     get("playerProfile").innerHTML = `<div class="profile-content ${opponentMarkup ? "is-matchup" : ""}"><div class="profile-person primary"><img src="${image}" alt="Headshot of ${player.player_display_name}" onerror="this.style.visibility='hidden'" /><div><p class="profile-person-kicker">${opponentMarkup ? "SELECTED PLAYER" : "PLAYER SPOTLIGHT"}</p><h3>${player.player_display_name}</h3><p>${player.position || "Unknown position"} · ${unit} · ${primaryTeam}</p></div></div>${opponentMarkup}<div class="profile-stats"><div class="profile-stat"><strong>${number(focusValue)}</strong><span>${metric.label}</span></div><div class="profile-stat"><strong>${decimal(perGame(focusValue, games))}</strong><span>${metric.perGameLabel}</span></div><div class="profile-stat"><strong>${opponentPlayer ? number(opponentPlayer.total) : "—"}</strong><span>${context.matched ? `${context.opponentTeam} · ${opponentPlayer?.label || "opposing player"} · ${metric.label}` : "Opposing player"}</span></div><div class="profile-stat"><strong>${edgeText}</strong><span>${context.matched ? "Per-game matchup edge" : "Select an opponent"}</span></div></div></div>`;
   }
-  function updateView() { updateSummary(state.filtered); updateCharts(state.filtered); updateTable(state.filtered); get("filterStatus").textContent = `${number(state.filtered.length)} rows · ${number(gameCount(state.filtered))} games`; }
+  function highlightMetric(row) {
+    const position = row.position || row.position_group;
+    if (position === "QB") return { role: "pass", label: "Passing yards", value: Number(row.passing_yards || 0), title: "Deep completion", unit: "yards" };
+    if (["WR", "TE"].includes(position)) return { role: "catch", label: "Receiving yards", value: Number(row.receiving_yards || 0), title: "Route and catch", unit: "yards" };
+    if (["RB", "FB"].includes(position)) return { role: "rush", label: "Rushing yards", value: Number(row.rushing_yards || 0), title: "Breakaway run", unit: "yards" };
+    if (["DL", "DE", "DT", "NT", "LB", "ILB", "MLB", "OLB"].includes(position) || row.position_group === "DL" || row.position_group === "LB") return { role: "pressure", label: "Sacks + tackles", value: Number(row.def_sacks || 0) + Number(row.def_tackles_solo || 0), title: Number(row.def_sacks || 0) ? "Quarterback pressure" : "Open-field stop", unit: "events" };
+    if (["CB", "DB", "S", "FS", "SAF"].includes(position) || row.position_group === "DB") return { role: "coverage", label: "Pass defended + INT", value: Number(row.def_pass_defended || 0) + Number(row.def_interceptions || 0), title: Number(row.def_interceptions || 0) ? "Takeaway" : "Coverage win", unit: "events" };
+    return { role: "special", label: "Fantasy points", value: Number(row.fantasy_points || 0), title: "Special teams moment", unit: "points" };
+  }
+  function bestHighlightRows(rows, playerId) {
+    return rows.filter((row) => row.player_id === playerId).sort((a, b) => { const metricDifference = highlightMetric(b).value - highlightMetric(a).value; return metricDifference || Number(b.team_score || 0) - Number(a.team_score || 0); });
+  }
+  function highlightLabel(row) { const metric = highlightMetric(row); return `${row.season} · Week ${row.week} · ${row.team} vs ${row.opponent_team} · ${row.team_score}-${row.opponent_score} · ${number(metric.value)} ${metric.unit}`; }
+  function renderHighlightFrame(row, running = false) {
+    if (!row || !get("highlightField")) return;
+    state.highlight.row = row;
+    const metric = highlightMetric(row); const field = get("highlightField"); const layer = get("highlightPlayLayer");
+    const startByRole = { pass: [300, 166], catch: [360, 110], rush: [350, 224], pressure: [610, 155], coverage: [630, 100], special: [285, 170] };
+    const endByRole = { pass: [620, 105], catch: [610, 92], rush: [630, 225], pressure: [375, 166], coverage: [420, 75], special: [650, 170] };
+    const ballStart = metric.role === "pressure" || metric.role === "coverage" ? [300, 166] : [300, 166]; const ballEnd = metric.role === "pass" ? endByRole.pass : metric.role === "catch" ? endByRole.catch : metric.role === "rush" ? endByRole.rush : [400, 166];
+    const start = startByRole[metric.role]; const end = endByRole[metric.role];
+    const route = metric.role === "pass" ? `M ${start[0]} ${start[1]} C 390 150 520 120 ${end[0]} ${end[1]}` : metric.role === "catch" ? `M ${start[0]} ${start[1]} C 430 75 520 130 ${end[0]} ${end[1]}` : metric.role === "rush" ? `M ${start[0]} ${start[1]} C 470 215 530 245 ${end[0]} ${end[1]}` : `M ${start[0]} ${start[1]} C 520 155 450 170 ${end[0]} ${end[1]}`;
+    const blockers = [[235, 140], [235, 166], [235, 192], [270, 140], [270, 192]];
+    const defenders = [[520, 82], [565, 145], [525, 218], [650, 160]];
+    const marker = (point, className, index) => `<circle class="highlight-dot ${className}" cx="${point[0]}" cy="${point[1]}" r="${className.includes("feature") ? 12 : 9}" ${className.includes("feature") ? `style="--move-x:${end[0] - start[0]}px;--move-y:${end[1] - start[1]}px"` : ""}></circle><text class="highlight-dot-label" x="${point[0] - 7}" y="${point[1] + 4}">${className.includes("feature") ? "★" : index + 1}</text>`;
+    const defenderMarkup = defenders.map((point, index) => `<circle class="highlight-dot highlight-defender ${metric.role === "pressure" || metric.role === "coverage" ? "is-feature-defender" : ""}" cx="${point[0]}" cy="${point[1]}" r="9" ${index === 0 ? `style="--move-x:${end[0] - point[0]}px;--move-y:${end[1] - point[1]}px"` : ""}></circle>`).join("");
+    layer.innerHTML = `<path class="highlight-route ${running ? "is-live" : ""}" d="${route}"></path><g class="highlight-blockers">${blockers.map((point, index) => marker(point, "highlight-offense", index)).join("")}</g><g class="highlight-defense">${defenderMarkup}</g>${marker(start, `highlight-offense highlight-feature feature-${metric.role}`, 0)}<circle class="highlight-ball" cx="${ballStart[0]}" cy="${ballStart[1]}" r="7" style="--move-x:${ballEnd[0] - ballStart[0]}px;--move-y:${ballEnd[1] - ballStart[1]}px"></circle><text class="highlight-field-label" x="34" y="45">${row.team} OFFENSE</text><text class="highlight-field-label" x="690" y="45">${row.opponent_team} DEFENSE</text>`;
+    const yardLines = get("highlightField").querySelector(".highlight-yard-lines");
+    if (yardLines && !yardLines.innerHTML) yardLines.innerHTML = [100, 190, 280, 370, 460, 550, 640, 730, 820].map((x, index) => `<line x1="${x}" y1="16" x2="${x}" y2="314"></line><text x="${x + 4}" y="36">${index * 10}</text>`).join("");
+    field.classList.remove("is-running"); if (running) { void field.offsetWidth; field.classList.add("is-running"); }
+    const player = playerById()[row.player_id]; const image = row.headshot_url || player?.headshot_url || ""; const headshot = get("highlightHeadshot");
+    if (headshot) { headshot.src = image; headshot.alt = `${row.player_display_name || row.player_name} headshot`; headshot.style.visibility = image ? "visible" : "hidden"; }
+    get("highlightStatus").textContent = running ? "LIVE MOTION" : "PRE-SNAP"; get("highlightScore").textContent = `${row.team} ${row.team_score} — ${row.opponent_team} ${row.opponent_score}`; get("highlightResult").textContent = `${metric.title} · ${number(metric.value)} ${metric.unit} · ${row.win_loss}`; get("highlightStatOne").textContent = number(metric.value); get("highlightStatLabelOne").textContent = metric.label; get("highlightStatTwo").textContent = number(row.team_score); get("highlightStatLabelTwo").textContent = `${row.team} score`; get("highlightStatThree").textContent = number(row.opponent_score); get("highlightStatLabelThree").textContent = `${row.opponent_team} score`; get("highlightNote").textContent = highlightLabel(row);
+  }
+  function updateHighlightOptions(rows) {
+    const playerSelect = get("highlightPlayer"); if (!playerSelect) return;
+    const bestByPlayer = new Map(); rows.forEach((row) => { if (!bestByPlayer.has(row.player_id) || highlightMetric(row).value > highlightMetric(bestByPlayer.get(row.player_id)).value) bestByPlayer.set(row.player_id, row); });
+    const choices = [...bestByPlayer.values()].sort((a, b) => highlightMetric(b).value - highlightMetric(a).value); const selectedFilterPlayer = val("playerFilter"); const current = choices.some((row) => row.player_id === playerSelect.value) ? playerSelect.value : choices.some((row) => row.player_id === selectedFilterPlayer) ? selectedFilterPlayer : choices[0]?.player_id || "all";
+    playerSelect.innerHTML = choices.length ? choices.map((row) => `<option value="${row.player_id}">${row.player_display_name || row.player_name} · ${row.position || row.position_group}</option>`).join("") : `<option value="all">No matching players</option>`; playerSelect.value = current;
+    updateHighlightGames(rows, current);
+  }
+  function updateHighlightGames(rows, playerId) {
+    const gameSelect = get("highlightGame"); if (!gameSelect || playerId === "all") { if (gameSelect) gameSelect.innerHTML = `<option value="all">Select a game</option>`; return; }
+    const games = bestHighlightRows(rows, playerId); const current = games.some((row) => row.game_id === gameSelect.value) ? gameSelect.value : games[0]?.game_id;
+    gameSelect.innerHTML = games.length ? games.map((row) => `<option value="${row.game_id}">${highlightLabel(row)}</option>`).join("") : `<option value="all">No games in view</option>`; gameSelect.value = current || "all";
+    const row = games.find((item) => item.game_id === gameSelect.value) || games[0]; if (row) renderHighlightFrame(row);
+  }
+  function runHighlight() {
+    const row = state.highlight.row; if (!row) return; if (state.highlight.timer) window.clearTimeout(state.highlight.timer); renderHighlightFrame(row, true); get("highlightStatus").textContent = "PLAY IN MOTION"; get("highlightResult").textContent = "Watch the dots: the featured player is moving toward the statistical moment."; state.highlight.timer = window.setTimeout(() => { const metric = highlightMetric(row); renderHighlightFrame(row); get("highlightStatus").textContent = "FINAL FRAME"; get("highlightResult").textContent = `${metric.title} · ${number(metric.value)} ${metric.unit} recorded in this game.`; state.highlight.timer = null; }, 2700); }
+  function resetHighlight() { if (state.highlight.timer) window.clearTimeout(state.highlight.timer); if (state.highlight.row) renderHighlightFrame(state.highlight.row); }
+  function updateView() { updateSummary(state.filtered); updateCharts(state.filtered); updateTable(state.filtered); updateHighlightOptions(state.filtered); get("filterStatus").textContent = `${number(state.filtered.length)} rows · ${number(gameCount(state.filtered))} games`; }
   function reset() { ["seasonFilter", "teamFilter", "opponentFilter", "homeAwayFilter", "positionGroupFilter", "positionFilter", "playerFilter"].forEach((id) => get(id).value = "all"); showProfile(""); applyFilters(); }
 
   try {
@@ -232,6 +282,9 @@
     state.rows = parsed; state.teams = teams; state.players = players;
     fillSelect("seasonFilter", unique(state.rows.map((r) => r.season)), (v) => v); fillSelect("teamFilter", unique(state.rows.map((r) => r.team))); fillSelect("opponentFilter", unique(state.rows.map((r) => r.opponent_team))); fillSelect("homeAwayFilter", unique(state.rows.map((r) => r.home_away)), (v) => v, "All locations"); fillSelect("positionGroupFilter", unique(state.rows.map(unitForRow)), (v) => v, "All units"); fillSelect("positionFilter", unique(state.rows.map((r) => r.position))); fillSelect("playerFilter", state.players.map((p) => p.player_id), (v) => { const p = playerById()[v]; return p ? `${p.player_display_name} · ${p.position || ""}` : v; });
     ["seasonFilter", "teamFilter", "opponentFilter", "homeAwayFilter", "positionGroupFilter", "positionFilter", "playerFilter"].forEach((id) => get(id).addEventListener("change", applyFilters)); get("resetFilters").addEventListener("click", reset);
+    get("highlightPlayer")?.addEventListener("change", (event) => { if (event.target.value !== "all") { get("playerFilter").value = event.target.value; applyFilters(); } });
+    get("highlightGame")?.addEventListener("change", (event) => { const row = bestHighlightRows(state.filtered, get("highlightPlayer").value).find((item) => item.game_id === event.target.value); if (row) renderHighlightFrame(row); });
+    get("highlightPlay")?.addEventListener("click", runHighlight); get("highlightReset")?.addEventListener("click", resetHighlight);
     applyFilters();
   } catch (error) { get("filterStatus").textContent = "Could not load data"; console.error(error); }
 })();

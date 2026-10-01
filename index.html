@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css?v=20261001-animated-replays" />
   </head>
   <body class="report-page">
     <nav class="site-nav">
@@ -32,25 +32,28 @@
         </div>
       </section>
 
-      <section class="pulse-lab content-width" aria-labelledby="pulse-title">
-        <div class="pulse-intro">
-          <p class="section-kicker">OPENING DRIVE · INTERACTIVE</p>
-          <h2 id="pulse-title">Press play on the league’s scoring pulse.</h2>
-          <p>Choose a season and watch the scoring environment move from kickoff to final whistle. The pulse uses points per team-game, so seasons with different numbers of games stay comparable.</p>
-          <div class="pulse-controls">
-            <label for="pulseSeason">VIEW</label>
-            <select id="pulseSeason"><option value="all">All five seasons</option></select>
-            <button class="pulse-button" id="pulsePlay" type="button"><span aria-hidden="true">▶</span> Play pulse</button>
+      <section class="qb-lab content-width" aria-labelledby="qb-title">
+        <div class="qb-intro">
+          <p class="section-kicker">LIVE ACTION · QB DECISION LAB</p>
+          <h2 id="qb-title">You’re the quarterback.</h2>
+          <p>Read the coverage, watch the routes develop, and choose the throw. Open targets reward timing; covered targets turn the same snap into an incompletion, a sack, or a risky window.</p>
+          <div class="qb-controls">
+            <label for="qbPlaySelect">PLAY CALL<select id="qbPlaySelect"><option value="mesh">Mesh concept</option><option value="fourVerticals">Four verticals</option><option value="redZone">Red-zone spacing</option><option value="screen">Running back screen</option></select></label>
+            <label for="qbTargetSelect">THROW TO<select id="qbTargetSelect"></select></label>
+            <label for="qbPlayerSelect">QUARTERBACK<select id="qbPlayerSelect"></select></label>
+            <button class="qb-button" id="qbSnap" type="button"><span aria-hidden="true">▶</span> Snap the ball</button>
           </div>
+          <p class="qb-disclaimer">Schematic animation · route and coverage dots are illustrative, while player names and season context come from the project data.</p>
         </div>
-        <div class="pulse-stage" id="pulseStage">
-          <div class="pulse-scoreline"><span class="pulse-live"><i></i> LIVE DATA</span><strong id="pulseReadout">League scoring pulse</strong><span id="pulseMeta">2021–2025 regular seasons</span></div>
-          <svg id="seasonPulseChart" viewBox="0 0 780 250" role="img" aria-labelledby="pulse-title pulseDesc" preserveAspectRatio="none">
-            <desc id="pulseDesc">Interactive line showing average points per team-game by NFL season.</desc>
-            <defs><linearGradient id="pulseFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d50a0a" stop-opacity=".42"/><stop offset="1" stop-color="#d50a0a" stop-opacity="0"/></linearGradient></defs>
-            <g class="pulse-grid-lines"></g><path class="pulse-area"></path><path class="pulse-line"></path><g class="pulse-points"></g>
+        <div class="qb-stage" id="qbStage">
+          <div class="qb-scoreboard"><span class="pulse-live"><i></i> LIVE SNAP</span><strong id="qbScore">HOME 17 — AWAY 14</strong><span id="qbSituation">Q3 · 04:42 · 2nd &amp; 6</span></div>
+          <svg id="qbField" class="qb-field" viewBox="0 0 780 315" role="img" aria-labelledby="qb-title qbDesc">
+            <desc id="qbDesc">Animated football field with route runners, coverage defenders, quarterback, and ball.</desc>
+            <defs><linearGradient id="fieldGrass" x1="0" x2="1"><stop offset="0" stop-color="#0b5d4b"/><stop offset="1" stop-color="#13745b"/></linearGradient><filter id="fieldGlow"><feGaussianBlur stdDeviation="3"/></filter></defs>
+            <rect class="qb-field-grass" x="18" y="18" width="744" height="270" rx="8"></rect><rect class="qb-endzone qb-endzone-left" x="18" y="18" width="72" height="270" rx="8"></rect><rect class="qb-endzone qb-endzone-right" x="690" y="18" width="72" height="270" rx="8"></rect>
+            <g class="qb-yard-lines"></g><g class="qb-route-lines"></g><g class="qb-coverage-dots"></g><g class="qb-offense-dots"></g><circle class="qb-ball" cx="265" cy="174" r="7"></circle><g class="qb-labels"></g>
           </svg>
-          <div class="pulse-footer"><span id="pulseFootnote">Select a season to spotlight it.</span><span class="pulse-yardline" aria-hidden="true">01 · 10 · 20 · 30 · 40 · 50</span></div>
+          <div class="qb-result" id="qbResult" aria-live="polite"><strong>Pre-snap read</strong><span>Pick a target and snap the ball.</span></div>
         </div>
       </section>
 
@@ -115,6 +118,6 @@
 
     <footer class="site-footer"><span>NFL BY THE NUMBERS · 2021–2025</span><span><a href="dashboard.html">Open dashboard →</a></span></footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/report.js"></script>
+    <script src="assets/report.js?v=20261001-qb-lab"></script>
   </body>
 </html>

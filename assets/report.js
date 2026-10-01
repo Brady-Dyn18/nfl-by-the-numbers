@@ -42,58 +42,96 @@
     return colors.sky;
   };
 
-  function renderPulse(trend) {
-    const select = document.getElementById("pulseSeason");
-    const line = document.querySelector(".pulse-line");
-    const area = document.querySelector(".pulse-area");
-    const pointGroup = document.querySelector(".pulse-points");
-    const gridGroup = document.querySelector(".pulse-grid-lines");
-    if (!select || !line || !area || !pointGroup || !gridGroup) return;
+  const qbPlays = {
+    mesh: {
+      situation: "Q3 · 04:42 · 2nd & 6",
+      targets: {
+        outside: { label: "X receiver · speed out", open: true, yards: 9, start: [350, 78], end: [560, 105], path: "M 350 78 C 430 78 485 95 560 105" },
+        slot: { label: "Y receiver · shallow cross", open: true, yards: 14, start: [350, 135], end: [575, 185], path: "M 350 135 C 425 135 475 185 575 185" },
+        tightEnd: { label: "Tight end · seam", open: false, yards: 0, start: [340, 176], end: [530, 205], path: "M 340 176 C 415 176 470 205 530 205" },
+        back: { label: "Running back · checkdown", open: true, yards: 5, start: [320, 220], end: [450, 250], path: "M 320 220 C 370 220 410 250 450 250" },
+      },
+      defaultTarget: "slot",
+    },
+    fourVerticals: {
+      situation: "Q2 · 08:16 · 1st & 10",
+      targets: {
+        outside: { label: "X receiver · go route", open: true, yards: 27, start: [350, 78], end: [660, 58], path: "M 350 78 C 450 52 560 52 660 58" },
+        slot: { label: "Y receiver · seam", open: false, yards: 0, start: [350, 135], end: [640, 125], path: "M 350 135 C 445 112 550 122 640 125" },
+        tightEnd: { label: "Tight end · seam", open: false, yards: 0, start: [340, 176], end: [635, 178], path: "M 340 176 C 450 160 550 175 635 178" },
+        back: { label: "Running back · checkdown", open: true, yards: 4, start: [320, 220], end: [455, 258], path: "M 320 220 C 375 220 415 252 455 258" },
+      },
+      defaultTarget: "outside",
+    },
+    redZone: {
+      situation: "Q4 · 02:08 · 3rd & goal",
+      targets: {
+        outside: { label: "X receiver · fade", open: false, yards: 0, start: [350, 78], end: [565, 88], path: "M 350 78 C 430 68 510 72 565 88" },
+        slot: { label: "Y receiver · pivot", open: false, yards: 0, start: [350, 135], end: [570, 145], path: "M 350 135 C 435 120 515 150 570 145" },
+        tightEnd: { label: "Tight end · stick nod", open: true, yards: 6, start: [340, 176], end: [580, 200], path: "M 340 176 C 430 176 505 205 580 200" },
+        back: { label: "Running back · flat", open: true, yards: 3, start: [320, 220], end: [510, 245], path: "M 320 220 C 390 215 445 250 510 245" },
+      },
+      defaultTarget: "tightEnd",
+    },
+    screen: {
+      situation: "Q1 · 11:34 · 2nd & 7",
+      targets: {
+        outside: { label: "X receiver · clear out", open: false, yards: 0, start: [350, 78], end: [500, 65], path: "M 350 78 C 400 65 455 62 500 65" },
+        slot: { label: "Y receiver · block and release", open: false, yards: 0, start: [350, 135], end: [485, 115], path: "M 350 135 C 390 130 440 115 485 115" },
+        tightEnd: { label: "Tight end · block", open: false, yards: 0, start: [340, 176], end: [455, 170], path: "M 340 176 L 455 170" },
+        back: { label: "Running back · screen", open: true, yards: 18, start: [320, 220], end: [600, 255], path: "M 320 220 C 405 225 500 270 600 255" },
+      },
+      defaultTarget: "back",
+    },
+  };
+  const qbState = { play: "mesh", target: "slot", running: false };
 
-    if (select.options.length === 1) {
-      trend.forEach((row) => select.insertAdjacentHTML("beforeend", `<option value="${row.season}">${row.season} season</option>`));
+  function drawQbField() {
+    const yardLines = document.querySelector(".qb-yard-lines");
+    if (yardLines && !yardLines.innerHTML) {
+      yardLines.innerHTML = [90, 180, 270, 360, 450, 540, 630, 690].map((x, index) => `<line x1="${x}" y1="18" x2="${x}" y2="288"></line><text x="${x + 4}" y="38">${index * 10}</text>`).join("");
     }
-    const chosen = select.value === "all" ? trend : trend.filter((row) => String(row.season) === select.value);
-    const data = chosen.length ? chosen : trend;
-    const min = Math.min(...trend.map((row) => Number(row.points_per_team_game))) - 1;
-    const max = Math.max(...trend.map((row) => Number(row.points_per_team_game))) + 1;
-    const left = 42; const right = 756; const top = 22; const bottom = 198;
-    const x = (index) => data.length === 1 ? (left + right) / 2 : left + (index * (right - left) / (data.length - 1));
-    const y = (value) => bottom - ((Number(value) - min) / (max - min)) * (bottom - top);
-    const points = data.map((row, index) => [x(index), y(row.points_per_team_game), row]);
-    const path = points.map(([px, py], index) => `${index ? "L" : "M"} ${px.toFixed(1)} ${py.toFixed(1)}`).join(" ");
-    const areaPath = `${path} L ${points.at(-1)[0].toFixed(1)} ${bottom} L ${points[0][0].toFixed(1)} ${bottom} Z`;
-    line.setAttribute("d", path); area.setAttribute("d", areaPath);
-    line.style.strokeDasharray = "1200"; line.style.strokeDashoffset = "0";
-    area.style.opacity = "1";
-    gridGroup.innerHTML = [0, 1, 2, 3].map((step) => {
-      const value = min + ((max - min) * step / 3);
-      const py = y(value);
-      return `<line x1="${left}" y1="${py}" x2="${right}" y2="${py}"></line><text x="0" y="${py + 4}">${decimal(value)}</text>`;
-    }).join("");
-    pointGroup.innerHTML = points.map(([px, py, row]) => `<g class="pulse-point" data-season="${row.season}"><circle cx="${px}" cy="${py}" r="${select.value === String(row.season) ? 9 : 6}"></circle><text x="${px}" y="${bottom + 28}" text-anchor="middle">${row.season}</text></g>`).join("");
-    const focus = select.value === "all" ? data.at(-1) : data[0];
-    set("pulseReadout", `${focus.season}: ${decimal(focus.points_per_team_game)} points per team-game`);
-    set("pulseMeta", `${number(focus.games)} games · ${number(focus.points_for)} points scored`);
-    set("pulseFootnote", select.value === "all" ? "The red line follows the league’s five-season rhythm." : `${focus.season} is spotlighted. Choose another season or play the pulse.`);
   }
 
-  function startPulse(trend) {
-    const stage = document.getElementById("pulseStage");
-    const button = document.getElementById("pulsePlay");
-    if (!stage || !button) return;
-    stage.classList.remove("is-playing");
-    void stage.offsetWidth;
-    stage.classList.add("is-playing");
-    button.innerHTML = '<span aria-hidden="true">↻</span> Pulse replaying';
-    window.setTimeout(() => { stage.classList.remove("is-playing"); button.innerHTML = '<span aria-hidden="true">▶</span> Play pulse'; }, 1650);
-    const select = document.getElementById("pulseSeason");
-    if (select.value === "all") {
-      const line = document.querySelector(".pulse-line");
-      line.style.strokeDashoffset = "1200";
-      window.setTimeout(() => { line.style.strokeDashoffset = "0"; }, 40);
-    }
-    renderPulse(trend);
+  function renderQuarterbackPlay(qbName = "Quarterback") {
+    const play = qbPlays[qbState.play];
+    const targetSelect = document.getElementById("qbTargetSelect");
+    const field = document.getElementById("qbField");
+    if (!play || !targetSelect || !field) return;
+    const current = play.targets[qbState.target] ? qbState.target : play.defaultTarget;
+    qbState.target = current;
+    targetSelect.innerHTML = Object.entries(play.targets).map(([key, target]) => `<option value="${key}">${target.label} · ${target.open ? "OPEN" : "COVERED"}</option>`).join("");
+    targetSelect.value = current;
+    const target = play.targets[current];
+    const routeLayer = document.querySelector(".qb-route-lines");
+    const coverageLayer = document.querySelector(".qb-coverage-dots");
+    const offenseLayer = document.querySelector(".qb-offense-dots");
+    const labelsLayer = document.querySelector(".qb-labels");
+    drawQbField();
+    routeLayer.innerHTML = Object.entries(play.targets).map(([key, item]) => `<path class="qb-route qb-route-${key} ${key === current ? "is-selected" : ""}" d="${item.path}"></path><circle class="qb-runner qb-target-${key}" cx="${item.start[0]}" cy="${item.start[1]}" r="9" style="--move-x:${item.end[0] - item.start[0]}px;--move-y:${item.end[1] - item.start[1]}px"></circle>`).join("");
+    coverageLayer.innerHTML = Object.entries(play.targets).map(([key, item]) => { const coverX = item.open ? item.end[0] - 42 : item.end[0] - 8; const coverY = item.open ? item.end[1] + 34 : item.end[1] + 8; return `<circle class="qb-cover qb-cover-${key}" cx="${item.start[0] + 25}" cy="${item.start[1] + 8}" r="8" style="--move-x:${coverX - item.start[0] - 25}px;--move-y:${coverY - item.start[1] - 8}px"></circle>`; }).join("");
+    offenseLayer.innerHTML = `<circle class="qb-lineman" cx="230" cy="142" r="10"></circle><circle class="qb-lineman" cx="230" cy="174" r="10"></circle><circle class="qb-lineman" cx="230" cy="206" r="10"></circle><circle class="qb-quarterback" cx="265" cy="174" r="12"></circle><circle class="qb-ball" cx="265" cy="174" r="7" style="--ball-x:${target.end[0] - 265}px;--ball-y:${target.end[1] - 174}px"></circle>`;
+    labelsLayer.innerHTML = `<text class="qb-label qb-label-qb" x="244" y="159">${qbName}</text>${Object.entries(play.targets).map(([key, item]) => `<text class="qb-label qb-label-${key}" x="${item.start[0] - 16}" y="${item.start[1] - 16}">${key === "tightEnd" ? "TE" : key === "outside" ? "X" : key === "slot" ? "Y" : "RB"}</text>`).join("")}<text class="qb-coverage-label" x="600" y="284">Red dots = coverage · click the open window</text>`;
+    field.className.baseVal = "qb-field";
+    field.classList.add(`qb-play-${qbState.play}`);
+    set("qbSituation", play.situation); set("qbResult", "");
+    const result = document.getElementById("qbResult");
+    if (result) result.innerHTML = `<strong>Pre-snap read</strong><span>${target.label} is ${target.open ? "showing a window" : "covered by the defender"}. Snap the ball, then judge the throw.</span>`;
+    set("qbScore", "HOME 17 — AWAY 14");
+  }
+
+  function runQuarterbackPlay() {
+    const playKey = qbState.play; const targetKey = qbState.target; const field = document.getElementById("qbField"); const play = qbPlays[playKey]; const target = play?.targets[targetKey]; const result = document.getElementById("qbResult");
+    if (!field || !target || !result || qbState.running) return;
+    qbState.running = true; field.classList.remove("is-running"); void field.offsetWidth; field.classList.add("is-running");
+    set("qbSituation", "SNAP · routes developing · read the leverage");
+    result.innerHTML = `<strong>Routes developing</strong><span>Watch the defender’s hips and throw before the window closes.</span>`;
+    window.setTimeout(() => {
+      const outcome = target.open ? `COMPLETE · ${target.yards} yards` : (playKey === "redZone" ? "SACK · coverage wins in the red zone" : "INCOMPLETE · defender stays in phase");
+      set("qbSituation", target.open ? `PLAY COMPLETE · ${target.yards} yards` : "PLAY OVER · coverage wins");
+      result.innerHTML = `<strong>${outcome}</strong><span>${target.open ? "Good timing. You found the open window." : "The safer choice was another route or the checkdown."}</span>`;
+      qbState.running = false;
+    }, 2450);
   }
 
   try {
@@ -124,9 +162,17 @@
     const away = stats.home_away.find((row) => row.home_away === "Away");
     set("home-win-rate", pct(home.win_rate)); set("home-edge", decimal((home.win_rate - away.win_rate) * 100));
 
-    renderPulse(trend);
-    document.getElementById("pulseSeason")?.addEventListener("change", () => renderPulse(trend));
-    document.getElementById("pulsePlay")?.addEventListener("click", () => startPulse(trend));
+    const qbSelect = document.getElementById("qbPlayerSelect");
+    if (qbSelect) {
+      const qbOptions = stats.quarterbacks.slice(0, 10);
+      qbSelect.innerHTML = qbOptions.map((row) => `<option value="${row.player_display_name}">${row.player_display_name} · ${row.attempts} attempts</option>`).join("");
+      qbSelect.value = topQb.player_display_name;
+    }
+    renderQuarterbackPlay(topQb.player_display_name);
+    document.getElementById("qbPlaySelect")?.addEventListener("change", (event) => { qbState.play = event.target.value; renderQuarterbackPlay(qbSelect?.value || topQb.player_display_name); });
+    document.getElementById("qbTargetSelect")?.addEventListener("change", (event) => { qbState.target = event.target.value; renderQuarterbackPlay(qbSelect?.value || topQb.player_display_name); });
+    document.getElementById("qbPlayerSelect")?.addEventListener("change", (event) => renderQuarterbackPlay(event.target.value));
+    document.getElementById("qbSnap")?.addEventListener("click", runQuarterbackPlay);
 
     makeChart("seasonTrendChart", {
       type: "line",
