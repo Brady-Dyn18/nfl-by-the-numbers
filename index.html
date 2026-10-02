@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css?v=20261002-chart-lab" />
+    <link rel="stylesheet" href="assets/styles.css?v=20261002-field-goal" />
   </head>
   <body class="report-page">
     <nav class="site-nav">
@@ -23,7 +23,7 @@
           <h1>Find the story inside the score.</h1>
           <p class="hero-lede">A player-level look at the five most recent completed NFL seasons—built to show how scoring, style, pressure, position roles, and home field fit together.</p>
           <p class="byline">Prepared by <strong>Brady Dyn</strong> · <span id="report-generated">Loading verified data…</span></p>
-          <div class="hero-actions"><a class="primary-button" href="dashboard.html">Explore the interactive dashboard <span>→</span></a><a class="hero-text-link" href="#qb-lab">Try a quarterback snap <span aria-hidden="true">↓</span></a></div>
+          <div class="hero-actions"><a class="primary-button" href="dashboard.html">Explore the interactive dashboard <span>→</span></a><a class="hero-text-link" href="#field-goal-lab">Try a field goal <span aria-hidden="true">↓</span></a></div>
         </div>
         <div class="hero-art" aria-label="NFL analytics snapshot">
           <div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div>
@@ -45,28 +45,30 @@
         <a href="#finding-1">01 Scoring</a><a href="#finding-2">02 Winning</a><a href="#finding-3">03 Offense</a><a href="#finding-4">04 Defense</a><a href="#finding-5">05 Roles</a><a href="#finding-6">06 QB</a><a href="#finding-7">07 Style</a><a href="#finding-8">08 Home field</a><a href="#finding-9">09 Balance</a><a href="#finding-10">10 Turnovers</a><a href="#methodology">Methods</a>
       </nav>
 
-      <section class="qb-lab content-width" id="qb-lab" aria-labelledby="qb-title">
-        <div class="qb-intro">
-          <p class="section-kicker">INTERACTIVE SIMULATION · QB DECISION LAB</p>
-          <h2 id="qb-title">You’re the quarterback.</h2>
-          <p>Read the coverage, watch the routes develop, and choose the throw. Open targets reward timing; covered targets turn the same snap into an incompletion, a sack, or a risky window.</p>
-          <div class="qb-controls">
-            <label for="qbPlaySelect">PLAY CALL<select id="qbPlaySelect"><option value="mesh">Mesh concept</option><option value="fourVerticals">Four verticals</option><option value="redZone">Red-zone spacing</option><option value="screen">Running back screen</option></select></label>
-            <label for="qbTargetSelect">THROW TO<select id="qbTargetSelect"></select></label>
-            <label for="qbPlayerSelect">QUARTERBACK<select id="qbPlayerSelect"></select></label>
-            <button class="qb-button" id="qbSnap" type="button"><span aria-hidden="true">▶</span> Snap the ball</button>
+      <section class="field-goal-lab content-width" id="field-goal-lab" aria-labelledby="field-goal-title">
+        <div class="fg-intro">
+          <p class="section-kicker">INTERACTIVE SIMULATION · KICKING LAB</p>
+          <h2 id="field-goal-title">Can you split the uprights?</h2>
+          <p>Read the distance, counter the wind, and use just enough power. Your aim and kick strength decide whether the ball is good, wide, short, or sailing over the goal post.</p>
+          <div class="fg-controls" aria-label="Field goal controls">
+            <label for="fgAim">AIM <output id="fgAimValue" for="fgAim">CENTER</output><input id="fgAim" type="range" min="-10" max="10" value="0" step="1" aria-label="Aim left or right" /></label>
+            <label for="fgPower">POWER <output id="fgPowerValue" for="fgPower">80%</output><input id="fgPower" type="range" min="55" max="100" value="80" step="1" aria-label="Kick power percentage" /></label>
+            <div class="fg-range-labels" aria-hidden="true"><span>LEFT</span><span>UPRIGHT CENTER</span><span>RIGHT</span></div>
+            <button class="fg-button" id="fgKick" type="button"><span aria-hidden="true">▶</span> Kick it</button>
+            <button class="fg-button fg-button-ghost" id="fgNew" type="button">New challenge</button>
           </div>
-          <p class="qb-disclaimer">Schematic animation · route and coverage dots are illustrative, while player names and season context come from the project data.</p>
+          <p class="fg-disclaimer">The kick is a schematic simulation: distance sets the power window, while the crosswind shifts the ideal aim point.</p>
         </div>
-        <div class="qb-stage" id="qbStage">
-          <div class="qb-scoreboard"><span class="pulse-live"><i></i> SIMULATION</span><strong id="qbScore">HOME 17 — AWAY 14</strong><span id="qbSituation">Q3 · 04:42 · 2nd &amp; 6</span></div>
-          <svg id="qbField" class="qb-field" viewBox="0 0 780 315" role="img" aria-labelledby="qb-title qbDesc">
-            <desc id="qbDesc">Animated football field with route runners, coverage defenders, quarterback, and ball.</desc>
-            <defs><linearGradient id="fieldGrass" x1="0" x2="1"><stop offset="0" stop-color="#0b5d4b"/><stop offset="1" stop-color="#13745b"/></linearGradient><filter id="fieldGlow"><feGaussianBlur stdDeviation="3"/></filter></defs>
-            <rect class="qb-field-grass" x="18" y="18" width="744" height="270" rx="8"></rect><rect class="qb-endzone qb-endzone-left" x="18" y="18" width="72" height="270" rx="8"></rect><rect class="qb-endzone qb-endzone-right" x="690" y="18" width="72" height="270" rx="8"></rect>
-            <g class="qb-yard-lines"></g><g class="qb-route-lines"></g><g class="qb-coverage-dots"></g><g class="qb-offense-dots"></g><circle class="qb-ball" cx="265" cy="174" r="7"></circle><g class="qb-labels"></g>
+        <div class="fg-stage" id="fgStage">
+          <div class="fg-scoreboard"><span class="pulse-live"><i></i> LIVE CHALLENGE</span><strong id="fgScore">0 / 0 GOOD</strong><span id="fgSituation">42 YARDS · WIND CALM</span></div>
+          <svg id="fgField" class="fg-field" viewBox="0 0 780 330" role="img" aria-labelledby="field-goal-title fgDesc">
+            <desc id="fgDesc">Animated field goal attempt showing the kicker, football, uprights, aim, and kick trajectory.</desc>
+            <defs><linearGradient id="fgGrass" x1="0" x2="1"><stop offset="0" stop-color="#0b5d4b"/><stop offset="1" stop-color="#13745b"/></linearGradient><filter id="fgGlow"><feGaussianBlur stdDeviation="4"/></filter></defs>
+            <rect class="fg-field-grass" x="18" y="24" width="744" height="276" rx="8"></rect><g class="fg-yard-lines"></g>
+            <g class="fg-goal"><line x1="654" y1="154" x2="654" y2="74"></line><line x1="654" y1="154" x2="620" y2="154"></line><line x1="654" y1="154" x2="688" y2="154"></line><line x1="620" y1="154" x2="620" y2="73"></line><line x1="688" y1="154" x2="688" y2="73"></line><path d="M 605 73 H 635 M 673 73 H 703"></path></g>
+            <line id="fgAimLine" class="fg-aim-line" x1="118" y1="251" x2="654" y2="154"></line><path id="fgTrajectory" class="fg-trajectory" d="M 118 251 Q 380 48 654 154"></path><circle id="fgBall" class="fg-ball" cx="118" cy="251" r="9"></circle><circle id="fgAimMarker" class="fg-aim-marker" cx="654" cy="154" r="9"></circle><g id="fgImpact" class="fg-impact"></g><g class="fg-kicker"><circle cx="93" cy="238" r="10"></circle><path d="M 93 248 L 93 273 M 93 254 L 79 264 M 93 254 L 108 261 M 93 273 L 82 292 M 93 273 L 105 292"></path></g><text class="fg-field-label" x="48" y="53">KICKING SPOT</text><text class="fg-field-label" x="594" y="47">UPRIGHTS</text><text id="fgWindLabel" class="fg-wind-label" x="48" y="287">WIND: CALM</text><text class="fg-field-note" x="584" y="287">FIELD GOAL TARGET</text>
           </svg>
-          <div class="qb-result" id="qbResult" aria-live="polite"><strong>Pre-snap read</strong><span>Pick a target and snap the ball.</span></div>
+          <div class="fg-result" id="fgResult" aria-live="polite"><strong>Pre-kick read</strong><span>Set your aim and power, then kick.</span></div>
         </div>
       </section>
 
@@ -141,6 +143,6 @@
 
     <footer class="site-footer"><span>NFL BY THE NUMBERS · 2021–2025</span><span><a href="dashboard.html">Open dashboard →</a> · <a href="docs/data-dictionary.md">Data dictionary</a></span></footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/report.js?v=20261002-chart-lab"></script>
+    <script src="assets/report.js?v=20261002-field-goal"></script>
   </body>
 </html>

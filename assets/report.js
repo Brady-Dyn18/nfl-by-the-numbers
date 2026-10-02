@@ -147,6 +147,149 @@
     }, 2450);
   }
 
+  const fgState = { distance: 42, wind: 0, aim: 0, power: 80, attempts: 0, good: 0, running: false };
+  const fgClamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+  function fgWindLabel() {
+    if (!fgState.wind) return "CALM";
+    return `${Math.abs(fgState.wind)} MPH ${fgState.wind > 0 ? "→" : "←"}`;
+  }
+
+  function fgAimLabel() {
+    if (!fgState.aim) return "CENTER";
+    return `${Math.abs(fgState.aim)}° ${fgState.aim < 0 ? "LEFT" : "RIGHT"}`;
+  }
+
+  function fgTargetPower() {
+    return Math.round(fgClamp(58 + fgState.distance * 0.65, 70, 98));
+  }
+
+  function drawFieldGoal() {
+    const aimInput = document.getElementById("fgAim");
+    const powerInput = document.getElementById("fgPower");
+    const field = document.getElementById("fgField");
+    const line = document.getElementById("fgAimLine");
+    const trajectory = document.getElementById("fgTrajectory");
+    const marker = document.getElementById("fgAimMarker");
+    const ball = document.getElementById("fgBall");
+    if (!aimInput || !powerInput || !field || !line || !trajectory || !marker || !ball) return;
+    const yardLines = field.querySelector(".fg-yard-lines");
+    if (yardLines && !yardLines.innerHTML) {
+      yardLines.innerHTML = [110, 205, 300, 395, 490, 585].map((x, index) => `<line x1="${x}" y1="24" x2="${x}" y2="300"></line><text x="${x + 4}" y="44">${index * 10}</text>`).join("");
+    }
+    fgState.aim = Number(aimInput.value);
+    fgState.power = Number(powerInput.value);
+    const targetX = 654 + fgState.aim * 7;
+    line.setAttribute("x2", targetX);
+    line.setAttribute("y2", 154);
+    marker.setAttribute("cx", targetX);
+    trajectory.setAttribute("d", `M 118 251 Q ${(118 + targetX) / 2} 38 ${targetX} 154`);
+    ball.setAttribute("cx", 118);
+    ball.setAttribute("cy", 251);
+    field.classList.remove("is-kicking", "is-good", "is-miss");
+    const aimOutput = document.getElementById("fgAimValue");
+    const powerOutput = document.getElementById("fgPowerValue");
+    const situation = document.getElementById("fgSituation");
+    const windLabel = document.getElementById("fgWindLabel");
+    if (aimOutput) aimOutput.textContent = fgAimLabel();
+    if (powerOutput) powerOutput.textContent = `${fgState.power}%`;
+    if (situation) situation.textContent = `${fgState.distance} YARDS · WIND ${fgWindLabel()}`;
+    if (windLabel) windLabel.textContent = `WIND: ${fgWindLabel()}`;
+  }
+
+  function fieldGoalResult(powerError, aimError) {
+    if (powerError <= -8) return { title: "SHORT", detail: "The kick ran out of distance before it reached the uprights." };
+    if (powerError >= 8) return { title: "TOO MUCH POWER", detail: "The ball had the distance, but sailed over the target window." };
+    if (Math.abs(aimError) >= 2.8) return { title: `WIDE ${aimError > 0 ? "RIGHT" : "LEFT"}`, detail: "The crosswind and your aim pulled the ball outside the uprights." };
+    if (Math.abs(powerError) >= 3) return { title: powerError > 0 ? "JUST LONG" : "JUST LOW", detail: "Your aim was close, but the power missed the sweet spot." };
+    return { title: "GOOD", detail: "Clean contact. The ball splits the uprights." };
+  }
+
+  function animateFieldGoal(endX, endY, finish) {
+    const ball = document.getElementById("fgBall");
+    if (!ball) return;
+    const start = performance.now();
+    const duration = 1250;
+    const frame = (now) => {
+      const progress = fgClamp((now - start) / duration, 0, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const arc = Math.sin(Math.PI * eased) * 118;
+      const x = 118 + (endX - 118) * eased;
+      const y = 251 + (endY - 251) * eased - arc;
+      ball.setAttribute("cx", x.toFixed(1));
+      ball.setAttribute("cy", y.toFixed(1));
+      if (progress < 1) window.requestAnimationFrame(frame);
+      else finish();
+    };
+    window.requestAnimationFrame(frame);
+  }
+
+  function kickFieldGoal() {
+    const stage = document.getElementById("fgStage");
+    const result = document.getElementById("fgResult");
+    const kickButton = document.getElementById("fgKick");
+    if (!stage || !result || !kickButton || fgState.running) return;
+    const idealPower = fgTargetPower();
+    const idealAim = -fgState.wind * 0.5;
+    const powerError = fgState.power - idealPower;
+    const aimError = fgState.aim - idealAim;
+    const powerRatio = fgState.power / idealPower;
+    const reach = 118 + 536 * fgClamp(powerRatio, 0.42, 1.22);
+    const endX = fgClamp(reach + aimError * 10, 72, 748);
+    const endY = 154 - powerError * 3;
+    const outcome = fieldGoalResult(powerError, aimError);
+    const isGood = outcome.title === "GOOD";
+    fgState.running = true;
+    fgState.attempts += 1;
+    if (isGood) fgState.good += 1;
+    stage.classList.remove("is-good", "is-miss");
+    stage.classList.add("is-kicking");
+    kickButton.disabled = true;
+    const aimInput = document.getElementById("fgAim");
+    const powerInput = document.getElementById("fgPower");
+    if (aimInput) aimInput.disabled = true;
+    if (powerInput) powerInput.disabled = true;
+    result.innerHTML = `<strong>Kick in motion…</strong><span>Tracking ${fgState.distance} yards with ${fgState.power}% power.</span>`;
+    animateFieldGoal(endX, endY, () => {
+      const impact = document.getElementById("fgImpact");
+      if (impact) impact.innerHTML = `<circle class="fg-impact-ring ${isGood ? "is-good" : "is-miss"}" cx="${endX.toFixed(1)}" cy="${endY.toFixed(1)}" r="12"></circle>`;
+      stage.classList.remove("is-kicking");
+      stage.classList.add(isGood ? "is-good" : "is-miss");
+      result.innerHTML = `<strong>${outcome.title}</strong><span>${outcome.detail} · Aim ${fgAimLabel()} · Power ${fgState.power}%.</span>`;
+      const score = document.getElementById("fgScore");
+      if (score) score.textContent = `${fgState.good} / ${fgState.attempts} GOOD`;
+      fgState.running = false;
+      kickButton.disabled = false;
+      if (aimInput) aimInput.disabled = false;
+      if (powerInput) powerInput.disabled = false;
+    });
+  }
+
+  function newFieldGoalChallenge() {
+    if (fgState.running) return;
+    const distances = [28, 34, 41, 47, 53, 58];
+    fgState.distance = distances[Math.floor(Math.random() * distances.length)];
+    fgState.wind = Math.floor(Math.random() * 13) - 6;
+    fgState.aim = 0;
+    fgState.power = 80;
+    const aimInput = document.getElementById("fgAim");
+    const powerInput = document.getElementById("fgPower");
+    if (aimInput) aimInput.value = "0";
+    if (powerInput) powerInput.value = "80";
+    drawFieldGoal();
+    const result = document.getElementById("fgResult");
+    if (result) result.innerHTML = `<strong>New distance: ${fgState.distance} yards</strong><span>Counter the wind, choose your power, and take the kick.</span>`;
+  }
+
+  function setupFieldGoalGame() {
+    if (!document.getElementById("fgField")) return;
+    drawFieldGoal();
+    document.getElementById("fgAim")?.addEventListener("input", drawFieldGoal);
+    document.getElementById("fgPower")?.addEventListener("input", drawFieldGoal);
+    document.getElementById("fgKick")?.addEventListener("click", kickFieldGoal);
+    document.getElementById("fgNew")?.addEventListener("click", newFieldGoalChallenge);
+  }
+
   try {
     const [stats, metadata] = await Promise.all([
       fetch("data/report_stats.json").then((response) => response.json()),
@@ -193,17 +336,7 @@
     set("style-takeaway", `${topStyle.team} had the highest passing share at ${decimal(Number(topStyle.passing_share) * 100)}%.`);
     set("home-takeaway", `Home teams won ${pct(home.win_rate)} of team-games, ${decimal((home.win_rate - away.win_rate) * 100)} points above away teams.`);
 
-    const qbSelect = document.getElementById("qbPlayerSelect");
-    if (qbSelect) {
-      const qbOptions = stats.quarterbacks.slice(0, 10);
-      qbSelect.innerHTML = qbOptions.map((row) => `<option value="${row.player_display_name}">${row.player_display_name} · ${row.attempts} attempts</option>`).join("");
-      qbSelect.value = topQb.player_display_name;
-    }
-    renderQuarterbackPlay(topQb.player_display_name);
-    document.getElementById("qbPlaySelect")?.addEventListener("change", (event) => { qbState.play = event.target.value; renderQuarterbackPlay(qbSelect?.value || topQb.player_display_name); });
-    document.getElementById("qbTargetSelect")?.addEventListener("change", (event) => { qbState.target = event.target.value; renderQuarterbackPlay(qbSelect?.value || topQb.player_display_name); });
-    document.getElementById("qbPlayerSelect")?.addEventListener("change", (event) => renderQuarterbackPlay(event.target.value));
-    document.getElementById("qbSnap")?.addEventListener("click", runQuarterbackPlay);
+    setupFieldGoalGame();
 
     makeChart("seasonTrendChart", {
       type: "line",

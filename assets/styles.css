@@ -227,3 +227,54 @@ body { background: radial-gradient(circle at 8% 12%, rgba(116,185,232,.08), tran
 .dashboard-chart-grid .chart-card canvas { height: 250px !important; }
 .dashboard-chart-grid .large canvas { height: 280px !important; }
 @media (max-width: 950px) { .dashboard-chart-grid { grid-template-columns: 1fr; gap: 28px; }.dashboard-chart-grid .chart-card:nth-child(n) { grid-column: 1; } }
+
+/* Report intro: a distance-and-aim field-goal challenge. */
+.field-goal-lab { display: grid; grid-template-columns: minmax(260px, .72fr) minmax(520px, 1.28fr); gap: 24px; align-items: stretch; margin-top: 50px; padding: 34px; color: #fff; background: linear-gradient(135deg, #071d34, #013369); box-shadow: 0 22px 60px rgba(1,51,105,.22); position: relative; overflow: hidden; border-radius: 14px; }
+.field-goal-lab::after { content: ""; width: 330px; height: 330px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; position: absolute; right: -120px; top: -145px; box-shadow: 0 0 0 32px rgba(255,255,255,.025), 0 0 0 64px rgba(255,255,255,.018); pointer-events: none; }
+.fg-intro, .fg-stage { position: relative; z-index: 1; }
+.fg-intro .section-kicker { color: #a7d8f3; }
+.fg-intro h2 { max-width: 410px; margin-bottom: 14px; }
+.fg-intro p:not(.section-kicker):not(.fg-disclaimer) { color: rgba(255,255,255,.74); max-width: 410px; }
+.fg-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 12px; margin-top: 24px; }
+.fg-controls label { display: grid; grid-template-columns: 1fr auto; gap: 6px; color: #a7d8f3; font: 800 10px "Barlow Condensed"; letter-spacing: .14em; }
+.fg-controls output { color: #fff; font: 800 12px "Barlow Condensed"; letter-spacing: .04em; }
+.fg-controls input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: var(--nfl-red); }
+.fg-range-labels { grid-column: 1 / -1; display: flex; justify-content: space-between; margin-top: -8px; color: rgba(255,255,255,.42); font: 700 9px "Barlow Condensed"; letter-spacing: .1em; }
+.fg-button { min-height: 42px; padding: 0 15px; border: 0; border-radius: 3px; background: var(--nfl-red); color: #fff; font-weight: 800; cursor: pointer; }
+.fg-button:hover { background: #fff; color: var(--nfl-blue); }
+.fg-button:disabled { cursor: wait; opacity: .65; }
+.fg-button span { margin-right: 5px; }
+.fg-button-ghost { border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.1); }
+.fg-button-ghost:hover { background: rgba(255,255,255,.2); color: #fff; }
+.fg-disclaimer { margin: 18px 0 0; color: rgba(255,255,255,.46) !important; font-size: 11px; line-height: 1.45; }
+.fg-stage { min-height: 390px; padding: 18px 18px 14px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 6px; }
+.fg-scoreboard { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 8px; font-family: "Barlow Condensed"; }
+.fg-scoreboard strong { font-size: 21px; letter-spacing: -.01em; }
+.fg-scoreboard > span:last-child { margin-left: auto; color: rgba(255,255,255,.64); font-size: 12px; }
+.fg-field { display: block; width: 100%; height: 290px; overflow: visible; }
+.fg-field-grass { fill: url(#fgGrass); stroke: rgba(255,255,255,.25); stroke-width: 2; }
+.fg-yard-lines line { stroke: rgba(255,255,255,.25); stroke-width: 1; }
+.fg-yard-lines text { fill: rgba(255,255,255,.52); font: 10px "DM Sans"; }
+.fg-goal line, .fg-goal path { fill: none; stroke: #f2b134; stroke-width: 7; stroke-linecap: round; filter: drop-shadow(0 0 4px rgba(242,177,52,.32)); }
+.fg-goal path { stroke-width: 4; }
+.fg-aim-line { stroke: rgba(255,255,255,.58); stroke-width: 1.5; stroke-dasharray: 5 7; }
+.fg-trajectory { fill: none; stroke: #ff6b6b; stroke-width: 3; stroke-dasharray: 8 8; stroke-linecap: round; opacity: .8; }
+.fg-ball { fill: #a95b2d; stroke: #fff; stroke-width: 2; filter: drop-shadow(0 4px 5px rgba(0,0,0,.28)); }
+.fg-aim-marker { fill: rgba(255,255,255,.1); stroke: #fff; stroke-width: 2; stroke-dasharray: 3 3; }
+.fg-kicker circle, .fg-kicker path { fill: none; stroke: #a7d8f3; stroke-width: 4; stroke-linecap: round; }
+.fg-kicker circle { fill: #a7d8f3; stroke: none; }
+.fg-field-label, .fg-field-note, .fg-wind-label { fill: rgba(255,255,255,.7); font: 800 11px "Barlow Condensed"; letter-spacing: .12em; }
+.fg-field-note { fill: #f2b134; }
+.fg-wind-label { fill: #a7d8f3; }
+.fg-impact-ring { fill: none; stroke-width: 4; opacity: .9; animation: fg-impact-pop .7s ease-out both; }
+.fg-impact-ring.is-good { stroke: #49a078; }
+.fg-impact-ring.is-miss { stroke: var(--nfl-red); }
+.fg-stage.is-kicking .fg-ball { filter: drop-shadow(0 0 9px rgba(255,255,255,.82)); }
+.fg-stage.is-good .fg-aim-marker { fill: rgba(73,160,120,.42); stroke: #9de5c1; }
+.fg-stage.is-miss .fg-aim-marker { fill: rgba(213,10,10,.32); stroke: #ff9b9b; }
+.fg-result { display: grid; gap: 3px; min-height: 45px; padding: 8px 12px; border-left: 3px solid var(--nfl-red); background: rgba(0,0,0,.17); }
+.fg-result strong { color: #fff; font: 800 17px "Barlow Condensed"; }
+.fg-result span { color: rgba(255,255,255,.68); font-size: 12px; }
+@keyframes fg-impact-pop { from { opacity: 0; transform: scale(.55); transform-origin: center; } to { opacity: 1; transform: scale(1); transform-origin: center; } }
+@media (max-width: 950px) { .field-goal-lab { grid-template-columns: 1fr; }.fg-intro h2, .fg-intro p:not(.section-kicker):not(.fg-disclaimer) { max-width: 650px; } }
+@media (max-width: 600px) { .field-goal-lab { margin-top: 28px; padding: 22px 16px; }.fg-controls { grid-template-columns: 1fr; }.fg-button { width: 100%; }.fg-scoreboard > span:last-child { margin-left: 0; width: 100%; }.fg-stage { padding-inline: 8px; }.fg-field { height: 215px; }.fg-field-note { display: none; } }
