@@ -412,10 +412,133 @@
     document.getElementById("fgNew")?.addEventListener("click", newFieldGoalChallenge);
   }
 
+  const reportFilterState = { season: "all", team: "all", position: "all" };
+  const aggregateTeamRows = (rows) => {
+    const grouped = new Map();
+    rows.forEach((row) => {
+      const key = row.team;
+      const current = grouped.get(key) || { ...row, games: 0, wins: 0, losses: 0, passing_yards: 0, rushing_yards: 0, offensive_yards: 0, points_total: 0, offensive_tds: 0 };
+      const games = Number(row.games || 0);
+      current.games += games;
+      current.wins += Number(row.wins || 0);
+      current.losses += Number(row.losses || 0);
+      current.passing_yards += Number(row.passing_yards || 0);
+      current.rushing_yards += Number(row.rushing_yards || 0);
+      current.offensive_yards += Number(row.offensive_yards || 0);
+      current.points_total += Number(row.points_per_game || 0) * games;
+      current.offensive_tds += Number(row.offensive_tds || 0);
+      grouped.set(key, current);
+    });
+    return [...grouped.values()].map((row) => ({ ...row, losses: Math.max(0, row.games - row.wins), win_rate: row.games ? row.wins / row.games : 0, points_per_game: row.games ? row.points_total / row.games : 0, offensive_yards_per_game: row.games ? row.offensive_yards / row.games : 0 }));
+  };
+  const filterBySeasonAndTeam = (rows) => rows.filter((row) => (reportFilterState.season === "all" || Number(row.season) === Number(reportFilterState.season)) && (reportFilterState.team === "all" || row.team === reportFilterState.team));
+  const reportTeamRows = (stats) => reportFilterState.season === "all" ? aggregateTeamRows(filterBySeasonAndTeam(stats.team_offense)) : filterBySeasonAndTeam(stats.team_offense);
+  const reportTeamRecord = (stats, team, season) => {
+    const rows = stats.team_offense.filter((row) => row.team === team && (season === "all" || Number(row.season) === Number(season)));
+    if (!rows.length) return null;
+    const offense = season === "all" ? aggregateTeamRows(rows)[0] : rows[0];
+    const styleRows = stats.team_style.filter((row) => row.team === team && (season === "all" || Number(row.season) === Number(season)));
+    const defenseRows = stats.team_defense.filter((row) => row.team === team && (season === "all" || Number(row.season) === Number(season)));
+    const passing = rows.reduce((sum, row) => sum + Number(row.passing_yards || 0), 0);
+    const rushing = rows.reduce((sum, row) => sum + Number(row.rushing_yards || 0), 0);
+    const games = rows.reduce((sum, row) => sum + Number(row.games || 0), 0);
+    const pressure = defenseRows.reduce((sum, row) => sum + Number(row.def_sacks || 0) + Number(row.def_interceptions || 0), 0);
+    return { team, games, wins: Number(offense.wins || 0), losses: Math.max(0, games - Number(offense.wins || 0)), winRate: Number(offense.win_rate || 0), pointsPerGame: Number(offense.points_per_game || 0), yardsPerGame: Number(offense.offensive_yards_per_game || 0), passShare: (passing + rushing) ? passing / (passing + rushing) : 0, pressurePerGame: games ? pressure / games : 0 };
+  };
+  const reportTeamMeta = (teams, team) => (teams || []).find((row) => row.team_abbr === team) || { team_abbr: team, team_name: team, team_color: colors.navy, team_color2: colors.red };
+
+  function renderReportLens(stats) {
+    const seasonRows = reportTeamRows(stats);
+    const positionRows = (stats.position_production || []).filter((row) => reportFilterState.position === "all" || row.position_group === reportFilterState.position);
+    let labels; let values; let title; let explainer; let takeaway; let tooltipLabel;
+    if (reportFilterState.position !== "all") {
+      const roles = positionRows.slice().sort((a, b) => Number(b.production_yards) - Number(a.production_yards));
+      labels = roles.map((row) => row.position_group); values = roles.map((row) => Number(row.production_yards));
+      title = `${reportFilterState.position} role workload`; explainer = "Recorded player production for the selected position group."; takeaway = roles[0] ? `${roles[0].position_group} represents ${number(roles[0].production_yards)} recorded yards across ${number(roles[0].player_games)} player-games.` : "No role data for this selection."; tooltipLabel = (ctx) => `${ctx.label}: ${number(ctx.raw)} recorded yards`;
+    } else {
+      const ranked = seasonRows.slice().sort((a, b) => Number(b.offensive_yards_per_game) - Number(a.offensive_yards_per_game)).slice(0, 8);
+      labels = ranked.map((row) => row.team); values = ranked.map((row) => Number(row.offensive_yards_per_game));
+      title = reportFilterState.team === "all" ? "Offensive identity ranking" : `${reportFilterState.team} offensive identity`;
+      explainer = reportFilterState.season === "all" ? "Average offensive yards per team-game across the selected window." : `Offensive yards per game in ${reportFilterState.season}.`;
+      takeaway = ranked[0] ? `${ranked[0].team} leads this lens at ${decimal(ranked[0].offensive_yards_per_game)} offensive yards per game.` : "No team data for this selection."; tooltipLabel = (ctx) => `${ctx.label}: ${decimal(ctx.raw)} offensive yards/game`;
+    }
+    set("reportLensChartTitle", title); set("reportLensExplainer", explainer); set("reportLensTakeaway", takeaway);
+    makeChart("reportLensChart", { type: "bar", data: { labels, datasets: [{ label: title, data: values, backgroundColor: labels.map((label, index) => label === reportFilterState.team ? colors.red : palette[index % palette.length]), borderRadius: 4, borderSkipped: false }] }, options: { ...chartDefaults, indexAxis: "y", plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: tooltipLabel } } }, scales: { x: { ...chartDefaults.scales.x, beginAtZero: true, ticks: { callback: (value) => reportFilterState.position === "all" ? `${Math.round(value)} yds` : `${Math.round(value / 1000)}k` } }, y: { ...chartDefaults.scales.y, grid: { display: false } } } } });
+  }
+
+  function refreshFilteredCharts(stats) {
+    const seasonTrend = reportFilterState.season === "all" ? stats.season_trend : stats.season_trend.filter((row) => Number(row.season) === Number(reportFilterState.season));
+    if (charts.seasonTrendChart) { charts.seasonTrendChart.data.labels = seasonTrend.map((row) => row.season); charts.seasonTrendChart.data.datasets[0].data = seasonTrend.map((row) => row.points_per_team_game); charts.seasonTrendChart.update(); }
+    const winRows = (reportFilterState.season === "all" ? aggregateTeamRows(filterBySeasonAndTeam(stats.team_offense)) : filterBySeasonAndTeam(stats.team_offense)).sort((a, b) => Number(b.wins) - Number(a.wins)).slice(0, 8);
+    if (charts.teamWinChart) { charts.teamWinChart.data.labels = winRows.map((row) => row.team); charts.teamWinChart.data.datasets[0].data = winRows.map((row) => row.wins); charts.teamWinChart.data.datasets[0].backgroundColor = winRows.map((row, index) => row.team === reportFilterState.team ? colors.red : palette[index % palette.length]); charts.teamWinChart.update(); }
+    const offenseRows = reportTeamRows(stats);
+    if (charts.offenseChart) { charts.offenseChart.data.datasets[0].data = offenseRows.map((row) => ({ x: Number(row.passing_yards), y: Number(row.rushing_yards), team: row.team, season: row.season || "window", wins: row.wins, rate: row.win_rate, offensiveYards: row.offensive_yards, offensiveTds: row.offensive_tds, pointsPerGame: row.points_per_game, yardsPerGame: row.offensive_yards_per_game })); charts.offenseChart.data.datasets[0].backgroundColor = offenseRows.map((row) => pointColor(row.win_rate)); charts.offenseChart.data.datasets[0].pointRadius = offenseRows.map((row) => 4 + Math.min(6, Number(row.wins || 0) / 3)); charts.offenseChart.update(); }
+    const positions = (stats.position_production || []).filter((row) => reportFilterState.position === "all" || row.position_group === reportFilterState.position).slice(0, 8);
+    if (charts.positionChart) { charts.positionChart.data.labels = positions.map((row) => row.position_group); charts.positionChart.data.datasets[0].data = positions.map((row) => row.production_yards); charts.positionChart.update(); }
+    const defenseRows = stats.team_defense.filter((row) => (reportFilterState.season === "all" || Number(row.season) === Number(reportFilterState.season)) && (reportFilterState.team === "all" || row.team === reportFilterState.team)).slice(0, 5);
+    if (charts.defenseChart) { charts.defenseChart.data.datasets = defenseRows.map((row, index) => ({ label: `${row.team} · ${row.season}`, data: [row.def_sacks, row.def_interceptions, Number(row.win_rate) * 100], borderColor: palette[index], backgroundColor: `${palette[index]}22`, pointBackgroundColor: palette[index], borderWidth: 2 })); charts.defenseChart.update(); }
+    const balanceRows = reportFilterState.season === "all" ? stats.season_balance : stats.season_balance.filter((row) => Number(row.season) === Number(reportFilterState.season));
+    if (charts.balanceChart) { charts.balanceChart.data.labels = balanceRows.map((row) => row.season); charts.balanceChart.data.datasets[0].data = balanceRows.map((row) => row.passing_yards_per_team_game); charts.balanceChart.data.datasets[1].data = balanceRows.map((row) => row.rushing_yards_per_team_game); charts.balanceChart.data.datasets[2].data = balanceRows.map((row) => Number(row.passing_share) * 100); charts.balanceChart.update(); }
+    const turnoverRows = stats.turnover_success.filter((row) => (reportFilterState.season === "all" || Number(row.season) === Number(reportFilterState.season)) && (reportFilterState.team === "all" || row.team === reportFilterState.team));
+    if (charts.turnoverChart) { charts.turnoverChart.data.datasets[0].data = turnoverRows.map((row) => ({ x: Number(row.offensive_interceptions_per_game), y: Number(row.points_per_game), r: Math.max(5, Math.min(15, Number(row.offensive_tds_per_game) * 2.6)), team: row.team, season: row.season, winRate: row.win_rate, takeaways: row.takeaway_margin, tds: row.offensive_tds_per_game })); charts.turnoverChart.data.datasets[0].backgroundColor = turnoverRows.map((row) => `${pointColor(row.win_rate)}cc`); charts.turnoverChart.data.datasets[0].borderColor = turnoverRows.map((row) => pointColor(row.win_rate)); charts.turnoverChart.update(); }
+    const filterText = `${reportFilterState.season === "all" ? "All seasons" : reportFilterState.season} · ${reportFilterState.team === "all" ? "all teams" : reportFilterState.team} · ${reportFilterState.position === "all" ? "all positions" : reportFilterState.position}`;
+    set("reportFilterStatus", filterText);
+  }
+
+  function setupReportFilters(stats) {
+    const seasonSelect = document.getElementById("reportSeasonFilter"); const teamSelect = document.getElementById("reportTeamFilter"); const positionSelect = document.getElementById("reportPositionFilter");
+    if (!seasonSelect || !teamSelect || !positionSelect) return;
+    [...new Set(stats.season_trend.map((row) => Number(row.season)))].sort((a, b) => a - b).forEach((season) => seasonSelect.insertAdjacentHTML("beforeend", `<option value="${season}">${season}</option>`));
+    [...new Set(stats.team_offense.map((row) => row.team))].sort().forEach((team) => teamSelect.insertAdjacentHTML("beforeend", `<option value="${team}">${team}</option>`));
+    [...new Set(stats.position_production.map((row) => row.position_group))].sort().forEach((position) => positionSelect.insertAdjacentHTML("beforeend", `<option value="${position}">${position}</option>`));
+    const update = () => { reportFilterState.season = seasonSelect.value; reportFilterState.team = teamSelect.value; reportFilterState.position = positionSelect.value; renderReportLens(stats); refreshFilteredCharts(stats); };
+    seasonSelect.addEventListener("change", update); teamSelect.addEventListener("change", update); positionSelect.addEventListener("change", update);
+    document.getElementById("reportResetFilters")?.addEventListener("click", () => { seasonSelect.value = "all"; teamSelect.value = "all"; positionSelect.value = "all"; update(); });
+    renderReportLens(stats); refreshFilteredCharts(stats);
+  }
+
+  function setupTeamComparison(stats, teams) {
+    const seasonSelect = document.getElementById("compareSeason"); const teamASelect = document.getElementById("compareTeamA"); const teamBSelect = document.getElementById("compareTeamB");
+    if (!seasonSelect || !teamASelect || !teamBSelect) return;
+    [...new Set(stats.season_trend.map((row) => Number(row.season)))].sort((a, b) => a - b).forEach((season) => seasonSelect.insertAdjacentHTML("beforeend", `<option value="${season}">${season}</option>`));
+    [...new Set(stats.team_offense.map((row) => row.team))].sort().forEach((team) => { const meta = reportTeamMeta(teams, team); const label = `${team} · ${meta.team_nick || meta.team_name || team}`; teamASelect.insertAdjacentHTML("beforeend", `<option value="${team}">${label}</option>`); teamBSelect.insertAdjacentHTML("beforeend", `<option value="${team}">${label}</option>`); });
+    teamASelect.value = stats.team_offense.some((row) => row.team === "BUF") ? "BUF" : teamASelect.options[0]?.value; teamBSelect.value = stats.team_offense.some((row) => row.team === "CIN") ? "CIN" : teamBSelect.options[1]?.value;
+    const update = () => {
+      const season = seasonSelect.value; const teamA = reportTeamRecord(stats, teamASelect.value, season); const teamB = reportTeamRecord(stats, teamBSelect.value, season); if (!teamA || !teamB) return;
+      const metaA = reportTeamMeta(teams, teamA.team); const metaB = reportTeamMeta(teams, teamB.team); const cardA = document.querySelector(".comparison-team-a"); const cardB = document.querySelector(".comparison-team-b");
+      if (cardA) cardA.style.setProperty("--compare-color", metaA.team_color || colors.navy); if (cardB) cardB.style.setProperty("--compare-color", metaB.team_color || colors.red);
+      [ ["compareLogoA", metaA.team_logo_espn || metaA.team_logo_wikipedia, metaA.team_name || teamA.team], ["compareLogoB", metaB.team_logo_espn || metaB.team_logo_wikipedia, metaB.team_name || teamB.team] ].forEach(([id, src, alt]) => { const img = document.getElementById(id); if (img) { img.src = src || ""; img.alt = `${alt} logo`; } });
+      set("compareNameA", teamA.team); set("compareNameB", teamB.team); set("compareRecordA", `${teamA.wins}-${teamA.losses} · ${season === "all" ? "five-season window" : season}`); set("compareRecordB", `${teamB.wins}-${teamB.losses} · ${season === "all" ? "five-season window" : season}`);
+      set("compareWinA", pct(teamA.winRate)); set("compareWinB", pct(teamB.winRate)); set("comparePointsA", decimal(teamA.pointsPerGame)); set("comparePointsB", decimal(teamB.pointsPerGame)); set("compareYardsA", decimal(teamA.yardsPerGame)); set("compareYardsB", decimal(teamB.yardsPerGame)); set("compareStyleA", pct(teamA.passShare)); set("compareStyleB", pct(teamB.passShare));
+      const labels = ["Win rate", "Points / game", "Offensive yds / game", "Pass share", "Pressure / game"]; const rawA = [teamA.winRate * 100, teamA.pointsPerGame, teamA.yardsPerGame, teamA.passShare * 100, teamA.pressurePerGame]; const rawB = [teamB.winRate * 100, teamB.pointsPerGame, teamB.yardsPerGame, teamB.passShare * 100, teamB.pressurePerGame]; const normalized = (values, other) => values.map((value, index) => { const max = Math.max(Number(value), Number(other[index]), 1); return (Number(value) / max) * 100; });
+      makeChart("reportCompareChart", { type: "bar", data: { labels, datasets: [{ label: teamA.team, data: normalized(rawA, rawB), rawValues: rawA, backgroundColor: metaA.team_color || colors.navy, borderRadius: 3 }, { label: teamB.team, data: normalized(rawB, rawA), rawValues: rawB, backgroundColor: metaB.team_color || colors.red, borderRadius: 3 }] }, options: { ...chartDefaults, indexAxis: "y", plugins: { ...chartDefaults.plugins, legend: { display: true, position: "bottom", labels: chartDefaults.plugins.legend.labels }, tooltip: { callbacks: { label: (ctx) => { const raw = ctx.dataset.rawValues[ctx.dataIndex]; return `${ctx.dataset.label}: ${ctx.dataIndex === 0 || ctx.dataIndex === 3 ? decimal(raw) + "%" : decimal(raw)}`; } } } }, scales: { x: { ...chartDefaults.scales.x, min: 0, max: 100, ticks: { callback: (value) => `${value}` } }, y: { ...chartDefaults.scales.y, grid: { display: false } } } } });
+      const edges = labels.map((label, index) => Math.abs(rawA[index] - rawB[index])); const edgeIndex = edges.indexOf(Math.max(...edges)); const edgeTeam = rawA[edgeIndex] >= rawB[edgeIndex] ? teamA.team : teamB.team; set("compareTakeaway", `${edgeTeam} has the clearest edge in ${labels[edgeIndex].toLowerCase()} for this view.`);
+    };
+    seasonSelect.addEventListener("change", update); teamASelect.addEventListener("change", update); teamBSelect.addEventListener("change", update); update();
+  }
+
+  function renderSurprises(stats) {
+    const runHeavy = stats.team_offense.reduce((best, row) => { const share = Number(row.rushing_yards) / Math.max(1, Number(row.passing_yards) + Number(row.rushing_yards)); return !best || share > best.share ? { row, share } : best; }, null);
+    const pressure = stats.team_defense.reduce((best, row) => !best || Number(row.defensive_takeaways_pressure) > Number(best.defensive_takeaways_pressure) ? row : best, null);
+    const efficient = (stats.turnover_success || []).slice().sort((a, b) => Number(b.win_rate) - Number(a.win_rate) || Number(a.offensive_interceptions_per_game) - Number(b.offensive_interceptions_per_game))[0];
+    if (runHeavy) { set("surprise-run-title", `${runHeavy.row.team} ran ${decimal(runHeavy.share * 100)}% of its offense`); set("surprise-run-detail", `The ${runHeavy.row.season} team-season still produced ${decimal(runHeavy.row.points_per_game)} points per game, showing that balance can be a strength rather than a lack of ambition.`); }
+    if (pressure) { set("surprise-defense-title", `${pressure.team} created ${number(pressure.defensive_takeaways_pressure)} pressure events`); set("surprise-defense-detail", `${pressure.team} in ${pressure.season} paired ${number(pressure.def_sacks)} sacks with ${number(pressure.def_interceptions)} interceptions—two different ways to end a drive.`); }
+    if (efficient) { set("surprise-efficiency-title", `${efficient.team} turned care into wins`); set("surprise-efficiency-detail", `${efficient.team} in ${efficient.season} won ${pct(efficient.win_rate)} of its games while throwing only ${decimal(efficient.offensive_interceptions_per_game)} interceptions per game.`); }
+  }
+
+  function renderClosingSummary(stats) {
+    const topTeam = stats.team_win_rate[0]; const topStyle = stats.passing_share[0]; const home = stats.home_away.find((row) => row.home_away === "Home"); const away = stats.home_away.find((row) => row.home_away === "Away");
+    set("closing-lede", `The report’s central lesson is simple: production matters most when it fits the role and the situation. Use the dashboard to move from league pattern to player matchup.`);
+    set("closing-one-title", `${topTeam.team} shows the value of finishing games`); set("closing-one-detail", `${topTeam.team} led the window with ${number(topTeam.wins)} wins and a ${pct(topTeam.win_rate)} winning rate.`);
+    set("closing-two-title", `${topStyle.team} shows that style is a choice`); set("closing-two-detail", `${topStyle.team} produced the highest passing share at ${decimal(Number(topStyle.passing_share) * 100)}%, but the report keeps rushing, pressure, and role workload in view.`);
+    set("closing-three-title", "Context keeps the stat honest"); set("closing-three-detail", `Home teams won ${pct(home.win_rate)} of team-games versus ${pct(away.win_rate)} away. Situations, decisions, and field position belong beside the box score.`);
+  }
+
   try {
-    const [stats, metadata] = await Promise.all([
+    const [stats, metadata, teamMetadata] = await Promise.all([
       fetch("data/report_stats.json").then((response) => response.json()),
       fetch("data/metadata.json").then((response) => response.json()),
+      fetch("data/teams.json").then((response) => response.json()),
     ]);
     const overview = stats.overview;
     setupHeroTicker(stats);
@@ -462,6 +585,7 @@
     set("insight-winning", `${topTeam.team} led the win table`); set("insight-winning-detail", `${number(topTeam.wins)} wins across ${number(topTeam.games)} team-games (${pct(topTeam.win_rate)}).`);
     set("insight-style", `${topStyle.team} leaned most on the pass`); set("insight-style-detail", `${decimal(Number(topStyle.passing_share) * 100)}% of offensive yards came through passing.`);
     set("insight-home", `Home field added ${decimal((home.win_rate - away.win_rate) * 100)} points`); set("insight-home-detail", `Home teams won ${pct(home.win_rate)} of team-games versus ${pct(away.win_rate)} away.`);
+    renderSurprises(stats); renderClosingSummary(stats);
 
     setupFieldGoalGame();
 
@@ -473,9 +597,9 @@
 
     const winningTeams = stats.team_win_rate.slice(0, 8);
     makeChart("teamWinChart", {
-      type: "doughnut",
-      data: { labels: winningTeams.map((row) => row.team), datasets: [{ data: winningTeams.map((row) => row.wins), backgroundColor: palette.slice(0, winningTeams.length), borderColor: "#fff", borderWidth: 4, hoverOffset: 10 }] },
-      options: { ...chartDefaults, cutout: "62%", plugins: { ...chartDefaults.plugins, legend: { display: true, position: "bottom", labels: chartDefaults.plugins.legend.labels }, tooltip: { callbacks: { label: (ctx) => `${ctx.label}: ${number(ctx.raw)} wins · ${pct(winningTeams[ctx.dataIndex].win_rate)}` } } } },
+      type: "bar",
+      data: { labels: winningTeams.map((row) => row.team), datasets: [{ label: "Wins", data: winningTeams.map((row) => row.wins), backgroundColor: winningTeams.map((_, index) => palette[index]), borderRadius: 4, borderSkipped: false }] },
+      options: { ...chartDefaults, indexAxis: "y", plugins: { ...chartDefaults.plugins, legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.label}: ${number(ctx.raw)} wins · ${pct(winningTeams[ctx.dataIndex].win_rate)}` } } }, scales: { x: { ...chartDefaults.scales.x, beginAtZero: true, ticks: { precision: 0 } }, y: { ...chartDefaults.scales.y, grid: { display: false } } } },
     });
 
     makeChart("offenseChart", {
@@ -530,6 +654,7 @@
       data: { datasets: [{ label: "Team-seasons", data: turnoverRows.map((row) => ({ x: Number(row.offensive_interceptions_per_game), y: Number(row.points_per_game), r: Math.max(5, Math.min(15, Number(row.offensive_tds_per_game) * 2.6)), team: row.team, season: row.season, winRate: row.win_rate, takeaways: row.takeaway_margin, tds: row.offensive_tds_per_game })), backgroundColor: turnoverRows.map((row) => `${pointColor(row.win_rate)}cc`), borderColor: turnoverRows.map((row) => pointColor(row.win_rate)), borderWidth: 2, pointHoverRadius: 11 }] },
       options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: (ctx) => { const raw = ctx.raw; return `${raw.team} ${raw.season}: ${decimal(raw.x)} INTs thrown/game · ${decimal(raw.y)} pts/game · ${decimal(raw.tds)} offensive TDs/game · ${pct(raw.winRate)} wins · ${raw.takeaways >= 0 ? "+" : ""}${decimal(raw.takeaways)} INT margin`; } } } }, scales: { x: { ...chartDefaults.scales.x, beginAtZero: true, title: { display: true, text: "Offensive interceptions thrown / game", color: colors.navyDark } }, y: { ...chartDefaults.scales.y, beginAtZero: true, title: { display: true, text: "Points scored / game", color: colors.navyDark } } } },
     });
+    setupReportFilters(stats); setupTeamComparison(stats, teamMetadata);
   } catch (error) {
     document.body.insertAdjacentHTML("beforeend", `<div class="load-error">Report data could not be loaded. Run the build script and serve the project over HTTP.</div>`);
     console.error(error);

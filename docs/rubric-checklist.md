@@ -17,6 +17,9 @@
 - [x] Ten finding sections, each with explanatory text and a chart.
 - [x] Closing methodology section explains source, row definition, exclusions, and calculations.
 - [x] Interactive Clutch Kicker game makes the report opening engaging while connecting field-goal mechanics to a fourth-down decision.
+- [x] Report guide, season/team/position lens, and direct chart-type labels improve navigation and readability.
+- [x] Team comparison builder compares two selected teams by season using role-relevant real values and a normalized index.
+- [x] Surprise findings and a closing summary turn the chart collection into an interpretable story.
 
 ## Dashboard page
 

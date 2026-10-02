@@ -60,6 +60,15 @@
         </div>
       </section>
 
+      <section class="report-guide content-width" aria-labelledby="report-guide-title">
+        <div class="report-guide-heading"><p class="section-kicker">HOW TO USE THIS REPORT</p><h2 id="report-guide-title">Three ways into the same five-season story.</h2><p>Start broad, narrow the lens, then test the decision. Each stop answers a different football question.</p></div>
+        <div class="report-guide-grid">
+          <a class="report-guide-card" href="#chapter-league"><span>01 · READ THE PATTERN</span><strong>League pulse</strong><p>See how scoring, winning, and the shape of offense changed from 2021 to 2025.</p><b>Start with the rhythm <i>→</i></b></a>
+          <a class="report-guide-card" href="#team-comparison"><span>02 · TEST A MATCHUP</span><strong>Team identity</strong><p>Put two teams side by side and see whether the edge comes through points, pace, balance, or pressure.</p><b>Compare two teams <i>→</i></b></a>
+          <a class="report-guide-card" href="#field-goal-lab"><span>03 · MAKE THE CALL</span><strong>Clutch kicker</strong><p>Choose kick, go, or punt, then take the kick yourself when the moment calls for three.</p><b>Play the decision <i>→</i></b></a>
+        </div>
+      </section>
+
       <section class="field-goal-lab content-width" id="field-goal-lab" aria-labelledby="field-goal-title">
         <div class="fg-intro">
           <p class="section-kicker">INTERACTIVE SIMULATION · CLUTCH KICKER</p>
@@ -126,62 +135,97 @@
         </div>
       </section>
 
+      <section class="report-controls content-width" id="report-lens" aria-labelledby="report-lens-title">
+        <div class="report-controls-heading"><div><p class="section-kicker">INTERACTIVE REPORT LENS</p><h2 id="report-lens-title">Change the question without leaving the page.</h2><p>Filter the overview ranking by season, team, or position. The lens updates the chart and takeaway below; the full-window findings remain as context.</p></div><div class="report-controls-note"><span>FILTERS</span><strong id="reportFilterStatus">All seasons · all teams · all positions</strong></div></div>
+        <div class="report-filter-grid" aria-label="Report filters">
+          <label for="reportSeasonFilter">SEASON<select id="reportSeasonFilter"><option value="all">All five seasons</option></select></label>
+          <label for="reportTeamFilter">TEAM<select id="reportTeamFilter"><option value="all">All teams</option></select></label>
+          <label for="reportPositionFilter">POSITION<select id="reportPositionFilter"><option value="all">All position groups</option></select></label>
+          <button class="ghost-button" id="reportResetFilters" type="button">Reset lens</button>
+        </div>
+        <div class="report-lens-grid">
+          <div class="chart-card report-lens-card"><div class="chart-card-heading"><div><p class="chart-explainer" id="reportLensExplainer">Team-season offensive yards per game.</p><h3 id="reportLensChartTitle">Offensive identity ranking</h3></div><span class="chart-type">FILTERED RANKING</span></div><canvas id="reportLensChart" role="img" aria-label="Interactive filtered report ranking"></canvas><p class="chart-callout"><span>READ IT</span><strong id="reportLensTakeaway">—</strong></p></div>
+          <div class="report-lens-side"><p class="section-kicker">WHAT CHANGES</p><h3>Use the lens to make the report yours.</h3><div class="lens-note"><span>SEASON</span><strong>Compare eras</strong><p>Follow the league’s balance and scoring from one season to the next.</p></div><div class="lens-note"><span>TEAM</span><strong>Find a fingerprint</strong><p>See whether a team wins with pace, points, balance, or pressure.</p></div><div class="lens-note"><span>POSITION</span><strong>Respect the role</strong><p>Switch from yardage to workload when the job on the field changes.</p></div></div>
+        </div>
+      </section>
+
       <section class="report-chapter content-width" id="chapter-league"><div class="chapter-index">01</div><div><p class="section-kicker">LEAGUE PULSE</p><h2>Start with the rhythm of the league.</h2><p>Scoring and winning establish the baseline. Every team and player comparison below is easier to read once you know the shape of the five-season game.</p></div><span class="chapter-tag">SCORING · WINNING</span></section>
 
       <section class="report-section content-width" id="finding-1">
         <div class="finding-number">01</div><div class="finding-copy"><p class="section-kicker">LEAGUE RHYTHM</p><h2>The scoring pulse rose and fell without losing its NFL shape.</h2><p>Across the five-season window, the league averaged <strong id="trend-average">—</strong> points per team-game. <strong id="trend-peak-season">—</strong> was the highest-scoring season, giving us the baseline for every comparison that follows.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Each point is the average points scored by one team in that season.</p><canvas id="seasonTrendChart" role="img" aria-label="Line chart showing average points per team-game by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="trend-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">LINE · TREND</span><p class="chart-explainer">Each point is the average points scored by one team in that season.</p><canvas id="seasonTrendChart" role="img" aria-label="Line chart showing average points per team-game by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="trend-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-section content-width" id="finding-2">
-        <div class="finding-number">02</div><div class="finding-copy"><p class="section-kicker">WINNING MARGIN</p><h2><span id="top-team-name">—</span> set the five-season pace for winning.</h2><p>It won <strong id="top-team-wins">—</strong> of <strong id="top-team-games">—</strong> team-games, a <strong id="top-team-rate">—</strong> winning rate. The ring chart shows how that record compares with the rest of the league without making a game count twice.</p></div>
-        <div class="chart-card"><p class="chart-explainer">The ring compares team wins across the five-season window.</p><canvas id="teamWinChart" role="img" aria-label="Doughnut chart comparing wins among leading NFL teams"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="win-takeaway">—</strong></p></div>
+        <div class="finding-number">02</div><div class="finding-copy"><p class="section-kicker">WINNING MARGIN</p><h2><span id="top-team-name">—</span> set the five-season pace for winning.</h2><p>It won <strong id="top-team-wins">—</strong> of <strong id="top-team-games">—</strong> team-games, a <strong id="top-team-rate">—</strong> winning rate. The ranking bars make the league’s winning gap visible without making a game count twice.</p></div>
+        <div class="chart-card"><span class="chart-type">RANKING · WINS</span><p class="chart-explainer">The bars rank the leading teams by total wins across the five-season window.</p><canvas id="teamWinChart" role="img" aria-label="Horizontal bar chart comparing wins among leading NFL teams"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="win-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-chapter content-width" id="chapter-team"><div class="chapter-index">02</div><div><p class="section-kicker">TEAM IDENTITY</p><h2>Teams reveal themselves in the air, on the ground, and in pressure.</h2><p>These views connect offense and defense so a team style feels like a football identity—not just a column of totals.</p></div><span class="chapter-tag">OFFENSE · DEFENSE · STYLE</span></section>
 
+      <section class="team-comparison content-width" id="team-comparison" aria-labelledby="team-comparison-title">
+        <div class="team-comparison-heading"><div><p class="section-kicker">MATCHUP BUILDER</p><h2 id="team-comparison-title">Put two team identities on the same field.</h2><p>Choose two teams and a season. The comparison index puts win rate, scoring, offensive volume, passing balance, and defensive pressure on a common scale while the cards keep the real values visible.</p></div><div class="comparison-controls"><label for="compareSeason">SEASON<select id="compareSeason"><option value="all">Five-season average</option></select></label><label for="compareTeamA">TEAM A<select id="compareTeamA"></select></label><label for="compareTeamB">TEAM B<select id="compareTeamB"></select></label></div></div>
+        <div class="comparison-grid">
+          <article class="comparison-team-card comparison-team-a"><div class="comparison-team-top"><img id="compareLogoA" alt="" /><div><span>TEAM A</span><h3 id="compareNameA">—</h3><p id="compareRecordA">—</p></div></div><div class="comparison-mini-stats"><span><b id="compareWinA">—</b><small>WIN RATE</small></span><span><b id="comparePointsA">—</b><small>PTS/G</small></span><span><b id="compareYardsA">—</b><small>YDS/G</small></span><span><b id="compareStyleA">—</b><small>PASS SHARE</small></span></div></article>
+          <div class="comparison-vs">VS</div>
+          <article class="comparison-team-card comparison-team-b"><div class="comparison-team-top"><img id="compareLogoB" alt="" /><div><span>TEAM B</span><h3 id="compareNameB">—</h3><p id="compareRecordB">—</p></div></div><div class="comparison-mini-stats"><span><b id="compareWinB">—</b><small>WIN RATE</small></span><span><b id="comparePointsB">—</b><small>PTS/G</small></span><span><b id="compareYardsB">—</b><small>YDS/G</small></span><span><b id="compareStyleB">—</b><small>PASS SHARE</small></span></div></article>
+          <div class="chart-card comparison-chart-card"><div class="chart-card-heading"><div><p class="chart-explainer">Relative index: the higher bar is stronger for that selected measure. Hover for the actual value.</p><h3>Where the matchup tilts</h3></div><span class="chart-type">INDEX · MATCHUP</span></div><canvas id="reportCompareChart" role="img" aria-label="Horizontal bar chart comparing two selected NFL teams"></canvas><p class="chart-callout"><span>EDGE</span><strong id="compareTakeaway">—</strong></p></div>
+        </div>
+      </section>
+
       <section class="report-section content-width" id="finding-3">
-        <div class="finding-number">03</div><div class="finding-copy"><p class="section-kicker">OFFENSIVE IDENTITY</p><h2><span id="offense-team-season">—</span> shows how different team styles can travel to the same scoreboard.</h2><p>Each dot is a team-season: farther right means more passing yards, higher means more rushing yards, and dot size reflects wins. Hover over a team to see its offensive fingerprint.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Farther right means more passing yards; higher means more rushing yards. Bubble size reflects wins.</p><canvas id="offenseChart" role="img" aria-label="Scatter chart comparing team passing and rushing yards by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="offense-takeaway">—</strong></p></div>
+        <div class="finding-number">03</div><div class="finding-copy"><p class="section-kicker">OFFENSIVE IDENTITY</p><h2><span id="offense-team-season">—</span> shows how different team styles can travel to the same scoreboard.</h2><p>Each dot is a team-season—or a selected-window team profile when the report lens spans multiple seasons. Farther right means more passing yards, higher means more rushing yards, and dot size reflects wins.</p></div>
+        <div class="chart-card"><span class="chart-type">SCATTER · OFFENSE</span><p class="chart-explainer">Farther right means more passing yards; higher means more rushing yards. Bubble size reflects wins.</p><canvas id="offenseChart" role="img" aria-label="Scatter chart comparing team passing and rushing yards by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="offense-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-section content-width" id="finding-4">
         <div class="finding-number">04</div><div class="finding-copy"><p class="section-kicker">DEFENSIVE PRESSURE</p><h2><span id="defense-team-season">—</span> led the team-seasons in disruption.</h2><p>The radar separates sacks from interceptions so “pressure” is not a one-number mystery. A bigger shape means more disruption, but the two axes tell you whether a defense got home with the rush or took the ball away.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Sacks and interceptions show two different ways defenses disrupt games.</p><canvas id="defenseChart" role="img" aria-label="Radar chart comparing defensive sacks, interceptions, and win rate"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="defense-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">RADAR · PRESSURE</span><p class="chart-explainer">Sacks and interceptions show two different ways defenses disrupt games.</p><canvas id="defenseChart" role="img" aria-label="Radar chart comparing defensive sacks, interceptions, and win rate"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="defense-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-section content-width" id="finding-5">
         <div class="finding-number">05</div><div class="finding-copy"><p class="section-kicker">POSITION ROLES</p><h2><span id="top-position">—</span> carried the largest share of recorded yardage.</h2><p>The polar chart makes the roles visible at a glance: quarterbacks move the passing needle, running backs own the ground game, and receivers stretch the field. This is workload, not a ranking of player value.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Recorded yards are grouped by position role; this is workload, not player value.</p><canvas id="positionChart" role="img" aria-label="Polar chart showing recorded yardage by position group"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="position-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">POLAR · ROLE MIX</span><p class="chart-explainer">Recorded yards are grouped by position role; this is workload, not player value.</p><canvas id="positionChart" role="img" aria-label="Polar chart showing recorded yardage by position group"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="position-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-chapter content-width" id="chapter-player"><div class="chapter-index">03</div><div><p class="section-kicker">PLAYER ROLES</p><h2>Volume matters, but the role explains the number.</h2><p>Quarterbacks, backs, receivers, defenders, and specialists are measured with the workload and efficiency that actually belong to their job.</p></div><span class="chapter-tag">ROLES · EFFICIENCY</span></section>
 
       <section class="report-section content-width" id="finding-6">
         <div class="finding-number">06</div><div class="finding-copy"><p class="section-kicker">QUARTERBACK EFFICIENCY</p><h2><span id="top-quarterback">—</span> topped the qualified quarterback group in EPA per attempt.</h2><p>Only quarterbacks with at least 100 attempts are included. Each bubble balances efficiency on the vertical axis with pass volume on the horizontal axis, so a small sample cannot hide behind a shiny rate.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Only quarterbacks with at least 100 attempts appear. Bubble size represents passing touchdowns.</p><canvas id="qbChart" role="img" aria-label="Bubble chart comparing quarterback EPA per attempt and pass attempts"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="qb-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">BUBBLE · QB VALUE</span><p class="chart-explainer">Only quarterbacks with at least 100 attempts appear. Bubble size represents passing touchdowns.</p><canvas id="qbChart" role="img" aria-label="Bubble chart comparing quarterback EPA per attempt and pass attempts"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="qb-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-section content-width" id="finding-7">
         <div class="finding-number">07</div><div class="finding-copy"><p class="section-kicker">PLAY STYLE</p><h2><span id="pass-heavy-team">—</span> was the most pass-heavy team across the window.</h2><p>Pass share is passing yards divided by passing plus rushing yards. The slope chart follows that identity by season, making it easier to see whether teams changed their balance as personnel and situations changed.</p></div>
-        <div class="chart-card"><p class="chart-explainer">A higher line means a larger share of offensive yards came through passing.</p><canvas id="styleChart" role="img" aria-label="Line chart showing team passing share by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="style-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">SLOPE · PASS SHARE</span><p class="chart-explainer">A higher line means a larger share of offensive yards came through passing.</p><canvas id="styleChart" role="img" aria-label="Line chart showing team passing share by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="style-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-chapter content-width" id="chapter-context"><div class="chapter-index">04</div><div><p class="section-kicker">GAME CONTEXT</p><h2>Situations change what success looks like.</h2><p>Home field, balance, and turnovers give the final layer of context for understanding how teams turn production into points and wins.</p></div><span class="chapter-tag">HOME FIELD · BALANCE · TURNOVERS</span></section>
 
       <section class="report-section content-width" id="finding-8">
         <div class="finding-number">08</div><div class="finding-copy"><p class="section-kicker">HOME FIELD</p><h2>Home teams won&nbsp;<span id="home-win-rate">—</span> of their team-games.</h2><p>The home edge was <strong id="home-edge">—</strong> percentage points in win rate. The companion radar compares wins, points scored, and point differential per game—what the home crowd can influence is a question for deeper game-level research.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Home and away teams are compared on win rate, scoring, and point differential per game.</p><canvas id="homeAwayChart" role="img" aria-label="Radar chart comparing NFL home and away performance"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="home-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">RADAR · CONTEXT</span><p class="chart-explainer">Home and away teams are compared on win rate, scoring, and point differential per game.</p><canvas id="homeAwayChart" role="img" aria-label="Radar chart comparing NFL home and away performance"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="home-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-section content-width" id="finding-9">
         <div class="finding-number">09</div><div class="finding-copy"><p class="section-kicker">OFFENSIVE BALANCE</p><h2><span id="balance-season">—</span> shows how the league split the workload between air and ground.</h2><p>The total column height is offensive yards per team-game. The stack makes the passing-versus-rushing tradeoff visible while keeping the seasons comparable.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Each season is split into passing yards and rushing yards per team-game; the line tracks passing share.</p><canvas id="balanceChart" role="img" aria-label="Stacked bar chart comparing passing and rushing yards per team-game by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="balance-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">STACKED · BALANCE</span><p class="chart-explainer">Each season is split into passing yards and rushing yards per team-game; the line tracks passing share.</p><canvas id="balanceChart" role="img" aria-label="Stacked bar chart comparing passing and rushing yards per team-game by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="balance-takeaway">—</strong></p></div>
       </section>
 
       <section class="report-section content-width" id="finding-10">
         <div class="finding-number">10</div><div class="finding-copy"><p class="section-kicker">TURNOVERS &amp; SUCCESS</p><h2><span id="turnover-season">—</span> shows the cost of giving away possessions.</h2><p>Each bubble is a team-season: left is better on interceptions thrown, higher is better on points per game, and larger bubbles represent more offensive touchdowns. This uses recorded interceptions as the turnover measure in the player panel.</p></div>
-        <div class="chart-card"><p class="chart-explainer">Lower-left teams protected the ball and scored more efficiently. Color tracks win rate.</p><canvas id="turnoverChart" role="img" aria-label="Bubble chart comparing offensive interceptions, points per game, and touchdowns by team-season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="turnover-takeaway">—</strong></p></div>
+        <div class="chart-card"><span class="chart-type">BUBBLE · TURNOVERS</span><p class="chart-explainer">Lower-left teams protected the ball and scored more efficiently. Color tracks win rate.</p><canvas id="turnoverChart" role="img" aria-label="Bubble chart comparing offensive interceptions, points per game, and touchdowns by team-season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="turnover-takeaway">—</strong></p></div>
+      </section>
+
+      <section class="surprise-section content-width" aria-labelledby="surprise-title">
+        <div class="surprise-heading"><div><p class="section-kicker">SURPRISE FINDINGS</p><h2 id="surprise-title">The numbers do not always tell the obvious story.</h2><p>These are the moments that reward a closer read than a simple yardage leaderboard.</p></div><span class="chapter-tag">LOOK CLOSER</span></div>
+        <div class="surprise-grid"><article class="surprise-card"><span>01 · BALANCE</span><strong id="surprise-run-title">—</strong><p id="surprise-run-detail">—</p></article><article class="surprise-card"><span>02 · PRESSURE</span><strong id="surprise-defense-title">—</strong><p id="surprise-defense-detail">—</p></article><article class="surprise-card"><span>03 · EFFICIENCY</span><strong id="surprise-efficiency-title">—</strong><p id="surprise-efficiency-detail">—</p></article></div>
+      </section>
+
+      <section class="closing-summary content-width" id="closing-summary" aria-labelledby="closing-title">
+        <div class="closing-summary-heading"><p class="section-kicker">THE SHORT VERSION</p><h2 id="closing-title">What should you carry into the dashboard?</h2><p id="closing-lede">—</p></div>
+        <div class="closing-conclusions"><article><span>01</span><strong id="closing-one-title">—</strong><p id="closing-one-detail">—</p></article><article><span>02</span><strong id="closing-two-title">—</strong><p id="closing-two-detail">—</p></article><article><span>03</span><strong id="closing-three-title">—</strong><p id="closing-three-detail">—</p></article></div>
+        <div class="closing-actions"><a class="primary-button" href="dashboard.html">Test a player matchup <span>→</span></a><a class="hero-text-link" href="#methodology">Read the methods <span aria-hidden="true">↓</span></a></div>
       </section>
 
       <section class="methodology content-width" id="methodology">
