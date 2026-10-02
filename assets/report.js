@@ -52,6 +52,32 @@
     if (value >= .5) return colors.navy;
     return colors.sky;
   };
+  function setupHeroTicker(stats) {
+    const ticker = document.getElementById("hero-ticker-text");
+    if (!ticker) return;
+    const trend = stats.season_trend || [];
+    const peak = trend.reduce((best, row) => Number(row.points_per_team_game) > Number(best?.points_per_team_game || 0) ? row : best, trend[0]);
+    const topTeam = stats.team_win_rate?.[0];
+    const topQb = stats.quarterbacks?.[0];
+    const home = stats.home_away?.find((row) => row.home_away === "Home");
+    const away = stats.home_away?.find((row) => row.home_away === "Away");
+    const signals = [
+      peak ? `${peak.season} set the scoring peak at ${decimal(peak.points_per_team_game)} points per team-game.` : "Five seasons of regular-season signal.",
+      topTeam ? `${topTeam.team} led the window with ${number(topTeam.wins)} wins.` : "Team identity is built from every game.",
+      topQb ? `${topQb.player_display_name} led qualified QBs at ${Number(topQb.epa_per_attempt).toFixed(3)} EPA per attempt.` : "Role metrics keep the comparisons fair.",
+      home && away ? `Home teams held a ${decimal((home.win_rate - away.win_rate) * 100)} point win-rate edge.` : "Context changes the meaning of production.",
+    ];
+    let index = 0;
+    const show = () => {
+      ticker.classList.remove("is-changing");
+      void ticker.offsetWidth;
+      ticker.textContent = signals[index % signals.length];
+      ticker.classList.add("is-changing");
+      index += 1;
+    };
+    show();
+    if (signals.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) window.setInterval(show, 5200);
+  }
 
   const qbPlays = {
     mesh: {
@@ -305,6 +331,7 @@
       fetch("data/metadata.json").then((response) => response.json()),
     ]);
     const overview = stats.overview;
+    setupHeroTicker(stats);
     document.querySelectorAll('[data-report="rows"]').forEach((el) => el.textContent = number(overview.rows));
     document.querySelectorAll('[data-report="games"]').forEach((el) => el.textContent = number(overview.games));
     document.querySelectorAll('[data-report="teams"]').forEach((el) => el.textContent = number(overview.teams));

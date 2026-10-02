@@ -30,6 +30,52 @@
     get("teamName").textContent = team.team_name; get("teamConference").textContent = `${team.team_conf} · ${team.team_division}`; get("teamLogo").src = team.team_logo_espn || team.team_logo_wikipedia || team.team_logo_squared; get("teamLogo").alt = `${team.team_name} logo`;
     const teamRows = teamRowsForView(); const games = aggregateTeamGames(teamRows); const wins = games.filter((row) => row.win_loss === "W").length; const ties = games.filter((row) => row.win_loss === "T").length; const losses = games.length - wins - ties; const seasonLabel = val("seasonFilter") === "all" ? "selected seasons" : `${val("seasonFilter")} season`; const opponentLabel = val("opponentFilter") === "all" ? "" : ` vs ${val("opponentFilter")}`; const locationLabel = val("homeAwayFilter") === "all" ? "" : ` · ${val("homeAwayFilter")}`; get("teamRecord").textContent = `${wins}-${losses}${ties ? `-${ties}` : ""} in ${seasonLabel}${opponentLabel}${locationLabel}`;
   }
+  function updateScorebug() {
+    const team = val("teamFilter");
+    const opponent = val("opponentFilter");
+    const season = val("seasonFilter");
+    const location = val("homeAwayFilter");
+    const teamMeta = teamByAbbr()[team] || {};
+    const opponentMeta = teamByAbbr()[opponent] || {};
+    const opponentLogo = get("scorebugOpponentLogo");
+    const opponentName = get("scorebugOpponentName");
+    const opponentConference = get("scorebugOpponentConference");
+    const opponentRecord = get("scorebugOpponentRecord");
+    const gameNote = get("scorebugGameNote");
+    const status = get("scorebugStatus");
+    const viewLabel = get("dashboardViewLabel");
+    if (!opponentName) return;
+    if (team === "all") {
+      opponentName.textContent = "Awaiting matchup";
+      opponentConference.textContent = "OPPONENT";
+      opponentRecord.textContent = "Select a team first";
+      opponentLogo.removeAttribute("src");
+      opponentLogo.alt = "";
+      gameNote.textContent = "Choose an opponent";
+      status.textContent = "League view · all teams";
+      viewLabel.textContent = "FIVE-SEASON PANEL";
+      return;
+    }
+    if (opponent === "all") {
+      opponentName.textContent = "Choose opponent";
+      opponentConference.textContent = "AVAILABLE OPPONENTS";
+      opponentRecord.textContent = "Only teams this team played";
+      opponentLogo.removeAttribute("src");
+      opponentLogo.alt = "";
+      gameNote.textContent = "Select a matchup";
+      status.textContent = `${teamMeta.team_name || team} · opponent needed`;
+    } else {
+      opponentName.textContent = opponentMeta.team_name || opponent;
+      opponentConference.textContent = `${opponentMeta.team_conf || "NFL"} · OPPONENT`;
+      opponentRecord.textContent = "Matched games only";
+      opponentLogo.src = opponentMeta.team_logo_espn || opponentMeta.team_logo_wikipedia || opponentMeta.team_logo_squared || "";
+      opponentLogo.alt = `${opponentMeta.team_name || opponent} logo`;
+      const scope = season === "all" ? "2021–2025" : season;
+      gameNote.textContent = `${scope} · ${location === "all" ? "all locations" : location.toLowerCase()}`;
+      status.textContent = `${teamMeta.team_name || team} vs ${opponentMeta.team_name || opponent}`;
+    }
+    viewLabel.textContent = season === "all" ? "FIVE-SEASON PANEL" : `${season} SEASON VIEW`;
+  }
   function val(id) { return get(id).value; }
   function oppositeLocation(location) { return location === "Home" ? "Away" : location === "Away" ? "Home" : "all"; }
   function syncDependentFilters() {
@@ -354,7 +400,7 @@
   function runHighlight() {
     const row = state.highlight.row; if (!row) return; if (state.highlight.timer) window.clearTimeout(state.highlight.timer); renderHighlightFrame(row, true); get("highlightStatus").textContent = "PLAY IN MOTION"; get("highlightResult").textContent = "Tracing the actual play-by-play event with schematic player motion."; state.highlight.timer = window.setTimeout(() => { const metric = highlightMetric(row); const play = playFor(row); renderHighlightFrame(row); get("highlightStatus").textContent = "PLAY COMPLETE"; get("highlightResult").textContent = play ? `${play.event} · ${signedYards(play.yards_gained)} yards recorded in this play.` : `${metric.title} · ${number(metric.value)} ${metric.unit} recorded in this game.`; state.highlight.timer = null; }, 2700); }
   function resetHighlight() { if (state.highlight.timer) window.clearTimeout(state.highlight.timer); if (state.highlight.row) renderHighlightFrame(state.highlight.row); }
-  function updateView() { updateSummary(state.filtered); updateCharts(state.filtered); updateTable(state.filtered); updateHighlightOptions(state.filtered); updateMatchupSummary(state.filtered); renderActiveFilters(); renderSelectionRail(); get("filterStatus").textContent = `${number(state.filtered.length)} rows · ${number(gameCount(state.filtered))} games`; }
+  function updateView() { updateScorebug(); updateSummary(state.filtered); updateCharts(state.filtered); updateTable(state.filtered); updateHighlightOptions(state.filtered); updateMatchupSummary(state.filtered); renderActiveFilters(); renderSelectionRail(); get("filterStatus").textContent = `${number(state.filtered.length)} rows · ${number(gameCount(state.filtered))} games`; }
   function reset() { ["seasonFilter", "teamFilter", "opponentFilter", "homeAwayFilter", "positionGroupFilter", "positionFilter", "playerFilter"].forEach((id) => get(id).value = "all"); if (get("filterSearch")) get("filterSearch").value = ""; showProfile(""); applyFilters(); }
 
   async function loadPanelText() {

@@ -8,22 +8,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css?v=20261002-field-goal" />
+    <link rel="stylesheet" href="assets/styles.css?v=20261002-redesign" />
   </head>
   <body class="report-page">
     <nav class="site-nav">
       <a class="brand" href="index.html"><span class="brand-mark">NFL</span><span>BY THE NUMBERS</span></a>
-      <div class="nav-links"><a class="active" href="index.html">Report</a><a href="dashboard.html">Dashboard <span aria-hidden="true">↗</span></a></div>
+      <div class="nav-links"><a class="active" href="index.html">Report</a><a href="#field-goal-lab">Play lab</a><a href="dashboard.html">Dashboard <span aria-hidden="true">↗</span></a></div>
     </nav>
 
     <main>
       <section class="hero report-hero">
         <div class="hero-copy">
-          <p class="eyebrow">NFL DATA ANALYTICS · REGULAR SEASONS 2021–2025</p>
-          <h1>Find the story inside the score.</h1>
+          <p class="eyebrow"><span class="eyebrow-live"><i></i> LIVE DATA STORY</span> · REGULAR SEASONS 2021–2025</p>
+          <h1>See the game plan behind the score.</h1>
           <p class="hero-lede">A player-level look at the five most recent completed NFL seasons—built to show how scoring, style, pressure, position roles, and home field fit together.</p>
           <p class="byline">Prepared by <strong>Brady Dyn</strong> · <span id="report-generated">Loading verified data…</span></p>
           <div class="hero-actions"><a class="primary-button" href="dashboard.html">Explore the interactive dashboard <span>→</span></a><a class="hero-text-link" href="#field-goal-lab">Try a field goal <span aria-hidden="true">↓</span></a></div>
+          <div class="hero-quickstart" aria-label="Report quick starts"><span class="quickstart-label">START WITH</span><a href="#chapter-league">League pulse <b>01</b></a><a href="#chapter-team">Team identity <b>02</b></a><a href="#chapter-player">Player roles <b>03</b></a><a href="#chapter-context">Game context <b>04</b></a></div>
         </div>
         <div class="hero-art" aria-label="NFL analytics snapshot">
           <div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div>
@@ -36,13 +37,14 @@
             <span class="hero-data-label">QB EFFICIENCY LEADER</span>
             <b id="hero-top-qb">—</b>
           </div>
+          <div class="hero-ticker" aria-live="polite"><span><i></i> STAT OF THE DAY</span><strong id="hero-ticker-text">Loading the five-season signal…</strong></div>
           <div class="hero-stat"><strong>5</strong><span>SEASONS</span></div>
         </div>
       </section>
 
       <nav class="story-map content-width" aria-label="Report sections">
-        <span class="story-map-label">EXPLORE THE STORY</span>
-        <a href="#finding-1">01 Scoring</a><a href="#finding-2">02 Winning</a><a href="#finding-3">03 Offense</a><a href="#finding-4">04 Defense</a><a href="#finding-5">05 Roles</a><a href="#finding-6">06 QB</a><a href="#finding-7">07 Style</a><a href="#finding-8">08 Home field</a><a href="#finding-9">09 Balance</a><a href="#finding-10">10 Turnovers</a><a href="#methodology">Methods</a>
+        <span class="story-map-label">STORY MAP</span>
+        <a href="#chapter-league">01 League pulse</a><a href="#chapter-team">02 Team identity</a><a href="#chapter-player">03 Player roles</a><a href="#chapter-context">04 Game context</a><a href="#methodology">Methods</a>
       </nav>
 
       <section class="field-goal-lab content-width" id="field-goal-lab" aria-labelledby="field-goal-title">
@@ -86,6 +88,8 @@
         <div class="headline-card accent-red"><span class="metric-label">PLAYERS</span><strong data-report="players">—</strong><small>with recorded statistics</small></div>
       </section>
 
+      <section class="report-chapter content-width" id="chapter-league"><div class="chapter-index">01</div><div><p class="section-kicker">LEAGUE PULSE</p><h2>Start with the rhythm of the league.</h2><p>Scoring and winning establish the baseline. Every team and player comparison below is easier to read once you know the shape of the five-season game.</p></div><span class="chapter-tag">SCORING · WINNING</span></section>
+
       <section class="report-section content-width" id="finding-1">
         <div class="finding-number">01</div><div class="finding-copy"><p class="section-kicker">LEAGUE RHYTHM</p><h2>The scoring pulse rose and fell without losing its NFL shape.</h2><p>Across the five-season window, the league averaged <strong id="trend-average">—</strong> points per team-game. <strong id="trend-peak-season">—</strong> was the highest-scoring season, giving us the baseline for every comparison that follows.</p></div>
         <div class="chart-card"><p class="chart-explainer">Each point is the average points scored by one team in that season.</p><canvas id="seasonTrendChart" role="img" aria-label="Line chart showing average points per team-game by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="trend-takeaway">—</strong></p></div>
@@ -95,6 +99,8 @@
         <div class="finding-number">02</div><div class="finding-copy"><p class="section-kicker">WINNING MARGIN</p><h2><span id="top-team-name">—</span> set the five-season pace for winning.</h2><p>It won <strong id="top-team-wins">—</strong> of <strong id="top-team-games">—</strong> team-games, a <strong id="top-team-rate">—</strong> winning rate. The ring chart shows how that record compares with the rest of the league without making a game count twice.</p></div>
         <div class="chart-card"><p class="chart-explainer">The ring compares team wins across the five-season window.</p><canvas id="teamWinChart" role="img" aria-label="Doughnut chart comparing wins among leading NFL teams"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="win-takeaway">—</strong></p></div>
       </section>
+
+      <section class="report-chapter content-width" id="chapter-team"><div class="chapter-index">02</div><div><p class="section-kicker">TEAM IDENTITY</p><h2>Teams reveal themselves in the air, on the ground, and in pressure.</h2><p>These views connect offense and defense so a team style feels like a football identity—not just a column of totals.</p></div><span class="chapter-tag">OFFENSE · DEFENSE · STYLE</span></section>
 
       <section class="report-section content-width" id="finding-3">
         <div class="finding-number">03</div><div class="finding-copy"><p class="section-kicker">OFFENSIVE IDENTITY</p><h2><span id="offense-team-season">—</span> shows how different team styles can travel to the same scoreboard.</h2><p>Each dot is a team-season: farther right means more passing yards, higher means more rushing yards, and dot size reflects wins. Hover over a team to see its offensive fingerprint.</p></div>
@@ -111,6 +117,8 @@
         <div class="chart-card"><p class="chart-explainer">Recorded yards are grouped by position role; this is workload, not player value.</p><canvas id="positionChart" role="img" aria-label="Polar chart showing recorded yardage by position group"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="position-takeaway">—</strong></p></div>
       </section>
 
+      <section class="report-chapter content-width" id="chapter-player"><div class="chapter-index">03</div><div><p class="section-kicker">PLAYER ROLES</p><h2>Volume matters, but the role explains the number.</h2><p>Quarterbacks, backs, receivers, defenders, and specialists are measured with the workload and efficiency that actually belong to their job.</p></div><span class="chapter-tag">ROLES · EFFICIENCY</span></section>
+
       <section class="report-section content-width" id="finding-6">
         <div class="finding-number">06</div><div class="finding-copy"><p class="section-kicker">QUARTERBACK EFFICIENCY</p><h2><span id="top-quarterback">—</span> topped the qualified quarterback group in EPA per attempt.</h2><p>Only quarterbacks with at least 100 attempts are included. Each bubble balances efficiency on the vertical axis with pass volume on the horizontal axis, so a small sample cannot hide behind a shiny rate.</p></div>
         <div class="chart-card"><p class="chart-explainer">Only quarterbacks with at least 100 attempts appear. Bubble size represents passing touchdowns.</p><canvas id="qbChart" role="img" aria-label="Bubble chart comparing quarterback EPA per attempt and pass attempts"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="qb-takeaway">—</strong></p></div>
@@ -120,6 +128,8 @@
         <div class="finding-number">07</div><div class="finding-copy"><p class="section-kicker">PLAY STYLE</p><h2><span id="pass-heavy-team">—</span> was the most pass-heavy team across the window.</h2><p>Pass share is passing yards divided by passing plus rushing yards. The slope chart follows that identity by season, making it easier to see whether teams changed their balance as personnel and situations changed.</p></div>
         <div class="chart-card"><p class="chart-explainer">A higher line means a larger share of offensive yards came through passing.</p><canvas id="styleChart" role="img" aria-label="Line chart showing team passing share by season"></canvas><p class="chart-callout"><span>TAKEAWAY</span><strong id="style-takeaway">—</strong></p></div>
       </section>
+
+      <section class="report-chapter content-width" id="chapter-context"><div class="chapter-index">04</div><div><p class="section-kicker">GAME CONTEXT</p><h2>Situations change what success looks like.</h2><p>Home field, balance, and turnovers give the final layer of context for understanding how teams turn production into points and wins.</p></div><span class="chapter-tag">HOME FIELD · BALANCE · TURNOVERS</span></section>
 
       <section class="report-section content-width" id="finding-8">
         <div class="finding-number">08</div><div class="finding-copy"><p class="section-kicker">HOME FIELD</p><h2>Home teams won&nbsp;<span id="home-win-rate">—</span> of their team-games.</h2><p>The home edge was <strong id="home-edge">—</strong> percentage points in win rate. The companion radar compares wins, points scored, and point differential per game—what the home crowd can influence is a question for deeper game-level research.</p></div>
@@ -137,6 +147,7 @@
       </section>
 
       <section class="methodology content-width" id="methodology">
+        <div class="method-intro"><p class="section-kicker">OPEN THE BOOK</p><h2>How to read the numbers.</h2><p>Use the dashboard when you want to choose the matchup. Use this report when you want to understand the pattern.</p></div>
         <div class="method-grid"><div><h3>Source</h3><p>Data comes from the free <a href="https://github.com/nflverse/nflverse-data" target="_blank" rel="noreferrer">nflverse</a> releases through <a href="https://nflreadpy.nflverse.com/" target="_blank" rel="noreferrer">nflreadpy</a>. Player statistics provide offense, defense, position, team, opponent, and headshot URLs. Schedules provide game dates and final scores. Team metadata supplies colors and logo URLs.</p></div><div><h3>One row</h3><p>One row is one player in one regular-season NFL game from 2021, 2022, 2023, 2024, or 2025. The five seasons are deliberately limited to completed regular seasons, so the comparisons use the same game type throughout.</p></div><div><h3>Calculations</h3><p>Win/loss is computed from team score minus opponent score. Win rate is wins divided by team-games. Team offensive yards means passing plus rushing yards; recorded player production also includes receiving yards and is labeled separately. EPA per attempt is passing EPA divided by pass attempts. Pass share is passing yards divided by passing plus rushing yards. Turnover charts use interceptions thrown and defensive interceptions because fumbles are not included in this player panel.</p></div><div><h3>Limitations</h3><p>Players without an official statistic in a game are not represented in the player-statistics release. Player totals are not a measure of value by themselves, and these charts show association rather than causation. The animation is schematic because this panel does not contain play-level tracking coordinates or video. Images and team marks belong to their respective rights holders and are used for this educational project.</p></div></div>
         <div class="method-links"><strong>PROJECT FILES</strong><a href="data/panel.csv" download>Download the player-game panel (CSV)</a><a href="docs/data-dictionary.md">Read the data dictionary</a><span>Data refreshed <time id="report-updated">—</time></span></div>
       </section>
@@ -144,6 +155,6 @@
 
     <footer class="site-footer"><span>NFL BY THE NUMBERS · 2021–2025</span><span><a href="dashboard.html">Open dashboard →</a> · <a href="docs/data-dictionary.md">Data dictionary</a></span></footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/report.js?v=20261002-field-goal"></script>
+    <script src="assets/report.js?v=20261002-redesign"></script>
   </body>
 </html>
