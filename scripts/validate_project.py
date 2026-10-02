@@ -65,11 +65,14 @@ def main() -> None:
     require(report_html.count("class=\"report-section") >= 8, "Report needs at least eight finding sections")
     require(report_html.count("<canvas") >= 8, "Report needs a chart for each finding")
     require(dashboard_html.count("<canvas") >= 4, "Dashboard needs at least four charts")
-    for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "positionFilter", "playerFilter", "filterSearch", "activeFilters", "resetFilters", "summaryValue1", "summaryValue4", "matchupSummary", "playerDuel", "duelPrimaryPlayer", "duelOpponentPlayer", "duelChart", "dataTableBody"]:
+    for required_id in ["main-content", "seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "positionFilter", "playerFilter", "filterSearch", "activeFilters", "resetFilters", "downloadFiltered", "summaryValue1", "summaryValue4", "teamSnapshot", "matchupSummary", "playerDuel", "duelPrimaryPlayer", "duelOpponentPlayer", "duelChart", "duelTrendChart", "downloadFilteredTable", "dataTableBody"]:
         require(required_id in dashboard_html, f"Dashboard missing {required_id}")
+    require("project-brief" in report_html and "insight-title" in report_html and "main-content" in report_html, "Report is missing the project framing and key findings")
     require("panel.csv.gz" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must prefer the compressed panel")
-    require("updatePlayerDuel" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must render the role-specific player duel")
-    require("fg_att" in (ROOT / "assets/app.js").read_text(encoding="utf-8") and "offense_snaps" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must include specialist and workload metrics")
+    app_js = (ROOT / "assets/app.js").read_text(encoding="utf-8")
+    require("updatePlayerDuel" in app_js and "duelTrendChart" in dashboard_html, "Dashboard must render the role-specific player duel and season trend")
+    require("fg_att" in app_js and "offense_snaps" in app_js, "Dashboard must include specialist and workload metrics")
+    require("choosePreferredView" in app_js and "downloadFilteredCsv" in app_js and "updateTeamSnapshot" in app_js, "Dashboard must include defaults, export, and team-season context")
 
     print("Project validation passed.")
     print(json.dumps({"rows": len(panel), "columns": panel.shape[1], "seasons": sorted(panel["season"].unique().tolist()), "teams": panel["team"].nunique(), "players": panel["player_id"].nunique()}, indent=2))

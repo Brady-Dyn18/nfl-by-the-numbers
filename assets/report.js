@@ -371,6 +371,10 @@
     set("qb-takeaway", `${topQb.player_display_name} led qualified QBs at ${Number(topQb.epa_per_attempt).toFixed(3)} EPA per attempt.`);
     set("style-takeaway", `${topStyle.team} had the highest passing share at ${decimal(Number(topStyle.passing_share) * 100)}%.`);
     set("home-takeaway", `Home teams won ${pct(home.win_rate)} of team-games, ${decimal((home.win_rate - away.win_rate) * 100)} points above away teams.`);
+    set("insight-scoring", `${peak.season} was the scoring peak`); set("insight-scoring-detail", `${decimal(peak.points_per_team_game)} points per team-game across the league.`);
+    set("insight-winning", `${topTeam.team} led the win table`); set("insight-winning-detail", `${number(topTeam.wins)} wins across ${number(topTeam.games)} team-games (${pct(topTeam.win_rate)}).`);
+    set("insight-style", `${topStyle.team} leaned most on the pass`); set("insight-style-detail", `${decimal(Number(topStyle.passing_share) * 100)}% of offensive yards came through passing.`);
+    set("insight-home", `Home field added ${decimal((home.win_rate - away.win_rate) * 100)} points`); set("insight-home-detail", `Home teams won ${pct(home.win_rate)} of team-games versus ${pct(away.win_rate)} away.`);
 
     setupFieldGoalGame();
 

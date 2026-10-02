@@ -24,10 +24,10 @@
 - [x] Five dynamic charts, including role-specific production, home/away outcomes, usage efficiency, and turnover success.
 - [x] Team/opponent matchup snapshot with logos, colors, and role-specific comparison.
 - [x] Cascading filters, quick-find search, active filter chips, and accessible table rows.
-- [x] Measure switch and chart breakdown switch.
-- [x] Current-view data table.
+- [x] Useful default matchup, team-season context snapshot, and automatically generated matchup takeaway.
+- [x] Current-view data table with role-appropriate columns and filtered CSV export.
 - [x] Reset filters button.
-- [x] Player Duel compares same-position players from both teams with role-specific workload, production, efficiency, and discipline measures.
+- [x] Player Duel compares same-position players from both teams with raw values, normalized role scores, season trends, images, and role-appropriate workload, production, efficiency, and discipline measures.
 
 ## Repository and design
 
@@ -37,4 +37,5 @@
 - [x] README describes every file and data source.
 - [x] Reproducible build and validation scripts.
 - [x] Compressed dashboard panel, data dictionary, refresh date, and downloadable CSV.
+- [x] Project question, key findings, methodology notes, defensive-comparison limitation, and responsive/accessibility refinements.
 - [x] Optional compressed play-by-play index with a reproducible build script.

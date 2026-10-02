@@ -24,7 +24,7 @@ The browser dashboard needs an HTTP server because browsers block local CSV requ
 ## Website files
 
 - `index.html` - narrative report with headline metrics and ten findings, including scoring, offense balance, turnovers, and home/away context.
-- `dashboard.html` - interactive dashboard with cascading filters, team matchup views, a role-specific Player Duel, charts, table, and reset control.
+- `dashboard.html` - interactive dashboard with cascading filters, a useful default matchup, team-season context cards, role-specific Player Duel cards and trends, charts, table, and filtered CSV export.
 - `assets/styles.css` - shared NFL-inspired design system and responsive layout.
 - `assets/app.js` - dashboard data loading, filtering, calculations, charts, theming, and player cards.
 - `data/panel.csv` - downloadable player-game panel used by both pages.
@@ -49,4 +49,4 @@ One row is one player in one regular-season NFL game. Players with no recorded o
 
 The majority of nflverse data is broadly licensed under CC-BY 4.0. Team logos and player images remain the property of their respective rights holders and are used here for an educational project. Please retain source attribution when reusing this work. The dashboard loads the compressed panel first and falls back to the CSV when compression support is unavailable.
 
-The dashboard’s Player Duel compares two players from the same position across the selected matchup. Its measures change with the role: quarterbacks use passing volume and completion rate, receivers use targets and catch rate, defensive players use tackles and pressure, offensive linemen use offensive snaps and snap rate, kickers use field-goal attempts, accuracy, and longest make, punters use distance and inside-20 results, and long snappers use special-teams workload. Player headshots, team logos, and team colors update with the selection.
+The dashboard opens to a KC-DEN quarterback matchup so the analytical story is visible immediately; users can reset or replace it with any valid matchup. The team-season snapshot reports record, scoring, offensive yards, pass share, and interception margin per team-game. The Player Duel compares two players from the same position across the selected matchup, shows raw values beside a normalized scorecard, and adds a season-by-season role trend. Its measures change with the role: quarterbacks use passing volume and completion rate, receivers use targets and catch rate, defensive players use tackles and pressure, offensive linemen use offensive snaps and snap rate, kickers use field-goal attempts, accuracy, and longest make, punters use distance and inside-20 results, and long snappers use special-teams workload. Player headshots, team logos, and team colors update with the selection. The dashboard can export the exact filtered rows currently visible. Defensive comparisons describe recorded activity; the panel does not identify the exact defender covering a receiver.

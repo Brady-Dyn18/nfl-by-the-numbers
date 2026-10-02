@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="assets/styles.css?v=20261002-redesign" />
   </head>
   <body class="report-page">
+    <a class="skip-link" href="#main-content">Skip to report content</a>
     <nav class="site-nav">
       <a class="brand" href="index.html"><span class="brand-mark">NFL</span><span>BY THE NUMBERS</span></a>
       <div class="nav-links"><a class="active" href="index.html">Report</a><a href="#field-goal-lab">Play lab</a><a href="dashboard.html">Dashboard <span aria-hidden="true">↗</span></a></div>
     </nav>
 
-    <main>
+    <main id="main-content">
       <section class="hero report-hero">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-live"><i></i> LIVE DATA STORY</span> · REGULAR SEASONS 2021–2025</p>
@@ -46,6 +47,18 @@
         <span class="story-map-label">STORY MAP</span>
         <a href="#chapter-league">01 League pulse</a><a href="#chapter-team">02 Team identity</a><a href="#chapter-player">03 Player roles</a><a href="#chapter-context">04 Game context</a><a href="#methodology">Methods</a>
       </nav>
+
+      <section class="project-brief content-width" aria-labelledby="project-brief-title">
+        <div class="project-brief-mark" aria-hidden="true">01</div>
+        <div>
+          <p class="section-kicker">THE QUESTION</p>
+          <h2 id="project-brief-title">How do NFL teams turn role-specific work into wins?</h2>
+          <p>Compare five completed regular seasons through the lens that fits the job: quarterback efficiency, receiver opportunity, line workload, defensive disruption, and specialist execution. The report explains the league pattern; the dashboard lets you test your own matchup.</p>
+        </div>
+        <div class="project-brief-facts" aria-label="Project scope">
+          <span><b>5</b> seasons</span><span><b>32</b> teams</span><span><b>90k+</b> player-games</span>
+        </div>
+      </section>
 
       <section class="field-goal-lab content-width" id="field-goal-lab" aria-labelledby="field-goal-title">
         <div class="fg-intro">
@@ -86,6 +99,16 @@
         <div class="headline-card accent-orange"><span class="metric-label">GAMES COVERED</span><strong data-report="games">—</strong><small>2021 through 2025</small></div>
         <div class="headline-card accent-green"><span class="metric-label">TEAMS</span><strong data-report="teams">—</strong><small>current NFL franchises</small></div>
         <div class="headline-card accent-red"><span class="metric-label">PLAYERS</span><strong data-report="players">—</strong><small>with recorded statistics</small></div>
+      </section>
+
+      <section class="insight-strip content-width" aria-labelledby="insight-title">
+        <div class="insight-strip-heading"><p class="section-kicker">KEY FINDINGS</p><h2 id="insight-title">Four signals to carry into the matchup.</h2><p>These statements update from the same verified five-season summary used by the charts below.</p></div>
+        <div class="insight-grid">
+          <article class="insight-card"><span class="insight-index">01</span><strong id="insight-scoring">Loading scoring signal…</strong><p id="insight-scoring-detail">—</p></article>
+          <article class="insight-card"><span class="insight-index">02</span><strong id="insight-winning">Loading winning signal…</strong><p id="insight-winning-detail">—</p></article>
+          <article class="insight-card"><span class="insight-index">03</span><strong id="insight-style">Loading style signal…</strong><p id="insight-style-detail">—</p></article>
+          <article class="insight-card"><span class="insight-index">04</span><strong id="insight-home">Loading context signal…</strong><p id="insight-home-detail">—</p></article>
+        </div>
       </section>
 
       <section class="report-chapter content-width" id="chapter-league"><div class="chapter-index">01</div><div><p class="section-kicker">LEAGUE PULSE</p><h2>Start with the rhythm of the league.</h2><p>Scoring and winning establish the baseline. Every team and player comparison below is easier to read once you know the shape of the five-season game.</p></div><span class="chapter-tag">SCORING · WINNING</span></section>
@@ -148,7 +171,7 @@
 
       <section class="methodology content-width" id="methodology">
         <div class="method-intro"><p class="section-kicker">OPEN THE BOOK</p><h2>How to read the numbers.</h2><p>Use the dashboard when you want to choose the matchup. Use this report when you want to understand the pattern.</p></div>
-        <div class="method-grid"><div><h3>Source</h3><p>Data comes from the free <a href="https://github.com/nflverse/nflverse-data" target="_blank" rel="noreferrer">nflverse</a> releases through <a href="https://nflreadpy.nflverse.com/" target="_blank" rel="noreferrer">nflreadpy</a>. Player statistics provide offense, defense, position, team, opponent, and headshot URLs. Schedules provide game dates and final scores. Team metadata supplies colors and logo URLs.</p></div><div><h3>One row</h3><p>One row is one player in one regular-season NFL game from 2021, 2022, 2023, 2024, or 2025. The five seasons are deliberately limited to completed regular seasons, so the comparisons use the same game type throughout.</p></div><div><h3>Calculations</h3><p>Win/loss is computed from team score minus opponent score. Win rate is wins divided by team-games. Team offensive yards means passing plus rushing yards; recorded player production also includes receiving yards and is labeled separately. EPA per attempt is passing EPA divided by pass attempts. Pass share is passing yards divided by passing plus rushing yards. Turnover charts use interceptions thrown and defensive interceptions because fumbles are not included in this player panel.</p></div><div><h3>Limitations</h3><p>Players without an official statistic in a game are not represented in the player-statistics release. Player totals are not a measure of value by themselves, and these charts show association rather than causation. The animation is schematic because this panel does not contain play-level tracking coordinates or video. Images and team marks belong to their respective rights holders and are used for this educational project.</p></div></div>
+        <div class="method-grid"><div><h3>Source</h3><p>Data comes from the free <a href="https://github.com/nflverse/nflverse-data" target="_blank" rel="noreferrer">nflverse</a> releases through <a href="https://nflreadpy.nflverse.com/" target="_blank" rel="noreferrer">nflreadpy</a>. Player statistics provide offense, defense, position, team, opponent, and headshot URLs. Schedules provide game dates and final scores. Team metadata supplies colors and logo URLs.</p></div><div><h3>One row</h3><p>One row is one player in one regular-season NFL game from 2021, 2022, 2023, 2024, or 2025. The five seasons are deliberately limited to completed regular seasons, so the comparisons use the same game type throughout.</p></div><div><h3>Calculations</h3><p>Win/loss is computed from team score minus opponent score. Win rate is wins divided by team-games. Team offensive yards means passing plus rushing yards; recorded player production also includes receiving yards and is labeled separately. EPA per attempt is passing EPA divided by pass attempts. Pass share is passing yards divided by passing plus rushing yards. Turnover charts use interceptions thrown and defensive interceptions because fumbles are not included in this player panel.</p></div><div><h3>Limitations</h3><p>Players without an official statistic in a game are not represented in the player-statistics release. Player totals are not a measure of value by themselves, and these charts show association rather than causation. The animation is schematic because this panel does not contain play-level tracking coordinates or video. This panel does not identify the exact defender covering a receiver, so defensive comparisons describe activity rather than true one-on-one coverage. Images and team marks belong to their respective rights holders and are used for this educational project.</p></div></div>
         <div class="method-links"><strong>PROJECT FILES</strong><a href="data/panel.csv" download>Download the player-game panel (CSV)</a><a href="docs/data-dictionary.md">Read the data dictionary</a><span>Data refreshed <time id="report-updated">—</time></span></div>
       </section>
     </main>

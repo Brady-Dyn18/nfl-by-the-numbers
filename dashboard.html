@@ -11,19 +11,20 @@
     <link rel="stylesheet" href="assets/styles.css?v=20261002-redesign" />
   </head>
   <body class="dashboard-page">
+    <a class="skip-link" href="#main-content">Skip to dashboard content</a>
     <nav class="site-nav">
       <a class="brand" href="index.html"><span class="brand-mark">NFL</span><span>BY THE NUMBERS</span></a>
       <div class="nav-links"><a href="index.html">Report</a><a class="active" href="dashboard.html">Dashboard <span aria-hidden="true">↗</span></a></div>
     </nav>
 
-    <main class="dashboard-shell">
+    <main class="dashboard-shell" id="main-content">
       <section class="dashboard-hero">
         <div class="dashboard-hero-copy"><p class="eyebrow"><span class="eyebrow-live"><i></i> INTERACTIVE EXPLORER</span> · 90,000+ PLAYER-GAME ROWS</p><h1>Build the matchup. Read the game.</h1><p>Choose a team, find an opponent they actually played, then compare the role, production, and game context that made the matchup matter.</p><p class="dashboard-hero-note" id="dashboard-data-note">Loading the five-season panel…</p><div class="dashboard-hero-actions"><a class="primary-button" href="#matchup-controls">Build a matchup <span aria-hidden="true">↓</span></a><a class="hero-text-link" href="index.html">Read the report <span aria-hidden="true">↗</span></a></div></div>
         <div class="team-identity matchup-scorebug" id="teamIdentity" aria-live="polite"><div class="scorebug-header"><span class="pulse-live"><i></i> LIVE VIEW</span><span id="dashboardViewLabel">FIVE-SEASON PANEL</span></div><div class="scorebug-teams"><article class="scorebug-team scorebug-primary"><img id="teamLogo" alt="Selected team logo" /><div><span id="teamConference">NFL LEAGUE VIEW</span><strong id="teamName">All teams</strong><small id="teamRecord">Select a team to apply its colors</small></div></article><div class="scorebug-vs"><strong>VS</strong><span id="scorebugGameNote">Choose an opponent</span></div><article class="scorebug-team scorebug-opponent"><img id="scorebugOpponentLogo" alt="Opponent team logo" /><div><span id="scorebugOpponentConference">OPPONENT</span><strong id="scorebugOpponentName">Awaiting matchup</strong><small id="scorebugOpponentRecord">Select a team first</small></div></article></div><div class="scorebug-footer"><span id="scorebugStatus">League view · all teams</span><span id="scorebugScope">2021–2025 regular seasons</span></div></div>
       </section>
 
       <section class="filter-panel" id="matchup-controls" aria-label="Dashboard filters">
-        <div class="filter-heading"><div><span class="section-kicker">BUILD YOUR MATCHUP</span><h2>Start with the teams.</h2><p class="filter-subtitle">Selections narrow each other automatically, so every comparison stays grounded in a real game.</p></div><div class="filter-actions"><label class="filter-search" for="filterSearch">QUICK FIND<input id="filterSearch" list="filterSearchOptions" type="search" placeholder="Team or player" autocomplete="off" /></label><datalist id="filterSearchOptions"></datalist><button class="ghost-button" id="resetFilters" type="button">Reset all filters</button></div></div>
+        <div class="filter-heading"><div><span class="section-kicker">BUILD YOUR MATCHUP</span><h2>Start with the teams.</h2><p class="filter-subtitle">Selections narrow each other automatically, so every comparison stays grounded in a real game.</p></div><div class="filter-actions"><label class="filter-search" for="filterSearch">QUICK FIND<input id="filterSearch" list="filterSearchOptions" type="search" placeholder="Team or player" autocomplete="off" /></label><datalist id="filterSearchOptions"></datalist><button class="ghost-button" id="resetFilters" type="button">Reset all filters</button><button class="ghost-button" id="downloadFiltered" type="button">Download filtered CSV</button></div></div>
         <div class="filter-grid">
           <label for="seasonFilter"><span class="filter-step"><b>01</b> SEASON</span><select id="seasonFilter"><option value="all">All seasons</option></select></label>
           <label for="teamFilter"><span class="filter-step"><b>02</b> YOUR TEAM</span><select id="teamFilter"><option value="all">All teams</option></select></label>
@@ -43,6 +44,16 @@
         <div class="summary-card"><span id="summaryLabel2">PASSING YARDS / GAME</span><strong id="summaryValue2">—</strong><small id="summaryNote2">selected games</small></div>
         <div class="summary-card"><span id="summaryLabel3">RUSHING YARDS</span><strong id="summaryValue3">—</strong><small id="summaryNote3">total in view</small></div>
         <div class="summary-card"><span id="summaryLabel4">TEAM OFFENSIVE YARDS</span><strong id="summaryValue4">—</strong><small id="summaryNote4">passing + rushing · no double count</small></div>
+      </section>
+
+      <section class="team-snapshot" id="teamSnapshot" aria-labelledby="teamSnapshotTitle">
+        <div class="snapshot-heading"><div><span class="section-kicker">TEAM-SEASON SNAPSHOT</span><h2 id="teamSnapshotTitle">The context behind the matchup.</h2></div><span class="chart-note" id="snapshotNote">Selected team and opponent · all seasons</span></div>
+        <div class="snapshot-grid">
+          <article class="snapshot-team snapshot-primary"><div class="snapshot-team-heading"><img id="snapshotPrimaryLogo" alt="" /><div><span id="snapshotPrimaryLabel">SELECTED TEAM</span><h3 id="snapshotPrimaryName">—</h3><p id="snapshotPrimaryRecord">—</p></div></div><div class="snapshot-stat-grid"><div><strong id="snapshotPrimaryPoints">—</strong><span>POINTS / GAME</span></div><div><strong id="snapshotPrimaryOffense">—</strong><span>OFF. YDS / GAME</span></div><div><strong id="snapshotPrimaryShare">—</strong><span>PASS SHARE</span></div><div><strong id="snapshotPrimaryMargin">—</strong><span>INT MARGIN / GAME</span></div></div></article>
+          <div class="snapshot-vs" aria-hidden="true">VS</div>
+          <article class="snapshot-team snapshot-opponent"><div class="snapshot-team-heading"><img id="snapshotOpponentLogo" alt="" /><div><span id="snapshotOpponentLabel">OPPONENT</span><h3 id="snapshotOpponentName">—</h3><p id="snapshotOpponentRecord">—</p></div></div><div class="snapshot-stat-grid"><div><strong id="snapshotOpponentPoints">—</strong><span>POINTS / GAME</span></div><div><strong id="snapshotOpponentOffense">—</strong><span>OFF. YDS / GAME</span></div><div><strong id="snapshotOpponentShare">—</strong><span>PASS SHARE</span></div><div><strong id="snapshotOpponentMargin">—</strong><span>INT MARGIN / GAME</span></div></div></article>
+        </div>
+        <p class="snapshot-takeaway" id="snapshotTakeaway">Choose a team and opponent to see record, scoring, offensive identity, and turnover context.</p>
       </section>
 
       <section class="player-profile" id="playerProfile"><div class="profile-placeholder"><span class="profile-icon">+</span><div><strong>Select a player from the filter or table</strong><p>The player’s headshot, team colors, position, and selected statistics will appear here.</p></div></div></section>
@@ -65,7 +76,8 @@
           <div class="duel-middle"><span id="duelPosition">ROLE DUEL</span><strong id="duelVerdict">Pick a position to compare players.</strong><p id="duelGames">The metrics change with the job.</p></div>
           <article class="duel-player duel-opponent"><div class="duel-player-head"><img id="duelOpponentHeadshot" class="duel-headshot" alt="" /><div><span id="duelOpponentTeam">OPPONENT</span><h3 id="duelOpponentName">Choose a player</h3><p id="duelOpponentRole">A same-position comparison will appear here.</p></div><img id="duelOpponentLogo" class="duel-team-logo" alt="" /></div><div class="duel-stat-grid" id="duelOpponentStats"></div></article>
         </div>
-        <div class="duel-chart-area"><div><span class="section-kicker">THE ROLE SCORECARD</span><p id="duelChartCaption">Select both players to see the metrics that belong to their position.</p></div><canvas id="duelChart" role="img" aria-label="Role-specific player comparison chart"></canvas></div>
+        <div class="duel-chart-area"><div><span class="section-kicker">THE ROLE SCORECARD</span><p id="duelChartCaption">Select both players to see the metrics that belong to their position.</p><p class="duel-score-note" id="duelRawNote">Bars are normalized for comparison; the player cards show the raw values.</p></div><canvas id="duelChart" role="img" aria-label="Role-specific player comparison chart"></canvas></div>
+        <div class="duel-trend-area"><div><span class="section-kicker">SEASON SHAPE</span><p id="duelTrendCaption">Choose two players to see how their role changed by season.</p></div><canvas id="duelTrendChart" role="img" aria-label="Line chart showing selected players' role metrics by season"></canvas></div>
         <p class="duel-footnote" id="duelMetricsNote">For linemen, workload means snaps and snap rate. For specialists, production means kicking or punting results—not fantasy points.</p>
       </section>
 
@@ -79,7 +91,7 @@
         <div class="chart-card large chart-turnover"><div class="chart-heading"><div><span class="section-kicker">05 · POSSESSION LEVERAGE</span><h2 id="turnoverTitle">Turnover leverage</h2></div><span class="chart-note" id="turnoverNote">Choose a team or matchup</span></div><p class="chart-explainer">Interceptions thrown, points scored, and offensive touchdown rate reveal how possessions become success.</p><canvas id="turnoverChart" role="img" aria-label="Bubble chart comparing turnover leverage and offensive success"></canvas></div>
       </section>
 
-      <section class="table-card"><div class="table-heading"><div><span class="section-kicker">THE NUMBERS BEHIND THE VIEW</span><h2>Player-game detail</h2></div><span id="tableCount">Showing 0 rows</span></div><div class="table-scroll"><table><caption class="sr-only">Filtered NFL player-game statistics</caption><thead id="dataTableHead"></thead><tbody id="dataTableBody"></tbody></table></div></section>
+      <section class="table-card"><div class="table-heading"><div><span class="section-kicker">THE NUMBERS BEHIND THE VIEW</span><h2>Player-game detail</h2><p class="table-subtitle">Rows are sorted by the metric that fits the selected role. Click any row to spotlight that player.</p></div><div class="table-actions"><span id="tableCount">Showing 0 rows</span><button class="ghost-button" id="downloadFilteredTable" type="button">Download filtered CSV</button></div></div><div class="table-scroll"><table><caption class="sr-only">Filtered NFL player-game statistics</caption><thead id="dataTableHead"></thead><tbody id="dataTableBody"></tbody></table></div></section>
     </main>
 
     <footer class="site-footer"><span>NFL BY THE NUMBERS · FILTERS CALCULATED IN YOUR BROWSER · <span id="dashboard-generated">DATA REFRESH —</span></span><span><a href="index.html">← Back to report</a> · <a href="data/panel.csv" download>Download CSV</a> · <a href="docs/data-dictionary.md">Data dictionary</a></span></footer>
