@@ -16,6 +16,7 @@
 - [x] Four headline numbers.
 - [x] Ten finding sections, each with explanatory text and a chart.
 - [x] Closing methodology section explains source, row definition, exclusions, and calculations.
+- [x] Interactive Clutch Kicker game makes the report opening engaging while connecting field-goal mechanics to a fourth-down decision.
 
 ## Dashboard page
 

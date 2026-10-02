@@ -173,7 +173,15 @@
     }, 2450);
   }
 
-  const fgState = { distance: 42, wind: 0, aim: 0, power: 85, attempts: 0, good: 0, score: 0, streak: 0, bestStreak: 0, running: false };
+  const fgScenarios = [
+    { quarter: "Q4", clock: "0:42", down: "4TH & 8", toGo: 8, position: 25, distance: 42, wind: 0, home: 24, away: 27, prompt: "You are down three late in the fourth. What is the best move?" },
+    { quarter: "Q4", clock: "1:18", down: "4TH & 2", toGo: 2, position: 18, distance: 35, wind: -3, home: 20, away: 20, prompt: "The game is tied inside the red zone. Take the lead or trust the offense?" },
+    { quarter: "Q2", clock: "0:08", down: "4TH & GOAL", toGo: 1, position: 9, distance: 27, wind: 4, home: 10, away: 13, prompt: "There is one play before halftime. Bank three points or chase seven?" },
+    { quarter: "Q4", clock: "2:06", down: "4TH & 5", toGo: 5, position: 31, distance: 48, wind: 5, home: 21, away: 24, prompt: "A long kick is available, but a miss gives the opponent a short field." },
+    { quarter: "Q3", clock: "4:31", down: "4TH & 3", toGo: 3, position: 22, distance: 39, wind: -5, home: 17, away: 14, prompt: "You are up three. Add points, extend the drive, or pin them deep?" },
+    { quarter: "Q4", clock: "0:19", down: "4TH & 10", toGo: 10, position: 36, distance: 53, wind: 2, home: 27, away: 28, prompt: "A 53-yarder could win it. This is the definition of a clutch attempt." },
+  ];
+  const fgState = { distance: 42, wind: 0, aim: 0, power: 85, attempts: 0, makes: 0, decisions: 0, score: 0, streak: 0, bestStreak: 0, running: false, phase: "decision", scenarioIndex: 0 };
   const fgClamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   function fgWindLabel() {
@@ -186,13 +194,44 @@
     return `${Math.abs(fgState.aim)}° ${fgState.aim < 0 ? "LEFT" : "RIGHT"}`;
   }
 
+  function fgIdealAim() {
+    return fgClamp(Math.round(-fgState.wind * 0.45), -10, 10);
+  }
+
   function fgTargetPower() {
     return Math.round(fgClamp(58 + fgState.distance * 0.65, 70, 98));
   }
 
   function updateFgScoreboard() {
-    const values = { fgScore: fgState.score, fgAttempts: fgState.attempts, fgStreak: fgState.streak, fgBest: fgState.bestStreak };
+    const values = { fgScore: fgState.score, fgDecisions: fgState.decisions, fgMakes: fgState.makes, fgStreak: fgState.streak, fgBest: fgState.bestStreak };
     Object.entries(values).forEach(([id, value]) => { const element = document.getElementById(id); if (element) element.textContent = value; });
+  }
+
+  function updateFgSituation() {
+    const scenario = fgScenarios[fgState.scenarioIndex];
+    if (!scenario) return;
+    set("fgDriveLabel", `${scenario.down} · OPPONENT ${scenario.position}`);
+    set("fgScoreline", `HOME ${scenario.home} — AWAY ${scenario.away}`);
+    set("fgDown", scenario.down);
+    set("fgYardline", `${scenario.position} YD LINE`);
+    set("fgDistance", `${fgState.distance} YARDS`);
+    set("fgWindRead", fgWindLabel());
+    set("fgSituation", `${scenario.quarter} · ${scenario.clock}`);
+  }
+
+  function setFgPhase(phase) {
+    fgState.phase = phase;
+    const decisionPanel = document.getElementById("fgDecisionPanel");
+    const kickingControls = document.getElementById("fgKickingControls");
+    if (decisionPanel) decisionPanel.hidden = phase === "kick";
+    if (kickingControls) kickingControls.hidden = phase !== "kick";
+    document.querySelectorAll(".fg-decision-button").forEach((button) => { button.disabled = phase !== "decision"; button.classList.toggle("is-selected", button.dataset.decision === fgState.lastCall && phase === "kick"); });
+    const kickButton = document.getElementById("fgKick");
+    const aimInput = document.getElementById("fgAim");
+    const powerInput = document.getElementById("fgPower");
+    if (kickButton) kickButton.disabled = phase !== "kick" || fgState.running;
+    if (aimInput) aimInput.disabled = phase !== "kick" || fgState.running;
+    if (powerInput) powerInput.disabled = phase !== "kick" || fgState.running;
   }
 
   function drawFieldGoal() {
@@ -216,26 +255,25 @@
     marker.setAttribute("cx", targetX);
     trajectory.setAttribute("d", `M 118 255 Q ${(118 + targetX) / 2} 38 ${targetX} 140`);
     ball.setAttribute("transform", "translate(118 255) rotate(-18)");
-    field.classList.remove("is-kicking", "is-good", "is-miss");
+    field.classList.remove("is-kicking", "is-good", "is-miss", "is-go", "is-punt");
     const impact = document.getElementById("fgImpact");
     if (impact) impact.innerHTML = "";
     const aimOutput = document.getElementById("fgAimValue");
     const powerOutput = document.getElementById("fgPowerValue");
     const powerGuide = document.getElementById("fgPowerGuide");
-    const situation = document.getElementById("fgSituation");
     const windLabel = document.getElementById("fgWindLabel");
     if (aimOutput) aimOutput.textContent = fgAimLabel();
     if (powerOutput) powerOutput.textContent = `${fgState.power}%`;
-    if (powerGuide) powerGuide.textContent = `RECOMMENDED ${fgTargetPower()}%`;
-    if (situation) situation.textContent = `${fgState.distance} YARDS · WIND ${fgWindLabel()}`;
+    if (powerGuide) powerGuide.textContent = `IDEAL ${fgTargetPower()}% · ±9 IS GOOD`;
     if (windLabel) windLabel.textContent = `WIND: ${fgWindLabel()}`;
+    updateFgSituation();
   }
 
   function fieldGoalResult(powerError, aimError) {
     if (powerError <= -12) return { title: "SHORT", detail: "The kick ran out of distance before it reached the uprights." };
     if (powerError >= 12) return { title: "TOO MUCH POWER", detail: "The ball had the distance, but sailed over the target window." };
-    if (Math.abs(aimError) >= 4.4) return { title: `WIDE ${aimError > 0 ? "RIGHT" : "LEFT"}`, detail: "The crosswind and your aim pulled the ball outside the uprights." };
-    if (Math.abs(powerError) >= 7) return { title: powerError > 0 ? "JUST LONG" : "JUST LOW", detail: "Your aim was close, but the power missed the sweet spot." };
+    if (Math.abs(aimError) >= 5.3) return { title: `WIDE ${aimError > 0 ? "RIGHT" : "LEFT"}`, detail: "The wind and your aim pulled the ball outside the uprights." };
+    if (Math.abs(powerError) >= 9) return { title: powerError > 0 ? "JUST LONG" : "JUST LOW", detail: "Your aim was close, but the power missed the sweet spot." };
     return { title: "GOOD", detail: "Clean contact. The ball splits the uprights." };
   }
 
@@ -257,13 +295,54 @@
     window.requestAnimationFrame(frame);
   }
 
+  function resolveNonKick(choice) {
+    const stage = document.getElementById("fgStage");
+    const result = document.getElementById("fgResult");
+    if (!stage || !result || fgState.running) return;
+    fgState.running = true;
+    const scenario = fgScenarios[fgState.scenarioIndex];
+    const chance = choice === "go" ? fgClamp(.76 - (scenario.toGo - 2) * .075, .31, .76) : .78;
+    const successful = Math.random() < chance;
+    const points = choice === "go" ? (successful ? 5 : 0) : (successful ? 1 : 0);
+    const title = choice === "go" ? (successful ? "CONVERSION! +5" : "TURNOVER ON DOWNS") : (successful ? "PUNT PINNED · +1" : "PUNT AWAY");
+    const detail = choice === "go" ? (successful ? `You beat the ${scenario.toGo}-yard line and kept the drive alive.` : "The defense closes the window before the sticks.") : (successful ? "The punt wins the field-position battle." : "The return gives the opponent a little room to work.");
+    stage.classList.remove("is-good", "is-miss", "is-go", "is-punt");
+    stage.classList.add(choice === "go" ? "is-go" : "is-punt");
+    result.innerHTML = `<strong>${title}</strong><span>${detail} ${points ? `Challenge score +${points}.` : "No challenge points this round."}</span>`;
+    if (points) { fgState.score += points; fgState.streak += 1; fgState.bestStreak = Math.max(fgState.bestStreak, fgState.streak); } else fgState.streak = 0;
+    updateFgScoreboard();
+    setFgPhase("resolved");
+    set("fgDecisionPrompt", "Round complete. Reset for another fourth-down situation.");
+    window.setTimeout(() => { fgState.running = false; }, 650);
+  }
+
+  function chooseFourthDown(choice) {
+    if (fgState.phase !== "decision" || fgState.running) return;
+    fgState.decisions += 1;
+    fgState.lastCall = choice;
+    const scenario = fgScenarios[fgState.scenarioIndex];
+    if (choice === "kick") {
+      const aimInput = document.getElementById("fgAim");
+      const powerInput = document.getElementById("fgPower");
+      if (aimInput) aimInput.value = String(fgIdealAim());
+      if (powerInput) powerInput.value = String(fgTargetPower());
+      drawFieldGoal();
+      setFgPhase("kick");
+      set("fgDecisionPrompt", `${scenario.distance} yards into ${fgWindLabel().toLowerCase()}. Set the kick, then trust your read.`);
+      const result = document.getElementById("fgResult");
+      if (result) result.innerHTML = `<strong>Kick team is on the field</strong><span>The gold target shows the ideal window. You have a forgiving ±9% power range.</span>`;
+      return;
+    }
+    resolveNonKick(choice);
+  }
+
   function kickFieldGoal() {
     const stage = document.getElementById("fgStage");
     const result = document.getElementById("fgResult");
     const kickButton = document.getElementById("fgKick");
-    if (!stage || !result || !kickButton || fgState.running) return;
+    if (!stage || !result || !kickButton || fgState.running || fgState.phase !== "kick") return;
     const idealPower = fgTargetPower();
-    const idealAim = -fgState.wind * 0.5;
+    const idealAim = fgIdealAim();
     const powerError = fgState.power - idealPower;
     const aimError = fgState.aim - idealAim;
     const powerRatio = fgState.power / idealPower;
@@ -274,10 +353,9 @@
     const isGood = outcome.title === "GOOD";
     fgState.running = true;
     fgState.attempts += 1;
-    if (isGood) { fgState.good += 1; fgState.score += 3; fgState.streak += 1; fgState.bestStreak = Math.max(fgState.bestStreak, fgState.streak); }
-    else fgState.streak = 0;
+    if (isGood) { fgState.makes += 1; fgState.score += 3; fgState.streak += 1; fgState.bestStreak = Math.max(fgState.bestStreak, fgState.streak); } else fgState.streak = 0;
     updateFgScoreboard();
-    stage.classList.remove("is-good", "is-miss");
+    stage.classList.remove("is-good", "is-miss", "is-go", "is-punt");
     stage.classList.add("is-kicking");
     kickButton.disabled = true;
     const aimInput = document.getElementById("fgAim");
@@ -293,34 +371,43 @@
       result.innerHTML = `<strong>${isGood ? "FIELD GOAL! +3" : outcome.title}</strong><span>${outcome.detail} · Aim ${fgAimLabel()} · Power ${fgState.power}%.</span>`;
       updateFgScoreboard();
       fgState.running = false;
-      kickButton.disabled = false;
-      if (aimInput) aimInput.disabled = false;
-      if (powerInput) powerInput.disabled = false;
+      setFgPhase("resolved");
+      set("fgDecisionPrompt", "Round complete. Reset for another fourth-down situation.");
     });
   }
 
   function newFieldGoalChallenge() {
     if (fgState.running) return;
-    const distances = [28, 34, 41, 47, 53, 58];
-    fgState.distance = distances[Math.floor(Math.random() * distances.length)];
-    fgState.wind = Math.floor(Math.random() * 13) - 6;
-    fgState.aim = Math.round(fgClamp(-fgState.wind * 0.35, -10, 10));
+    let nextIndex = Math.floor(Math.random() * fgScenarios.length);
+    if (fgScenarios.length > 1 && nextIndex === fgState.scenarioIndex) nextIndex = (nextIndex + 1) % fgScenarios.length;
+    fgState.scenarioIndex = nextIndex;
+    const scenario = fgScenarios[nextIndex];
+    fgState.distance = scenario.distance;
+    fgState.wind = scenario.wind;
+    fgState.aim = fgIdealAim();
     fgState.power = fgTargetPower();
     const aimInput = document.getElementById("fgAim");
     const powerInput = document.getElementById("fgPower");
-    if (aimInput) aimInput.value = String(fgState.aim);
-    if (powerInput) powerInput.value = String(fgState.power);
+    if (aimInput) { aimInput.value = String(fgState.aim); aimInput.disabled = true; }
+    if (powerInput) { powerInput.value = String(fgState.power); powerInput.disabled = true; }
+    const stage = document.getElementById("fgStage");
+    if (stage) stage.classList.remove("is-kicking", "is-good", "is-miss", "is-go", "is-punt");
     drawFieldGoal();
+    setFgPhase("decision");
+    set("fgDecisionPrompt", scenario.prompt);
     const result = document.getElementById("fgResult");
-    if (result) result.innerHTML = `<strong>New challenge: ${fgState.distance} yards</strong><span>Power is guided. Aim into the wind, then kick for +3.</span>`;
+    if (result) result.innerHTML = `<strong>New situation: ${scenario.down}</strong><span>Choose your call. The kick controls unlock only if you take the points.</span>`;
+    updateFgScoreboard();
   }
 
   function setupFieldGoalGame() {
     if (!document.getElementById("fgField")) return;
-    drawFieldGoal();
-    updateFgScoreboard();
+    newFieldGoalChallenge();
     document.getElementById("fgAim")?.addEventListener("input", drawFieldGoal);
     document.getElementById("fgPower")?.addEventListener("input", drawFieldGoal);
+    document.getElementById("fgKickDecision")?.addEventListener("click", () => chooseFourthDown("kick"));
+    document.getElementById("fgGoDecision")?.addEventListener("click", () => chooseFourthDown("go"));
+    document.getElementById("fgPuntDecision")?.addEventListener("click", () => chooseFourthDown("punt"));
     document.getElementById("fgKick")?.addEventListener("click", kickFieldGoal);
     document.getElementById("fgNew")?.addEventListener("click", newFieldGoalChallenge);
   }

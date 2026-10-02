@@ -319,6 +319,36 @@ body { background: radial-gradient(circle at 8% 12%, rgba(116,185,232,.08), tran
 @keyframes fg-confetti-pop { from { opacity: 0; transform: translateY(5px) rotate(0deg); } 30% { opacity: 1; } to { opacity: 0; transform: translateY(22px) rotate(160deg); } }
 @media (max-width: 600px) { .fg-scoreboard { align-items: stretch; }.fg-scoreboard > .pulse-live { flex-basis: 100%; }.fg-scoreboard > span:last-child { flex-basis: 100%; margin-left: 0; }.fg-power-guide { display: grid; gap: 2px; }.fg-field { height: 235px; } }
 
+/* Clutch kicker + fourth-down decision layer. */
+.fg-situation-card { margin-top: 22px; padding: 13px 14px; border: 1px solid rgba(167,216,243,.2); border-left: 3px solid #f2b134; border-radius: 4px; background: rgba(0,0,0,.16); }
+.fg-situation-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; color: #a7d8f3; font: 800 10px "Barlow Condensed"; letter-spacing: .11em; }
+.fg-situation-top strong { color: #fff; font-size: 17px; letter-spacing: .02em; }
+.fg-situation-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-top: 13px; }
+.fg-situation-grid span { display: grid; gap: 3px; padding: 8px 7px; background: rgba(255,255,255,.055); }
+.fg-situation-grid small { color: rgba(255,255,255,.5); font: 800 8px "Barlow Condensed"; letter-spacing: .1em; }
+.fg-situation-grid b { color: #fff; font: 800 14px "Barlow Condensed"; }
+.fg-decision-panel, .fg-kicking-controls { margin-top: 22px; }
+.fg-step { display: flex; align-items: start; gap: 10px; }
+.fg-step > span { display: grid; place-items: center; flex: 0 0 29px; height: 29px; border: 1px solid rgba(242,177,52,.55); border-radius: 50%; color: #f2b134; font: 800 11px "Barlow Condensed"; }
+.fg-step strong { display: block; color: #fff; font: 800 17px "Barlow Condensed"; }
+.fg-step p { margin: 3px 0 0; color: rgba(255,255,255,.65) !important; font-size: 11px; line-height: 1.45; }
+.fg-decision-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+.fg-decision-button { display: grid; gap: 2px; min-height: 76px; padding: 10px 8px; border: 1px solid rgba(255,255,255,.2); border-radius: 4px; color: #fff; text-align: left; cursor: pointer; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+.fg-decision-button:hover, .fg-decision-button:focus-visible { transform: translateY(-2px); border-color: #fff; }
+.fg-decision-button span { font: 800 9px "Barlow Condensed"; letter-spacing: .11em; }
+.fg-decision-button strong { font: 800 17px "Barlow Condensed"; }
+.fg-decision-button small { color: rgba(255,255,255,.62); font-size: 10px; }
+.fg-decision-button.is-kick { background: rgba(213,10,10,.7); }.fg-decision-button.is-go { background: rgba(73,160,120,.52); }.fg-decision-button.is-punt { background: rgba(116,185,232,.25); }
+.fg-decision-button.is-selected { box-shadow: 0 0 0 3px rgba(242,177,52,.55); }
+.fg-decision-button:disabled { cursor: default; opacity: .52; transform: none; }
+.fg-kicking-controls { padding: 13px 13px 14px; border: 1px solid rgba(242,177,52,.3); border-radius: 4px; background: rgba(242,177,52,.07); }
+.fg-kicking-controls .fg-controls { margin-top: 16px; }
+.fg-next-button { width: 100%; margin-top: 12px; }
+.fg-stage.is-go .fg-field-grass { animation: fg-go-pulse .75s ease-in-out 2; }.fg-stage.is-punt .fg-field-grass { animation: fg-punt-pulse .75s ease-in-out 2; }
+@keyframes fg-go-pulse { 50% { filter: brightness(1.24) saturate(1.15); } }
+@keyframes fg-punt-pulse { 50% { filter: brightness(1.12) hue-rotate(12deg); } }
+@media (max-width: 600px) { .fg-situation-grid { grid-template-columns: repeat(2, 1fr); }.fg-situation-top strong { width: 100%; }.fg-decision-buttons { grid-template-columns: 1fr; }.fg-decision-button { min-height: 58px; }.fg-next-button { margin-top: 10px; } }
+
 /* Game-day redesign: stronger hierarchy, clearer chapters, and a broadcast-style matchup view. */
 :root { --nfl-gold: #f2b134; --nfl-sky: #a7d8f3; --nfl-dark: #06192d; }
 html { scroll-behavior: smooth; }

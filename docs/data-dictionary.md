@@ -86,6 +86,7 @@ The downloadable panel is `data/panel.csv`. Each row represents one player in on
 - Recorded player production is a player-facing total of passing, rushing, and receiving yards. It is not a team total and should not be interpreted as player value.
 - The report’s EPA rate is passing EPA divided by pass attempts for qualified quarterbacks.
 - The website’s animated plays are schematic illustrations. The panel contains player-game aggregates, not play-level tracking coordinates or video.
+- The report’s Clutch Kicker is a schematic simulation, not a predictive model. Its fourth-down outcomes are designed for interaction and teaching; they are not calculated from live win-probability data.
 - The dashboard’s filtered CSV buttons export the rows currently visible after season, team, opponent, location, unit, position, and player filters are applied.
 - Defensive role comparisons use recorded activity such as tackles, sacks, QB hits, and passes defended. The panel does not identify the exact defender assigned to a receiver on each play.
 
