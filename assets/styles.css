@@ -217,3 +217,13 @@ body { background: radial-gradient(circle at 8% 12%, rgba(116,185,232,.08), tran
 .highlight-reel, .qb-lab, .pulse-lab { border-radius: 14px; }
 @media (max-width: 950px) { .hero-data-card { right: 7%; }.selection-rail { align-items: flex-start; flex-direction: column; }.selection-rail p { text-align: left; } }
 @media (max-width: 600px) { .hero-data-card { top: 1%; right: 2%; width: 220px; transform: rotate(2deg) scale(.9); transform-origin: top right; }.hero-art { min-height: 310px; }.hero-stat { right: 0; bottom: 0; }.story-map { top: 64px; overflow-x: auto; flex-wrap: nowrap; padding-inline: 20px; margin-inline: 0; width: 100%; }.story-map-label { flex: 0 0 auto; width: auto; }.story-map a { flex: 0 0 auto; }.selection-rail strong { font-size: 21px; }.profile-trend { flex-basis: 100%; order: 3; }.profile-content.is-matchup .profile-trend { grid-column: 1 / -1; }.dashboard-chart-grid .chart-card { min-height: 330px; }.chart-card:hover { transform: none; } }
+/* Dashboard chart lab layout: separate the stories without losing mobile flow. */
+.dashboard-chart-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 38px 28px; align-items: start; }
+.dashboard-chart-grid .chart-card:nth-child(1) { grid-column: span 7; }
+.dashboard-chart-grid .chart-card:nth-child(2) { grid-column: span 5; }
+.dashboard-chart-grid .chart-card:nth-child(3) { grid-column: 2 / span 5; }
+.dashboard-chart-grid .chart-card:nth-child(4) { grid-column: 7 / span 5; }
+.dashboard-chart-grid .chart-card:nth-child(5) { grid-column: 2 / span 10; }
+.dashboard-chart-grid .chart-card canvas { height: 250px !important; }
+.dashboard-chart-grid .large canvas { height: 280px !important; }
+@media (max-width: 950px) { .dashboard-chart-grid { grid-template-columns: 1fr; gap: 28px; }.dashboard-chart-grid .chart-card:nth-child(n) { grid-column: 1; } }
