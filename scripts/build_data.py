@@ -171,6 +171,76 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
         position["passing_yards"] + position["rushing_yards"] + position["receiving_yards"]
     )
 
+    player_season = (
+        panel.groupby(
+            [
+                "season",
+                "player_id",
+                "player_display_name",
+                "position",
+                "position_group",
+                "team",
+                "headshot_url",
+            ],
+            as_index=False,
+        )
+        .agg(
+            games=("game_id", "nunique"),
+            wins=("win_loss", lambda s: (s == "W").sum()),
+            offense_snaps=("offense_snaps", "sum"),
+            offense_pct=("offense_pct", "mean"),
+            defense_snaps=("defense_snaps", "sum"),
+            defense_pct=("defense_pct", "mean"),
+            st_snaps=("st_snaps", "sum"),
+            st_pct=("st_pct", "mean"),
+            completions=("completions", "sum"),
+            attempts=("attempts", "sum"),
+            passing_yards=("passing_yards", "sum"),
+            passing_tds=("passing_tds", "sum"),
+            passing_interceptions=("passing_interceptions", "sum"),
+            passing_epa=("passing_epa", "sum"),
+            carries=("carries", "sum"),
+            rushing_yards=("rushing_yards", "sum"),
+            rushing_tds=("rushing_tds", "sum"),
+            rushing_epa=("rushing_epa", "sum"),
+            receptions=("receptions", "sum"),
+            targets=("targets", "sum"),
+            receiving_yards=("receiving_yards", "sum"),
+            receiving_tds=("receiving_tds", "sum"),
+            receiving_epa=("receiving_epa", "sum"),
+            def_tackles=("def_tackles_solo", "sum"),
+            def_sacks=("def_sacks", "sum"),
+            def_interceptions=("def_interceptions", "sum"),
+            def_pass_defended=("def_pass_defended", "sum"),
+            def_qb_hits=("def_qb_hits", "sum"),
+            def_tackles_for_loss=("def_tackles_for_loss", "sum"),
+            fg_made=("fg_made", "sum"),
+            fg_att=("fg_att", "sum"),
+            fg_long=("fg_long", "max"),
+            pat_made=("pat_made", "sum"),
+            pat_att=("pat_att", "sum"),
+            pt_att=("pt_att", "sum"),
+            pt_long=("pt_long", "max"),
+            pt_yards=("pt_yards", "sum"),
+            pt_inside_20=("pt_inside_20", "sum"),
+            fantasy_points=("fantasy_points", "sum"),
+        )
+    )
+    player_season["win_rate"] = player_season["wins"] / player_season["games"].replace(0, pd.NA)
+    player_season["fg_pct"] = player_season["fg_made"] / player_season["fg_att"].replace(0, pd.NA)
+    player_season["pat_pct"] = player_season["pat_made"] / player_season["pat_att"].replace(0, pd.NA)
+    player_season["total_yards"] = (
+        player_season["passing_yards"]
+        + player_season["rushing_yards"]
+        + player_season["receiving_yards"]
+    )
+    player_season["total_tds"] = (
+        player_season["passing_tds"]
+        + player_season["rushing_tds"]
+        + player_season["receiving_tds"]
+    )
+    player_season = player_season.fillna(0)
+
     quarterbacks = panel.loc[panel["position_group"].eq("QB")].copy()
     qb = (
         quarterbacks.groupby(["player_id", "player_display_name"], as_index=False)
@@ -264,6 +334,9 @@ def build_report_stats(panel: pd.DataFrame) -> dict:
         "team_offense": records(offense_by_yards, ["season", "team", "games", "wins", "win_rate", "passing_yards", "rushing_yards", "offensive_yards", "offensive_tds", "points_per_game", "offensive_yards_per_game", "offensive_interceptions_per_game"], 160),
         "team_defense": records(defense_by_pressure, ["season", "team", "games", "wins", "win_rate", "def_sacks", "def_interceptions", "defensive_takeaways_pressure"], 160),
         "position_production": records(position_by_production, ["position_group", "players", "player_games", "passing_yards", "rushing_yards", "receiving_yards", "production_yards", "def_tackles", "def_sacks"]),
+        "player_production": json.loads(
+            player_season.sort_values(["player_display_name", "season", "team"]).to_json(orient="records")
+        ),
         "quarterbacks": records(qb_by_epa, ["player_display_name", "games", "attempts", "passing_yards", "passing_tds", "epa_per_attempt", "win_rate"]),
         "passing_share": records(pass_share, ["team", "passing_share"], 32),
         "team_style": records(rushing_passing.sort_values(["team", "season"]), ["season", "team", "passing_share", "passing_yards", "rushing_yards"], 160),
@@ -462,6 +535,11 @@ def main() -> None:
     player_records.to_json(DATA_DIR / "players.json", orient="records", indent=2)
 
     report_stats = build_report_stats(panel.copy())
+    report_players = report_stats.pop("player_production", [])
+    report_player_json = json.dumps(report_players, separators=(",", ":"))
+    (DATA_DIR / "report_players.json").write_text(report_player_json, encoding="utf-8")
+    with gzip.open(DATA_DIR / "report_players.json.gz", "wt", encoding="utf-8") as compressed_players:
+        compressed_players.write(report_player_json)
     (DATA_DIR / "report_stats.json").write_text(json.dumps(report_stats, indent=2), encoding="utf-8")
     metadata = {
         "seasons": SEASONS,

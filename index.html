@@ -136,16 +136,17 @@
       </section>
 
       <section class="report-controls content-width" id="report-lens" aria-labelledby="report-lens-title">
-        <div class="report-controls-heading"><div><p class="section-kicker">INTERACTIVE REPORT LENS</p><h2 id="report-lens-title">Change the question without leaving the page.</h2><p>Filter the overview ranking by season, team, or position. The lens updates the chart and takeaway below; the full-window findings remain as context.</p></div><div class="report-controls-note"><span>FILTERS</span><strong id="reportFilterStatus">All seasons · all teams · all positions</strong></div></div>
+        <div class="report-controls-heading"><div><p class="section-kicker">INTERACTIVE REPORT LENS</p><h2 id="report-lens-title">Change the question without leaving the page.</h2><p>Selections work together: choose a season, team, position, and player to turn the report into a focused role profile instead of a one-size-fits-all ranking.</p></div><div class="report-controls-note"><span>FILTERS</span><strong id="reportFilterStatus">All seasons · all teams · all positions · all players</strong></div></div>
         <div class="report-filter-grid" aria-label="Report filters">
           <label for="reportSeasonFilter">SEASON<select id="reportSeasonFilter"><option value="all">All five seasons</option></select></label>
           <label for="reportTeamFilter">TEAM<select id="reportTeamFilter"><option value="all">All teams</option></select></label>
           <label for="reportPositionFilter">POSITION<select id="reportPositionFilter"><option value="all">All position groups</option></select></label>
+          <label for="reportPlayerFilter">PLAYER<select id="reportPlayerFilter"><option value="all">All players</option></select></label>
           <button class="ghost-button" id="reportResetFilters" type="button">Reset lens</button>
         </div>
         <div class="report-lens-grid">
           <div class="chart-card report-lens-card"><div class="chart-card-heading"><div><p class="chart-explainer" id="reportLensExplainer">Team-season offensive yards per game.</p><h3 id="reportLensChartTitle">Offensive identity ranking</h3></div><span class="chart-type">FILTERED RANKING</span></div><canvas id="reportLensChart" role="img" aria-label="Interactive filtered report ranking"></canvas><p class="chart-callout"><span>READ IT</span><strong id="reportLensTakeaway">—</strong></p></div>
-          <div class="report-lens-side"><p class="section-kicker">WHAT CHANGES</p><h3>Use the lens to make the report yours.</h3><div class="lens-note"><span>SEASON</span><strong>Compare eras</strong><p>Follow the league’s balance and scoring from one season to the next.</p></div><div class="lens-note"><span>TEAM</span><strong>Find a fingerprint</strong><p>See whether a team wins with pace, points, balance, or pressure.</p></div><div class="lens-note"><span>POSITION</span><strong>Respect the role</strong><p>Switch from yardage to workload when the job on the field changes.</p></div></div>
+          <div class="report-lens-side"><p class="section-kicker">WHAT CHANGES</p><h3>Use the lens to make the report yours.</h3><div class="lens-note"><span>SEASON</span><strong>Compare eras</strong><p>Follow the league’s balance and scoring from one season to the next.</p></div><div class="lens-note"><span>TEAM + POSITION</span><strong>Find a fingerprint</strong><p>Move from a team identity to a role leaderboard without losing the matchup context.</p></div><div class="lens-note"><span>PLAYER</span><strong>Respect the job</strong><p>The chart switches to that player’s real role metric—snaps for linemen, coverage events for DBs, and kicking or punting for specialists.</p></div><div class="lens-player-card" id="reportLensPlayerCard" hidden><img id="reportLensPlayerImage" alt="" /><div><span>SELECTED PLAYER</span><strong id="reportLensPlayerName">—</strong><p id="reportLensPlayerMeta">—</p><b id="reportLensPlayerStats">—</b></div></div></div>
         </div>
       </section>
 
@@ -237,6 +238,6 @@
 
     <footer class="site-footer"><span>NFL BY THE NUMBERS · 2021–2025</span><span><a href="dashboard.html">Open dashboard →</a> · <a href="docs/data-dictionary.md">Data dictionary</a></span></footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="assets/report.js?v=20261002-redesign"></script>
+    <script src="assets/report.js?v=20261002-player-lens"></script>
   </body>
 </html>

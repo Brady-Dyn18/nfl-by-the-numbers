@@ -34,6 +34,7 @@ The browser dashboard needs an HTTP server because browsers block local CSV requ
 - `data/teams.json` - team names, colors, and logo URLs.
 - `data/players.json` - player names, positions, and headshot URLs.
 - `data/report_stats.json` - derived season, team, position, quarterback, balance, turnover, and home/away aggregates used by the report charts.
+- `data/report_players.json.gz` - compressed season/team/player role summaries used by the report lens; the readable `data/report_players.json` fallback is included for browsers without native gzip streams.
 - `scripts/build_data.py` - reproducible data acquisition, snap-count joins, specialist fields, and panel construction.
 - `scripts/build_highlights.py` - optional reproducible nflverse play-by-play indexing for one actual event per player-game.
 - `scripts/validate_project.py` - automated rubric and data-integrity checks.
