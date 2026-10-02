@@ -14,7 +14,6 @@ From this repository root:
 ```bash
 uv sync
 uv run python scripts/build_data.py
-uv run python scripts/build_highlights.py
 uv run python -m http.server 8000
 ```
 
@@ -25,18 +24,18 @@ The browser dashboard needs an HTTP server because browsers block local CSV requ
 ## Website files
 
 - `index.html` - narrative report with headline metrics and ten findings, including scoring, offense balance, turnovers, and home/away context.
-- `dashboard.html` - interactive dashboard with filters, switches, charts, table, and reset control.
+- `dashboard.html` - interactive dashboard with cascading filters, team matchup views, a role-specific Player Duel, charts, table, and reset control.
 - `assets/styles.css` - shared NFL-inspired design system and responsive layout.
 - `assets/app.js` - dashboard data loading, filtering, calculations, charts, theming, and player cards.
 - `data/panel.csv` - downloadable player-game panel used by both pages.
 - `data/panel.csv.gz` - compressed copy used by the browser dashboard for faster loading.
-- `data/highlights.json.gz` - compressed game-specific nflverse play-by-play events used by the animated replay.
-- `data/highlights.json` - readable copy of the play-by-play index for inspection and fallback loading.
+- `data/highlights.json.gz` - optional compressed game-specific nflverse play-by-play index retained for exploration; the dashboard now uses the Player Duel instead of a replay.
+- `data/highlights.json` - readable copy of the optional play-by-play index for inspection.
 - `data/teams.json` - team names, colors, and logo URLs.
 - `data/players.json` - player names, positions, and headshot URLs.
 - `data/report_stats.json` - derived season, team, position, quarterback, balance, turnover, and home/away aggregates used by the report charts.
-- `scripts/build_data.py` - reproducible data acquisition and panel construction.
-- `scripts/build_highlights.py` - reproducible nflverse play-by-play indexing for one actual event per player-game.
+- `scripts/build_data.py` - reproducible data acquisition, snap-count joins, specialist fields, and panel construction.
+- `scripts/build_highlights.py` - optional reproducible nflverse play-by-play indexing for one actual event per player-game.
 - `scripts/validate_project.py` - automated rubric and data-integrity checks.
 - `docs/rubric-checklist.md` - checklist mapping the project to the assignment rubric.
 - `docs/data-dictionary.md` - column definitions and calculation notes for the downloadable panel.
@@ -50,4 +49,4 @@ One row is one player in one regular-season NFL game. Players with no recorded o
 
 The majority of nflverse data is broadly licensed under CC-BY 4.0. Team logos and player images remain the property of their respective rights holders and are used here for an educational project. Please retain source attribution when reusing this work. The dashboard loads the compressed panel first and falls back to the CSV when compression support is unavailable.
 
-The dashboard replay is driven by the selected player’s actual nflverse play-by-play event for that game: its description, down, distance, clock, field position, play type, yards, and score state. The moving dots are a responsive schematic because the public panel does not contain broadcast video or player-tracking coordinates; the replay should be read as an animated trace of the real event, not as a video clip.
+The dashboard’s Player Duel compares two players from the same position across the selected matchup. Its measures change with the role: quarterbacks use passing volume and completion rate, receivers use targets and catch rate, defensive players use tackles and pressure, offensive linemen use offensive snaps and snap rate, kickers use field-goal attempts, accuracy, and longest make, punters use distance and inside-20 results, and long snappers use special-teams workload. Player headshots, team logos, and team colors update with the selection.

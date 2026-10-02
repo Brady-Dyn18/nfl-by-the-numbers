@@ -29,7 +29,19 @@ def main() -> None:
     require(panel["team"].nunique() >= 10, "Panel needs at least ten groups")
     require(panel["position"].nunique() >= 2, "Panel needs categorical position values")
     require(panel["team"].nunique() >= 2, "Panel needs categorical team values")
-    numeric_columns = ["passing_yards", "rushing_yards", "receiving_yards", "def_tackles_solo", "def_sacks"]
+    numeric_columns = [
+        "passing_yards",
+        "rushing_yards",
+        "receiving_yards",
+        "def_tackles_solo",
+        "def_sacks",
+        "offense_snaps",
+        "st_snaps",
+        "fg_att",
+        "fg_long",
+        "pt_att",
+        "pt_long",
+    ]
     require(all(column in panel.columns for column in numeric_columns), "Missing numeric analysis fields")
     require(panel["win_loss"].isin(["W", "L", "T"]).all(), "Unexpected win/loss values")
     require(panel["game_id"].notna().all(), "Missing game IDs")
@@ -53,11 +65,11 @@ def main() -> None:
     require(report_html.count("class=\"report-section") >= 8, "Report needs at least eight finding sections")
     require(report_html.count("<canvas") >= 8, "Report needs a chart for each finding")
     require(dashboard_html.count("<canvas") >= 4, "Dashboard needs at least four charts")
-    for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "positionFilter", "playerFilter", "filterSearch", "activeFilters", "resetFilters", "summaryValue1", "summaryValue4", "matchupSummary", "highlightField", "dataTableBody"]:
+    for required_id in ["seasonFilter", "teamFilter", "opponentFilter", "positionGroupFilter", "positionFilter", "playerFilter", "filterSearch", "activeFilters", "resetFilters", "summaryValue1", "summaryValue4", "matchupSummary", "playerDuel", "duelPrimaryPlayer", "duelOpponentPlayer", "duelChart", "dataTableBody"]:
         require(required_id in dashboard_html, f"Dashboard missing {required_id}")
     require("panel.csv.gz" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must prefer the compressed panel")
-    require("highlights.json.gz" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must load the compressed highlight index")
-    require("highlightEvent" in dashboard_html and "highlightSituation" in dashboard_html, "Dashboard highlight needs actual play context")
+    require("updatePlayerDuel" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must render the role-specific player duel")
+    require("fg_att" in (ROOT / "assets/app.js").read_text(encoding="utf-8") and "offense_snaps" in (ROOT / "assets/app.js").read_text(encoding="utf-8"), "Dashboard must include specialist and workload metrics")
 
     print("Project validation passed.")
     print(json.dumps({"rows": len(panel), "columns": panel.shape[1], "seasons": sorted(panel["season"].unique().tolist()), "teams": panel["team"].nunique(), "players": panel["player_id"].nunique()}, indent=2))

@@ -53,25 +53,20 @@
         <div class="matchup-bar" aria-hidden="true"><span id="matchupPrimaryBar"></span><span id="matchupOpponentBar"></span></div><p class="matchup-takeaway" id="matchupTakeaway">—</p>
       </section>
 
-      <section class="highlight-reel" id="highlightReel" aria-labelledby="highlightTitle">
-        <div class="highlight-heading"><div><span class="section-kicker">ACTUAL PLAY REPLAY · NFLVERSE PLAY-BY-PLAY</span><h2 id="highlightTitle">Replay the real play behind the stat.</h2></div><span class="chart-note" id="highlightNote">Select a team + opponent to load matchup highlights</span></div>
-        <div class="highlight-controls">
-          <label for="highlightPlayer">PLAYER<select id="highlightPlayer"><option value="all">Select a player</option></select></label>
-          <label for="highlightGame">GAME<select id="highlightGame"><option value="all">Select a game</option></select></label>
-          <button class="highlight-button" id="highlightPlay" type="button"><span aria-hidden="true">▶</span> Run highlight</button>
-          <button class="ghost-button" id="highlightReset" type="button">Reset frame</button>
+      <section class="player-duel" id="playerDuel" aria-labelledby="playerDuelTitle">
+        <div class="duel-heading"><div><span class="section-kicker">PLAYER DUEL · ROLE-SPECIFIC MATCHUP</span><h2 id="playerDuelTitle">Compare the role, not just the score.</h2></div><span class="chart-note" id="playerDuelNote">Choose a team, opponent, and position</span></div>
+        <div class="duel-controls">
+          <label for="duelPrimaryPlayer">SELECTED TEAM PLAYER<select id="duelPrimaryPlayer"><option value="all">Select a matchup first</option></select></label>
+          <div class="duel-vs-badge" aria-hidden="true">VS</div>
+          <label for="duelOpponentPlayer">OPPONENT PLAYER<select id="duelOpponentPlayer"><option value="all">Select a matchup first</option></select></label>
         </div>
-        <div class="highlight-layout">
-          <div class="highlight-field-shell">
-            <svg id="highlightField" class="highlight-field" viewBox="0 0 900 330" role="img" aria-labelledby="highlightTitle highlightDescription">
-              <desc id="highlightDescription">Animated schematic trace of the selected nflverse play-by-play event.</desc>
-              <defs><linearGradient id="highlightGrass" x1="0" x2="1"><stop offset="0" stop-color="#0b5d4b"/><stop offset="1" stop-color="#13745b"/></linearGradient></defs>
-              <rect x="14" y="16" width="872" height="298" rx="10" class="highlight-grass"></rect><g class="highlight-yard-lines"></g><g id="highlightPlayLayer"></g>
-            </svg>
-            <div class="highlight-legend"><span><i class="legend-offense"></i> Offense</span><span><i class="legend-defense"></i> Defense</span><span><i class="legend-ball"></i> Ball</span><span>Motion is schematic</span></div>
-          </div>
-          <aside class="highlight-scoreboard" aria-live="polite"><div class="highlight-status" id="highlightStatus">PLAY READY</div><img id="highlightHeadshot" alt="Selected player headshot" /><strong id="highlightScore">—</strong><p class="highlight-context" id="highlightContext">Select a player and game to load the replay.</p><div class="highlight-situation"><span id="highlightSituation">Actual down, distance, and clock will appear here.</span><span id="highlightFieldPosition">Field position —</span></div><p class="highlight-event" id="highlightEvent">The actual play description will appear here.</p><p id="highlightResult">Play-by-play context is paired with the selected player-game statistic.</p><div class="highlight-stat-grid"><span><b id="highlightStatOne">—</b><small id="highlightStatLabelOne">Play yards</small></span><span><b id="highlightStatTwo">—</b><small id="highlightStatLabelTwo">Score after</small></span><span><b id="highlightStatThree">—</b><small id="highlightStatLabelThree">Opponent after</small></span></div></aside>
+        <div class="duel-board" aria-live="polite">
+          <article class="duel-player duel-primary"><div class="duel-player-head"><img id="duelPrimaryHeadshot" class="duel-headshot" alt="" /><div><span id="duelPrimaryTeam">SELECTED TEAM</span><h3 id="duelPrimaryName">Choose a player</h3><p id="duelPrimaryRole">A same-position comparison will appear here.</p></div><img id="duelPrimaryLogo" class="duel-team-logo" alt="" /></div><div class="duel-stat-grid" id="duelPrimaryStats"></div></article>
+          <div class="duel-middle"><span id="duelPosition">ROLE DUEL</span><strong id="duelVerdict">Pick a position to compare players.</strong><p id="duelGames">The metrics change with the job.</p></div>
+          <article class="duel-player duel-opponent"><div class="duel-player-head"><img id="duelOpponentHeadshot" class="duel-headshot" alt="" /><div><span id="duelOpponentTeam">OPPONENT</span><h3 id="duelOpponentName">Choose a player</h3><p id="duelOpponentRole">A same-position comparison will appear here.</p></div><img id="duelOpponentLogo" class="duel-team-logo" alt="" /></div><div class="duel-stat-grid" id="duelOpponentStats"></div></article>
         </div>
+        <div class="duel-chart-area"><div><span class="section-kicker">THE ROLE SCORECARD</span><p id="duelChartCaption">Select both players to see the metrics that belong to their position.</p></div><canvas id="duelChart" role="img" aria-label="Role-specific player comparison chart"></canvas></div>
+        <p class="duel-footnote" id="duelMetricsNote">For linemen, workload means snaps and snap rate. For specialists, production means kicking or punting results—not fantasy points.</p>
       </section>
 
       <section class="dashboard-lab-intro"><div><span class="section-kicker">THE MATCHUP LAB</span><h2>Five ways to read the same game.</h2><p>Each panel answers a different football question. Start with the score, then move through role, situation, usage, and turnover leverage.</p></div><div class="lab-key"><span><i class="key-primary"></i> Selected team</span><span><i class="key-opponent"></i> Opponent</span><span><i class="key-neutral"></i> League or context</span></div></section>
@@ -84,7 +79,7 @@
         <div class="chart-card large chart-turnover"><div class="chart-heading"><div><span class="section-kicker">05 · POSSESSION LEVERAGE</span><h2 id="turnoverTitle">Turnover leverage</h2></div><span class="chart-note" id="turnoverNote">Choose a team or matchup</span></div><p class="chart-explainer">Interceptions thrown, points scored, and offensive touchdown rate reveal how possessions become success.</p><canvas id="turnoverChart" role="img" aria-label="Bubble chart comparing turnover leverage and offensive success"></canvas></div>
       </section>
 
-      <section class="table-card"><div class="table-heading"><div><span class="section-kicker">THE NUMBERS BEHIND THE VIEW</span><h2>Player-game detail</h2></div><span id="tableCount">Showing 0 rows</span></div><div class="table-scroll"><table><caption class="sr-only">Filtered NFL player-game statistics</caption><thead><tr><th>Player</th><th>Team</th><th>Opp.</th><th>Pos.</th><th>Season</th><th>Week</th><th>H/A</th><th>Result</th><th>Pass yds</th><th>Rush yds</th><th>Rec yds</th><th>Tackles</th><th>Sacks</th></tr></thead><tbody id="dataTableBody"></tbody></table></div></section>
+      <section class="table-card"><div class="table-heading"><div><span class="section-kicker">THE NUMBERS BEHIND THE VIEW</span><h2>Player-game detail</h2></div><span id="tableCount">Showing 0 rows</span></div><div class="table-scroll"><table><caption class="sr-only">Filtered NFL player-game statistics</caption><thead id="dataTableHead"></thead><tbody id="dataTableBody"></tbody></table></div></section>
     </main>
 
     <footer class="site-footer"><span>NFL BY THE NUMBERS · FILTERS CALCULATED IN YOUR BROWSER · <span id="dashboard-generated">DATA REFRESH —</span></span><span><a href="index.html">← Back to report</a> · <a href="data/panel.csv" download>Download CSV</a> · <a href="docs/data-dictionary.md">Data dictionary</a></span></footer>

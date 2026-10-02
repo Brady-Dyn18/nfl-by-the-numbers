@@ -518,3 +518,43 @@ body { background: radial-gradient(circle at 8% 12%, rgba(116,185,232,.1), trans
   .dashboard-chart-grid .chart-card canvas, .dashboard-chart-grid .large canvas { height: 250px !important; }
   .table-card { padding: 20px 15px; }
 }
+
+/* Player Duel: the dashboard's role-aware centerpiece. */
+.player-duel { position: relative; margin: 27px 0 0; padding: 31px; overflow: hidden; color: #fff; border: 1px solid rgba(1,51,105,.2); border-top: 5px solid var(--team-secondary); border-radius: 14px; background: radial-gradient(circle at 50% 0%, rgba(167,216,243,.16), transparent 32%), linear-gradient(135deg, #06192d 0%, #013369 58%, #06213d 100%); box-shadow: 0 24px 58px rgba(1,51,105,.18); }
+.player-duel::before { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 28px 28px; content: ""; pointer-events: none; }
+.duel-heading, .duel-controls, .duel-board, .duel-chart-area, .duel-footnote { position: relative; z-index: 1; }
+.duel-heading { display: flex; align-items: start; justify-content: space-between; gap: 18px; }
+.duel-heading .section-kicker { color: var(--nfl-sky); }
+.duel-heading h2 { max-width: 700px; margin: 5px 0 0; font-size: clamp(31px, 4vw, 48px); letter-spacing: -.035em; }
+.duel-heading .chart-note { max-width: 290px; padding: 9px 11px; color: rgba(255,255,255,.68); border: 1px solid rgba(167,216,243,.18); border-radius: 3px; background: rgba(0,0,0,.16); text-align: right; }
+.duel-controls { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 14px; align-items: end; margin: 25px 0 19px; }
+.duel-controls label { color: var(--nfl-sky); font: 800 10px "Barlow Condensed"; letter-spacing: .14em; }
+.duel-controls select { display: block; width: 100%; min-height: 44px; margin-top: 7px; padding: 0 12px; color: #fff; border: 1px solid rgba(255,255,255,.25); border-radius: 4px; background: rgba(255,255,255,.1); font: 600 13px "DM Sans"; }
+.duel-controls option { color: var(--ink); }
+.duel-controls select:disabled { cursor: not-allowed; opacity: .6; }
+.duel-vs-badge { display: grid; place-items: center; width: 48px; height: 48px; margin: 0 auto 0; color: #071d34; border-radius: 50%; background: var(--nfl-gold); font: 800 15px "Barlow Condensed"; box-shadow: 0 0 0 5px rgba(242,177,52,.14); }
+.duel-board { display: grid; grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.duel-player { min-width: 0; padding: 20px; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(0,0,0,.18)); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+.duel-opponent { background: linear-gradient(145deg, rgba(213,10,10,.2), rgba(0,0,0,.18)); }
+.duel-player-head { display: grid; grid-template-columns: 68px minmax(0, 1fr) 48px; gap: 13px; align-items: center; min-height: 76px; }
+.duel-headshot { width: 68px; height: 76px; object-fit: cover; object-position: top center; border-radius: 6px; background: rgba(255,255,255,.08); }
+.duel-team-logo { width: 48px; height: 48px; object-fit: contain; }
+.duel-player-head span { display: block; color: #ffb3b3; font: 800 10px "Barlow Condensed"; letter-spacing: .12em; }
+.duel-opponent .duel-player-head span { color: #f2b134; }
+.duel-player h3 { margin: 3px 0 3px; color: #fff; font-size: clamp(22px, 2.5vw, 31px); line-height: .95; }
+.duel-player p { margin: 0; color: rgba(255,255,255,.62); font-size: 11px; line-height: 1.35; }
+.duel-stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; margin-top: 18px; }
+.duel-stat { min-height: 61px; padding: 9px 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 4px; background: rgba(0,0,0,.15); }
+.duel-stat strong { display: block; color: #fff; font: 800 23px/1 "Barlow Condensed"; }
+.duel-stat span { display: block; margin-top: 5px; color: rgba(255,255,255,.55); font: 800 9px/1.15 "Barlow Condensed"; letter-spacing: .06em; text-transform: uppercase; }
+.duel-middle { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; text-align: center; }
+.duel-middle > span { color: var(--nfl-gold); font: 800 10px "Barlow Condensed"; letter-spacing: .15em; }
+.duel-middle strong { margin-top: 11px; color: #fff; font: 800 25px/.95 "Barlow Condensed"; }
+.duel-middle p { margin: 10px 0 0; color: rgba(255,255,255,.55); font-size: 11px; line-height: 1.4; }
+.duel-chart-area { display: grid; grid-template-columns: minmax(220px,.55fr) minmax(0,1.45fr); gap: 25px; align-items: center; margin-top: 25px; padding: 20px 0 0; border-top: 1px solid rgba(255,255,255,.15); }
+.duel-chart-area .section-kicker { color: var(--nfl-sky); }
+.duel-chart-area p { max-width: 270px; margin: 7px 0 0; color: rgba(255,255,255,.68); font-size: 13px; line-height: 1.4; }
+.duel-chart-area canvas { width: 100% !important; height: 230px !important; }
+.duel-footnote { margin: 18px 0 0; color: rgba(255,255,255,.52); font-size: 11px; line-height: 1.5; }
+@media (max-width: 950px) { .duel-board { grid-template-columns: 1fr 48px 1fr; }.duel-chart-area { grid-template-columns: 1fr; gap: 8px; }.duel-chart-area p { max-width: 650px; }.duel-chart-area canvas { height: 260px !important; } }
+@media (max-width: 650px) { .player-duel { padding: 22px 15px; }.duel-heading { display: block; }.duel-heading .chart-note { display: inline-block; max-width: none; margin-top: 10px; text-align: left; }.duel-controls { grid-template-columns: 1fr; gap: 11px; }.duel-vs-badge { width: 38px; height: 38px; margin: 0 auto; }.duel-board { grid-template-columns: 1fr; gap: 10px; }.duel-middle { order: 2; padding: 5px; }.duel-opponent { order: 3; }.duel-player-head { grid-template-columns: 58px minmax(0,1fr) 40px; }.duel-headshot { width: 58px; height: 66px; }.duel-team-logo { width: 40px; height: 40px; }.duel-chart-area canvas { height: 300px !important; } }

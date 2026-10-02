@@ -300,6 +300,7 @@ def main() -> None:
     schedules = as_pandas(nfl.load_schedules(SEASONS))
     teams = as_pandas(nfl.load_teams())
     players = as_pandas(nfl.load_players())
+    snap_counts = as_pandas(nfl.load_snap_counts(SEASONS))
 
     player_stats = player_stats.loc[player_stats["season_type"].eq("REG")].copy()
     # nflverse includes a small number of team-level penalty rows without a player ID.
@@ -311,6 +312,7 @@ def main() -> None:
     player_meta = players[
         [
             "gsis_id",
+            "pfr_id",
             "display_name",
             "position",
             "position_group",
@@ -323,6 +325,29 @@ def main() -> None:
     panel["position"] = panel["position"].fillna(panel["position_meta"])
     panel["position_group"] = panel["position_group"].fillna(panel["position_group_meta"])
     panel["headshot_url"] = panel["headshot_url"].fillna(panel["player_headshot"])
+
+    # Snap counts are published separately from weekly player statistics. Join
+    # them through the player metadata so line players and specialists retain
+    # meaningful workload measures even when they do not touch the ball.
+    snap_counts = snap_counts.loc[snap_counts["game_type"].eq("REG")].copy()
+    snap_counts = snap_counts.merge(
+        players[["gsis_id", "pfr_id"]].rename(columns={"gsis_id": "player_id"}),
+        left_on="pfr_player_id",
+        right_on="pfr_id",
+        how="left",
+    )
+    snap_counts = (
+        snap_counts.groupby(["game_id", "player_id", "team"], as_index=False)
+        .agg(
+            offense_snaps=("offense_snaps", "sum"),
+            offense_pct=("offense_pct", "mean"),
+            defense_snaps=("defense_snaps", "sum"),
+            defense_pct=("defense_pct", "mean"),
+            st_snaps=("st_snaps", "sum"),
+            st_pct=("st_pct", "mean"),
+        )
+    )
+    panel = panel.merge(snap_counts, on=["game_id", "player_id", "team"], how="left")
 
     stat_columns = [
         "completions",
@@ -345,11 +370,35 @@ def main() -> None:
         "def_interceptions",
         "def_pass_defended",
         "def_tds",
+        "def_qb_hits",
+        "def_tackles_for_loss",
+        "def_fumbles_forced",
         "penalties",
         "penalty_yards",
+        "fg_made",
+        "fg_att",
+        "fg_missed",
+        "fg_blocked",
+        "fg_long",
+        "fg_pct",
+        "pat_made",
+        "pat_att",
+        "pat_missed",
+        "pat_pct",
+        "pt_att",
+        "pt_long",
+        "pt_yards",
+        "pt_inside_20",
+        "pt_touchback",
+        "pt_net_yards",
+        "punt_return_yards",
+        "kickoff_return_yards",
+        "special_teams_tds",
         "fantasy_points",
     ]
     for column in stat_columns:
+        panel[column] = clean_number(panel[column])
+    for column in ["offense_snaps", "offense_pct", "defense_snaps", "defense_pct", "st_snaps", "st_pct"]:
         panel[column] = clean_number(panel[column])
 
     output_columns = [
@@ -370,6 +419,12 @@ def main() -> None:
         "opponent_score",
         "point_differential",
         "win_loss",
+        "offense_snaps",
+        "offense_pct",
+        "defense_snaps",
+        "defense_pct",
+        "st_snaps",
+        "st_pct",
         *stat_columns,
     ]
     panel = panel[output_columns].sort_values(["season", "week", "team", "player_display_name"])

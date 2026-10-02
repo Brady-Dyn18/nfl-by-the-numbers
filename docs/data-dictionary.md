@@ -62,6 +62,24 @@ The downloadable panel is `data/panel.csv`. Each row represents one player in on
 | `penalty_yards` | Penalty yards. |
 | `fantasy_points` | nflverse fantasy-points total. |
 
+## Workload and specialists
+
+| Column | Meaning |
+| --- | --- |
+| `offense_snaps` | Offensive snaps played by the player in the game. Useful for offensive linemen and offensive workload comparisons. |
+| `offense_pct` | Share of the team’s offensive snaps played, stored as a decimal proportion. |
+| `defense_snaps` | Defensive snaps played by the player in the game. |
+| `defense_pct` | Share of the team’s defensive snaps played, stored as a decimal proportion. |
+| `st_snaps` | Special-teams snaps played by the player in the game. |
+| `st_pct` | Share of the team’s special-teams snaps played, stored as a decimal proportion. |
+| `fg_made`, `fg_att`, `fg_missed`, `fg_blocked` | Field goals made, attempted, missed, and blocked. |
+| `fg_long` | Longest made field goal in the game. |
+| `pat_made`, `pat_att`, `pat_missed` | Extra points made, attempted, and missed. |
+| `pt_att`, `pt_long`, `pt_yards`, `pt_net_yards` | Punt attempts, longest punt, gross punt yards, and net punt yards. |
+| `pt_inside_20`, `pt_touchback` | Punts downed inside the 20-yard line and touchbacks. |
+| `punt_return_yards`, `kickoff_return_yards` | Return yards by punt and kickoff returners. |
+| `special_teams_tds` | Special-teams touchdowns. |
+
 ## Important calculation notes
 
 - Team offensive yards on the dashboard means passing yards plus rushing yards. Receiving yards are not added to team offense because they describe the same passing plays from the receiver’s perspective.
@@ -69,9 +87,9 @@ The downloadable panel is `data/panel.csv`. Each row represents one player in on
 - The report’s EPA rate is passing EPA divided by pass attempts for qualified quarterbacks.
 - The website’s animated plays are schematic illustrations. The panel contains player-game aggregates, not play-level tracking coordinates or video.
 
-## Actual play replay index
+## Optional play-by-play index
 
-The dashboard also loads `data/highlights.json.gz`. This separate index contains one highest-priority nflverse play-by-play event for each player-game represented in the panel. It is used to keep the replay tied to a real game event instead of a repeated generic animation.
+`data/highlights.json.gz` is retained as an optional exploration artifact. It is not required by the current dashboard, whose matchup interaction is the role-specific Player Duel. The separate index contains one highest-priority nflverse play-by-play event for each player-game represented in the panel.
 
 | Field | Meaning |
 | --- | --- |
@@ -82,6 +100,6 @@ The dashboard also loads `data/highlights.json.gz`. This separate index contains
 | `yards_gained` | Yards recorded on the play. |
 | `team_score_before`, `opponent_score_before`, `team_score_after`, `opponent_score_after` | Score state around the selected play from the possession and defensive-team perspective. |
 
-The replay uses those fields for the text and motion length. Its player dots are intentionally schematic because nflverse play-by-play does not provide broadcast video or tracking coordinates.
+Those fields can support a future play-by-play visualization. nflverse play-by-play does not provide broadcast video or tracking coordinates.
 
 Source: [nflverse](https://github.com/nflverse/nflverse-data) through [nflreadpy](https://nflreadpy.nflverse.com/). Team marks and player images remain the property of their respective rights holders and are used for this educational project.

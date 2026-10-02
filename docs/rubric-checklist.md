@@ -27,7 +27,7 @@
 - [x] Measure switch and chart breakdown switch.
 - [x] Current-view data table.
 - [x] Reset filters button.
-- [x] Game-specific animated replay driven by actual nflverse play-by-play descriptions and situation data.
+- [x] Player Duel compares same-position players from both teams with role-specific workload, production, efficiency, and discipline measures.
 
 ## Repository and design
 
@@ -37,4 +37,4 @@
 - [x] README describes every file and data source.
 - [x] Reproducible build and validation scripts.
 - [x] Compressed dashboard panel, data dictionary, refresh date, and downloadable CSV.
-- [x] Compressed play-by-play highlight index with a reproducible build script.
+- [x] Optional compressed play-by-play index with a reproducible build script.
