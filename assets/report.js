@@ -147,7 +147,7 @@
     }, 2450);
   }
 
-  const fgState = { distance: 42, wind: 0, aim: 0, power: 80, attempts: 0, good: 0, running: false };
+  const fgState = { distance: 42, wind: 0, aim: 0, power: 85, attempts: 0, good: 0, score: 0, streak: 0, bestStreak: 0, running: false };
   const fgClamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   function fgWindLabel() {
@@ -164,6 +164,11 @@
     return Math.round(fgClamp(58 + fgState.distance * 0.65, 70, 98));
   }
 
+  function updateFgScoreboard() {
+    const values = { fgScore: fgState.score, fgAttempts: fgState.attempts, fgStreak: fgState.streak, fgBest: fgState.bestStreak };
+    Object.entries(values).forEach(([id, value]) => { const element = document.getElementById(id); if (element) element.textContent = value; });
+  }
+
   function drawFieldGoal() {
     const aimInput = document.getElementById("fgAim");
     const powerInput = document.getElementById("fgPower");
@@ -175,33 +180,36 @@
     if (!aimInput || !powerInput || !field || !line || !trajectory || !marker || !ball) return;
     const yardLines = field.querySelector(".fg-yard-lines");
     if (yardLines && !yardLines.innerHTML) {
-      yardLines.innerHTML = [110, 205, 300, 395, 490, 585].map((x, index) => `<line x1="${x}" y1="24" x2="${x}" y2="300"></line><text x="${x + 4}" y="44">${index * 10}</text>`).join("");
+      yardLines.innerHTML = [110, 205, 300, 395, 490, 585].map((x, index) => `<line x1="${x}" y1="62" x2="${x}" y2="290"></line><text x="${x + 4}" y="84">${index * 10}</text>`).join("");
     }
     fgState.aim = Number(aimInput.value);
     fgState.power = Number(powerInput.value);
-    const targetX = 654 + fgState.aim * 7;
+    const targetX = 660 + fgState.aim * 5;
     line.setAttribute("x2", targetX);
-    line.setAttribute("y2", 154);
+    line.setAttribute("y2", 140);
     marker.setAttribute("cx", targetX);
-    trajectory.setAttribute("d", `M 118 251 Q ${(118 + targetX) / 2} 38 ${targetX} 154`);
-    ball.setAttribute("cx", 118);
-    ball.setAttribute("cy", 251);
+    trajectory.setAttribute("d", `M 118 255 Q ${(118 + targetX) / 2} 38 ${targetX} 140`);
+    ball.setAttribute("transform", "translate(118 255) rotate(-18)");
     field.classList.remove("is-kicking", "is-good", "is-miss");
+    const impact = document.getElementById("fgImpact");
+    if (impact) impact.innerHTML = "";
     const aimOutput = document.getElementById("fgAimValue");
     const powerOutput = document.getElementById("fgPowerValue");
+    const powerGuide = document.getElementById("fgPowerGuide");
     const situation = document.getElementById("fgSituation");
     const windLabel = document.getElementById("fgWindLabel");
     if (aimOutput) aimOutput.textContent = fgAimLabel();
     if (powerOutput) powerOutput.textContent = `${fgState.power}%`;
+    if (powerGuide) powerGuide.textContent = `RECOMMENDED ${fgTargetPower()}%`;
     if (situation) situation.textContent = `${fgState.distance} YARDS · WIND ${fgWindLabel()}`;
     if (windLabel) windLabel.textContent = `WIND: ${fgWindLabel()}`;
   }
 
   function fieldGoalResult(powerError, aimError) {
-    if (powerError <= -8) return { title: "SHORT", detail: "The kick ran out of distance before it reached the uprights." };
-    if (powerError >= 8) return { title: "TOO MUCH POWER", detail: "The ball had the distance, but sailed over the target window." };
-    if (Math.abs(aimError) >= 2.8) return { title: `WIDE ${aimError > 0 ? "RIGHT" : "LEFT"}`, detail: "The crosswind and your aim pulled the ball outside the uprights." };
-    if (Math.abs(powerError) >= 3) return { title: powerError > 0 ? "JUST LONG" : "JUST LOW", detail: "Your aim was close, but the power missed the sweet spot." };
+    if (powerError <= -12) return { title: "SHORT", detail: "The kick ran out of distance before it reached the uprights." };
+    if (powerError >= 12) return { title: "TOO MUCH POWER", detail: "The ball had the distance, but sailed over the target window." };
+    if (Math.abs(aimError) >= 4.4) return { title: `WIDE ${aimError > 0 ? "RIGHT" : "LEFT"}`, detail: "The crosswind and your aim pulled the ball outside the uprights." };
+    if (Math.abs(powerError) >= 7) return { title: powerError > 0 ? "JUST LONG" : "JUST LOW", detail: "Your aim was close, but the power missed the sweet spot." };
     return { title: "GOOD", detail: "Clean contact. The ball splits the uprights." };
   }
 
@@ -215,9 +223,8 @@
       const eased = 1 - Math.pow(1 - progress, 3);
       const arc = Math.sin(Math.PI * eased) * 118;
       const x = 118 + (endX - 118) * eased;
-      const y = 251 + (endY - 251) * eased - arc;
-      ball.setAttribute("cx", x.toFixed(1));
-      ball.setAttribute("cy", y.toFixed(1));
+      const y = 255 + (endY - 255) * eased - arc;
+      ball.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(-18 + eased * 70).toFixed(1)})`);
       if (progress < 1) window.requestAnimationFrame(frame);
       else finish();
     };
@@ -234,14 +241,16 @@
     const powerError = fgState.power - idealPower;
     const aimError = fgState.aim - idealAim;
     const powerRatio = fgState.power / idealPower;
-    const reach = 118 + 536 * fgClamp(powerRatio, 0.42, 1.22);
-    const endX = fgClamp(reach + aimError * 10, 72, 748);
-    const endY = 154 - powerError * 3;
+    const reach = 118 + 542 * fgClamp(powerRatio, 0.42, 1.22);
+    const endX = fgClamp(reach + aimError * 8, 72, 748);
+    const endY = 140 - powerError * 2.2;
     const outcome = fieldGoalResult(powerError, aimError);
     const isGood = outcome.title === "GOOD";
     fgState.running = true;
     fgState.attempts += 1;
-    if (isGood) fgState.good += 1;
+    if (isGood) { fgState.good += 1; fgState.score += 3; fgState.streak += 1; fgState.bestStreak = Math.max(fgState.bestStreak, fgState.streak); }
+    else fgState.streak = 0;
+    updateFgScoreboard();
     stage.classList.remove("is-good", "is-miss");
     stage.classList.add("is-kicking");
     kickButton.disabled = true;
@@ -255,9 +264,8 @@
       if (impact) impact.innerHTML = `<circle class="fg-impact-ring ${isGood ? "is-good" : "is-miss"}" cx="${endX.toFixed(1)}" cy="${endY.toFixed(1)}" r="12"></circle>`;
       stage.classList.remove("is-kicking");
       stage.classList.add(isGood ? "is-good" : "is-miss");
-      result.innerHTML = `<strong>${outcome.title}</strong><span>${outcome.detail} · Aim ${fgAimLabel()} · Power ${fgState.power}%.</span>`;
-      const score = document.getElementById("fgScore");
-      if (score) score.textContent = `${fgState.good} / ${fgState.attempts} GOOD`;
+      result.innerHTML = `<strong>${isGood ? "FIELD GOAL! +3" : outcome.title}</strong><span>${outcome.detail} · Aim ${fgAimLabel()} · Power ${fgState.power}%.</span>`;
+      updateFgScoreboard();
       fgState.running = false;
       kickButton.disabled = false;
       if (aimInput) aimInput.disabled = false;
@@ -270,20 +278,21 @@
     const distances = [28, 34, 41, 47, 53, 58];
     fgState.distance = distances[Math.floor(Math.random() * distances.length)];
     fgState.wind = Math.floor(Math.random() * 13) - 6;
-    fgState.aim = 0;
-    fgState.power = 80;
+    fgState.aim = Math.round(fgClamp(-fgState.wind * 0.35, -10, 10));
+    fgState.power = fgTargetPower();
     const aimInput = document.getElementById("fgAim");
     const powerInput = document.getElementById("fgPower");
-    if (aimInput) aimInput.value = "0";
-    if (powerInput) powerInput.value = "80";
+    if (aimInput) aimInput.value = String(fgState.aim);
+    if (powerInput) powerInput.value = String(fgState.power);
     drawFieldGoal();
     const result = document.getElementById("fgResult");
-    if (result) result.innerHTML = `<strong>New distance: ${fgState.distance} yards</strong><span>Counter the wind, choose your power, and take the kick.</span>`;
+    if (result) result.innerHTML = `<strong>New challenge: ${fgState.distance} yards</strong><span>Power is guided. Aim into the wind, then kick for +3.</span>`;
   }
 
   function setupFieldGoalGame() {
     if (!document.getElementById("fgField")) return;
     drawFieldGoal();
+    updateFgScoreboard();
     document.getElementById("fgAim")?.addEventListener("input", drawFieldGoal);
     document.getElementById("fgPower")?.addEventListener("input", drawFieldGoal);
     document.getElementById("fgKick")?.addEventListener("click", kickFieldGoal);

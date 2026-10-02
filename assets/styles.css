@@ -278,3 +278,43 @@ body { background: radial-gradient(circle at 8% 12%, rgba(116,185,232,.08), tran
 @keyframes fg-impact-pop { from { opacity: 0; transform: scale(.55); transform-origin: center; } to { opacity: 1; transform: scale(1); transform-origin: center; } }
 @media (max-width: 950px) { .field-goal-lab { grid-template-columns: 1fr; }.fg-intro h2, .fg-intro p:not(.section-kicker):not(.fg-disclaimer) { max-width: 650px; } }
 @media (max-width: 600px) { .field-goal-lab { margin-top: 28px; padding: 22px 16px; }.fg-controls { grid-template-columns: 1fr; }.fg-button { width: 100%; }.fg-scoreboard > span:last-child { margin-left: 0; width: 100%; }.fg-stage { padding-inline: 8px; }.fg-field { height: 215px; }.fg-field-note { display: none; } }
+
+/* Field-goal arcade polish: clearer scoring, a real target window, and a livelier kick. */
+.fg-scoreboard { gap: 8px; margin-bottom: 12px; }
+.fg-scoreboard > .pulse-live { margin-right: 5px; }
+.fg-score-block { display: grid; gap: 1px; min-width: 48px; padding: 5px 8px; border: 1px solid rgba(167,216,243,.2); border-radius: 4px; background: rgba(0,0,0,.18); }
+.fg-score-block small { color: rgba(255,255,255,.52); font: 800 8px "Barlow Condensed"; letter-spacing: .12em; }
+.fg-score-block strong { color: #fff; font: 800 20px/1 "Barlow Condensed"; }
+.fg-scoreboard > span:last-child { margin-left: auto; }
+.fg-power-guide { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 12px; padding: 7px 9px; border-left: 3px solid #f2b134; background: rgba(242,177,52,.1); color: rgba(255,255,255,.58); font: 800 10px "Barlow Condensed"; letter-spacing: .1em; }
+.fg-power-guide strong { color: #f2b134; }
+.fg-controls input[type="range"]:disabled { opacity: .55; }
+.fg-field { height: 310px; filter: drop-shadow(0 12px 16px rgba(0,0,0,.16)); }
+.fg-endzone { fill: rgba(213,10,10,.48); }
+.fg-field-hash { fill: none; stroke: rgba(255,255,255,.68); stroke-width: 3; stroke-linecap: round; }
+.fg-yard-lines line { stroke: rgba(255,255,255,.34); stroke-width: 2; }
+.fg-yard-lines text { fill: rgba(255,255,255,.66); font-weight: 700; }
+.fg-target-window { fill: rgba(242,177,52,.1); stroke: rgba(242,177,52,.86); stroke-width: 2; stroke-dasharray: 6 6; }
+.fg-goal line, .fg-goal path { stroke: #f2b134; stroke-width: 8; filter: drop-shadow(0 0 6px rgba(242,177,52,.44)); }
+.fg-goal path { stroke-width: 6; }
+.fg-aim-line { stroke: rgba(167,216,243,.72); stroke-width: 2; }
+.fg-trajectory { stroke: #ffb3b3; stroke-width: 4; opacity: .92; }
+.fg-ball ellipse { fill: #a95b2d; stroke: #fff; stroke-width: 2; }
+.fg-ball path { fill: none; stroke: #fff; stroke-width: 1.25; stroke-linecap: round; }
+.fg-aim-marker { fill: rgba(242,177,52,.35); stroke: #fff; stroke-width: 3; }
+.fg-wind-streams path { fill: none; stroke: rgba(167,216,243,.48); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 10 12; animation: fg-wind-flow 2.4s linear infinite; }
+.fg-confetti { opacity: 0; }
+.fg-confetti circle, .fg-confetti rect { fill: #f2b134; }
+.fg-confetti circle:nth-child(2n), .fg-confetti rect { fill: #a7d8f3; }
+.fg-stage.is-kicking .fg-trajectory { animation: fg-trajectory-flow 1.15s linear infinite; }
+.fg-stage.is-good .fg-goal { animation: fg-goal-flash .8s ease-out both; }
+.fg-stage.is-good .fg-confetti { opacity: 1; }
+.fg-stage.is-good .fg-confetti circle, .fg-stage.is-good .fg-confetti rect { animation: fg-confetti-pop .9s ease-out both; }
+.fg-stage.is-good .fg-confetti circle:nth-child(2) { animation-delay: .05s; }.fg-stage.is-good .fg-confetti circle:nth-child(3) { animation-delay: .1s; }.fg-stage.is-good .fg-confetti circle:nth-child(4) { animation-delay: .15s; }.fg-stage.is-good .fg-confetti circle:nth-child(5) { animation-delay: .2s; }.fg-stage.is-good .fg-confetti circle:nth-child(6) { animation-delay: .25s; }.fg-stage.is-good .fg-confetti circle:nth-child(7) { animation-delay: .3s; }.fg-stage.is-good .fg-confetti rect { animation-delay: .35s; }
+.fg-stage.is-miss .fg-goal { animation: fg-goal-wobble .45s ease-in-out both; }
+@keyframes fg-wind-flow { to { stroke-dashoffset: -44; } }
+@keyframes fg-trajectory-flow { to { stroke-dashoffset: -60; } }
+@keyframes fg-goal-flash { 50% { filter: drop-shadow(0 0 15px rgba(242,177,52,.95)); } }
+@keyframes fg-goal-wobble { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+@keyframes fg-confetti-pop { from { opacity: 0; transform: translateY(5px) rotate(0deg); } 30% { opacity: 1; } to { opacity: 0; transform: translateY(22px) rotate(160deg); } }
+@media (max-width: 600px) { .fg-scoreboard { align-items: stretch; }.fg-scoreboard > .pulse-live { flex-basis: 100%; }.fg-scoreboard > span:last-child { flex-basis: 100%; margin-left: 0; }.fg-power-guide { display: grid; gap: 2px; }.fg-field { height: 235px; } }
