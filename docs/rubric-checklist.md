@@ -25,7 +25,7 @@
 
 - [x] Filters for season, team, opponent, position group, and position.
 - [x] Four dynamic summary numbers.
-- [x] Five dynamic charts, including role-specific production, home/away outcomes, usage efficiency, and turnover success.
+- [x] Five dynamic charts, including a measure-and-breakdown chart switch for totals, per-game averages, and role-specific rates, plus role-specific production, home/away outcomes, usage efficiency, and turnover success.
 - [x] Team/opponent matchup snapshot with logos, colors, and role-specific comparison.
 - [x] Cascading filters, quick-find search, active filter chips, and accessible table rows.
 - [x] Useful default matchup, team-season context snapshot, and automatically generated matchup takeaway.

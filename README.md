@@ -24,7 +24,7 @@ The browser dashboard needs an HTTP server because browsers block local CSV requ
 ## Website files
 
 - `index.html` - narrative report with headline metrics and ten findings, including scoring, offense balance, turnovers, home/away context, a clutch-kicker fourth-down game, an interactive report lens, a two-team comparison, surprise findings, and closing conclusions.
-- `dashboard.html` - interactive dashboard with cascading filters, a useful default matchup, team-season context cards, role-specific Player Duel cards and trends, charts, table, and filtered CSV export.
+- `dashboard.html` - interactive dashboard with cascading filters, explicit chart measure and breakdown switches, a useful default matchup, team-season context cards, role-specific Player Duel cards and trends, charts, table, and filtered CSV export.
 - `assets/styles.css` - shared NFL-inspired design system and responsive layout.
 - `assets/app.js` - dashboard data loading, filtering, calculations, charts, theming, and player cards.
 - `data/panel.csv` - downloadable player-game panel used by both pages.

@@ -6,7 +6,7 @@
   const decimal = (value) => oneDecimal.format(Number(value || 0));
   const safe = (value) => value == null || value === "" ? "—" : value;
   const get = (id) => document.getElementById(id);
-  const state = { rows: [], teams: [], players: [], highlights: [], highlightByKey: new Map(), filtered: [], charts: {}, duel: { primaryId: "all", opponentId: "all" }, highlight: { row: null, timer: null } };
+  const state = { rows: [], teams: [], players: [], highlights: [], highlightByKey: new Map(), filtered: [], charts: {}, chartView: { measure: "per_game", breakdown: "season" }, duel: { primaryId: "all", opponentId: "all" }, highlight: { row: null, timer: null } };
   const preferredView = { team: "KC", opponent: "DEN", position: "QB" };
   const defaults = { primary: "#003b7a", secondary: "#d71920", soft: "#eaf1fb" };
 
@@ -152,6 +152,56 @@
     if (mode === "special") return { mode, field: "stSnaps", label: "Special-teams snaps", shortLabel: "special-teams snaps", perGameLabel: "Special-teams snaps / game" };
     return { mode, field: "production", label: "Recorded player production", shortLabel: "recorded production", perGameLabel: "Recorded production / game" };
   }
+  function itemGames(item) { return item?.games instanceof Set ? item.games.size : Number(item?.games || 0); }
+  function roleRateLabel(metric) {
+    if (metric.mode === "passing") return "Completion rate";
+    if (metric.mode === "receiving") return "Catch rate";
+    if (metric.mode === "rushing") return "Yards / carry";
+    if (metric.mode === "line") return "Offensive snap rate";
+    if (metric.mode === "kicking") return "Field-goal accuracy";
+    if (metric.mode === "punting") return "Punt yards / attempt";
+    if (metric.mode === "long_snapper" || metric.mode === "special") return "Special-teams snap rate";
+    if (metric.mode === "defense") return "Sacks / game";
+    return "Recorded production / game";
+  }
+  function roleRateValue(item, metric) {
+    const games = itemGames(item);
+    if (metric.mode === "passing") return percent(item.completions, item.attempts);
+    if (metric.mode === "receiving") return percent(item.receptions, item.targets);
+    if (metric.mode === "rushing") return perGame(item.rushing, item.carries);
+    if (metric.mode === "line") return percent(item.offensePct, 1);
+    if (metric.mode === "kicking") return percent(item.fgMade, item.fgAtt);
+    if (metric.mode === "punting") return perGame(item.puntYards, item.punts);
+    if (metric.mode === "long_snapper" || metric.mode === "special") return percent(item.stPct, 1);
+    if (metric.mode === "defense") return perGame(item.sacks, games);
+    return perGame(item.production, games);
+  }
+  function chartMeasureLabel(metric, mode) {
+    if (mode === "total") return `${metric.label} total`;
+    if (mode === "rate") return roleRateLabel(metric);
+    return metric.perGameLabel;
+  }
+  function chartMeasureValue(item, metric, mode) {
+    if (mode === "rate") return roleRateValue(item, metric);
+    const total = metricValue(item, metric);
+    return mode === "total" ? total : perGame(total, itemGames(item));
+  }
+  function chartMeasureFormat(value, mode) { return mode === "total" ? number(value) : decimal(value); }
+  function syncChartControls(metric) {
+    const measureSelect = get("chartMeasure");
+    if (measureSelect) {
+      const current = state.chartView.measure;
+      const choices = [["total", `Total · ${metric.shortLabel}`], ["per_game", metric.perGameLabel], ["rate", `Rate · ${roleRateLabel(metric)}`]];
+      measureSelect.innerHTML = choices.map(([value, label]) => `<option value="${value}">${label}</option>`).join("");
+      measureSelect.value = choices.some(([value]) => value === current) ? current : "per_game";
+      state.chartView.measure = measureSelect.value;
+    }
+    const breakdownSelect = get("chartBreakdown");
+    if (breakdownSelect) {
+      breakdownSelect.value = ["season", "team", "position"].includes(state.chartView.breakdown) ? state.chartView.breakdown : "season";
+      state.chartView.breakdown = breakdownSelect.value;
+    }
+  }
   function metricValue(item, metric) { return Number(item[metric.field] || 0); }
   function rowMetric(row, metric) { return metricValue(statTotals([row]), metric); }
   function matchupRows(rows) {
@@ -205,7 +255,7 @@
   function updateTeamSnapshot() {
     const team = val("teamFilter"); const opponent = val("opponentFilter"); const primaryRows = teamRowsForView(); const primary = teamSummary(primaryRows); const gameIds = new Set(primaryRows.map((row) => row.game_id)); const opponentRows = team !== "all" && opponent !== "all" ? state.rows.filter((row) => gameIds.has(row.game_id) && row.team === opponent && row.opponent_team === team && (val("homeAwayFilter") === "all" || row.home_away === oppositeLocation(val("homeAwayFilter")))) : []; const opponentSummary = teamSummary(opponentRows); const snapshot = (side, code, summary, label) => { const meta = teamByAbbr()[code] || {}; const name = code === "all" ? "League view" : meta.team_name || code || "—"; const games = summary.games; const gameRows = aggregateTeamGames(side === "primary" ? primaryRows : opponentRows); const wins = gameRows.filter((row) => row.win_loss === "W").length; const losses = gameRows.filter((row) => row.win_loss === "L").length; const logo = get(`snapshot${side === "primary" ? "Primary" : "Opponent"}Logo`); const prefix = `snapshot${side === "primary" ? "Primary" : "Opponent"}`; get(`${prefix}Label`).textContent = label; get(`${prefix}Name`).textContent = name; get(`${prefix}Record`).textContent = games ? `${wins}-${losses} record · ${number(games)} team-games` : "No games in this view"; get(`${prefix}Points`).textContent = games ? decimal(perGame(summary.points, games)) : "—"; get(`${prefix}Offense`).textContent = games ? decimal(perGame(summary.offense, games)) : "—"; get(`${prefix}Share`).textContent = summary.offense ? `${decimal(percent(summary.passing, summary.offense))}%` : "—"; get(`${prefix}Margin`).textContent = games ? `${perGame(summary.defensiveInterceptions - summary.passingInterceptions, games) >= 0 ? "+" : ""}${decimal(perGame(summary.defensiveInterceptions - summary.passingInterceptions, games))}` : "—"; if (logo) { const logoSrc = meta.team_logo_espn || meta.team_logo_wikipedia || meta.team_logo_squared || ""; logo.src = logoSrc; logo.alt = logoSrc ? `${name} logo` : ""; logo.style.visibility = logoSrc ? "visible" : "hidden"; } }; snapshot("primary", team, primary, team === "all" ? "LEAGUE VIEW" : "SELECTED TEAM"); snapshot("opponent", opponent, opponentSummary, opponent === "all" ? "OPPONENT" : "OPPONENT"); const note = get("snapshotNote"); const title = get("teamSnapshotTitle"); const takeaway = get("snapshotTakeaway"); if (note) note.textContent = team !== "all" && opponent !== "all" ? `${number(gameCount(primaryRows))} matched games · all positions` : `${number(gameCount(primaryRows))} games in current view`; if (title) title.textContent = team !== "all" && opponent !== "all" ? `${team} and ${opponent}: the context behind the matchup.` : "The context behind the current view."; if (takeaway) { if (team === "all" || opponent === "all" || !opponentRows.length) takeaway.textContent = "Choose a team and opponent to see record, scoring, offensive identity, and turnover context."; else { const primaryShare = primary.offense ? percent(primary.passing, primary.offense) : 0; const opponentShare = opponentSummary.offense ? percent(opponentSummary.passing, opponentSummary.offense) : 0; const scoringLeader = perGame(primary.points, primary.games) >= perGame(opponentSummary.points, opponentSummary.games) ? team : opponent; const styleLeader = primaryShare >= opponentShare ? team : opponent; takeaway.textContent = `${teamByAbbr()[scoringLeader]?.team_name || scoringLeader} scores more per game; ${teamByAbbr()[styleLeader]?.team_name || styleLeader} uses the larger passing share (${decimal(Math.max(primaryShare, opponentShare))}%). Interception margin is shown per team-game.`; } } }
   function seasonBuckets(rows) {
-    const keys = ["passing", "rushing", "receiving", "offense", "passingTds", "rushingTds", "receivingTds", "touchdowns", "tackles", "sacks", "interceptions", "fantasy", "penalties", "penaltyYards", "completions", "attempts", "carries", "receptions", "targets", "epa"];
+    const keys = ["passing", "rushing", "receiving", "offense", "production", "passingTds", "rushingTds", "receivingTds", "touchdowns", "tackles", "sacks", "interceptions", "fantasy", "penalties", "penaltyYards", "completions", "attempts", "carries", "receptions", "targets", "epa"];
     const buckets = new Map();
     rows.forEach((row) => { if (!buckets.has(row.season)) buckets.set(row.season, { season: row.season, games: new Set(), ...Object.fromEntries(keys.map((key) => [key, 0])) }); const bucket = buckets.get(row.season); bucket.games.add(row.game_id); const totals = statTotals([row]); keys.forEach((key) => bucket[key] += totals[key]); });
     return buckets;
@@ -292,7 +342,7 @@
     if (metric.mode === "special") return { title: "Special teams workload", xLabel: "Special-teams snaps / game", yLabel: "Special-teams snap rate", sizeLabel: "Penalty yards / game", x: (item) => perGame(item.stSnaps, item.games), y: (item) => percent(item.stPct, 1), size: (item) => perGame(item.penaltyYards, item.games) };
     return { title: "Offensive balance: pass vs rush", xLabel: "Passing yards / game", yLabel: "Rushing yards / game", sizeLabel: "Total yards / game", x: (item) => perGame(item.passing, item.games), y: (item) => perGame(item.rushing, item.games), size: (item) => perGame(item.production, item.games) };
   }
-  function updateCharts(rows) {
+  function updateChartsBase(rows) {
     const context = matchupRows(rows); const metric = activeMetric(context.primary); const primaryCode = teamLabel(context.team); const opponentCode = teamLabel(context.opponentTeam); const primaryColor = teamColor(context.team, getComputedStyle(document.documentElement).getPropertyValue("--team-primary").trim() || defaults.primary); const opponentColor = teamColor(context.opponentTeam, getComputedStyle(document.documentElement).getPropertyValue("--team-secondary").trim() || defaults.secondary);
 
     const primaryTeamRows = teamRowsForView(); const primaryGameIds = new Set(primaryTeamRows.map((row) => row.game_id)); const opponentTeamRows = context.matched ? state.rows.filter((row) => primaryGameIds.has(row.game_id) && row.team === context.opponentTeam && row.opponent_team === context.team && (val("homeAwayFilter") === "all" || row.home_away === oppositeLocation(val("homeAwayFilter")))) : [];
@@ -320,6 +370,48 @@
     const turnoverXMax = Math.max(...turnoverPoints.map((point) => point.interceptions), 1) * 1.25; const turnoverYMax = Math.max(...turnoverPoints.map((point) => point.points), 1) * 1.25;
     makeOrUpdateChart("turnover", "turnoverChart", { type: "bubble", data: { datasets: [{ label: "Team view", data: turnoverPoints.map((point) => ({ x: point.interceptions, y: point.points, r: Math.max(7, Math.min(20, 7 + point.touchdowns * 3)), team: point.code, games: point.games, touchdowns: point.touchdowns, margin: point.margin })), backgroundColor: turnoverPoints.map((point) => `${point.color}cc`), borderColor: turnoverPoints.map((point) => point.color), borderWidth: 2 }] }, options: { ...baseOptions(), scales: { x: { ...baseOptions().scales.x, beginAtZero: true, suggestedMax: turnoverXMax, title: { display: true, text: "Interceptions thrown / game", color: "#526074" } }, y: { ...baseOptions().scales.y, beginAtZero: true, suggestedMax: turnoverYMax, title: { display: true, text: "Points scored / game", color: "#526074" } } }, plugins: { ...baseOptions().plugins, legend: { display: false }, tooltip: { callbacks: { label: (ctx) => { const raw = ctx.raw; return `${raw.team}: ${decimal(raw.x)} INTs thrown/game · ${decimal(raw.y)} pts/game · ${decimal(raw.touchdowns)} offensive TDs/game · ${number(raw.games)} games · ${raw.margin >= 0 ? "+" : ""}${decimal(raw.margin)} INT margin`; } } } } } });
   }
+  function measureChartGroups(rows, breakdown, metric, mode) {
+    const groups = new Map();
+    rows.forEach((row) => {
+      const label = breakdown === "season" ? String(row.season) : breakdown === "team" ? row.team : row.position || row.position_group || "Unknown";
+      if (!groups.has(label)) groups.set(label, []);
+      groups.get(label).push(row);
+    });
+    const series = [...groups.entries()].map(([label, groupRows]) => ({ label, value: chartMeasureValue(teamSummary(groupRows), metric, mode), games: gameCount(groupRows) }));
+    return breakdown === "season" ? series.sort((a, b) => Number(a.label) - Number(b.label)) : series.sort((a, b) => b.value - a.value || a.label.localeCompare(b.label));
+  }
+  function updateMeasureChart(rows) {
+    const context = matchupRows(rows);
+    const metric = activeMetric(context.primary);
+    syncChartControls(metric);
+    const mode = state.chartView.measure;
+    const breakdown = state.chartView.breakdown;
+    const primaryCode = teamLabel(context.team);
+    const opponentCode = teamLabel(context.opponentTeam);
+    const primaryColor = teamColor(context.team, getComputedStyle(document.documentElement).getPropertyValue("--team-primary").trim() || defaults.primary);
+    const opponentColor = teamColor(context.opponentTeam, getComputedStyle(document.documentElement).getPropertyValue("--team-secondary").trim() || defaults.secondary);
+    const primaryTeamRows = teamRowsForView();
+    const gameIds = new Set(primaryTeamRows.map((row) => row.game_id));
+    const opponentTeamRows = context.matched ? state.rows.filter((row) => gameIds.has(row.game_id) && row.team === context.opponentTeam && row.opponent_team === context.team && (val("homeAwayFilter") === "all" || row.home_away === oppositeLocation(val("homeAwayFilter")))) : [];
+    const roleFiltered = val("positionGroupFilter") !== "all" || val("positionFilter") !== "all" || val("playerFilter") !== "all";
+    const primaryRows = roleFiltered || breakdown === "position" ? context.primary : primaryTeamRows;
+    const opponentRows = context.matched ? (roleFiltered || breakdown === "position" ? context.opponent : opponentTeamRows) : [];
+    const primarySeries = measureChartGroups(primaryRows, breakdown, metric, mode);
+    const opponentSeries = measureChartGroups(opponentRows, breakdown, metric, mode);
+    const labels = unique([...primarySeries.map((item) => item.label), ...opponentSeries.map((item) => item.label)]);
+    const primaryValues = Object.fromEntries(primarySeries.map((item) => [item.label, item.value]));
+    const opponentValues = Object.fromEntries(opponentSeries.map((item) => [item.label, item.value]));
+    const measureLabel = chartMeasureLabel(metric, mode);
+    const breakdownLabel = breakdown === "season" ? "season" : breakdown;
+    const horizontal = breakdown !== "season";
+    const valuesFor = (lookup) => labels.map((label) => lookup[label] ?? 0);
+    const dataset = (label, values, color, side) => ({ label, data: values, backgroundColor: horizontal && !context.matched && breakdown === "team" ? labels.map((team) => teamColor(team, color)) : `${color}${horizontal ? "cc" : "22"}`, borderColor: horizontal && !context.matched && breakdown === "team" ? labels.map((team) => teamColor(team, color)) : color, pointBackgroundColor: color, pointRadius: 4, borderWidth: 3, borderRadius: 5, tension: 0.25, fill: !horizontal, side });
+    const datasets = context.matched ? [dataset(primaryCode, valuesFor(primaryValues), primaryColor, "primary"), dataset(opponentCode, valuesFor(opponentValues), opponentColor, "opponent")] : [dataset(primaryCode, valuesFor(primaryValues), primaryColor, "primary")];
+    get("trendTitle").textContent = context.matched ? `${primaryCode} vs ${opponentCode}: ${measureLabel} by ${breakdownLabel}` : `${measureLabel} by ${breakdownLabel}`;
+    get("trendNote").textContent = context.matched ? `${number(gameCount(primaryRows))} matched games · ${mode === "total" ? "total" : mode === "rate" ? "rate" : "per-game average"}` : `${number(gameCount(primaryRows))} games in view · ${mode === "total" ? "total" : mode === "rate" ? "rate" : "per-game average"}`;
+    makeOrUpdateChart("trend", "trendChart", { type: horizontal ? "bar" : "line", data: { labels: labels.length ? labels : ["No matching rows"], datasets: datasets.map((item) => ({ ...item, data: item.data.length ? item.data : [0] })) }, options: { ...baseOptions(), indexAxis: horizontal ? "y" : "x", scales: horizontal ? { x: { beginAtZero: true, grid: { color: "#e7ebf2" }, ticks: { color: "#526074" }, title: { display: true, text: measureLabel, color: "#526074" } }, y: { grid: { display: false }, ticks: { color: "#526074" } } } : { x: { grid: { display: false }, ticks: { color: "#526074" } }, y: { beginAtZero: true, grace: "12%", grid: { color: "#e7ebf2" }, ticks: { color: "#526074" }, title: { display: true, text: measureLabel, color: "#526074" } } }, plugins: { ...baseOptions().plugins, legend: { display: true, position: "bottom", labels: { usePointStyle: true } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${chartMeasureFormat(ctx.raw, mode)} ${measureLabel.toLowerCase()}` } } } } });
+  }
+  function updateCharts(rows) { updateChartsBase(rows); updateMeasureChart(rows); }
   function updateTable(rows) {
     const metric = activeMetric(rows); const columns = tableMetricColumns(metric); const tableHead = get("dataTableHead"); if (tableHead) tableHead.innerHTML = `<tr><th>Player</th><th>Team</th><th>Opp.</th><th>Pos.</th><th>Season</th><th>Week</th><th>H/A</th><th>Result</th>${columns.map((column) => `<th>${column.label}</th>`).join("")}</tr>`; const tableRows = [...rows].sort((a, b) => rowMetric(b, metric) - rowMetric(a, metric)).slice(0, 100); get("tableCount").textContent = `Showing ${number(Math.min(rows.length, 100))} of ${number(rows.length)} rows`;
     get("dataTableBody").innerHTML = tableRows.map((row) => { const stats = statTotals([row]); return `<tr data-player="${row.player_id}" tabindex="0"><td><strong>${safe(row.player_display_name || row.player_name)}</strong></td><td>${row.team}</td><td>${row.opponent_team}</td><td>${row.position || "—"}</td><td>${row.season}</td><td>${row.week}</td><td>${row.home_away || "—"}</td><td><span class="result-label result-${row.win_loss}" aria-label="Result ${row.win_loss}">${row.win_loss}</span></td>${columns.map((column) => `<td>${column.format(column.value(stats))}</td>`).join("")}</tr>`; }).join("") || `<tr><td colspan="${8 + columns.length}">No rows match these filters.</td></tr>`;
@@ -527,6 +619,8 @@
     ["seasonFilter", "teamFilter", "opponentFilter", "homeAwayFilter", "positionGroupFilter", "positionFilter", "playerFilter"].forEach((id) => get(id).addEventListener("change", applyFilters)); get("resetFilters").addEventListener("click", reset); get("downloadFiltered")?.addEventListener("click", downloadFilteredCsv); get("downloadFilteredTable")?.addEventListener("click", downloadFilteredCsv); get("filterSearch")?.addEventListener("input", applyQuickFind); get("filterSearch")?.addEventListener("change", applyQuickFind); get("filterSearch")?.addEventListener("keydown", (event) => { if (event.key === "Enter") { event.preventDefault(); applyQuickFind(); } }); get("activeFilters")?.addEventListener("click", (event) => { const clearButton = event.target.closest("[data-clear-filter]"); if (!clearButton) return; get(clearButton.dataset.clearFilter).value = "all"; applyFilters(); });
     get("duelPrimaryPlayer")?.addEventListener("change", (event) => { state.duel.primaryId = event.target.value; if (event.target.value !== "all") { get("playerFilter").value = event.target.value; applyFilters(); } });
     get("duelOpponentPlayer")?.addEventListener("change", (event) => { state.duel.opponentId = event.target.value; updatePlayerDuel(); });
+    get("chartMeasure")?.addEventListener("change", (event) => { state.chartView.measure = event.target.value; updateView(); });
+    get("chartBreakdown")?.addEventListener("change", (event) => { state.chartView.breakdown = event.target.value; updateView(); });
     choosePreferredView(); applyFilters();
   } catch (error) { get("filterStatus").textContent = "Could not load data"; console.error(error); }
 })();
