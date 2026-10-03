@@ -87,20 +87,20 @@
             </div>
           </div>
           <div class="fg-kicking-controls" id="fgKickingControls" hidden>
-            <div class="fg-step"><span>02</span><div><strong>Set the kick</strong><p>Counter the wind, then land the power in the gold window.</p></div></div>
+            <div class="fg-step"><span>02</span><div><strong>Set the kick</strong><p>Read the wind and distance, then choose your own aim and power. The starting setup is only a guess.</p></div></div>
             <div class="fg-controls" aria-label="Field goal controls">
               <label for="fgAim">AIM <output id="fgAimValue" for="fgAim">CENTER</output><input id="fgAim" type="range" min="-10" max="10" value="0" step="1" aria-label="Aim left or right" /></label>
               <label for="fgPower">POWER <output id="fgPowerValue" for="fgPower">85%</output><input id="fgPower" type="range" min="55" max="100" value="85" step="1" aria-label="Kick power percentage" /></label>
               <div class="fg-range-labels" aria-hidden="true"><span>LEFT</span><span>UPRIGHT CENTER</span><span>RIGHT</span></div>
-              <div class="fg-power-guide" aria-live="polite"><span>POWER WINDOW</span><strong id="fgPowerGuide">IDEAL 85% · ±9 IS GOOD</strong></div>
+              <div class="fg-power-guide" aria-live="polite"><span>COACH'S READ</span><strong id="fgPowerGuide">MID RANGE · CONTROLLED SWING</strong></div>
               <button class="fg-button" id="fgKick" type="button"><span aria-hidden="true">▶</span> Kick it</button>
             </div>
           </div>
           <button class="fg-button fg-button-ghost fg-next-button" id="fgNew" type="button">Next challenge</button>
-          <p class="fg-disclaimer">Scoring: a made field goal is worth 3 challenge points, a successful conversion is worth 5, and a well-executed punt earns 1. The simulation is schematic, but the decision pressure is real.</p>
+          <p class="fg-disclaimer">Scoring: a made field goal is worth 3 challenge points, a successful conversion is worth 5, and a well-executed punt earns 1. A failed go-for-it can be stopped short and turn the ball over on downs.</p>
         </div>
         <div class="fg-stage" id="fgStage">
-          <div class="fg-scoreboard"><span class="pulse-live"><i></i> CLUTCH MODE</span><div class="fg-score-block"><small>SCORE</small><strong id="fgScore">0</strong></div><div class="fg-score-block"><small>CALLS</small><strong id="fgDecisions">0</strong></div><div class="fg-score-block"><small>MAKES</small><strong id="fgMakes">0</strong></div><div class="fg-score-block"><small>STREAK</small><strong id="fgStreak">0</strong></div><div class="fg-score-block"><small>BEST</small><strong id="fgBest">0</strong></div><span id="fgSituation">Q4 · 0:42</span></div>
+          <div class="fg-scoreboard"><span class="pulse-live"><i></i> CLUTCH MODE</span><div class="fg-score-block"><small>SCORE</small><strong id="fgScore">0</strong></div><div class="fg-score-block"><small>CALLS</small><strong id="fgDecisions">0</strong></div><div class="fg-score-block"><small>MAKES</small><strong id="fgMakes">0</strong></div><div class="fg-score-block"><small>STOPS</small><strong id="fgStops">0</strong></div><div class="fg-score-block"><small>STREAK</small><strong id="fgStreak">0</strong></div><div class="fg-score-block"><small>BEST</small><strong id="fgBest">0</strong></div><span id="fgSituation">Q4 · 0:42</span></div>
           <svg id="fgField" class="fg-field" viewBox="0 0 780 330" role="img" aria-labelledby="field-goal-title fgDesc">
             <desc id="fgDesc">Animated field goal challenge showing a fourth-down situation, kicker, football, uprights, wind, and kick trajectory.</desc>
             <defs><linearGradient id="fgGrass" x1="0" x2="1"><stop offset="0" stop-color="#0b5d4b"/><stop offset="1" stop-color="#13745b"/></linearGradient><filter id="fgGlow"><feGaussianBlur stdDeviation="4"/></filter></defs>

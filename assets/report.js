@@ -181,7 +181,7 @@
     { quarter: "Q3", clock: "4:31", down: "4TH & 3", toGo: 3, position: 22, distance: 39, wind: -5, home: 17, away: 14, prompt: "You are up three. Add points, extend the drive, or pin them deep?" },
     { quarter: "Q4", clock: "0:19", down: "4TH & 10", toGo: 10, position: 36, distance: 53, wind: 2, home: 27, away: 28, prompt: "A 53-yarder could win it. This is the definition of a clutch attempt." },
   ];
-  const fgState = { distance: 42, wind: 0, aim: 0, power: 85, attempts: 0, makes: 0, decisions: 0, score: 0, streak: 0, bestStreak: 0, running: false, phase: "decision", scenarioIndex: 0 };
+  const fgState = { distance: 42, wind: 0, aim: 0, power: 85, attempts: 0, makes: 0, stops: 0, decisions: 0, score: 0, streak: 0, bestStreak: 0, running: false, phase: "decision", scenarioIndex: 0 };
   const fgClamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   function fgWindLabel() {
@@ -202,8 +202,15 @@
     return Math.round(fgClamp(58 + fgState.distance * 0.65, 70, 98));
   }
 
+  function fgCoachRead() {
+    if (fgState.distance >= 50) return "LONG RANGE · LOAD IT UP";
+    if (fgState.distance >= 40) return "MID-LONG · FIRM STRIKE";
+    if (fgState.distance <= 30) return "SHORT FIELD · SMOOTH SWING";
+    return "MID RANGE · CONTROLLED SWING";
+  }
+
   function updateFgScoreboard() {
-    const values = { fgScore: fgState.score, fgDecisions: fgState.decisions, fgMakes: fgState.makes, fgStreak: fgState.streak, fgBest: fgState.bestStreak };
+    const values = { fgScore: fgState.score, fgDecisions: fgState.decisions, fgMakes: fgState.makes, fgStops: fgState.stops, fgStreak: fgState.streak, fgBest: fgState.bestStreak };
     Object.entries(values).forEach(([id, value]) => { const element = document.getElementById(id); if (element) element.textContent = value; });
   }
 
@@ -264,7 +271,7 @@
     const windLabel = document.getElementById("fgWindLabel");
     if (aimOutput) aimOutput.textContent = fgAimLabel();
     if (powerOutput) powerOutput.textContent = `${fgState.power}%`;
-    if (powerGuide) powerGuide.textContent = `IDEAL ${fgTargetPower()}% · ±9 IS GOOD`;
+    if (powerGuide) powerGuide.textContent = fgCoachRead();
     if (windLabel) windLabel.textContent = `WIND: ${fgWindLabel()}`;
     updateFgSituation();
   }
@@ -304,11 +311,12 @@
     const chance = choice === "go" ? fgClamp(.76 - (scenario.toGo - 2) * .075, .31, .76) : .78;
     const successful = Math.random() < chance;
     const points = choice === "go" ? (successful ? 5 : 0) : (successful ? 1 : 0);
-    const title = choice === "go" ? (successful ? "CONVERSION! +5" : "TURNOVER ON DOWNS") : (successful ? "PUNT PINNED · +1" : "PUNT AWAY");
-    const detail = choice === "go" ? (successful ? `You beat the ${scenario.toGo}-yard line and kept the drive alive.` : "The defense closes the window before the sticks.") : (successful ? "The punt wins the field-position battle." : "The return gives the opponent a little room to work.");
-    stage.classList.remove("is-good", "is-miss", "is-go", "is-punt");
-    stage.classList.add(choice === "go" ? "is-go" : "is-punt");
+    const title = choice === "go" ? (successful ? "CONVERSION! +5" : "DOWNED AT THE LINE · TURNOVER ON DOWNS") : (successful ? "PUNT PINNED · +1" : "PUNT AWAY");
+    const detail = choice === "go" ? (successful ? `You beat the ${scenario.toGo}-yard line and kept the drive alive.` : `The defense stuffs the play ${Math.max(1, scenario.toGo - 1)} yard${scenario.toGo - 1 === 1 ? "" : "s"} short and takes over.`) : (successful ? "The punt wins the field-position battle." : "The return gives the opponent a little room to work.");
+    stage.classList.remove("is-good", "is-miss", "is-go", "is-punt", "is-stopped");
+    stage.classList.add(choice === "go" ? (successful ? "is-go" : "is-stopped") : "is-punt");
     result.innerHTML = `<strong>${title}</strong><span>${detail} ${points ? `Challenge score +${points}.` : "No challenge points this round."}</span>`;
+    if (choice === "go" && !successful) fgState.stops += 1;
     if (points) { fgState.score += points; fgState.streak += 1; fgState.bestStreak = Math.max(fgState.bestStreak, fgState.streak); } else fgState.streak = 0;
     updateFgScoreboard();
     setFgPhase("resolved");
@@ -322,15 +330,11 @@
     fgState.lastCall = choice;
     const scenario = fgScenarios[fgState.scenarioIndex];
     if (choice === "kick") {
-      const aimInput = document.getElementById("fgAim");
-      const powerInput = document.getElementById("fgPower");
-      if (aimInput) aimInput.value = String(fgIdealAim());
-      if (powerInput) powerInput.value = String(fgTargetPower());
       drawFieldGoal();
       setFgPhase("kick");
-      set("fgDecisionPrompt", `${scenario.distance} yards into ${fgWindLabel().toLowerCase()}. Set the kick, then trust your read.`);
+      set("fgDecisionPrompt", `${scenario.distance} yards into ${fgWindLabel().toLowerCase()}. Adjust the aim and power yourself before you kick.`);
       const result = document.getElementById("fgResult");
-      if (result) result.innerHTML = `<strong>Kick team is on the field</strong><span>The gold target shows the ideal window. You have a forgiving ±9% power range.</span>`;
+      if (result) result.innerHTML = `<strong>Kick team is on the field</strong><span>Your starting read is only a guess. Tune the aim and power before you trust it.</span>`;
       return;
     }
     resolveNonKick(choice);
@@ -355,7 +359,7 @@
     fgState.attempts += 1;
     if (isGood) { fgState.makes += 1; fgState.score += 3; fgState.streak += 1; fgState.bestStreak = Math.max(fgState.bestStreak, fgState.streak); } else fgState.streak = 0;
     updateFgScoreboard();
-    stage.classList.remove("is-good", "is-miss", "is-go", "is-punt");
+    stage.classList.remove("is-good", "is-miss", "is-go", "is-punt", "is-stopped");
     stage.classList.add("is-kicking");
     kickButton.disabled = true;
     const aimInput = document.getElementById("fgAim");
@@ -384,19 +388,22 @@
     const scenario = fgScenarios[nextIndex];
     fgState.distance = scenario.distance;
     fgState.wind = scenario.wind;
-    fgState.aim = fgIdealAim();
-    fgState.power = fgTargetPower();
+    // Give the player a plausible but imperfect starting read. The decision layer
+    // still locks the controls until the player chooses to kick, but the kick
+    // itself must be set manually instead of being solved for them.
+    fgState.aim = fgClamp(Math.round(Math.random() * 12 - 6), -10, 10);
+    fgState.power = Math.round(fgClamp(fgTargetPower() + Math.round(Math.random() * 18 - 9), 55, 100));
     const aimInput = document.getElementById("fgAim");
     const powerInput = document.getElementById("fgPower");
-    if (aimInput) { aimInput.value = String(fgState.aim); aimInput.disabled = true; }
-    if (powerInput) { powerInput.value = String(fgState.power); powerInput.disabled = true; }
+    if (aimInput) aimInput.value = String(fgState.aim);
+    if (powerInput) powerInput.value = String(fgState.power);
     const stage = document.getElementById("fgStage");
-    if (stage) stage.classList.remove("is-kicking", "is-good", "is-miss", "is-go", "is-punt");
+    if (stage) stage.classList.remove("is-kicking", "is-good", "is-miss", "is-go", "is-punt", "is-stopped");
     drawFieldGoal();
     setFgPhase("decision");
     set("fgDecisionPrompt", scenario.prompt);
     const result = document.getElementById("fgResult");
-    if (result) result.innerHTML = `<strong>New situation: ${scenario.down}</strong><span>Choose your call. The kick controls unlock only if you take the points.</span>`;
+    if (result) result.innerHTML = `<strong>New situation: ${scenario.down}</strong><span>Choose your call. A go-for-it can be stopped short, and a kick starts with an imperfect read.</span>`;
     updateFgScoreboard();
   }
 

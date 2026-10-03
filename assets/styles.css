@@ -344,9 +344,10 @@ body { background: radial-gradient(circle at 8% 12%, rgba(116,185,232,.08), tran
 .fg-kicking-controls { padding: 13px 13px 14px; border: 1px solid rgba(242,177,52,.3); border-radius: 4px; background: rgba(242,177,52,.07); }
 .fg-kicking-controls .fg-controls { margin-top: 16px; }
 .fg-next-button { width: 100%; margin-top: 12px; }
-.fg-stage.is-go .fg-field-grass { animation: fg-go-pulse .75s ease-in-out 2; }.fg-stage.is-punt .fg-field-grass { animation: fg-punt-pulse .75s ease-in-out 2; }
+.fg-stage.is-go .fg-field-grass { animation: fg-go-pulse .75s ease-in-out 2; }.fg-stage.is-punt .fg-field-grass { animation: fg-punt-pulse .75s ease-in-out 2; }.fg-stage.is-stopped .fg-field-grass { animation: fg-stop-pulse .65s ease-in-out 2; }
 @keyframes fg-go-pulse { 50% { filter: brightness(1.24) saturate(1.15); } }
 @keyframes fg-punt-pulse { 50% { filter: brightness(1.12) hue-rotate(12deg); } }
+@keyframes fg-stop-pulse { 50% { filter: brightness(.78) saturate(.7); } }
 @media (max-width: 600px) { .fg-situation-grid { grid-template-columns: repeat(2, 1fr); }.fg-situation-top strong { width: 100%; }.fg-decision-buttons { grid-template-columns: 1fr; }.fg-decision-button { min-height: 58px; }.fg-next-button { margin-top: 10px; } }
 
 /* Game-day redesign: stronger hierarchy, clearer chapters, and a broadcast-style matchup view. */
