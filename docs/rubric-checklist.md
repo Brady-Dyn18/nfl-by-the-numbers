@@ -29,7 +29,9 @@
 - [x] Team/opponent matchup snapshot with logos, colors, and role-specific comparison.
 - [x] Cascading filters, quick-find search, active filter chips, and accessible table rows.
 - [x] Useful default matchup, team-season context snapshot, and automatically generated matchup takeaway.
+- [x] Visible dashboard quick-start guide, data-quality summary, role-specific chart explanations, and clear no-result states.
 - [x] Current-view data table with role-appropriate columns and filtered CSV export.
+- [x] Current filtered view can also be exported beside the chart lab, with the same rows used by the table.
 - [x] Reset filters button.
 - [x] Player Duel compares same-position players from both teams with raw values, normalized role scores, season trends, images, and role-appropriate workload, production, efficiency, and discipline measures.
 

@@ -21,6 +21,12 @@ Then open `http://localhost:8000/`.
 
 The browser dashboard needs an HTTP server because browsers block local CSV requests from `file://` pages.
 
+## Reader quick start
+
+Open the report first for the five-season story, then use the dashboard to test a matchup. On the dashboard, choose a team before an opponent; the opponent list narrows to teams that actually played that team. Add a unit, position, or player to make the charts role-specific. The Measure Lab can switch between totals, per-game averages, and role-specific rates, while the breakdown control groups the same measure by season, team, or position. The current filtered rows can be downloaded from the filter panel, chart section, or table.
+
+The dashboard’s data check reports the exact rows, games, teams, players, and seasons currently in view. If a filter combination has no rows, the charts explain how to broaden the selection instead of presenting misleading zeros. The site is designed for a desktop browser but includes responsive layouts for smaller screens.
+
 ## Website files
 
 - `index.html` - narrative report with headline metrics and ten findings, including scoring, offense balance, turnovers, home/away context, a clutch-kicker fourth-down game, an interactive report lens, a two-team comparison, surprise findings, and closing conclusions.
@@ -34,13 +40,20 @@ The browser dashboard needs an HTTP server because browsers block local CSV requ
 - `data/teams.json` - team names, colors, and logo URLs.
 - `data/players.json` - player names, positions, and headshot URLs.
 - `data/report_stats.json` - derived season, team, position, quarterback, balance, turnover, and home/away aggregates used by the report charts.
-- `data/report_players.json.gz` - compressed season/team/player role summaries used by the report lens; the readable `data/report_players.json` fallback is included for browsers without native gzip streams.
+- `data/report_players.json.gz` and `data/report_players.json` - compressed and readable season/team/player role summaries used by the report lens.
 - `scripts/build_data.py` - reproducible data acquisition, snap-count joins, specialist fields, and panel construction.
 - `scripts/build_highlights.py` - optional reproducible nflverse play-by-play indexing for one actual event per player-game.
 - `scripts/validate_project.py` - automated rubric and data-integrity checks.
 - `docs/rubric-checklist.md` - checklist mapping the project to the assignment rubric.
 - `docs/data-dictionary.md` - column definitions and calculation notes for the downloadable panel.
+- `pyproject.toml` and `uv.lock` - Python dependencies and the reproducible `uv` environment.
 - `submission.txt` - four-line turn-in template; replace the student-ID placeholder before submitting.
+
+Run the validation check from the repository root before submitting:
+
+```bash
+uv run python scripts/validate_project.py
+```
 
 ## Data source and methodology
 
