@@ -1,4 +1,4 @@
 Name: Brady Dyn
-Student ID: [REPLACE WITH YOUR STUDENT ID]
+Student ID: 011035542
 Repository: https://github.com/Brady-Dyn18/nfl-by-the-numbers
 Live site: https://brady-dyn18.github.io/nfl-by-the-numbers/
